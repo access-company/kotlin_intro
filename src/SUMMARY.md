@@ -2,7 +2,7 @@
 * [開発環境の構築](./development_environment.md)
 * [基本的な文法](./basic_syntax.md)
 * [関数](./function.md)
-* [特殊な関数](./first_class_function.md)
+* [ちょっと特殊な関数](./first_class_function.md)
 * [クラス](./class.md)
 * [継承・抽象クラス](./inherit_abstract.md)
 * [インターフェース](./interface.md)
