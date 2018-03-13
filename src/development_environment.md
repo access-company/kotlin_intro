@@ -32,9 +32,47 @@ $ brew cask install intellij-idea-ce
 
 ## 新規プロジェクトの作成
 
-* TODO: 手順を簡単に書く
+* IntelliJ IDEA を起動し、「Create New Project」を選択します。
 
-## ビルドして実行
+![idea1.png](./assets/images/idea1.png)
+IntelliJ IDEA を起動したところ
 
-* TODO: 手順を簡単に書く
+* Kotlin を選択します。
 
+![idea2.png](./assets/images/idea2.png)
+Kotlin を選んだところ
+
+* 適当に Project 名を付け、Finish を選択します。
+
+![idea3.png](./assets/images/idea3.png)
+SecondKotlin と名付けたところ
+
+![idea4.png](./assets/images/idea4.png)
+プロジェクトが作成されたところ
+
+## ソースコードの追加
+
+* 画面左上の「src」を右クリックし、「New → Kotlin File/Class」を選択します。
+* ファイル名を「main.kt」として、OK を押します。
+
+![idea5.png](./assets/images/idea5.png)  
+main.kt を作るところ
+
+## ソースコードを書く 
+
+* 以下のようなコードを書いてみましょう。
+
+```kotlin
+fun main(args: Array<String>) {
+        println("Hello World!")
+}
+```
+
+## ビルドして実行する
+
+* main.kt をクリックして選択します。
+* メニューから「Run」→「Run」と選択します。  
+ファイルがコンパイルされ、実行が始まります。
+
+![idea6.png](./assets/images/idea6.png)  
+プログラムを実行したところ
