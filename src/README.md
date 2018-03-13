@@ -1,6 +1,6 @@
 # Kotlin introduction
 
-## Table of contents
+## 目次
 
 {% include "./SUMMARY.md" %}
 

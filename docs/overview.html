@@ -279,52 +279,7 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="design-overview">design overview</h1>
-<h2 id="functions-of-hashira-on-pc">functions of hashira on PC</h2>
-<h3 id="cli-and-gui">cli and gui</h3>
-<ul>
-<li>add a new task and place it on Backlog</li>
-<li>change status of tasks to ToDo, Doing, and Done</li>
-<li>add interrupter task, place it on Doing directory</li>
-<li>show list of tasks on each status</li>
-</ul>
-<h3 id="gui-specific">gui specific</h3>
-<ul>
-<li>show chart to indicate how long time spent to current task </li>
-</ul>
-<h2 id="functions-of-hashira-on-android">functions of hashira on Android</h2>
-<h3 id="application">application</h3>
-<ul>
-<li>add a new task and place it on Backlog</li>
-<li>change status of tasks to ToDo, Doing, and Done</li>
-<li>add interrupter task, place it on Doing directory</li>
-<li>show list of tasks on each status</li>
-</ul>
-<h3 id="widget">widget</h3>
-<ul>
-<li>add a new task and place it on Backlog</li>
-<li>show list of tasks on Backlog</li>
-<li>show current task and how long time spent to the task</li>
-</ul>
-<h2 id="functions-of-daemon">functions of daemon</h2>
-<ul>
-<li>it is for making hashira work even there&apos;s no network</li>
-<li>daemon has database to cache the tasks and &quot;commands&quot;<ul>
-<li>&quot;commands&quot; means a unit of modifications to tasks.
-e.g) add new task, move task to ToDo, and so on</li>
-<li>&quot;commands&quot; are used to sync with datastore</li>
-</ul>
-</li>
-<li>if network is available, then sync registered or changed tasks with cloud</li>
-</ul>
-<h2 id="functions-of-datastore">functions of datastore</h2>
-<ul>
-<li>it is assumed to place on cloud. it is for syncing data between devices</li>
-<li>it accepts &quot;commands&quot; to add or modify tasks</li>
-<li>daemon can retrieve chunk of commands with from-to query to reflect datastore&apos;s update to local database</li>
-</ul>
-<h2 id="modules">modules</h2>
-<p><img src="assets/images/uml/c9a9978db11ac62b5667fe689064c3957d0d48bb.svg"></p>
+                                <h1 id="&#x306F;&#x3058;&#x3081;&#x306B;">&#x306F;&#x3058;&#x3081;&#x306B;</h1>
 
                                 
                                 </section>
@@ -352,7 +307,7 @@ e.g) add new task, move task to ToDo, and so on</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"はじめに","level":"1.2","depth":1,"next":{"title":"環境構築","level":"1.3","depth":1,"path":"development_environment.md","ref":"./development_environment.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","-search"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"overview.md","mtime":"2018-03-13T11:34:43.415Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-13T11:53:45.559Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"はじめに","level":"1.2","depth":1,"next":{"title":"環境構築","level":"1.3","depth":1,"path":"development_environment.md","ref":"./development_environment.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","-search"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"overview.md","mtime":"2018-03-13T12:00:00.296Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-13T12:00:49.132Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
