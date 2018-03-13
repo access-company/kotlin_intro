@@ -21,6 +21,10 @@
                 
             
                 
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
                 <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -64,6 +68,10 @@
     <div class="book-summary">
         
             
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
             
                 <nav role="navigation">
                 
@@ -110,7 +118,7 @@
                 <a href="development_environment.html">
             
                     
-                    環境構築
+                    開発環境の構築
             
                 </a>
             
@@ -149,7 +157,7 @@
                 <a href="first_class_function.html">
             
                     
-                    特殊な関数
+                    ちょっと特殊な関数
             
                 </a>
             
@@ -275,6 +283,9 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
+<div id="book-search-results">
+    <div class="search-noresults">
+    
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x305D;&#x306E;&#x4ED6;&#x8C46;&#x77E5;&#x8B58;">&#x305D;&#x306E;&#x4ED6;&#x8C46;&#x77E5;&#x8B58;</h1>
@@ -282,6 +293,22 @@
                                 
                                 </section>
                             
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
                         </div>
                     </div>
                 
@@ -301,7 +328,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"その他豆知識","level":"1.12","depth":1,"previous":{"title":"Null安全","level":"1.11","depth":1,"path":"null_safe.md","ref":"./null_safe.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","-search"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"tips.md","mtime":"2018-03-13T12:06:25.507Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-13T12:07:21.382Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"その他豆知識","level":"1.12","depth":1,"previous":{"title":"Null安全","level":"1.11","depth":1,"path":"null_safe.md","ref":"./null_safe.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"tips.md","mtime":"2018-03-13T12:06:25.507Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-13T12:12:26.904Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -309,6 +336,14 @@
         
     <script src="gitbook/gitbook.js"></script>
     <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
     
         
         <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
