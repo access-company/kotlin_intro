@@ -10,3 +10,8 @@ https://github.com/aYosukeAkatsuka/kotlin_intro/
 
 * 誤り、改善点などあれば、issue、Pull request でのご協力をお願いいたします。
 
+## 参考文献
+
+以下を参考にして作成されています。
+
+* [Kotlin スタートブック](https://www.amazon.co.jp/dp/B06XHJMR65/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1)
