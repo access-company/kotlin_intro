@@ -1,6 +1,7 @@
 # Kotlin introduction
 
 Kotlin 導入のための資料です。  
+GitHub pages を使ってホスティングしています。  
 https://ayosukeakatsuka.github.io/kotlin_intro/
 
 ## ドキュメントのビルド方法
