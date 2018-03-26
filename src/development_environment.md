@@ -8,25 +8,10 @@ Kotlin を用いた開発を行うための環境構築について記載しま�
 
 ## IntelliJ IDEA の導入
 
-* IntelliJ IDEA をインストールします。  
-`brew cask` を使うか、公式サイトからダウンロードします。
+* IntelliJ IDEA をインストールします。
+以下、公式サイトからダウンロードして導入する手順を紹介します。
 
-### brew cask で入れる場合
-
-* (入っていなければ) `brew cask` を導入します。
-
-```bash
-$ brew tap phinze/homebrew-cask
-$ brew install brew-cask
-```
-
-* intellij-idea-ce (無償版) をインストールします。 
-
-```bash
-$ brew cask install intellij-idea-ce
-```
-
-### 公式サイトからダウンロードする場合
+### 公式サイトからダウンロード
 
 * [JetBrains 公式のダウンロードページ](https://www.jetbrains.com/idea/download/) からダウンロードしてインストールします。
 
