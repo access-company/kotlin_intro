@@ -6,9 +6,9 @@ Kotlin のレクチャを行う目的で作成しています。
 ## 文書について
 
 * 以下のリポジトリで公開しています。  
-https://github.com/aYosukeAkatsuka/kotlin_intro/
+https://github.com/pankona/kotlin_intro/
 
-* 誤り、改善点などあれば、issue、Pull request でのご協力をお願いいたします。
+* 誤り、改善点などあれば、issue、Pull request でのご指摘にご協力をお願いいたします。
 
 ## 参考文献
 
