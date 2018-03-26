@@ -1,4 +1,5 @@
 * [はじめに](./overview.md)
+* [Kotlin について](./about_kotlin.md)
 * [開発環境の構築](./development_environment.md)
 * [基本的な文法](./basic_syntax.md)
 * [関数](./function.md)
