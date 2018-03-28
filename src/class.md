@@ -38,3 +38,11 @@
 
 * 拡張プロパティ
 
+
+## データクラス
+
+* data class の定義
+
+* data class の使い方
+
+* data class を使うと嬉しい場面
