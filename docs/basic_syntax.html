@@ -380,13 +380,67 @@
 </ul>
 <h2 id="&#x5909;&#x6570;">&#x5909;&#x6570;</h2>
 <ul>
-<li><code>var</code> &#x3068; <code>val</code></li>
+<li><code>val</code><ul>
+<li><code>val</code> &#x3067;&#x5BA3;&#x8A00;&#x3057;&#x305F;&#x5909;&#x6570;&#x306F;&#x3001;&#x3042;&#x3068;&#x304B;&#x3089;&#x5024;&#x306E;&#x5909;&#x66F4; (&#x518D;&#x4EE3;&#x5165;) &#x304C;&#x3067;&#x304D;&#x306A;&#x3044;&#x3002;</li>
+<li>&#x5909;&#x6570;&#x3092;&#x6271;&#x3046;&#x969B;&#x306B;&#x306F;&#x3001;&#x53EF;&#x80FD;&#x306A;&#x9650;&#x308A;&#x306F; <code>val</code> &#x3092;&#x7528;&#x3044;&#x305F;&#x307B;&#x3046;&#x304C;&#x826F;&#x3044;&#x3002;</li>
 </ul>
+</li>
+</ul>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// val &#x5909;&#x6570;&#x540D;: &#x578B; = &#x5F0F;</span>
+
+<span class="hljs-variable"><span class="hljs-keyword">val</span> foo</span>: <span class="hljs-keyword">Int</span> = <span class="hljs-number">123</span>
+<span class="hljs-variable"><span class="hljs-keyword">val</span> bar</span>: String = <span class="hljs-string">&quot;Hello&quot;</span>
+</code></pre>
+<ul>
+<li><code>var</code><ul>
+<li><code>var</code> &#x3067;&#x5BA3;&#x8A00;&#x3057;&#x305F;&#x5909;&#x6570;&#x306F;&#x518D;&#x4EE3;&#x5165;&#x304C;&#x53EF;&#x80FD;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// var &#x5909;&#x6570;&#x540D;: &#x578B; = &#x5F0F;</span>
+
+<span class="hljs-variable"><span class="hljs-keyword">val</span> foo</span>: <span class="hljs-keyword">Int</span> = <span class="hljs-number">123</span>
+<span class="hljs-variable"><span class="hljs-keyword">val</span> bar</span>: String = <span class="hljs-string">&quot;Hello&quot;</span>
+
+<span class="hljs-comment">// &#x3042;&#x3068;&#x304B;&#x3089;&#x5024;&#x304C;&#x5909;&#x3048;&#x3089;&#x308C;&#x308B;</span>
+
+foo = <span class="hljs-number">100</span>
+bar = <span class="hljs-string">&quot;World!&quot;</span>
+</code></pre>
 <h2 id="&#x578B;&#x63A8;&#x8AD6;">&#x578B;&#x63A8;&#x8AD6;</h2>
+<ul>
+<li>Kotlin &#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30E9;&#x306B;&#x3001;&#x53F3;&#x8FBA;&#x304B;&#x3089;&#x5909;&#x6570;&#x306E;&#x578B;&#x3092;&#x63A8;&#x8AD6;&#x3057;&#x3066;&#x3082;&#x3089;&#x3046;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;&#x3002;</li>
+<li>&#x578B;&#x63A8;&#x8AD6;&#x3092;&#x884C;&#x3046;&#x5834;&#x5408;&#x306F;&#x3001;&#x578B;&#x540D;&#x3092;&#x7701;&#x7565;&#x3057;&#x3066;&#x4EE3;&#x5165;&#x3092;&#x884C;&#x3046;&#x3002;</li>
+</ul>
+<pre><code class="lang-kotlin"><span class="hljs-variable"><span class="hljs-keyword">val</span> age</span>  = <span class="hljs-number">35</span>       <span class="hljs-comment">// age &#x306E;&#x578B;&#x306F; Int &#x306B;&#x306A;&#x308B;</span>
+
+<span class="hljs-variable"><span class="hljs-keyword">var</span> name</span> = <span class="hljs-string">&quot;access&quot;</span> <span class="hljs-comment">// name &#x306E;&#x578B;&#x306F; String &#x306B;&#x306A;&#x308B;</span>
+name = <span class="hljs-number">12</span>           <span class="hljs-comment">// name &#x306E;&#x578B;&#x306F; String &#x306A;&#x306E;&#x3067;&#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB;&#x30A8;&#x30E9;&#x30FC;&#x306B;&#x306A;&#x308B;</span>
+</code></pre>
 <h2 id="&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;">&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;</h2>
 <ul>
-<li><p>&#x6587;&#x5B57;&#x5217;</p>
+<li>&#x6587;&#x5B57;&#x5217; (String)<ul>
+<li>&#x6587;&#x5B57;&#x5217;&#x3092;&#x8868;&#x3059;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3002;</li>
+<li>&#x8272;&#x3005;&#x306A;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3001;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x304C;&#x53D6;&#x308A;&#x63C3;&#x3048;&#x3089;&#x308C;&#x3066;&#x3044;&#x308B;&#x3002;</li>
+<li><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html" target="_blank">String - Kotlin Programming Language (&#x516C;&#x5F0F; API Reference)</a></li>
+</ul>
 </li>
+</ul>
+<pre><code class="lang-kotlin"><span class="hljs-variable"><span class="hljs-keyword">val</span> str</span> = <span class="hljs-string">&quot;access&quot;</span>
+
+str.length      <span class="hljs-comment">// 6</span>
+str.captalize() <span class="hljs-comment">// &quot;Access&quot;</span>
+str.isEmpty()   <span class="hljs-comment">// false</span>
+
+<span class="hljs-comment">// &#x6587;&#x5B57;&#x5217;&#x306E;&#x9023;&#x7D50;</span>
+
+<span class="hljs-variable"><span class="hljs-keyword">val</span> str2</span> = <span class="hljs-string">&quot;Hello &quot;</span> + str + <span class="hljs-string">&quot; !&quot;</span>  <span class="hljs-comment">// + &#x3092;&#x4F7F;&#x3063;&#x305F;&#x9023;&#x7D50;</span>
+str2 <span class="hljs-comment">// &quot;Hello access !&quot;</span>
+
+<span class="hljs-variable"><span class="hljs-keyword">val</span> str3</span> = <span class="hljs-string">&quot;Good night ${str}!&quot;</span>   <span class="hljs-comment">// String &#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x3092;&#x4F7F;&#x3063;&#x305F;&#x9023;&#x7D50;</span>
+str3 <span class="hljs-comment">// &quot;Good night access!</span>
+</code></pre>
+<ul>
 <li><p>&#x914D;&#x5217;</p>
 </li>
 <li><p>&#x30EA;&#x30B9;&#x30C8;</p>
@@ -455,7 +509,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"基本的な文法","level":"1.5","depth":1,"next":{"title":"関数","level":"1.6","depth":1,"path":"function.md","ref":"./function.md","articles":[]},"previous":{"title":"開発環境の構築","level":"1.4","depth":1,"path":"development_environment.md","ref":"./development_environment.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"basic_syntax.md","mtime":"2018-03-28T03:00:30.730Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-28T03:32:25.735Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"基本的な文法","level":"1.5","depth":1,"next":{"title":"関数","level":"1.6","depth":1,"path":"function.md","ref":"./function.md","articles":[]},"previous":{"title":"開発環境の構築","level":"1.4","depth":1,"path":"development_environment.md","ref":"./development_environment.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"basic_syntax.md","mtime":"2018-03-28T05:57:08.753Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-28T05:57:45.181Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
