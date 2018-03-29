@@ -84,13 +84,95 @@ str3 // "Good night access!
 
 * 配列
 
+```kotlin
+// 配列を作るには arrayOfNulls を使う
+// Int の配列の場合は以下のような書き方
+val ints = arrayOfNulls<Int>(10)
+
+// 各要素への値の代入
+// (再代入も可能)
+ints[0] = 10
+ints[1] = 20
+
+// 中身はこうなる
+ints[0] // 10
+ints[1] // 20
+ints[2] // null
+
+// 要素数の取得には size プロパティを使う
+ints.size // 10
+
+// arrayOf で書くと型推論される
+// 以下は String の配列ということにされる
+val array = arrayOf{"access", "company", "com"}
+array[0] // "access"
+array[1] // "company"
+array[2] // "com"
+```
+
 * リスト
+
+```kotlin
+// listOf でリストを作る。
+val list = listOf<Int>(1, 2, 3)
+
+// 配列と同じように要素アクセスできる
+list[0] // 1
+
+// 単なるリストは要素の値を変更できない
+// 要素の値を変更可能なリストが欲しい場合は MutableList を使う
+list[0] = 100 // コンパイルエラー
+```
 
 * セット
 
+```kotlin
+// セットは「重複のない」集合を扱う場合に用いる
+val intSet = setOf(1, 2, 3, 4, 1, 3, 2)
+intSet // [1, 2, 3, 4]
+
+// 単なるセットは要素の値を変更できない
+// 要素を追加したり削除したりする場合は MutableSet を用いる
+intSet += 5 // コンパイルエラー
+
+// セットは要素の順番を保証しないので、配列みたいな添字での要素アクセスはできない
+intSet[2] // コンパイルエラー
+```
+
 * マップ
 
+```kotlin
+// マップはキーと値のペアを保持するコレクション
+// 以下は <String, Int> という形のペアを保持できるマップ
+val map = mapOf(1 to "access", 2 to "company", 3 to "com")
+map[1] // "access"
+map[2] // "company"
+map[3] // "com"
+map[4] // null
+
+// ご多分に漏れず、単なるマップは値の変更ができない
+// 要素の値を変更可能なマップが欲しい場合は MutableMap を使う
+map[1] = "fuga" // コンパイルエラー
+```
+
 * レンジ
+  * `..` を使って範囲を表すことができる
+
+```kotlin
+1..10 // 1〜10 の範囲を示す
+
+// in を使って、指定した値が範囲内にあるかチェックする
+5 in 1..10  // true
+
+// range もオブジェクトなので変数に入れたりできる
+val r = 1..10
+5 in r // true
+
+// レンジからリストを得ることができる
+val list = r.toList()
+list // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+```
 
 ## 条件分岐
 
