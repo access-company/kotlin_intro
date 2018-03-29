@@ -136,7 +136,7 @@ sum((1L..123456).toList()) // stack overflow しちゃう！
 
 ```kotlin
 // 再帰的に関数を呼び出す場合において、その関数呼び出しが関数の一番最後にくる場合、
-// 「末尾呼び出し最適化」と呼ばれる最適化を行うことができる
+// 「末尾呼び出し最適化 (Tail Call Optimization)」と呼ばれる最適化を行うことができる
 // * 関数定義の頭に tailrec をつける
 // * 再帰呼び出しを関数の最後にもっていく
 tailrec fun sum(numbers: List<Long>, acc: Long = 0): Long = // ← tailrec というのをつけた
