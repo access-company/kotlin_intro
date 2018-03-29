@@ -241,8 +241,100 @@ type // 5 is Int
 
 * while
 
+```kotlin
+// while による繰り返し
+var count1 = 0
+while (count1 < 5) {
+    // 繰り返したい処理
+    count1++
+}
+```
+
+```kotlin
+// do-while も使えます
+// 単なる while は繰り返し 0 回 (＝何もしない) もできるが、
+// do-while の場合はまず do の中身を一度実行してから繰り返す
+var count2 = 0
+do {
+    // 繰り返したい処理
+    count2++
+} while(count2 < 5)
+```
+
+```kotlin
+// 無限ループ
+while (true) {
+    // 繰り返したい処理
+}
+```
+
 * for
 
+```kotlin
+// for 文で繰り返し実行が可能なのは、
+// イテレータを提供するオブジェクト (配列、リスト、レンジ、等)
+//
+// for (要素名 in イテレータオブジェクト) {
+//     // 繰り返したい処理
+// }
+```
 
+```kotlin
+// Int の配列の場合
+val ints = arrayOf(1, 2, 3)
+for (n in ints) {
+    println(n) // 1, 2, 3 が順番に出力される
+}
+```
+
+```kotlin
+// レンジを使う場合
+var sum = 0
+for (n in 1..10) {
+    sum += n
+}
+sum // 55
+```
+
+```kotlin
+// リストを使う場合
+var sum = 0
+val list = 1..10.toList()
+for (n in list) {
+    sum += n
+}
+sum // 55
+```
+
+```kotlin
+// 途中でループを抜けたり (break)
+// 次のループまでスキップしたり (continue)
+
+var count = 0
+while (true) {
+    if (count == 10) {
+        break // while ループを抜ける
+    }
+    if (count % 3 == 0) {
+        println("3の倍数です！")
+        continue // 後ろの処理を行わずに次のループを開始する
+    }
+    println(count)
+}
+```
+
+```kotlin
+// ループが多重の場合は、
+// どのループを抜けるかラベルで指定する
+
+outer@ for (i in 1..10) {
+    for (j in 1..10) {
+        if ((i+j) % 3 == 0) {
+            break outer // 外側のループを抜ける
+            // break のように何も指定しない場合、内側のループを抜ける
+        }
+    }
+}
+```
 
 
