@@ -162,7 +162,8 @@ map[1] = "fuga" // コンパイルエラー
 1..10 // 1〜10 の範囲を示す
 
 // in を使って、指定した値が範囲内にあるかチェックする
-5 in 1..10  // true
+5 in 1..10   // true
+100 in 1..10 // false
 
 // range もオブジェクトなので変数に入れたりできる
 val r = 1..10
@@ -177,8 +178,64 @@ list // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ## 条件分岐
 
 * if
+  * 条件分岐に用いる
+  * else を伴うことで「式」として用いることが可能 (変数に代入したりできる)
+
+```kotlin
+val r = 1..10
+if (5 in r) {
+    println("5 is in range")
+}
+
+// 式として用いて変数に代入することも可能
+val n = 5
+val result = if (n in r) {
+    "$n is in range"
+} else {
+    // 式として用いるときには else 必須
+    "$n is not in range"
+}
+result // 5 is in range
+
+// else if で次々つなげることも可能
+val fee = if (age > 12) {
+    "大人料金"
+} else if (age >= 6) {
+    "小人料金"
+} else {
+    "無料"
+}
+```
 
 * when
+  * switch 文のようなもの
+  * if と同じく、else を伴うことで「式」として用いることが可能
+
+```kotlin
+// オーソドックスな when の使い方
+val n = 5
+when (n) {
+    1    -> "access"
+    2, 3 -> "company"
+    else -> "com"
+
+}
+
+// 定数以外も用いることができる
+when (n) {
+    in 1..5              -> "access"
+    isGreaterThanFive(n) -> "company"
+    else                 -> "com"
+}
+
+// is を用いた型チェック
+// 値の代入もトライ
+val type = when (n) {
+    is Int    -> "$n is Int"
+    else      -> "$n is not Int"
+}
+type // 5 is Int
+```
 
 ## ループ
 
