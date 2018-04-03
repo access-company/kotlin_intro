@@ -373,16 +373,74 @@
 </ul>
 <h2 id="&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x4F5C;&#x308A;&#x65B9;&#x3068;&#x4F7F;&#x3044;&#x65B9;">&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x4F5C;&#x308A;&#x65B9;&#x3068;&#x4F7F;&#x3044;&#x65B9;</h2>
 <ul>
-<li><p>&#x30AF;&#x30E9;&#x30B9;&#x5B9A;&#x7FA9;</p>
+<li><p>&#x30AF;&#x30E9;&#x30B9;&#x3063;&#x3066;&#xFF1F;</p>
+<ul>
+<li>&#x5225;&#x8B1B;&#x7FA9;&#x300C;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x6307;&#x5411;&#x300D;&#x306B;&#x3066;&#x307E;&#x3042;&#x307E;&#x3042;&#x7D30;&#x304B;&#x304F;&#x7D39;&#x4ECB;&#x3059;&#x308B;&#x4E88;&#x5B9A;</li>
+<li>&#x3056;&#x3063;&#x304F;&#x308A;&#x8A00;&#x3048;&#x3070;&#x300C;&#x5909;&#x6570;&#x3068;&#x95A2;&#x6570;&#x3092;&#x96C6;&#x3081;&#x3066;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x96DB;&#x5F62;&#x3068;&#x3057;&#x3066;&#x4F7F;&#x3046;&#x300D;&#x305F;&#x3081;&#x306E;&#x3082;&#x306E;</li>
+</ul>
 </li>
-<li><p>&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x4F7F;&#x3044;&#x65B9; (&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x5316;)</p>
+<li><p>&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x5B9A;&#x7FA9;&#x3059;&#x308B;</p>
+<ul>
+<li>&#x4EE5;&#x4E0B;&#x3001;&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3068;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x6301;&#x305F;&#x305B;&#x308B;&#x4F8B;&#x3002;</li>
+</ul>
 </li>
-<li><p>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x5B9A;&#x7FA9;</p>
-</li>
-<li><p>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306E;&#x547C;&#x3073;&#x51FA;&#x3057;</p>
-</li>
-<li><p>&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;</p>
-</li>
+</ul>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// Person (&#x4EBA;) &#x30AF;&#x30E9;&#x30B9;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>{
+    <span class="hljs-comment">// &#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3; (&#x540D;&#x524D;)</span>
+    <span class="hljs-variable"><span class="hljs-keyword">var</span> name</span>: String = <span class="hljs-string">&quot;&quot;</span>
+
+    <span class="hljs-comment">// &#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3; (&#x5E74;&#x9F62;&#x3001;&#x30AB;&#x30B9;&#x30BF;&#x30E0;&#x30BB;&#x30C3;&#x30BF;&#x30FC;&#x4ED8;&#x304D;)</span>
+    <span class="hljs-variable"><span class="hljs-keyword">var</span> age</span>: <span class="hljs-keyword">Int</span> = <span class="hljs-number">0</span>
+        <span class="hljs-keyword">set</span>(i) =
+            <span class="hljs-keyword">if</span> (i <span class="hljs-type">&lt; 0) {
+                println(&quot;invalid argument. only positive value can be specified to age property.&quot;)
+                // field &#x3068;&#x3044;&#x3046;&#x5909;&#x6570;&#x3067;&#x4EE3;&#x5165;&#x3059;&#x308B;&#x3002;age = 0 &#x3068;&#x3084;&#x308B;&#x3068;&#x2026;&#xFF1F;
+                field = 0 
+            } else {
+                field = i
+            }
+
+    // &#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3; (&#x540D;&#x524D;&#x306E;&#x9577;&#x3055;&#x3001;&#x30AB;&#x30B9;&#x30BF;&#x30E0;&#x30B2;&#x30C3;&#x30BF;&#x30FC;&#x4ED8;&#x304D;)
+    val nameLength: Int
+        get(): Int {
+            return name.length
+        }
+
+    // &#x30E1;&#x30BD;&#x30C3;&#x30C9; (20&#x6B73;&#x4EE5;&#x4E0A;&#x304B;&#x3069;&#x3046;&#x304B;&#x3092;&#x8FD4;&#x3059;)
+    fun isAdult(): Boolean {
+        if (age &gt;</span>= <span class="hljs-number">20</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+    }
+}
+</code></pre>
+<ul>
+<li>&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x4F7F;&#x3044;&#x65B9; (&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x5316;)</li>
+</ul>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+    <span class="hljs-comment">// Person &#x30AF;&#x30E9;&#x30B9;&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x5316;</span>
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> pankona</span> = Person()
+
+    <span class="hljs-comment">// &#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306B;&#x5024;&#x3092;&#x30BB;&#x30C3;&#x30C8;</span>
+    pankona.name = <span class="hljs-string">&quot;yosuke akatsuka&quot;</span>
+    pankona.age  = <span class="hljs-number">35</span>
+
+    <span class="hljs-comment">// &#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306E;&#x5024;&#x3092;&#x53C2;&#x7167;&#x3059;&#x308B;</span>
+    println(pankona.name)       <span class="hljs-comment">// yosuke akatsuka</span>
+    println(pankona.age)        <span class="hljs-comment">// 35</span>
+    println(pankona.nameLength) <span class="hljs-comment">// 15</span>
+
+    <span class="hljs-comment">// &#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306E;&#x547C;&#x3073;&#x51FA;&#x3057;</span>
+    <span class="hljs-keyword">if</span> (pankona.isAdult()) {
+        println(<span class="hljs-string">&quot;pankona belongs to adult team&quot;</span>)
+    } <span class="hljs-keyword">else</span> {
+        println(<span class="hljs-string">&quot;pankona belongs to young team&quot;</span>)
+    }
+}
+</code></pre>
+<ul>
 <li><p>lateinit</p>
 </li>
 <li><p>this</p>
@@ -451,7 +509,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"クラス","level":"1.8","depth":1,"next":{"title":"継承・抽象クラス","level":"1.9","depth":1,"path":"inherit_abstract.md","ref":"./inherit_abstract.md","articles":[]},"previous":{"title":"Exercise (1)","level":"1.7.1","depth":2,"path":"exercise1.md","ref":"./exercise1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"class.md","mtime":"2018-03-28T03:24:10.527Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-30T14:30:28.322Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"クラス","level":"1.8","depth":1,"next":{"title":"継承・抽象クラス","level":"1.9","depth":1,"path":"inherit_abstract.md","ref":"./inherit_abstract.md","articles":[]},"previous":{"title":"Exercise (1)","level":"1.7.1","depth":2,"path":"exercise1.md","ref":"./exercise1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"class.md","mtime":"2018-04-03T15:13:02.394Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-03T15:14:05.621Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
