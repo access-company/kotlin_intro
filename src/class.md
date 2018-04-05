@@ -181,16 +181,89 @@ fun main(args: Array<String>) {
 }
 ```
 
+```kotlin
+// ヒトを表すクラス
+// ちなみに、constructor の文字は省略が可能 (先述のものと意味は同じ)
+class Person (val name: String, val age: Int)
+```
 
+```kotlin
+// ヒトを表すクラス
+// ふたつめのコンストラクタを定義することもできる
+class Person (val name: String, val age: Int) {
+    // 引数なしのコンストラクタを定義
+    // this を使って ↑ のコンストラクタを呼び出す
+    constructor() : this("anonymous", 999) {
+        println("this is secondary constructor!")
+    }
+}
+```
+
+* コンストラクタの色々
+  * クラス名の横にコンストラクタを書く場合、それを「primary constructor」と呼ぶ。
+  * クラスの中にふたつめ以上のコンストラクタを書く場合、それ (ら) を「secondary constructor」と呼ぶ。
+  * primary constructor がある場合、secondary constructor は primary constructor を呼び出す必要がある。
+  * primary constructor に処理は書けないが、secondary constructor には処理が書ける。
+  * primary constructor で処理が書きたい場合は、後述のイニシャライザを用いる。
 
 * イニシャライザ
+  * primary constructor が解決された後に呼び出される部分
+  * constructor では足りない初期化処理を行う場合はここでやる
+  * エラー処理 (例外を発生させる) のであればここで
+
+```kotlin
+// ヒトを表すクラス
+class Person(val name: String, val age: Int) {
+    init {
+        // 条件を満たさない場合は例外をスロー
+        // java.lang.IllegalArgumentException: Failed requirement.
+        require(age >= 0)
+    }
+}
+
+fun main(args: Array<String>) {
+    val p = Person("pankona", -10) // 例外発生
+}
+```
 
 ## クラスの拡張
 
 * 拡張関数
+  * 既存のクラスにメソッドを追加する仕組み
+
+```kotlin
+// 文字列の長さを取得する関数を普通に作ると
+fun strlen(str: String) = return str.size
+
+fun main(args: Array<String>) {
+    strlen("hogehoge") // 8
+}
+```
+
+```kotlin
+// 文字列の長さを返す関数 size を String クラスに生やす
+// オブジェクトへの参照を得るには this が使える (省略可)
+fun String.size() = this.length
+
+fun main(args: Array<String>) {
+    "hogehoge".size() // 8
+}
+```
 
 * 拡張プロパティ
 
+```kotlin
+// メソッドを追加するのと同様にプロパティも追加できる
+// (バッキングフィールドは追加できない)
+
+// 文字列の長さを返すプロパティを生やす
+val String.size: Int
+    get() = this.length
+
+fun main(args: Array<String>) {
+    "hogehoge".size() // 8
+}
+```
 
 ## データクラス
 
