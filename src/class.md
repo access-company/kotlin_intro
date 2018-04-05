@@ -251,11 +251,10 @@ fun main(args: Array<String>) {
 ```
 
 * 拡張プロパティ
+  * 既存のクラスの拡張はメソッドのみならず、プロパティの追加もできる。
+  * ただしバッキングフィールドは追加できない。
 
 ```kotlin
-// メソッドを追加するのと同様にプロパティも追加できる
-// (バッキングフィールドは追加できない)
-
 // 文字列の長さを返すプロパティを生やす
 val String.size: Int
     get() = this.length
@@ -268,7 +267,62 @@ fun main(args: Array<String>) {
 ## データクラス
 
 * data class の定義
+  * クラスを単にデータの塊として表現したいときに用いる
+  * 通常のクラス定義の頭に `data` をつける
 
-* data class の使い方
+```kotlin
+// ヒトクラス (data が頭にくっついている)
+data class Person(val name String, val age: Int)
+```
+
+* data class の特徴
+
+```kotlin
+// 同じ名前と年齢を与える
+val p1 = Person("access", 35)
+val p2 = Person("access", 35)
+
+// 以下は true になる
+p1 == p2    // true
+
+// println に渡すといい感じに表示される
+println(p1) // Person(name=access, age=35)
+
+// copy 等の便利メソッドが生える
+val p3 = p1.copy()
+println(p3) // Person(name=access, age=35)
+
+// copy は一部のプロパティだけついでに変更したりもできる
+val p4 = p1.copy(age: 15)
+println(p4) // Person(name=access, age=15)
+```
 
 * data class を使うと嬉しい場面
+  * 以下は通常のクラスとの違い
+
+```kotlin
+// ヒトクラス
+class Person(val name String, val age: Int)
+
+// 同じ名前と年齢を与える
+val p1 = Person("access", 35)
+val p2 = Person("access", 35)
+
+// p1 と p2 は、「値は同じかもしれないが違うオブジェクト」なので
+// 下記の評価結果は false になる
+p1 == p2 // false
+
+// println に渡しても内容は表示されない
+println(p1) // Line_5$Person@3bd42f5b
+
+// copy メソッドがないのでコピーできない
+val p3 = p1.copy() // メソッドがないのでエラー
+
+// 以下をやると参照のコピーになる (p1 を変更すると p4 も変更される)
+val p4 = p1
+```
+
+* 上記のような場合、`p1` と `p2` はイコールと判定されてほしい場合が多々ある
+  * 本来、ちゃんと値同士を比較するようなメソッドを生やす必要がある
+  * Kotlin の `data class` は勝手に便利メソッドを生やしてくれる
+
