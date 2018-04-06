@@ -660,6 +660,8 @@ println(p4) <span class="hljs-comment">// Person(name=access, age=15)</span>
 </code></pre>
 <ul>
 <li>data class &#x3092;&#x4F7F;&#x3046;&#x3068;&#x5B09;&#x3057;&#x3044;&#x5834;&#x9762;<ul>
+<li>&#x901A;&#x5E38;&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x7528;&#x3044;&#x308B;&#x3068;&#x3001;&#x4E0A;&#x8A18;&#x306E;&#x6BD4;&#x8F03;&#x306F; <code>p1</code> &#x3068; <code>p2</code> &#x306F;&#x30A4;&#x30B3;&#x30FC;&#x30EB;&#x5224;&#x5B9A;&#x3055;&#x308C;&#x306A;&#x3044;</li>
+<li><code>copy</code> &#x7B49;&#x306E;&#x4FBF;&#x5229;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x81EA;&#x52D5;&#x7684;&#x306B;&#x751F;&#x3084;&#x3057;&#x3066;&#x304F;&#x308C;&#x308B;</li>
 <li>&#x4EE5;&#x4E0B;&#x306F;&#x901A;&#x5E38;&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x3068;&#x306E;&#x9055;&#x3044;</li>
 </ul>
 </li>
@@ -684,13 +686,6 @@ println(p1) <span class="hljs-comment">// Line_5$Person@3bd42f5b</span>
 <span class="hljs-comment">// &#x4EE5;&#x4E0B;&#x3092;&#x3084;&#x308B;&#x3068;&#x53C2;&#x7167;&#x306E;&#x30B3;&#x30D4;&#x30FC;&#x306B;&#x306A;&#x308B; (p1 &#x3092;&#x5909;&#x66F4;&#x3059;&#x308B;&#x3068; p4 &#x3082;&#x5909;&#x66F4;&#x3055;&#x308C;&#x308B;)</span>
 <span class="hljs-variable"><span class="hljs-keyword">val</span> p4</span> = p1
 </code></pre>
-<ul>
-<li>&#x4E0A;&#x8A18;&#x306E;&#x3088;&#x3046;&#x306A;&#x5834;&#x5408;&#x3001;<code>p1</code> &#x3068; <code>p2</code> &#x306F;&#x30A4;&#x30B3;&#x30FC;&#x30EB;&#x3068;&#x5224;&#x5B9A;&#x3055;&#x308C;&#x3066;&#x307B;&#x3057;&#x3044;&#x5834;&#x5408;&#x304C;&#x591A;&#x3005;&#x3042;&#x308B;<ul>
-<li>&#x672C;&#x6765;&#x3001;&#x3061;&#x3083;&#x3093;&#x3068;&#x5024;&#x540C;&#x58EB;&#x3092;&#x6BD4;&#x8F03;&#x3059;&#x308B;&#x3088;&#x3046;&#x306A;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x751F;&#x3084;&#x3059;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308B;</li>
-<li>Kotlin &#x306E; <code>data class</code> &#x306F;&#x52DD;&#x624B;&#x306B;&#x4FBF;&#x5229;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x751F;&#x3084;&#x3057;&#x3066;&#x304F;&#x308C;&#x308B;</li>
-</ul>
-</li>
-</ul>
 
                                 
                                 </section>
@@ -734,7 +729,7 @@ println(p1) <span class="hljs-comment">// Line_5$Person@3bd42f5b</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"クラス","level":"1.8","depth":1,"next":{"title":"継承・抽象クラス","level":"1.9","depth":1,"path":"inherit_abstract.md","ref":"./inherit_abstract.md","articles":[]},"previous":{"title":"Exercise (1)","level":"1.7.1","depth":2,"path":"exercise1.md","ref":"./exercise1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"class.md","mtime":"2018-04-05T13:29:27.255Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-05T13:30:15.213Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"クラス","level":"1.8","depth":1,"next":{"title":"継承・抽象クラス","level":"1.9","depth":1,"path":"inherit_abstract.md","ref":"./inherit_abstract.md","articles":[]},"previous":{"title":"Exercise (1)","level":"1.7.1","depth":2,"path":"exercise1.md","ref":"./exercise1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"class.md","mtime":"2018-04-06T05:56:33.667Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-06T07:31:07.411Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

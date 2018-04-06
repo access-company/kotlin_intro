@@ -372,20 +372,254 @@
 </ul>
 <h2 id="&#x7D99;&#x627F;">&#x7D99;&#x627F;</h2>
 <ul>
+<li><p>&#x7D99;&#x627F;&#x3068;&#x306F;</p>
+<ul>
+<li>&#x5225;&#x8B1B;&#x7FA9;&#x300C;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x6307;&#x5411;&#x300D;&#x306B;&#x3066;&#x307E;&#x3042;&#x307E;&#x3042;&#x7D30;&#x304B;&#x304F;&#x7D39;&#x4ECB;&#x3059;&#x308B;&#x4E88;&#x5B9A;</li>
+<li>&#x3056;&#x3063;&#x304F;&#x308A;&#x8A00;&#x3048;&#x3070;&#x300C;&#x3042;&#x308B;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x6027;&#x8CEA;&#x3092;&#x5225;&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x5F15;&#x304D;&#x7D99;&#x3050;&#x300D;&#x305F;&#x3081;&#x306E;&#x4ED5;&#x7D44;&#x307F;</li>
+</ul>
+</li>
 <li><p>&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x7D99;&#x627F;</p>
 </li>
-<li><p>&#x30E1;&#x30F3;&#x30D0;&#x306E;&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30E9;&#x30A4;&#x30C9;</p>
-</li>
-<li><p>&#x53EF;&#x8996;&#x6027;</p>
+</ul>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x30D2;&#x30C8;&#x30AF;&#x30E9;&#x30B9;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span></span>(<span class="hljs-variable"><span class="hljs-keyword">val</span> name</span>: String) {
+    <span class="hljs-comment">// &#x540D;&#x524D;&#x306E;&#x9577;&#x3055;&#x3092;&#x8FD4;&#x3059;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;</span>
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> nameLength</span>: <span class="hljs-keyword">Int</span>
+        <span class="hljs-keyword">get</span>() = name.length
+
+    <span class="hljs-comment">// &#x3069;&#x3053;&#x3067;&#x751F;&#x307E;&#x308C;&#x305F;&#x304B;&#x3092;&#x8FD4;&#x3059;&#x30E1;&#x30BD;&#x30C3;&#x30C9;</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">bornFrom</span><span class="hljs-params">()</span> = &quot;unknown&quot;</span>
+}
+</code></pre>
+<ul>
+<li>&#x30D2;&#x30C8;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x7D99;&#x627F;&#x3057;&#x3066;&#x307F;&#x308B;<ul>
+<li>&#x3053;&#x306E;&#x307E;&#x307E;&#x3067;&#x306F;&#x7D99;&#x627F;&#x306F;&#x3067;&#x304D;&#x306A;&#x304F;&#x3066;&#x3001;<code>open</code> &#x3092;&#x3064;&#x3051;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308B;</li>
+<li>&#x7D99;&#x627F;&#x3059;&#x308B;&#x3068;&#x3001;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x4E00;&#x5F0F;&#x3068;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x4E00;&#x5F0F;&#x3092;&#x7D99;&#x627F;&#x5148;&#x306F;&#x5F15;&#x304D;&#x7D99;&#x3050;</li>
+</ul>
 </li>
 </ul>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// open &#x304C;&#x3064;&#x3044;&#x3066;&#x7D99;&#x627F;&#x53EF;&#x80FD;&#x306B;&#x306A;&#x3063;&#x305F;&#x30D2;&#x30C8;&#x30AF;&#x30E9;&#x30B9;</span>
+<span class="hljs-keyword">open</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span></span>(<span class="hljs-variable"><span class="hljs-keyword">val</span> name</span>: String) {
+    <span class="hljs-comment">// &#x540D;&#x524D;&#x306E;&#x9577;&#x3055;&#x3092;&#x8FD4;&#x3059;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;</span>
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> nameLength</span>: <span class="hljs-keyword">Int</span>
+        <span class="hljs-keyword">get</span>() = name.length
+
+    <span class="hljs-comment">// &#x3069;&#x3053;&#x3067;&#x751F;&#x307E;&#x308C;&#x305F;&#x304B;&#x3092;&#x8FD4;&#x3059;&#x30E1;&#x30BD;&#x30C3;&#x30C9;</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">bornFrom</span><span class="hljs-params">()</span> = &quot;unknown&quot;</span>
+}
+
+<span class="hljs-comment">// &#x30D2;&#x30C8;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x7D99;&#x627F;&#x3057;&#x3066;&#x7537;&#x30AF;&#x30E9;&#x30B9;&#x3068;&#x5973;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x4F5C;&#x308B;</span>
+<span class="hljs-comment">// (&#x30B3;&#x30F3;&#x30B9;&#x30C8;&#x30E9;&#x30AF;&#x30BF;&#x306B; val &#x304C;&#x3064;&#x3044;&#x3066;&#x306A;&#x3044;&#x70B9;&#x306B;&#x6CE8;&#x610F;)</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Man</span></span>(name: String) : Person(name)
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Woman</span></span>(name: String) : Person(name)
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> p</span> = Person(<span class="hljs-string">&quot;p&quot;</span>)
+    p.nameLength <span class="hljs-comment">// 1</span>
+    w.bornFrom   <span class="hljs-comment">// unknown</span>
+
+    <span class="hljs-comment">// &#x5404;&#x3005;&#x3001;Person &#x304B;&#x3089;&#x5F15;&#x304D;&#x7D99;&#x3044;&#x3060;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x304C;&#x5229;&#x7528;&#x3067;&#x304D;&#x308B;</span>
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> m</span> = Man(<span class="hljs-string">&quot;bob&quot;</span>)
+    println(m.name)       <span class="hljs-comment">// bob  </span>
+    println(m.nameLength) <span class="hljs-comment">// 3  </span>
+    println(m.bornFrom)   <span class="hljs-comment">// unknown</span>
+
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> w</span> = Woman(<span class="hljs-string">&quot;alice&quot;</span>)
+    println(w.name)        <span class="hljs-comment">// alice</span>
+    println(w.nameLength)  <span class="hljs-comment">// 5</span>
+    println(w.bornFrom)    <span class="hljs-comment">// unknown</span>
+}
+</code></pre>
+<ul>
+<li>&#x30E1;&#x30F3;&#x30D0;&#x306E;&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30E9;&#x30A4;&#x30C9;<ul>
+<li>&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3001;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x7D99;&#x627F;&#x5148;&#x3067;&#x4E0A;&#x66F8;&#x304D;&#x3059;&#x308B;&#x4ED5;&#x7D44;&#x307F;</li>
+<li>&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30E9;&#x30A4;&#x30C9;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x306F;&#x3001;&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30E9;&#x30A4;&#x30C9;&#x3059;&#x308B;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3001;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306B; <code>open</code> &#x3092;&#x3064;&#x3051;&#x308B;</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// open &#x304C;&#x3064;&#x3044;&#x3066;&#x7D99;&#x627F;&#x53EF;&#x80FD;&#x306B;&#x306A;&#x3063;&#x305F;&#x30D2;&#x30C8;&#x30AF;&#x30E9;&#x30B9;</span>
+<span class="hljs-keyword">open</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span></span>(<span class="hljs-variable"><span class="hljs-keyword">val</span> name</span>: String) {
+    <span class="hljs-comment">// open &#x304C;&#x3064;&#x3044;&#x3066;&#x7D99;&#x627F;&#x304C;&#x53EF;&#x80FD;&#x306B;&#x306A;&#x3063;&#x305F;&#x540D;&#x524D;&#x306E;&#x9577;&#x3055;&#x3092;&#x8FD4;&#x3059;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;</span>
+    <span class="hljs-keyword">open</span> <span class="hljs-variable"><span class="hljs-keyword">val</span> nameLength</span>: <span class="hljs-keyword">Int</span>
+        <span class="hljs-keyword">get</span>() = name.length
+
+    <span class="hljs-comment">// open &#x304C;&#x3064;&#x3044;&#x3066;&#x7D99;&#x627F;&#x304C;&#x53EF;&#x80FD;&#x306B;&#x306A;&#x3063;&#x305F;&#x3069;&#x3053;&#x3067;&#x751F;&#x307E;&#x308C;&#x305F;&#x304B;&#x3092;&#x8FD4;&#x3059;&#x30E1;&#x30BD;&#x30C3;&#x30C9;</span>
+    <span class="hljs-keyword">open</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">bornFrom</span><span class="hljs-params">()</span> = &quot;unknown&quot;</span>
+}
+
+<span class="hljs-comment">// &#x30D2;&#x30C8;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x7D99;&#x627F;&#x3057;&#x3066;&#x7537;&#x30AF;&#x30E9;&#x30B9;&#x3068;&#x5973;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x4F5C;&#x308B;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Man</span></span>(name: String) : Person(name) {
+    <span class="hljs-comment">// nameLength &#x3092; Man &#x7528;&#x306E;&#x632F;&#x308B;&#x821E;&#x3044;&#x306B;&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30E9;&#x30A4;&#x30C9;</span>
+    <span class="hljs-keyword">override</span> <span class="hljs-variable"><span class="hljs-keyword">val</span> nameLength</span>: <span class="hljs-keyword">Int</span>
+        <span class="hljs-keyword">get</span>() {
+            print(<span class="hljs-string">&quot;$name (man) &quot;</span>) <span class="hljs-comment">// &#x540D;&#x524D;&#x3092; woman &#x3092;&#x8868;&#x793A;&#x3059;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x305F;</span>
+            <span class="hljs-keyword">return</span> name.length
+        }
+    <span class="hljs-comment">// bornFrom &#x3092; Man &#x7528;&#x306E;&#x632F;&#x308B;&#x821E;&#x3044;&#x306B;&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30E9;&#x30A4;&#x30C9;</span>
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">bornFrom</span><span class="hljs-params">()</span> = &quot;mud&quot; <span class="hljs-comment">// &#x571F;&#x304B;&#x3089;&#x751F;&#x307E;&#x308C;&#x305F;</span></span>
+
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">doShibakari</span><span class="hljs-params">()</span> {</span>
+        println(<span class="hljs-string">&quot;&#x5C71;&#x3078;&#x829D;&#x5208;&#x308A;&#x306B;&quot;</span>)
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Woman</span></span>(name: String) : Person(name) {
+    <span class="hljs-comment">// nameLength &#x3092; Woman &#x7528;&#x306E;&#x632F;&#x308B;&#x821E;&#x3044;&#x306B;&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30E9;&#x30A4;&#x30C9;</span>
+    <span class="hljs-keyword">override</span> <span class="hljs-variable"><span class="hljs-keyword">val</span> nameLength</span>: <span class="hljs-keyword">Int</span>
+        <span class="hljs-keyword">get</span>() {
+            print(<span class="hljs-string">&quot;$name (woman) &quot;</span>) <span class="hljs-comment">// &#x540D;&#x524D;&#x3092; woman &#x3092;&#x8868;&#x793A;&#x3059;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x305F;</span>
+            <span class="hljs-keyword">return</span> name.length
+        }
+    <span class="hljs-comment">// bornFrom &#x3092; Woman &#x7528;&#x306E;&#x632F;&#x308B;&#x821E;&#x3044;&#x306B;&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30E9;&#x30A4;&#x30C9;</span>
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">bornFrom</span><span class="hljs-params">()</span> = &quot;rib&quot; <span class="hljs-comment">// &#x808B;&#x9AA8;&#x304B;&#x3089;&#x751F;&#x307E;&#x308C;&#x305F;</span></span>
+
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">doSentaku</span><span class="hljs-params">()</span> {</span>
+        println(<span class="hljs-string">&quot;&#x5DDD;&#x3078;&#x6D17;&#x6FEF;&#x306B;&quot;</span>)
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> p</span> = Person(<span class="hljs-string">&quot;p&quot;</span>)
+    p.nameLength <span class="hljs-comment">// 1</span>
+    w.bornFrom   <span class="hljs-comment">// unknown</span>
+
+    <span class="hljs-comment">// &#x5404;&#x3005;&#x3001;&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30E9;&#x30A4;&#x30C9;&#x3057;&#x305F;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3068;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x307F;&#x308B;</span>
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> m</span> = Man(<span class="hljs-string">&quot;bob&quot;</span>)
+    println(m.name)       <span class="hljs-comment">// bob  </span>
+    println(m.nameLength) <span class="hljs-comment">// bob (man) 3  </span>
+    println(m.bornFrom)   <span class="hljs-comment">// mud</span>
+    <span class="hljs-comment">// Man &#x5C02;&#x7528;&#x30E1;&#x30BD;&#x30C3;&#x30C9;</span>
+    m.doShibakari()       <span class="hljs-comment">// &#x5C71;&#x3078;&#x829D;&#x5208;&#x308A;&#x306B;</span>
+
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> w</span> = Woman(<span class="hljs-string">&quot;alice&quot;</span>)
+    println(w.name)        <span class="hljs-comment">// alice</span>
+    println(w.nameLength)  <span class="hljs-comment">// alice (woman) 5</span>
+    println(w.bornFrom)    <span class="hljs-comment">// rib</span>
+    <span class="hljs-comment">// Woman &#x5C02;&#x7528;&#x30E1;&#x30BD;&#x30C3;&#x30C9;</span>
+    w.doSentaku()          <span class="hljs-comment">// &#x5DDD;&#x3078;&#x6D17;&#x6FEF;&#x306B;</span>
+}
+</code></pre>
+<ul>
+<li>&#x30B9;&#x30FC;&#x30D1;&#x30FC;&#x30BF;&#x30A4;&#x30D7;&#x3068;&#x30B5;&#x30D6;&#x30BF;&#x30A4;&#x30D7;<ul>
+<li><code>Man</code> &#x3068; <code>Woman</code> &#x306F;&#x7D99;&#x627F;&#x5143;&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x3067;&#x3042;&#x308B; <code>Person</code> &#x3068;&#x3057;&#x3066;&#x6271;&#x3046;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+    <span class="hljs-comment">// &#x7D99;&#x627F;&#x5148; (&#x30B5;&#x30D6;&#x30BF;&#x30A4;&#x30D7;) &#x3092;&#x3001;</span>
+    <span class="hljs-comment">// &#x7D99;&#x627F;&#x5143; (&#x30B9;&#x30FC;&#x30D1;&#x30FC;&#x30BF;&#x30A4;&#x30D7;) &#x306E;&#x5909;&#x6570;&#x306B;&#x5165;&#x308C;&#x308B;</span>
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> m</span>: Person = Man(<span class="hljs-string">&quot;bob&quot;</span>)
+
+    <span class="hljs-comment">// Person (&#x7D99;&#x627F;&#x5143;) &#x304C;&#x6301;&#x3063;&#x3066;&#x3044;&#x308B;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3001;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306B;&#x306F;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3067;&#x304D;&#x308B;</span>
+    <span class="hljs-comment">// &#x5B9F;&#x88C5;&#x306F; Man (&#x7D99;&#x627F;&#x5148;) &#x306B;&#x5F93;&#x3046;</span>
+    println(m.name)     <span class="hljs-comment">// bob</span>
+    println(m.bornFrom) <span class="hljs-comment">// mud</span>
+    m.doShibakari()     <span class="hljs-comment">// m &#x306F;&#x3042;&#x304F;&#x307E;&#x3067; Person &#x306A;&#x306E;&#x3067; doShibakari &#x306F;&#x4F7F;&#x3048;&#x306A;&#x3044; (&#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB;&#x30A8;&#x30E9;&#x30FC;)</span>
+}
+</code></pre>
 <h2 id="&#x62BD;&#x8C61;&#x30AF;&#x30E9;&#x30B9;">&#x62BD;&#x8C61;&#x30AF;&#x30E9;&#x30B9;</h2>
 <ul>
-<li><p>&#x62BD;&#x8C61;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x4F7F;&#x3046;&#x3068;&#x5B09;&#x3057;&#x3044;&#x5834;&#x9762;</p>
-</li>
-<li><p>&#x4F7F;&#x3044;&#x65B9;</p>
+<li>&#x62BD;&#x8C61;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x4F7F;&#x3046;&#x3068;&#x5B09;&#x3057;&#x3044;&#x5834;&#x9762;<ul>
+<li>&#x30B5;&#x30D6;&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30E9;&#x30A4;&#x30C9;&#x3092;&#x5F37;&#x5236;&#x3059;&#x308B;&#x4ED5;&#x7D44;&#x307F;</li>
+<li><code>abstract</code> &#x3092;&#x3064;&#x3051;&#x305F;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3084;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306F;&#x3001;&#x30B5;&#x30D6;&#x30AF;&#x30E9;&#x30B9;&#x3067;&#x5FC5;&#x305A;&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30E9;&#x30A4;&#x30C9;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308B;</li>
+</ul>
 </li>
 </ul>
+<pre><code class="lang-kotlin">abstract <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span></span>() {
+    <span class="hljs-comment">// &#x3069;&#x3053;&#x304B;&#x3089;&#x751F;&#x307E;&#x308C;&#x305F;&#x304B;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x62BD;&#x8C61;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306B;</span>
+    <span class="hljs-comment">// abstract &#x306E;&#x5834;&#x5408;&#x3001;&#x30B9;&#x30FC;&#x30D1;&#x30FC;&#x30AF;&#x30E9;&#x30B9;&#x3067;&#x306F;&#x5B9F;&#x88C5;&#x3092;&#x66F8;&#x304B;&#x306A;&#x304F;&#x3066;&#x3088;&#x3044;</span>
+    abstract <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">bornFrom</span><span class="hljs-params">()</span>: String</span>
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Man</span></span>() : Person() {
+    <span class="hljs-comment">// &#x30B9;&#x30FC;&#x30D1;&#x30FC;&#x30AF;&#x30E9;&#x30B9;&#x3067;&#x306F; abstract &#x304C;&#x3064;&#x3044;&#x3066;&#x3044;&#x308B;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306A;&#x306E;&#x3067;&#x3001;</span>
+    <span class="hljs-comment">// &#x30B5;&#x30D6;&#x30AF;&#x30E9;&#x30B9;&#x3067;&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30E9;&#x30A4;&#x30C9;&#x3057;&#x306A;&#x3044;&#x3068;&#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB;&#x30A8;&#x30E9;&#x30FC;&#x306B;&#x306A;&#x308B;</span>
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">bornFrom</span><span class="hljs-params">()</span> = &quot;mud&quot;</span>
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Woman</span></span>() : Person() {
+    <span class="hljs-comment">// &#x306A;&#x304A;&#x3001;abstract &#x304C;&#x3064;&#x3044;&#x3066;&#x308B;&#x5834;&#x5408;&#x306F;&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30E9;&#x30A4;&#x30C9;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x524D;&#x63D0;&#x306A;&#x306E;&#x3067;&#x3001;</span>
+    <span class="hljs-comment">// &#x30B9;&#x30FC;&#x30D1;&#x30FC;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x5074;&#x306B; open &#x3092;&#x3064;&#x3051;&#x306A;&#x304F;&#x3066;&#x826F;&#x3044;</span>
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">bornFrom</span><span class="hljs-params">()</span> = &quot;rib&quot;</span>
+}
+</code></pre>
+<ul>
+<li>&#x4F7F;&#x3044;&#x65B9;</li>
+</ul>
+<pre><code class="lang-kotlin">func main(args: Array<span class="hljs-type">&lt;String&gt;</span>) {
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> p</span>: Person = Person() <span class="hljs-comment">// Person &#x306F; abstract &#x306A;&#x306E;&#x3067;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x5316;&#x306F;&#x3067;&#x304D;&#x306A;&#x3044;</span>
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> m</span>: Person = Man()    <span class="hljs-comment">// &#x3053;&#x308C;&#x306F; OK</span>
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> w</span>: Person = Woman()  <span class="hljs-comment">// &#x3053;&#x308C;&#x3082; OK</span>
+
+    println(m.bornFrom()) <span class="hljs-comment">// mud</span>
+    println(w.bornFrom()) <span class="hljs-comment">// rib</span>
+}
+</code></pre>
+<h2 id="&#x53EF;&#x8996;&#x6027;">&#x53EF;&#x8996;&#x6027;</h2>
+<ul>
+<li>&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x30C8;&#x30C3;&#x30D7;&#x30EC;&#x30D9;&#x30EB;&#x3067;&#x306E;&#x95A2;&#x6570;&#x30FB;&#x5909;&#x6570;&#x5BA3;&#x8A00;&#x306E;&#x5834;&#x5408;<ul>
+<li><code>public</code>&#x3001;<code>internal</code>&#x3001;<code>private</code> &#x304B;&#x3089;&#x9078;&#x629E;&#x3059;&#x308B;</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x304C;&#x3042;&#x3063;&#x305F;&#x3068;&#x3057;&#x3066;</span>
+<span class="hljs-keyword">package</span> sample
+
+<span class="hljs-comment">// &#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x95A2;&#x6570;&#x304C;&#x5BA3;&#x8A00;&#x3055;&#x308C;&#x3066;&#x3044;&#x305F;&#x3068;&#x3059;&#x308B;</span>
+
+<span class="hljs-comment">// public &#x306F;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x5916;&#x304B;&#x3089;&#x3082;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x5916;&#x304B;&#x3089;&#x3082;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x53EF;&#x80FD; (&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;)</span>
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">publicFunc</span><span class="hljs-params">()</span> { <span class="hljs-title">println</span><span class="hljs-params">(&quot;<span class="hljs-keyword">public</span>!&quot;)</span> }</span>
+
+<span class="hljs-comment">// private &#x306F;&#x540C;&#x4E00;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x5185;&#x304B;&#x3089;&#x306E;&#x307F;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x53EF;&#x80FD;</span>
+<span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">privateFunc</span><span class="hljs-params">()</span> { <span class="hljs-title">println</span><span class="hljs-params">(&quot;<span class="hljs-keyword">private</span>!&quot;)</span> }</span>
+
+<span class="hljs-comment">// internal &#x306F;&#x540C;&#x4E00;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x304B;&#x3089;&#x306E;&#x307F;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x53EF;&#x80FD;</span>
+<span class="hljs-comment">// &#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3068;&#x3044;&#x3046;&#x306E;&#x306F; Maven&#x3001;Gradle &#x306E;&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x5358;&#x4F4D;</span>
+<span class="hljs-comment">// &#x5916;&#x90E8;&#x306B;&#x306F;&#x516C;&#x958B;&#x3057;&#x305F;&#x304F;&#x306A;&#x3044;&#x304C;&#x5185;&#x5074;&#x3067;&#x306F;&#x5E83;&#x304F;&#x4F7F;&#x3044;&#x305F;&#x3044;&#x3001;&#x307F;&#x305F;&#x3044;&#x306A;&#x3068;&#x304D;&#x306B;&#x7528;&#x3044;&#x308B;</span>
+internal <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">internalFunc</span><span class="hljs-params">()</span> { <span class="hljs-title">println</span><span class="hljs-params">(&quot;internal!&quot;)</span> }</span>
+</code></pre>
+<pre><code class="lang-kotlin"><span class="hljs-keyword">import</span> sample
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+    publicFunc()   <span class="hljs-comment">// &#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB; OK</span>
+    privateFunc()  <span class="hljs-comment">// &#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB; NG</span>
+    internalFunc() <span class="hljs-comment">// &#x5834;&#x5408;&#x306B;&#x3088;&#x308B;</span>
+}
+</code></pre>
+<ul>
+<li>&#x30AF;&#x30E9;&#x30B9;&#x5BA3;&#x8A00;&#x306E;&#x5834;&#x5408;<ul>
+<li><code>public</code>&#x3001;<code>internal</code>&#x3001;<code>protected</code>&#x3001;<code>private</code> &#x304B;&#x3089;&#x9078;&#x629E;&#x3059;&#x308B;</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x30B9;&#x30FC;&#x30D1;&#x30FC;&#x30AF;&#x30E9;&#x30B9;</span>
+<span class="hljs-keyword">open</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">privateMethod</span><span class="hljs-params">()</span> {}</span>
+    <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">protectedMethod</span><span class="hljs-params">()</span> {}</span>
+    internal <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">internalMethod</span><span class="hljs-params">()</span> {}</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">publicMethod</span><span class="hljs-params">()</span> {}</span>
+}
+
+<span class="hljs-comment">// &#x30B5;&#x30D6;&#x30AF;&#x30E9;&#x30B9;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Woman</span>: <span class="hljs-type">Person</span></span>() {
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">function</span><span class="hljs-params">()</span> {</span>
+        privateMethod()  <span class="hljs-comment">// &#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB; NG</span>
+        publicMethod()   <span class="hljs-comment">// &#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB; OK</span>
+        internalMethod() <span class="hljs-comment">// &#x5834;&#x5408;&#x306B;&#x3088;&#x308B;</span>
+        protectedMethod  <span class="hljs-comment">// &#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB; OK</span>
+    }
+}
+
+<span class="hljs-comment">// &#x95A2;&#x4FC2;&#x306A;&#x3044;&#x30AF;&#x30E9;&#x30B9;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foot</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">function</span><span class="hljs-params">()</span> {</span>
+        <span class="hljs-variable"><span class="hljs-keyword">val</span> p</span> = Person()
+        p.protectedMethod() <span class="hljs-comment">// &#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB; NG</span>
+        p.publicMethod()    <span class="hljs-comment">// &#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB; OK</span>
+        p.internalMethod()  <span class="hljs-comment">// &#x5834;&#x5408;&#x306B;&#x3088;&#x308B;</span>
+    }
+}
+</code></pre>
 
                                 
                                 </section>
@@ -429,7 +663,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"継承・抽象クラス","level":"1.9","depth":1,"next":{"title":"インターフェース","level":"1.10","depth":1,"path":"interface.md","ref":"./interface.md","articles":[{"title":"Exercise (2)","level":"1.10.1","depth":2,"path":"exercise2.md","ref":"./exercise2.md","articles":[]}]},"previous":{"title":"クラス","level":"1.8","depth":1,"path":"class.md","ref":"./class.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"inherit_abstract.md","mtime":"2018-03-28T03:12:46.252Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-05T13:30:15.213Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"継承・抽象クラス","level":"1.9","depth":1,"next":{"title":"インターフェース","level":"1.10","depth":1,"path":"interface.md","ref":"./interface.md","articles":[{"title":"Exercise (2)","level":"1.10.1","depth":2,"path":"exercise2.md","ref":"./exercise2.md","articles":[]}]},"previous":{"title":"クラス","level":"1.8","depth":1,"path":"class.md","ref":"./class.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"inherit_abstract.md","mtime":"2018-04-06T07:30:28.425Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-06T07:31:07.411Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
