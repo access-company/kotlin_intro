@@ -372,15 +372,242 @@
 </ul>
 <h2 id="&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30FC;&#x30B9;">&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30FC;&#x30B9;</h2>
 <ul>
+<li><p>&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3068;&#x306F;&#xFF1F;</p>
+<ul>
+<li>abstract &#x306A;&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x8FD1;&#x3044;&#x304C;&#x3001;&#x72B6;&#x614B; (&#x30D0;&#x30C3;&#x30AD;&#x30F3;&#x30B0;&#x30D5;&#x30A3;&#x30FC;&#x30EB;&#x30C9;) &#x3092;&#x6301;&#x3064;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x306A;&#x3044;&#x30AF;&#x30E9;&#x30B9;</li>
+<li>&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3001;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x6301;&#x305F;&#x305B;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;&#x304C;&#x3001;&#x3044;&#x305A;&#x308C;&#x3082; abstract &#x306B;&#x306A;&#x308B;</li>
+<li>&#x30B3;&#x30F3;&#x30B9;&#x30C8;&#x30E9;&#x30AF;&#x30BF;&#x3092;&#x6301;&#x305F;&#x305B;&#x308B;&#x3053;&#x3068;&#x306F;&#x3067;&#x304D;&#x306A;&#x3044;</li>
+</ul>
+</li>
 <li><p>&#x5B9A;&#x7FA9;&#x306E;&#x4ED5;&#x65B9;</p>
 </li>
-<li><p>&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x5B9F;&#x88C5;</p>
+</ul>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// interface &#x3068;&#x66F8;&#x3044;&#x3066;&#x5BA3;&#x8A00;&#x3059;&#x308B;</span>
+<span class="hljs-comment">// Greeter (&#x6328;&#x62F6;&#x3059;&#x308B;&#x3072;&#x3068;) &#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30FC;&#x30B9;</span>
+interface Greeter {
+    <span class="hljs-comment">// &#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3001;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x6301;&#x305F;&#x305B;&#x3089;&#x308C;&#x308B;&#x304C;&#x3001;&#x3044;&#x305A;&#x308C;&#x3082; abstract</span>
+    <span class="hljs-comment">// &#x5F37;&#x5236;&#x7684;&#x306B; abstract &#x306B;&#x306A;&#x308B;&#x306E;&#x3067;&#x3001;abstract &#x306F;&#x66F8;&#x304B;&#x306A;&#x3044;&#x3067;&#x3082;&#x826F;&#x3044; (&#x66F8;&#x3044;&#x3066;&#x3082;&#x826F;&#x3044;&#x304C;&#x5197;&#x9577;)</span>
+    <span class="hljs-comment">// &#x307E;&#x305F;&#x3001;&#x30E1;&#x30F3;&#x30D0;&#x306F;&#x5168;&#x3066; public &#x6271;&#x3044;&#x306B;&#x306A;&#x308B;</span>
+
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> language</span>: String
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span></span>
+}
+</code></pre>
+<ul>
+<li>&#x5B9F;&#x88C5;&#x306E;&#x4ED5;&#x65B9;<ul>
+<li>&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x4F5C;&#x3063;&#x3066;&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3092;&#x7D99;&#x627F;&#x3059;&#x308B;</li>
+<li>abstract &#x306A;&#x3082;&#x306E;&#x3092;&#x3072;&#x3068;&#x3068;&#x304A;&#x308A;&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30E9;&#x30A4;&#x30C9;&#x3059;&#x308B; (interface &#x3092;&#x5B9F;&#x88C5;&#x3059;&#x308B;&#x3001;&#x3068;&#x547C;&#x3076;)</li>
+</ul>
 </li>
-<li><p>&#x5B9F;&#x88C5;&#x306E;&#x4ED5;&#x65B9;</p>
+</ul>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// Greeter interface &#x3092;&#x5B9F;&#x88C5;&#x3059;&#x308B; EnglishGreeter &#x30AF;&#x30E9;&#x30B9;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EnglishGreeter</span> : <span class="hljs-type">Greeter {</span></span>
+    <span class="hljs-comment">// val language &#x3068; fun sayHello &#x3092;</span>
+    <span class="hljs-comment">// &#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30E9;&#x30A4;&#x30C9;&#x3057;&#x306A;&#x3044;&#x3068;&#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB;&#x304C;&#x901A;&#x3089;&#x306A;&#x3044;</span>
+    <span class="hljs-keyword">override</span> <span class="hljs-variable"><span class="hljs-keyword">val</span> language</span> = <span class="hljs-string">&quot;English&quot;</span>
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span> {</span>
+        println(<span class="hljs-string">&quot;Hello! $target!&quot;</span>)
+    }
+}
+</code></pre>
+<ul>
+<li>&#x3061;&#x306A;&#x307F;&#x306B;&#x3001;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x7D99;&#x627F;&#x306F;&#x3072;&#x3068;&#x3064;&#x307E;&#x3067;&#x306A;&#x306E;&#x306B;&#x5BFE;&#x3057;&#x3001;&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x306F;&#x8907;&#x6570;&#x7D99;&#x627F;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B; </li>
+</ul>
+<pre><code class="lang-kotlin">
+<span class="hljs-comment">// &#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x304C;&#x3075;&#x305F;&#x3064;&#x4EE5;&#x4E0A;&#x3042;&#x3063;&#x305F;&#x3068;&#x3057;&#x3066;...</span>
+interface Cookie {
+    ...
+}
+
+interface Chocolate {
+    ...
+}
+
+<span class="hljs-comment">// &#x30AF;&#x30E9;&#x30B9;&#x306F;&#x8907;&#x6570;&#x306E;&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3092;&#x7D99;&#x627F;&#x3057;&#x3066;&#x5B9F;&#x88C5;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Sweet</span> : <span class="hljs-type">Cookie</span>, <span class="hljs-type">Chocolate {</span></span>
+    ...
+    <span class="hljs-comment">// Cookie&#x3001;Chocolate &#x306B;&#x542B;&#x307E;&#x308C;&#x308B;&#x30E1;&#x30F3;&#x30D0;&#x3092;</span>
+    <span class="hljs-comment">// &#x5168;&#x3066;&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30E9;&#x30A4;&#x30C9;&#x3059;&#x308B; (&#x5B9F;&#x88C5;&#x3059;&#x308B;) &#x5FC5;&#x8981;&#x304C;&#x3042;&#x308B;</span>
+}
+</code></pre>
+<ul>
+<li>&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x5B9F;&#x88C5;<ul>
+<li>&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x306B;&#x542B;&#x307E;&#x308C;&#x308B;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x3066;&#x304A;&#x304F;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;</li>
+<li>&#x7D99;&#x627F;&#x3057;&#x305F;&#x5074;&#x3067;&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30E9;&#x30A4;&#x30C9;&#x3057;&#x306A;&#x3044;&#x5834;&#x5408;&#x3001;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x5B9F;&#x88C5;&#x304C;&#x4F7F;&#x308F;&#x308C;&#x308B;</li>
+</ul>
 </li>
-<li><p>&#x30AF;&#x30E9;&#x30B9;&#x30C7;&#x30EA;&#x30B2;&#x30FC;&#x30B7;&#x30E7;&#x30F3;</p>
+</ul>
+<pre><code class="lang-kotlin">interface Greeter {
+    <span class="hljs-comment">// &#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x5B9F;&#x88C5;&#x3092;&#x3082;&#x3063;&#x305F;&#x30E1;&#x30BD;&#x30C3;&#x30C9;</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span> {</span>
+        println(<span class="hljs-string">&quot;Hello $target!&quot;</span>)
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EnglishGreeter</span> : <span class="hljs-type">Greeter {</span></span>
+    <span class="hljs-comment">// sayHello &#x306E;&#x5B9F;&#x88C5;&#x3092;&#x7701;&#x7565;</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> g</span>: Greeter = EnglishGreeter()
+    g.sayHello(<span class="hljs-string">&quot;takeshi&quot;</span>) <span class="hljs-comment">// Hello takeshi!</span>
+}
+</code></pre>
+<ul>
+<li>&#x30AF;&#x30E9;&#x30B9;&#x30C7;&#x30EA;&#x30B2;&#x30FC;&#x30B7;&#x30E7;&#x30F3;<ul>
+<li>&#x7D99;&#x627F;&#x306E;&#x554F;&#x984C;&#x70B9;&#x3068;&#x3057;&#x3066;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A;&#x3082;&#x306E;&#x304C;&#x3042;&#x308B;<ul>
+<li>&#x3053;&#x3058;&#x3089;&#x305B;&#x308B;&#x3068;&#x30AF;&#x30E9;&#x30B9;&#x304C;&#x3069;&#x3093;&#x3069;&#x3093;&#x5927;&#x304D;&#x304F;&#x306A;&#x3063;&#x3066;&#x3057;&#x307E;&#x3046; (&#x5171;&#x901A;&#x6A5F;&#x80FD;&#x3092;&#x3064;&#x3081;&#x3053;&#x307F;&#x305F;&#x304F;&#x306A;&#x308B;)</li>
+<li>&#x30B9;&#x30FC;&#x30D1;&#x30FC;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x5909;&#x66F4;&#x306F;&#x305F;&#x3060;&#x3061;&#x306B;&#x30B5;&#x30D6;&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x5F71;&#x97FF;&#x3059;&#x308B; (&#x5909;&#x66F4;&#x306E;&#x5F71;&#x97FF;&#x7BC4;&#x56F2;&#x3092;&#x5C0F;&#x3055;&#x304F;&#x3067;&#x304D;&#x306A;&#x3044;)</li>
+</ul>
 </li>
-<li><p>&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x304C;&#x3042;&#x308B;&#x3068;&#x5B09;&#x3057;&#x3044;&#x5834;&#x9762;</p>
+<li>&#x7D99;&#x627F;&#x305B;&#x305A;&#x306B;&#x5225;&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x51E6;&#x7406;&#x3092;&#x59D4;&#x8B72;&#x3059;&#x308B;&#x3084;&#x308A;&#x65B9;&#x3092;&#x30C7;&#x30EA;&#x30B2;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3068;&#x547C;&#x3076;</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x7D99;&#x627F;&#x3059;&#x308B;&#x30D1;&#x30BF;&#x30FC;&#x30F3;</span>
+
+<span class="hljs-comment">// &#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x306E;&#x5B9A;&#x7FA9;</span>
+interface Greeter {
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">()</span></span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span></span>
+}
+
+<span class="hljs-comment">// &#x82F1;&#x8A9E;&#x3067;&#x6328;&#x62F6;&#x30AF;&#x30E9;&#x30B9;</span>
+<span class="hljs-keyword">open</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EnglishGreeter</span> : <span class="hljs-type">Greeter {</span></span>
+    <span class="hljs-keyword">open</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">()</span> {</span>
+        <span class="hljs-comment">// &#x540D;&#x524D;&#x3092;&#x7701;&#x7565;&#x3057;&#x305F;&#x3089; anonymous &#x3055;&#x3093;&#x306B;&#x6328;&#x62F6;&#x3059;&#x308B;</span>
+        sayHello(<span class="hljs-string">&quot;anonymous&quot;</span>)
+    }
+
+    <span class="hljs-keyword">open</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span> {</span>
+        println(<span class="hljs-string">&quot;Hello, $target!&quot;</span>)
+    }
+}
+
+<span class="hljs-comment">// &#x540D;&#x524D;&#x3092;&#x6307;&#x5B9A;&#x3055;&#x308C;&#x305F;&#x3068;&#x304D;&#x306F;&#x3059;&#x3054;&#x3044;&#x6328;&#x62F6;&#x3092;&#x3059;&#x308B;</span>
+<span class="hljs-comment">// &#x82F1;&#x8A9E;&#x3067;&#x6328;&#x62F6;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x7D99;&#x627F;&#x3057;&#x3066;&#x62E1;&#x5F35;&#x3057;&#x305F;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EnglishGreeterGreatAgain</span> : <span class="hljs-type">EnglishGreeter {</span></span>
+    <span class="hljs-keyword">override</span> sayHello(target: String) {
+        <span class="hljs-comment">// &#x30B9;&#x30FC;&#x30D1;&#x30FC;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x5B9F;&#x88C5;&#x3092;&#x547C;&#x3073;&#x51FA;&#x3059;</span>
+        super.sayHello(<span class="hljs-string">&quot;$target great again!&quot;</span>) <span class="hljs-comment">// Hello $target great again!</span>
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> g</span> = EnglishGreeterGreatAgain()
+    g.sayHello(<span class="hljs-string">&quot;America&quot;</span>) <span class="hljs-comment">// Hello America great again!</span>
+    g.sayHello(<span class="hljs-string">&quot;Japan&quot;</span>)   <span class="hljs-comment">// Hello Japan great again!</span>
+    g.sayHello(<span class="hljs-string">&quot;Germany&quot;</span>) <span class="hljs-comment">// Hello Germany great again!</span>
+    g.sayHello(<span class="hljs-string">&quot;&quot;</span>)        <span class="hljs-comment">// Hello anoymous great again &#x2190; &#xFF01;&#xFF1F;</span>
+}
+</code></pre>
+<ul>
+<li>&#x7D99;&#x627F;&#x3067;&#x4E00;&#x90E8;&#x5206;&#x3060;&#x3051;&#x62E1;&#x5F35;&#x3057;&#x305F;&#x3064;&#x3082;&#x308A;&#x3067;&#x3044;&#x305F;&#x304C;&#x3001;<br>&#x7D50;&#x5C40;&#x306E;&#x3068;&#x3053;&#x308D;&#x306F;&#x30B9;&#x30FC;&#x30D1;&#x30FC;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x5B9F;&#x88C5;&#x3078;&#x306E;&#x4F9D;&#x5B58;&#x304C;&#x3042;&#x308A;&#x3001;&#x5236;&#x5FA1;&#x304C;&#x96E3;&#x3057;&#x3044;&#x5834;&#x5408;&#x304C;&#x3042;&#x308B;</li>
+<li>&#x30B9;&#x30FC;&#x30D1;&#x30FC;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x3044;&#x3058;&#x308C;&#x308C;&#x3070;&#x826F;&#x3044;&#x304C;&#x3001;&#x305D;&#x3046;&#x3067;&#x306A;&#x3044;&#x5834;&#x5408;&#x306F;&#x601D;&#x3044;&#x901A;&#x308A;&#x306B;&#x3067;&#x304D;&#x306A;&#x3044;&#x5834;&#x5408;&#x3082;</li>
+</ul>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x59D4;&#x8B72;&#x3059;&#x308B;&#x30D1;&#x30BF;&#x30FC;&#x30F3;</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EnglishGreeterGreatAgain</span> : <span class="hljs-type">Greeter {</span></span>
+    <span class="hljs-comment">// &#x7D99;&#x627F;&#x3067;&#x306F;&#x306A;&#x304F;&#x3001;&#x30E1;&#x30F3;&#x30D0;&#x3068;&#x3057;&#x3066;&#x5024;&#x3092;&#x6301;&#x3064;</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-variable"><span class="hljs-keyword">val</span> g</span>: Greeter = EnglishGreeter()
+
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">()</span> {</span>
+        <span class="hljs-comment">// &#x5358;&#x306B;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x547C;&#x3073;&#x51FA;&#x3059;</span>
+        g.sayHello()
+    }
+
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span> {</span>
+        <span class="hljs-comment">// &#x62E1;&#x5F35;&#x3057;&#x3066;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x547C;&#x3073;&#x51FA;&#x3059;</span>
+        g.sayHello(<span class="hljs-string">&quot;Hello $target great again!&quot;</span>)
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> g</span> = EnglishGreeterGreatAgain()
+    g.sayHello(<span class="hljs-string">&quot;America&quot;</span>) <span class="hljs-comment">// Hello America great again!</span>
+    g.sayHello(<span class="hljs-string">&quot;Japan&quot;</span>)   <span class="hljs-comment">// Hello Japan great again!</span>
+    g.sayHello(<span class="hljs-string">&quot;Germany&quot;</span>) <span class="hljs-comment">// Hello Germany great again!</span>
+    g.sayHello(<span class="hljs-string">&quot;&quot;</span>)        <span class="hljs-comment">// Hello anoymous!</span>
+}
+</code></pre>
+<ul>
+<li>&#x901A;&#x5E38;&#x3001;&#x59D4;&#x8B72;&#x3059;&#x308B;&#x307B;&#x3046;&#x304C;&#x7D99;&#x627F;&#x3059;&#x308B;&#x3088;&#x308A;&#x3082;&#x30B3;&#x30FC;&#x30C9;&#x306F;&#x591A;&#x304F;&#x306A;&#x308B;&#x50BE;&#x5411;&#x304C;&#x3042;&#x308B;<ul>
+<li>&#x4E0A;&#x306E;&#x4F8B;&#x306E;&#x5834;&#x5408;&#x3001;<code>sayHello()</code> &#x3082; <code>sayHello(target: String)</code> &#x3082;&#x8981;&#x5B9F;&#x88C5;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;</li>
+<li>&#x3068;&#x3053;&#x308D;&#x304C;&#x3001;Kotlin &#x306E;&#x5834;&#x5408;&#x3001;&#x59D4;&#x8B72;&#x3057;&#x3066;&#x3082;&#x30B3;&#x30FC;&#x30C9;&#x91CF;&#x3092;&#x5897;&#x3084;&#x3055;&#x306A;&#x3044;&#x6280;&#x304C;&#x5099;&#x308F;&#x3063;&#x3066;&#x3044;&#x308B;</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x30B3;&#x30F3;&#x30B9;&#x30C8;&#x30E9;&#x30AF;&#x30BF;&#x3067; Greeter &#x3092;&#x3068;&#x308A;&#x3064;&#x3064;&#x3001;&quot;Greeter by greeter&quot; &#x3068;&#x6307;&#x5B9A;&#x3057;&#x3066;&#x7D99;&#x627F;</span>
+<span class="hljs-comment">// override &#x3057;&#x3066;&#x306A;&#x3044;&#x90E8;&#x5206;&#x306F; greeter &#x306B;&#x59D4;&#x8B72;&#x3059;&#x308B;&#x3068;&#x3044;&#x3046;&#x610F;&#x5473;&#x306B;&#x306A;&#x308B;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EnglishGreeterGreatAgain</span></span>(<span class="hljs-keyword">private</span> <span class="hljs-variable"><span class="hljs-keyword">val</span> greeter</span>: Greeter): Greeter by greeter {
+    <span class="hljs-comment">// override fun sayHello() &#x306F;&#x5B9F;&#x88C5;&#x3057;&#x306A;&#x3044; (= greeter &#x306B;&#x59D4;&#x8B72;)</span>
+
+    <span class="hljs-comment">// &#x62E1;&#x5F35;&#x3057;&#x305F;&#x3044;&#x3068;&#x3053;&#x308D;&#x3060;&#x3051; override</span>
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span> {</span>
+        greeter.sayHello(<span class="hljs-string">&quot;Hello $target great again!&quot;</span>)
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> eg</span> = EnglishGreeter()
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> g</span> = EnglishGreeterGreatAgain(eg)
+    g.sayHello(<span class="hljs-string">&quot;America&quot;</span>) <span class="hljs-comment">// Hello America great again!</span>
+    g.sayHello(<span class="hljs-string">&quot;Japan&quot;</span>)   <span class="hljs-comment">// Hello Japan great again!</span>
+    g.sayHello(<span class="hljs-string">&quot;Germany&quot;</span>) <span class="hljs-comment">// Hello Germany great again!</span>
+    g.sayHello(<span class="hljs-string">&quot;&quot;</span>)        <span class="hljs-comment">// Hello anoymous!</span>
+}
+</code></pre>
+<ul>
+<li>&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x304C;&#x3042;&#x308B;&#x3068;&#x5B09;&#x3057;&#x3044;&#x5834;&#x9762;<ul>
+<li>&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x305F;&#x30AF;&#x30E9;&#x30B9;&#x306F;&#x3001;<br>&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x306E;&#x307B;&#x3046;&#x306E;&#x300C;&#x578B;&#x300D;&#x3068;&#x3057;&#x3066;&#x6271;&#x3046;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// Greeter &#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30FC;&#x30B9;</span>
+interface Greeter {
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span></span>
+}
+
+<span class="hljs-comment">// Greeter &#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3092;&#x53D7;&#x3051;&#x53D6;&#x3063;&#x3066;&#x547C;&#x3073;&#x51FA;&#x3059;&#x3060;&#x3051;&#x306E;&#x95A2;&#x6570;</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">greeting</span><span class="hljs-params">(g: <span class="hljs-type">Greeter, target:String</span>)</span> {</span>
+    g.sayHello(target)
+}
+
+<span class="hljs-comment">// &#x65E5;&#x672C;&#x8A9E;&#x3067;&#x6328;&#x62F6;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">JapaneseGreeter</span> : <span class="hljs-type">Greeter {</span></span>
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span> {</span>
+        println(<span class="hljs-string">&quot;&#x3053;&#x3093;&#x306B;&#x3061;&#x306F;&#x3001;$target &#x3055;&#x3093;&#xFF01;&quot;</span>)
+    }
+}
+
+<span class="hljs-comment">// &#x82F1;&#x8A9E;&#x3067;&#x6328;&#x62F6;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EnglishGreeter</span> : <span class="hljs-type">Greeter {</span></span>
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span> {</span>
+        println(<span class="hljs-string">&quot;Hello, $target!&quot;</span>)
+    }
+}
+
+<span class="hljs-comment">// &#x30C9;&#x30A4;&#x30C4;&#x8A9E;&#x3067;&#x6328;&#x62F6;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GermanyGreeter</span> : <span class="hljs-type">Greeter {</span></span>
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span> {</span>
+        println(<span class="hljs-string">&quot;Guten morgen, $target!&quot;</span>)
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+    <span class="hljs-comment">// greeting &#x95A2;&#x6570;&#x306F; Greeter &#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x305F;&#x30AF;&#x30E9;&#x30B9;&#x3092;</span>
+    <span class="hljs-comment">// &#x5F15;&#x6570;&#x306B;&#x3068;&#x308B;&#x306E;&#x3067;&#x3001;&#x4EE5;&#x4E0B;&#x306F;&#x3044;&#x305A;&#x308C;&#x3082;&#x6709;&#x52B9;&#x306A;&#x66F8;&#x304D;&#x65B9;</span>
+    greeting(JapaneseGreeter(<span class="hljs-string">&quot;world&quot;</span>)) <span class="hljs-comment">// &#x3053;&#x3093;&#x306B;&#x3061;&#x306F;&#x3001;world&#xFF01;</span>
+    greeting(EnglishGreeter(<span class="hljs-string">&quot;world&quot;</span>))  <span class="hljs-comment">// Hello, world!</span>
+    greeting(GermanyGreeter(<span class="hljs-string">&quot;world&quot;</span>))  <span class="hljs-comment">// Guten morgen, world!</span>
+}
+</code></pre>
+<ul>
+<li>&#x5B9F;&#x88C5;&#x306E;&#x4E2D;&#x8EAB;&#x3092;&#x5165;&#x308C;&#x66FF;&#x3048;&#x305F;&#x3044;&#x3068;&#x304D;&#x306B;&#x4FBF;&#x5229;<ul>
+<li>&#x30C6;&#x30B9;&#x30C8;&#x7528;&#x306B;&#x5E38;&#x306B; OK &#x3092;&#x8FD4;&#x3059;&#x3060;&#x3051;&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x3057;&#x305F;&#x3044;</li>
+<li>SQLite &#x3092;&#x4F7F;&#x3063;&#x3066;&#x3044;&#x305F;&#x304C; Postgres &#x306B;&#x5909;&#x66F4;&#x3057;&#x305F;&#x3044;</li>
+<li>&#x7B49;&#x306A;&#x3069;</li>
+</ul>
 </li>
 </ul>
 
@@ -426,7 +653,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"インターフェース","level":"1.10","depth":1,"next":{"title":"Exercise (2)","level":"1.10.1","depth":2,"path":"exercise2.md","ref":"./exercise2.md","articles":[]},"previous":{"title":"継承・抽象クラス","level":"1.9","depth":1,"path":"inherit_abstract.md","ref":"./inherit_abstract.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"interface.md","mtime":"2018-03-28T03:15:57.937Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-06T07:31:07.411Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"インターフェース","level":"1.10","depth":1,"next":{"title":"Exercise (2)","level":"1.10.1","depth":2,"path":"exercise2.md","ref":"./exercise2.md","articles":[]},"previous":{"title":"継承・抽象クラス","level":"1.9","depth":1,"path":"inherit_abstract.md","ref":"./inherit_abstract.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"interface.md","mtime":"2018-04-06T13:19:40.247Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-06T13:20:25.725Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
