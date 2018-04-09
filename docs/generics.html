@@ -373,9 +373,115 @@
 </ul>
 <h2 id="&#x30B8;&#x30A7;&#x30CD;&#x30EA;&#x30AF;&#x30B9;">&#x30B8;&#x30A7;&#x30CD;&#x30EA;&#x30AF;&#x30B9;</h2>
 <ul>
-<li><p>&#x30B8;&#x30A7;&#x30CD;&#x30EA;&#x30C3;&#x30AF;&#x95A2;&#x6570;</p>
+<li>&#x30B8;&#x30A7;&#x30CD;&#x30EA;&#x30AF;&#x30B9;&#x3068;&#x306F;<ul>
+<li>&#x5229;&#x7528;&#x3059;&#x308B;&#x578B;&#x3092;&#x4EEE;&#x3067;&#x66F8;&#x3044;&#x3066;&#x304A;&#x3044;&#x3066;&#x3001;&#x5B9F;&#x969B;&#x306E;&#x578B;&#x306F;&#x3042;&#x3068;&#x304B;&#x3089;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x3068;&#x3044;&#x3046;&#x8A18;&#x8FF0;&#x65B9;&#x6CD5;&#x3002;</li>
+<li>&#x4EFB;&#x610F;&#x306E;&#x578B;&#x3092;&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;&#x306B;&#x3057;&#x305F;&#x3044;&#x3068;&#x304D;&#x306F;&#x3069;&#x306E;&#x3088;&#x3046;&#x306A;&#x66F8;&#x304D;&#x65B9;&#x304C;&#x3067;&#x304D;&#x308B;&#x304B;&#xFF1F; </li>
+</ul>
 </li>
-<li><p>&#x30B8;&#x30A7;&#x30CD;&#x30EA;&#x30C3;&#x30AF;&#x5236;&#x7D04;</p>
+</ul>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// value &#x3068;&#x3044;&#x3046;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x6301;&#x3063;&#x305F; Container &#x3068;&#x3044;&#x3046;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x4EEE;&#x5B9A;</span>
+<span class="hljs-comment">// value &#x306E;&#x578B;&#x306F; Any</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Container</span></span>(<span class="hljs-variable"><span class="hljs-keyword">val</span> value</span>: Any)
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+    <span class="hljs-comment">// &#x5024;&#x3092;&#x5165;&#x308C;&#x308B;&#x3068;&#x304D;</span>
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> intContainer</span>: Container = Container(<span class="hljs-number">10</span>)       <span class="hljs-comment">// OK</span>
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> strContainer</span>: Container = Container(<span class="hljs-string">&quot;hello!&quot;</span>) <span class="hljs-comment">// OK</span>
+
+    <span class="hljs-comment">// &#x5024;&#x3092;&#x53D6;&#x308A;&#x51FA;&#x3059;&#x3068;&#x304D;</span>
+    <span class="hljs-comment">// as &#x25EF;&#x25EF; &#x3092;&#x3064;&#x3051;&#x3066;&#x30AD;&#x30E3;&#x30B9;&#x30C8;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308B;</span>
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> i</span> = intContainer.value <span class="hljs-keyword">as</span> <span class="hljs-keyword">Int</span>      <span class="hljs-comment">// OK</span>
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> s</span> = intContainer.value <span class="hljs-keyword">as</span> String   <span class="hljs-comment">// OK</span>
+
+    <span class="hljs-comment">// &#x3068;&#x3053;&#x308D;&#x304C;&#x30AD;&#x30E3;&#x30B9;&#x30C8;&#x306F;&#x5931;&#x6557;&#x3059;&#x308B;&#x53EF;&#x80FD;&#x6027;&#x304C;&#x3042;&#x308B;</span>
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> i2</span> = intContainer.value <span class="hljs-keyword">as</span> String  <span class="hljs-comment">// &#x5B9F;&#x884C;&#x6642;&#x306B; ClassCastException &#x306E;&#x4F8B;&#x5916;&#x3092;&#x5410;&#x304B;&#x308C;&#x308B;</span>
+}
+</code></pre>
+<ul>
+<li>&#x4E0A;&#x8A18;&#x306E;&#x4F8B;&#x306E;&#x5834;&#x5408;&#x3001;ClassCastException &#x304C;&#x51FA;&#x306A;&#x3044;&#x3088;&#x3046;&#x306B;&#x4F5C;&#x308B;&#x306E;&#x306F;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30DE;&#x306E;&#x8CAC;&#x4EFB;<ul>
+<li>&#x30B8;&#x30A7;&#x30CD;&#x30EA;&#x30AF;&#x30B9;&#x3092;&#x4F7F;&#x3046;&#x3068;&#x3001;&#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB;&#x6642;&#x306B;&#x59A5;&#x5F53;&#x304B;&#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x3057;&#x3066;&#x3082;&#x3089;&#x3048;&#x308B;</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// any &#x3092;&#x4F7F;&#x308F;&#x305A;&#x3001;&#x30B8;&#x30A7;&#x30CD;&#x30EA;&#x30AF;&#x30B9;&#x3092;&#x4F7F;&#x3063;&#x305F;&#x5834;&#x5408;</span>
+<span class="hljs-comment">// value &#x306E;&#x578B;&#x306F; &lt;T&gt; &#x3068;&#x3057;&#x3066;&#x4EEE;&#x7F6E;&#x304D;&#x3057;&#x3066;&#x3044;&#x308B;</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Container</span>&lt;<span class="hljs-type">T</span>&gt;</span>(<span class="hljs-variable"><span class="hljs-keyword">val</span> value</span>: T)
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+    <span class="hljs-comment">// &#x5024;&#x3092;&#x5165;&#x308C;&#x308B;&#x3068;&#x304D;</span>
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> intContainer</span>: Contaienr<span class="hljs-type">&lt;Int&gt;</span> = Container<span class="hljs-type">&lt;Int&gt;</span>(<span class="hljs-number">10</span>)
+
+    <span class="hljs-comment">// &#x5024;&#x3092;&#x53D6;&#x308A;&#x51FA;&#x3059;&#x3068;&#x304D;&#x306B;&#x30AD;&#x30E3;&#x30B9;&#x30C8;&#x4E0D;&#x8981;</span>
+    <span class="hljs-comment">// &#x30AD;&#x30E3;&#x30B9;&#x30C8;&#x4E0D;&#x8981;&#x306A;&#x306E;&#x3067; ClassCastException &#x3082;&#x8D77;&#x3053;&#x3089;&#x306A;&#x3044;</span>
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> i</span>:<span class="hljs-keyword">Int</span> = intContainer.value 
+
+    <span class="hljs-comment">// &#x4F7F;&#x3044;&#x65B9;&#x304C;&#x9055;&#x3063;&#x3066;&#x3044;&#x308C;&#x3070;&#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB;&#x6642;&#x306B;&#x30A8;&#x30E9;&#x30FC;&#x306B;&#x306A;&#x308B;</span>
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> s</span>: String =  intContainer.value <span class="hljs-comment">// &#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB;&#x30A8;&#x30E9;&#x30FC;</span>
+}
+</code></pre>
+<ul>
+<li>&#x30B8;&#x30A7;&#x30CD;&#x30EA;&#x30C3;&#x30AF;&#x95A2;&#x6570;<ul>
+<li>&#x30B8;&#x30A7;&#x30CD;&#x30EA;&#x30AF;&#x30B9;&#x306F;&#x95A2;&#x6570;&#x3001;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3001;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306B;&#x3082;&#x9069;&#x7528;&#x3067;&#x304D;&#x308B;</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// data &#x30AF;&#x30E9;&#x30B9;&#x306B;&#x3057;&#x3066;&#x307F;&#x308B;</span>
+data <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Container</span>&lt;<span class="hljs-type">T</span>&gt;</span>(<span class="hljs-variable"><span class="hljs-keyword">val</span> value</span>: T)
+
+<span class="hljs-comment">// &#x95A2;&#x6570;&#x306B;&#x30B8;&#x30A7;&#x30CD;&#x30EA;&#x30AF;&#x30B9;&#x3092;&#x7528;&#x3044;&#x308B;&#x5834;&#x5408;</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-type">&lt;T&gt;</span> <span class="hljs-title">box</span><span class="hljs-params">(value: <span class="hljs-type">T</span>)</span>: Container<span class="hljs-type">&lt;T&gt;</span> {</span>
+    <span class="hljs-keyword">return</span> Container(value)
+}
+
+<span class="hljs-variable"><span class="hljs-keyword">val</span> &lt;T&gt; T.string</span>: String
+    <span class="hljs-keyword">get</span>() = toString()
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> container</span> = box<span class="hljs-type">&lt;Int&gt;</span>(<span class="hljs-number">100</span>)
+    println(container.string) <span class="hljs-comment">// Container(value=100)</span>
+}
+</code></pre>
+<ul>
+<li>&#x30B8;&#x30A7;&#x30CD;&#x30EA;&#x30C3;&#x30AF;&#x5236;&#x7D04;<ul>
+<li>&#x30B8;&#x30A7;&#x30CD;&#x30EA;&#x30AF;&#x30B9;&#x3067;&#x306F;&#x4EFB;&#x610F;&#x306E;&#x578B;&#x3092;&#x6271;&#x3046;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;&#x304C;&#x3001;<br>&#x300C;&#x4F55;&#x3089;&#x304B;&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x30B5;&#x30D6;&#x30AF;&#x30E9;&#x30B9;&#x3060;&#x3051;&#x306B;&#x5236;&#x9650;&#x3057;&#x305F;&#x3044;&#x300D;&#x3068;&#x3044;&#x3046;&#x5236;&#x9650;&#x3082;&#x53EF;&#x80FD;</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-kotlin">interface IFA
+interface IFB
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span>&lt;<span class="hljs-type">T</span>&gt;</span>()
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span>&lt;<span class="hljs-type">T : IFA</span>&gt;</span>() <span class="hljs-comment">// IFA interface &#x3092;&#x7D99;&#x627F;&#x3057;&#x305F; T &#x306B;&#x9650;&#x308B;</span>
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+    A<span class="hljs-type">&lt;IFA&gt;</span>() <span class="hljs-comment">// OK</span>
+    A<span class="hljs-type">&lt;IFB&gt;</span>() <span class="hljs-comment">// OK</span>
+    B<span class="hljs-type">&lt;IFA&gt;</span>() <span class="hljs-comment">// OK</span>
+    B<span class="hljs-type">&lt;IFB&gt;</span>() <span class="hljs-comment">// error: type argument is not within its bounds: should be subtype of &apos;IFA&apos;</span>
+}
+</code></pre>
+<ul>
+<li><code>where</code> &#x3092;&#x4F7F;&#x3063;&#x3066;&#x5236;&#x7D04;&#x3092;&#x8907;&#x6570;&#x306B;&#x3059;&#x308B;&#x3053;&#x3068;&#x3082;&#x3067;&#x304D;&#x308B;</li>
+</ul>
+<pre><code class="lang-kotlin">interface IFA
+interface IFB
+interface IFC: IFA, IFB <span class="hljs-comment">// IFC &#x306F; IFA&#x3001;IFB &#x3092;&#x7D99;&#x627F;</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span>&lt;<span class="hljs-type">T</span>&gt; <span class="hljs-title">where</span> <span class="hljs-title">T</span> : <span class="hljs-type">IFA</span>, <span class="hljs-type">T: IFB  // T &#x306F; IFA &#x306E;&#x30B5;&#x30D6;&#x30AF;&#x30E9;&#x30B9;&#x304B;&#x3064; IFB &#x306E;&#x30B5;&#x30D6;&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x9650;&#x308B;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+    A<span class="hljs-type">&lt;IFA&gt;</span>() <span class="hljs-comment">// error: type argument is not within its bounds: should be subtype of &apos;IFB&apos;</span>
+    A<span class="hljs-type">&lt;IFB&gt;</span>() <span class="hljs-comment">// error: type argument is not within its bounds: should be subtype of &apos;IFA&apos;</span>
+    A<span class="hljs-type">&lt;IFC&gt;</span>() <span class="hljs-comment">// OK</span>
+}
+</code></pre>
+<ul>
+<li>&#x4EE5;&#x4E0B;&#x306B;&#x3064;&#x3044;&#x3066;&#x306F;&#x8A18;&#x8F09;&#x3092;&#x7701;&#x7565;<ul>
+<li>&#x5909;&#x4F4D;&#x6307;&#x5B9A;</li>
+<li>&#x30B9;&#x30BF;&#x30FC;&#x6295;&#x5F71;</li>
+<li>&#x5177;&#x8C61;&#x578B;</li>
+</ul>
 </li>
 </ul>
 
@@ -421,7 +527,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ジェネリクス","level":"1.11","depth":1,"next":{"title":"Null安全","level":"1.12","depth":1,"path":"null_safe.md","ref":"./null_safe.md","articles":[{"title":"Exercise (3)","level":"1.12.1","depth":2,"path":"exercise3.md","ref":"./exercise3.md","articles":[]}]},"previous":{"title":"Exercise (2)","level":"1.10.1","depth":2,"path":"exercise2.md","ref":"./exercise2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"generics.md","mtime":"2018-03-28T03:16:59.067Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-06T13:20:25.725Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ジェネリクス","level":"1.11","depth":1,"next":{"title":"Null安全","level":"1.12","depth":1,"path":"null_safe.md","ref":"./null_safe.md","articles":[{"title":"Exercise (3)","level":"1.12.1","depth":2,"path":"exercise3.md","ref":"./exercise3.md","articles":[]}]},"previous":{"title":"Exercise (2)","level":"1.10.1","depth":2,"path":"exercise2.md","ref":"./exercise2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"generics.md","mtime":"2018-04-09T06:47:35.705Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-09T08:13:08.677Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
