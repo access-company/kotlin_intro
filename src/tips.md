@@ -12,4 +12,6 @@
 * 列挙型
 * 例外
 * coroutine
+* also
+* by lazy
 
