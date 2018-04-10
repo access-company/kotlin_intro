@@ -79,3 +79,39 @@ fun main(args: Array<String>) {
 }
 ```
 
+## 世界のナベアツ
+
+ところで、世界のナベアツはご存知でしょうか。
+* 現在は落語家になっていらっしゃる。高座名は「桂三度」
+* 彼の持ちネタ「3の倍数と3が付く数字のときだけアホになります」というのがいっとき (2008年前後と思われる) 流行った
+* 詳細は wikipedia 等を参照されたし
+
+ということで、ナベアツクラスを作ってみよう！
+* `next` というメソッドを持つ。戻り値は `String`
+* ナベアツは内部的にカウンターを持っており、`next` が呼び出されるたびにカウンターを 1 つずつ増やしていく
+* 内部カウンターが「3の倍数と3が付く数字のとき」、`next` は `Aho` を返す
+* それ意外のときは、カウンターの値を文字列にしたものをそのまま返す
+
+```kotlin
+class NabeAtsu {
+    // TODO: 実装する
+
+    fun next(): String {
+        // TODO: 実装する
+    }
+}
+
+// 呼び出しイメージ
+fun main(args: Array<String>) {
+    val n = NabeAtsu()
+    for (i 1..100) {
+        println(n.next())
+    }
+}
+```
+
+```bash
+# 実行例 (実際は改行されますがスペースの関係で横に書きます)
+1 2 Aho 4 5 Aho 7 8 Aho 10 11 Aho Aho 14 Aho 16 17 Aho 19 20 Aho 22 Aho Aho 25 26 Aho 28 29 Aho
+Aho Aho Aho Aho Aho Aho Aho Aho Aho 40 41 Aho Aho ...
+```
