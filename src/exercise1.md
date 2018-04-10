@@ -86,3 +86,21 @@ fun isLeapYear(y: Int): Boolean {
 }
 ```
 
+## 累乗
+
+数字をふたつ引数にとって (`a`、`n` とする)、a の n 乗を返す関数を書いてみよう！
+
+* 入力は `a`、`n` 共に任意の数 (正の数でも負の数でも浮動小数点でも OK) とする
+* …とすると考慮することが非常に増えるので、ここではひとまず、いずれも正の整数とする
+  * 余裕があったら浮動小数点も取れるようにしてみよう！
+
+```kotlin
+fun power(a: Int, n: Int): Long {
+    if (a < 0 || n < 0) {
+        println("inputs must be positive. return 0")
+        return 0
+    }
+    // TODO: 実装する
+}
+```
+
