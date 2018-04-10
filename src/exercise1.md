@@ -24,6 +24,7 @@ fun main(args: Array<String>) {
 * それ以外のときはそのまま数字を出力
 
 * 出力例
+
 ```
 1
 2
@@ -49,10 +50,9 @@ Fizz
 Buzz
 ```
 
-### ポイント
-
-* `if` 文、`for` ループが使えれば解けるはず
-* `when` を使って短く書いたりもできる
+* ポイント
+  * `if` 文、`for` ループが使えれば解けるはず
+  * `when` を使って短く書いたりもできる
 
 ```kotlin
 fun main(args: Array<String>) {
