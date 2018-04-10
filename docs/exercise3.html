@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="tips.html" />
     
-    
-    <link rel="prev" href="null_safe.html" />
+    <link rel="prev" href="exercise2.html" />
     
 
     </head>
@@ -178,25 +176,6 @@
             
 
             
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.7.1" data-path="exercise1.html">
-            
-                <a href="exercise1.html">
-            
-                    
-                    Exercise (1)
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
         </li>
     
         <li class="chapter " data-level="1.8" data-path="class.html">
@@ -236,25 +215,6 @@
             
 
             
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.10.1" data-path="exercise2.html">
-            
-                <a href="exercise2.html">
-            
-                    
-                    Exercise (2)
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
         </li>
     
         <li class="chapter " data-level="1.11" data-path="generics.html">
@@ -281,25 +241,6 @@
             
 
             
-            <ul class="articles">
-                
-    
-        <li class="chapter active" data-level="1.12.1" data-path="exercise3.html">
-            
-                <a href="exercise3.html">
-            
-                    
-                    Exercise (3)
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
         </li>
     
         <li class="chapter " data-level="1.13" data-path="tips.html">
@@ -308,6 +249,45 @@
             
                     
                     その他豆知識
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="exercise1.html">
+            
+                <a href="exercise1.html">
+            
+                    
+                    Exercise (1)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="exercise2.html">
+            
+                <a href="exercise2.html">
+            
+                    
+                    Exercise (2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.16" data-path="exercise3.html">
+            
+                <a href="exercise3.html">
+            
+                    
+                    Exercise (3)
             
                 </a>
             
@@ -361,6 +341,38 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="exercise-3">Exercise (3)</h1>
+<h2 id="&#x30CC;&#x30EB;&#x3068;&#x306E;&#x6226;&#x3044;">&#x30CC;&#x30EB;&#x3068;&#x306E;&#x6226;&#x3044;</h2>
+<p>&#x4EE5;&#x4E0B;&#x306E; Java &#x30B3;&#x30FC;&#x30C9;&#x3092;&#x3001;Kotlin &#x306B;&#x7F6E;&#x304D;&#x63DB;&#x3048;&#x3066;&#x307F;&#x3088;&#x3046;&#xFF01;<br>(&#x305F;&#x3060;&#x3057;&#x3001;<code>if</code> &#x306F;&#x4E00;&#x56DE;&#x3060;&#x3051;&#x4F7F;&#x3063;&#x3066;&#x826F;&#x3044;&#x3068;&#x3059;&#x308B;)</p>
+<ul>
+<li>&#x4E0B;&#x8A18; Java &#x30B3;&#x30FC;&#x30C9;&#x306E;&#x30DD;&#x30A4;&#x30F3;&#x30C8;<ul>
+<li>&#x5F15;&#x6570;&#x306E;&#x30A2;&#x30CE;&#x30C6;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306B;&#x3088;&#x308B;&#x3068;&#x3001;<code>client</code>&#x3001;<code>message</code> &#x306F; <code>null</code> &#x306E;&#x53EF;&#x80FD;&#x6027;&#x304C;&#x3042;&#x308B;</li>
+<li>&#x5F15;&#x6570;&#x306E;&#x30A2;&#x30CE;&#x30C6;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306B;&#x3088;&#x308B;&#x3068;&#x3001;<code>mailer</code> &#x306F; null &#x306E;&#x53EF;&#x80FD;&#x6027;&#x304C;&#x306A;&#x3044;</li>
+<li>&#x9014;&#x4E2D;&#x3067; <code>null</code> &#x306B;&#x51FA;&#x304F;&#x308F;&#x3057;&#x305F;&#x3089;&#x306B;&#x4F55;&#x3082;&#x305B;&#x305A; <code>return</code> &#x3057;&#x3066;&#x3044;&#x308B;</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sendMessageToClient</span><span class="hljs-params">(
+    @Nullable Client client,
+    @Nullable String message,
+    @NotNull Mailer mailer)</span> </span>{
+    <span class="hljs-keyword">if</span> (client == <span class="hljs-keyword">null</span> || message == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span>;
+
+    PersonalInfo personalInfo = client.getPersonalInfo();
+    <span class="hljs-keyword">if</span> (personalInfo == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span>;
+
+    String email = personalInfo.getEmail();
+    <span class="hljs-keyword">if</span> (email == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span>;
+
+    mailer.sendMessage(email, message);
+}
+</code></pre>
+<ul>
+<li>Kotlin &#x306E;&#x5834;&#x5408;&#x306F;&#x3069;&#x3046;&#x306A;&#x308B;&#xFF1F;</li>
+</ul>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sendMessageToClient</span><span class="hljs-params">(client: <span class="hljs-type">Client?, message: String?, mailer: Mailer</span>)</span> {</span>
+    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> &#x5B9F;&#x88C5;&#x3059;&#x308B;</span>
+}
+</code></pre>
 
                                 
                                 </section>
@@ -388,14 +400,10 @@
 
             
                 
-                <a href="null_safe.html" class="navigation navigation-prev " aria-label="Previous page: Null安全">
+                <a href="exercise2.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Exercise (2)">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="tips.html" class="navigation navigation-next " aria-label="Next page: その他豆知識">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -404,7 +412,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Exercise (3)","level":"1.12.1","depth":2,"next":{"title":"その他豆知識","level":"1.13","depth":1,"path":"tips.md","ref":"./tips.md","articles":[]},"previous":{"title":"Null安全","level":"1.12","depth":1,"path":"null_safe.md","ref":"./null_safe.md","articles":[{"title":"Exercise (3)","level":"1.12.1","depth":2,"path":"exercise3.md","ref":"./exercise3.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"exercise3.md","mtime":"2018-03-26T01:15:06.187Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-10T02:57:55.358Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Exercise (3)","level":"1.16","depth":1,"previous":{"title":"Exercise (2)","level":"1.15","depth":1,"path":"exercise2.md","ref":"./exercise2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"exercise3.md","mtime":"2018-04-10T07:05:25.678Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-10T07:05:48.629Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

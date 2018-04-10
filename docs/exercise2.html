@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="generics.html" />
+    <link rel="next" href="exercise3.html" />
     
     
-    <link rel="prev" href="interface.html" />
+    <link rel="prev" href="exercise1.html" />
     
 
     </head>
@@ -178,25 +178,6 @@
             
 
             
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.7.1" data-path="exercise1.html">
-            
-                <a href="exercise1.html">
-            
-                    
-                    Exercise (1)
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
         </li>
     
         <li class="chapter " data-level="1.8" data-path="class.html">
@@ -236,25 +217,6 @@
             
 
             
-            <ul class="articles">
-                
-    
-        <li class="chapter active" data-level="1.10.1" data-path="exercise2.html">
-            
-                <a href="exercise2.html">
-            
-                    
-                    Exercise (2)
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
         </li>
     
         <li class="chapter " data-level="1.11" data-path="generics.html">
@@ -281,25 +243,6 @@
             
 
             
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.12.1" data-path="exercise3.html">
-            
-                <a href="exercise3.html">
-            
-                    
-                    Exercise (3)
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
         </li>
     
         <li class="chapter " data-level="1.13" data-path="tips.html">
@@ -308,6 +251,45 @@
             
                     
                     その他豆知識
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="exercise1.html">
+            
+                <a href="exercise1.html">
+            
+                    
+                    Exercise (1)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.15" data-path="exercise2.html">
+            
+                <a href="exercise2.html">
+            
+                    
+                    Exercise (2)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="exercise3.html">
+            
+                <a href="exercise3.html">
+            
+                    
+                    Exercise (3)
             
                 </a>
             
@@ -361,6 +343,79 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="exercise-2">Exercise (2)</h1>
+<p>&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x4F7F;&#x3044;&#x65B9;&#x3092;&#x6291;&#x3048;&#x305F;&#x3068;&#x3053;&#x308D;&#x3067;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x7DF4;&#x7FD2;&#x3092;&#x3084;&#x3063;&#x3066;&#x307F;&#x3088;&#x3046;&#xFF01;</p>
+<h2 id="&#x5947;&#x6570;&#x304B;&#x5076;&#x6570;&#x304B;">&#x5947;&#x6570;&#x304B;&#x5076;&#x6570;&#x304B;</h2>
+<p><code>Int</code> &#x3092;&#x62E1;&#x5F35;&#x3057;&#x3066;&#x3001;<code>isOdd</code>&#x3001;<code>isEven</code> &#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x3066;&#x307F;&#x3088;&#x3046;&#xFF01;</p>
+<ul>
+<li><code>isOdd</code> ... &#x6570;&#x304C;&#x5947;&#x6570;&#x3067;&#x3042;&#x308B;&#x3068;&#x304D;&#x306B; <code>true</code> &#x3092;&#x8FD4;&#x3057;&#x3001;&#x5076;&#x6570;&#x306E;&#x3068;&#x304D;&#x306B; <code>false</code> &#x3092;&#x8FD4;&#x3059;&#x30E1;&#x30BD;&#x30C3;&#x30C9;</li>
+<li><p><code>isEven</code> ... &#x6570;&#x304C;&#x5076;&#x6570;&#x3067;&#x3042;&#x308B;&#x3068;&#x304D;&#x306B; <code>true</code> &#x3092;&#x8FD4;&#x3057;&#x3001;&#x5947;&#x6570;&#x306E;&#x3068;&#x304D;&#x306B; <code>false</code> &#x3092;&#x8FD4;&#x3059;&#x30E1;&#x30BD;&#x30C3;&#x30C9;</p>
+</li>
+<li><p>&#x4F7F;&#x3044;&#x65B9;&#x30A4;&#x30E1;&#x30FC;&#x30B8;</p>
+</li>
+</ul>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> a</span> = <span class="hljs-number">5</span>
+    a.isOdd()  <span class="hljs-comment">// true</span>
+    a.isEven() <span class="hljs-comment">// false</span>
+}
+</code></pre>
+<h2 id="n-&#x9762;&#x306E;&#x30B5;&#x30A4;&#x30B3;&#x30ED;">n &#x9762;&#x306E;&#x30B5;&#x30A4;&#x30B3;&#x30ED;</h2>
+<p>&#x30B5;&#x30A4;&#x30B3;&#x30ED;&#x30AF;&#x30E9;&#x30B9; (Dice &#x30AF;&#x30E9;&#x30B9;) &#x3092;&#x4F5C;&#x308B;&#x3088;&#xFF01;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3001;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3068;&#x3057;&#x3066;&#x4EE5;&#x4E0B;&#x3092;&#x5099;&#x3048;&#x308B;&#x3068;&#x3059;&#x308B;&#x3002;</p>
+<ul>
+<li>n &#x9762;&#x306E;&#x30B5;&#x30A4;&#x30B3;&#x30ED;&#x3092;&#x8868;&#x3059; <code>n: Int</code> &#x3092;&#x30B3;&#x30F3;&#x30B9;&#x30C8;&#x30E9;&#x30AF;&#x30BF;&#x3067;&#x53D6;&#x308B;</li>
+<li>&#x300C;&#x30B5;&#x30A4;&#x30B3;&#x30ED;&#x3092;&#x632F;&#x308B;&#x300D;&#x30E1;&#x30BD;&#x30C3;&#x30C9; <code>roll</code> &#x3092;&#x5099;&#x3048;&#x308B;<ul>
+<li><code>roll</code> &#x306F; Int &#x3092;&#x3072;&#x3068;&#x3064;&#x8FD4;&#x3059; (&#x8FD4;&#x308B;&#x5024;&#x306F; 1 &#x4EE5;&#x4E0A; n &#x4EE5;&#x4E0B;) &#x30E1;&#x30BD;&#x30C3;&#x30C9;</li>
+</ul>
+</li>
+<li>&#x3061;&#x306A;&#x307F;&#x306B; 100 &#x56DE;&#x632F;&#x308B;&#x3068;&#x58CA;&#x308C;&#x3066;&#x4F8B;&#x5916; <code>Exception(&quot;I was broken&quot;)</code> &#x3092;&#x5410;&#x304F;<ul>
+<li>&#x4EE5;&#x5F8C;&#x3001;<code>roll</code> &#x3092;&#x547C;&#x3073;&#x51FA;&#x3059;&#x3068;&#x4F8B;&#x5916;&#x3092;&#x5410;&#x304F;</li>
+<li>&#x5225;&#x306E; Dice &#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3092;&#x4F5C;&#x308C;&#x3070;&#x307E;&#x305F; <code>roll</code> &#x3067;&#x304D;&#x308B;</li>
+</ul>
+</li>
+<li>&#x30E9;&#x30F3;&#x30C0;&#x30E0;&#x306A;&#x6570;&#x3092;&#x5F97;&#x308B;&#x65B9;&#x6CD5;&#x306F;&#x3001;&#x305F;&#x3068;&#x3048;&#x3070;&#x4EE5;&#x4E0B;</li>
+</ul>
+<pre><code class="lang-kotlin"><span class="hljs-keyword">import</span> java.util.Random
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> random</span> = Random()
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> n</span> = random.nextInt(<span class="hljs-number">100</span>) <span class="hljs-comment">// 0&#x301C;99 &#x307E;&#x3067;&#x306E;&#x7BC4;&#x56F2;&#x306E;&#x5024;&#x304C;&#x30E9;&#x30F3;&#x30C0;&#x30E0;&#x3067;&#x8FD4;&#x308B;</span>
+    println(n)
+}
+</code></pre>
+<ul>
+<li>&#x4EE5;&#x4E0B;&#x3001;<code>Dice</code> &#x30AF;&#x30E9;&#x30B9;&#x306E;&#x4F7F;&#x3044;&#x65B9;&#x30A4;&#x30E1;&#x30FC;&#x30B8;</li>
+</ul>
+<pre><code class="lang-kotlin"><span class="hljs-keyword">import</span> java.util.Random
+
+<span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> class Dice &#x3092;&#x66F8;&#x304F;</span>
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> d</span> = Dice(<span class="hljs-number">16</span>)
+    <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.100</span>) {
+        println(d.roll()) <span class="hljs-comment">// 1&#x301C;16 &#x307E;&#x3067;&#x306E;&#x6570;&#x5B57;</span>
+    }
+    println(d.roll()) <span class="hljs-comment">// Exception</span>
+}
+</code></pre>
+<h2 id="&#x547C;&#x3073;&#x51FA;&#x3057;&#x305F;&#x56DE;&#x6570;&#x3092;&#x30AB;&#x30A6;&#x30F3;&#x30C8;&#x3059;&#x308B;">&#x547C;&#x3073;&#x51FA;&#x3057;&#x305F;&#x56DE;&#x6570;&#x3092;&#x30AB;&#x30A6;&#x30F3;&#x30C8;&#x3059;&#x308B;</h2>
+<p>&#x30AB;&#x30B9;&#x30BF;&#x30E0;&#x30BB;&#x30C3;&#x30BF;&#x30FC;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x3001;&#x4F55;&#x5EA6;&#x547C;&#x3073;&#x51FA;&#x3055;&#x308C;&#x305F;&#x304B;&#x3092;&#x30AB;&#x30A6;&#x30F3;&#x30C8;&#x3057;&#x3066;&#x307F;&#x3088;&#x3046;&#xFF01;</p>
+<ul>
+<li>&#x4F7F;&#x3044;&#x65B9;&#x30A4;&#x30E1;&#x30FC;&#x30B8;</li>
+</ul>
+<pre><code class="lang-kotlin"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyCustomClass</span> </span>{
+    <span class="hljs-variable"><span class="hljs-keyword">var</span> counter</span>: <span class="hljs-keyword">Int</span> = <span class="hljs-number">0</span>
+    <span class="hljs-variable"><span class="hljs-keyword">var</span> propertyWithCounter</span>: <span class="hljs-keyword">Int</span> = <span class="hljs-number">0</span>
+        <span class="hljs-comment">/* <span class="hljs-doctag">TODO:</span> &#x3053;&#x3053;&#x306B;&#x30AB;&#x30B9;&#x30BF;&#x30E0;&#x30BB;&#x30C3;&#x30BF;&#x30FC;&#x3092;&#x66F8;&#x304F; */</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+    <span class="hljs-variable"><span class="hljs-keyword">val</span> p</span> = MyCustomClass()
+    p.propertyWithCounter = <span class="hljs-number">123</span>
+    p.propertyWithCounter = <span class="hljs-number">456</span>
+    p.propertyWithCounter = <span class="hljs-number">789</span>
+    println(p.counter) <span class="hljs-comment">// 3</span>
+}
+</code></pre>
 
                                 
                                 </section>
@@ -388,12 +443,12 @@
 
             
                 
-                <a href="interface.html" class="navigation navigation-prev " aria-label="Previous page: インターフェース">
+                <a href="exercise1.html" class="navigation navigation-prev " aria-label="Previous page: Exercise (1)">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="generics.html" class="navigation navigation-next " aria-label="Next page: ジェネリクス">
+                <a href="exercise3.html" class="navigation navigation-next " aria-label="Next page: Exercise (3)">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -404,7 +459,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Exercise (2)","level":"1.10.1","depth":2,"next":{"title":"ジェネリクス","level":"1.11","depth":1,"path":"generics.md","ref":"./generics.md","articles":[]},"previous":{"title":"インターフェース","level":"1.10","depth":1,"path":"interface.md","ref":"./interface.md","articles":[{"title":"Exercise (2)","level":"1.10.1","depth":2,"path":"exercise2.md","ref":"./exercise2.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"exercise2.md","mtime":"2018-03-26T01:15:03.303Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-10T02:57:55.358Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Exercise (2)","level":"1.15","depth":1,"next":{"title":"Exercise (3)","level":"1.16","depth":1,"path":"exercise3.md","ref":"./exercise3.md","articles":[]},"previous":{"title":"Exercise (1)","level":"1.14","depth":1,"path":"exercise1.md","ref":"./exercise1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"exercise2.md","mtime":"2018-04-10T06:42:08.047Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-10T07:05:48.629Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
