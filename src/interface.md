@@ -233,7 +233,7 @@ class GermanyGreeter : Greeter {
 fun main(args: Array<String>) {
     // greeting 関数は Greeter インターフェースを実装したクラスを
     // 引数にとるので、以下はいずれも有効な書き方
-    greeting(JapaneseGreeter("world")) // こんにちは、world！
+    greeting(JapaneseGreeter("world")) // こんにちは、world さん！
     greeting(EnglishGreeter("world"))  // Hello, world!
     greeting(GermanyGreeter("world"))  // Guten morgen, world!
 }
