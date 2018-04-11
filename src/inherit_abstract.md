@@ -54,18 +54,18 @@ class Woman(name: String) : Person(name)
 fun main(args: Array<String>) {
     val p = Person("p")
     p.nameLength // 1
-    w.bornFrom   // unknown
+    p.bornFrom() // unknown
 
     // 各々、Person から引き継いだプロパティが利用できる
     val m = Man("bob")
     println(m.name)       // bob  
     println(m.nameLength) // 3  
-    println(m.bornFrom)   // unknown
+    println(m.bornFrom()) // unknown
 
     val w = Woman("alice")
     println(w.name)        // alice
     println(w.nameLength)  // 5
-    println(w.bornFrom)    // unknown
+    println(w.bornFrom())  // unknown
 }
 ```
 
@@ -118,20 +118,20 @@ class Woman(name: String) : Person(name) {
 fun main(args: Array<String>) {
     val p = Person("p")
     p.nameLength // 1
-    w.bornFrom   // unknown
+    p.bornFrom() // unknown
 
     // 各々、オーバーライドしたメソッドとプロパティを使ってみる
     val m = Man("bob")
     println(m.name)       // bob  
     println(m.nameLength) // bob (man) 3  
-    println(m.bornFrom)   // mud
+    println(m.bornFrom()) // mud
     // Man 専用メソッド
     m.doShibakari()       // 山へ芝刈りに
 
     val w = Woman("alice")
     println(w.name)        // alice
     println(w.nameLength)  // alice (woman) 5
-    println(w.bornFrom)    // rib
+    println(w.bornFrom())  // rib
     // Woman 専用メソッド
     w.doSentaku()          // 川へ洗濯に
 }
