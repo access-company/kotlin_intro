@@ -354,12 +354,99 @@
 <li>&#x30EB;&#x30FC;&#x30D7; (<code>while</code>&#x3001;<code>for</code>)</li>
 </ul>
 <h2 id="&#x3044;&#x308D;&#x3093;&#x306A;&#x578B;">&#x3044;&#x308D;&#x3093;&#x306A;&#x578B;</h2>
+<p>&#x4E3B;&#x306B;&#x4F7F;&#x308F;&#x308C;&#x308B;&#x578B;&#x3068;&#x3001;&#x5024;&#x306E;&#x4F8B;&#x3092;&#x4EE5;&#x4E0B;&#x306B;&#x8A18;&#x8F09;</p>
 <ul>
-<li><p>&#x6570;&#x5024;&#x578B;</p>
-</li>
-<li><p>&#x305D;&#x306E;&#x4ED6;&#x306E;&#x57FA;&#x672C;&#x578B;</p>
-</li>
+<li>&#x6570;&#x5024;&#x578B;</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>&#x578B;&#x540D;</th>
+<th>&#x30D3;&#x30C3;&#x30C8;&#x5E45;</th>
+<th>&#x7528;&#x9014;</th>
+<th>&#x4F8B;</th>
+<th>&#x5099;&#x8003;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Byte</code></td>
+<td>8 bit</td>
+<td>&#x6574;&#x6570;</td>
+<td>0x0f, 0b0101, 123</td>
+<td>-128 ~ 127</td>
+</tr>
+<tr>
+<td><code>Short</code></td>
+<td>16 bit</td>
+<td>&#x6574;&#x6570;</td>
+<td>0x0f, 0b0101, 1234</td>
+<td>-32,768 ~ 32767</td>
+</tr>
+<tr>
+<td><code>Int</code></td>
+<td>32 bit</td>
+<td>&#x6574;&#x6570;</td>
+<td>0x0f, 0b0101, 1234</td>
+<td>-2,147,483,648 ~ 2,147,483,647</td>
+</tr>
+<tr>
+<td><code>Long</code></td>
+<td>64 bit</td>
+<td>&#x6574;&#x6570;</td>
+<td>123456789L</td>
+<td>-9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807</td>
+</tr>
+<tr>
+<td><code>Float</code></td>
+<td>32 bit</td>
+<td>&#x6D6E;&#x52D5;&#x5C0F;&#x6570;&#x70B9;</td>
+<td>123.456F</td>
+<td>&#x5358;&#x7CBE;&#x5EA6;&#x6D6E;&#x52D5;&#x5C0F;&#x6570;&#x70B9;</td>
+</tr>
+<tr>
+<td><code>Double</code></td>
+<td>64 bit</td>
+<td>&#x6D6E;&#x52D5;&#x5C0F;&#x6570;&#x70B9;</td>
+<td>123.456</td>
+<td>&#x500D;&#x7CBE;&#x5EA6;&#x4E0D;&#x52D5;&#x5C0F;&#x6570;&#x70B9;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>&#x305D;&#x306E;&#x4ED6;&#x306E;&#x57FA;&#x672C;&#x578B;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#x578B;&#x540D;</th>
+<th>&#x7528;&#x9014;</th>
+<th>&#x4F8B;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Char</code></td>
+<td>&#x6587;&#x5B57;</td>
+<td>&apos;a&apos;, &apos;b&apos;, &apos;0&apos;, &apos;\u8d64&apos;</td>
+</tr>
+<tr>
+<td>`String</td>
+<td>&#x6587;&#x5B57;&#x5217;</td>
+<td>&quot;hello&quot;, &quot;How are you!&quot;</td>
+</tr>
+<tr>
+<td>`Boolean</td>
+<td>&#x771F;&#x507D;&#x5024;</td>
+<td>true, false</td>
+</tr>
+<tr>
+<td><code>Unit</code></td>
+<td>&quot;&#x306A;&#x3044;&quot;&#x3053;&#x3068;&#x3092;&#x8868;&#x3059; (Java &#x306E; <code>void</code> &#x306B;&#x3042;&#x305F;&#x308B;)</td>
+<td><code>fun hoge(): Unit</code><br>(&#x623B;&#x308A;&#x5024;&#x304C;&#x306A;&#x3044;&#x95A2;&#x6570;&#x306E;&#x5B9A;&#x7FA9;)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="&#x5909;&#x6570;">&#x5909;&#x6570;</h2>
 <ul>
 <li><code>val</code><ul>
@@ -697,7 +784,7 @@ outer@ <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</s
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"基本的な文法","level":"1.5","depth":1,"next":{"title":"関数","level":"1.6","depth":1,"path":"function.md","ref":"./function.md","articles":[]},"previous":{"title":"開発環境の構築","level":"1.4","depth":1,"path":"development_environment.md","ref":"./development_environment.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"basic_syntax.md","mtime":"2018-04-10T06:45:28.045Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-10T14:19:40.102Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"基本的な文法","level":"1.5","depth":1,"next":{"title":"関数","level":"1.6","depth":1,"path":"function.md","ref":"./function.md","articles":[]},"previous":{"title":"開発環境の構築","level":"1.4","depth":1,"path":"development_environment.md","ref":"./development_environment.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"basic_syntax.md","mtime":"2018-04-11T01:58:59.978Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-11T01:59:46.364Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
