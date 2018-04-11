@@ -133,7 +133,7 @@ fun main(args: Array<String>) {
     g.sayHello("America") // Hello America great again!
     g.sayHello("Japan")   // Hello Japan great again!
     g.sayHello("Germany") // Hello Germany great again!
-    g.sayHello("")        // Hello anoymous great again ← ！？
+    g.sayHello("")        // Hello anonymous great again ← ！？
 }
 ```
 
@@ -164,10 +164,10 @@ fun main(args: Array<String>) {
     g.sayHello("America") // Hello America great again!
     g.sayHello("Japan")   // Hello Japan great again!
     g.sayHello("Germany") // Hello Germany great again!
-    g.sayHello("")        // Hello anoymous!
+    g.sayHello("")        // Hello anonymous!
 }
 ```
-  
+
 * 通常、委譲するほうが継承するよりもコードは多くなる傾向がある
   * 上の例の場合、`sayHello()` も `sayHello(target: String)` も要実装になっている
   * ところが、Kotlin の場合、委譲してもコード量を増やさない技が備わっている
@@ -190,7 +190,7 @@ fun main(args: Array<String>) {
     g.sayHello("America") // Hello America great again!
     g.sayHello("Japan")   // Hello Japan great again!
     g.sayHello("Germany") // Hello Germany great again!
-    g.sayHello("")        // Hello anoymous!
+    g.sayHello("")        // Hello anonymous!
 }
 ```
 
