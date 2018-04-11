@@ -183,7 +183,7 @@ class Woman() : Person() {
 * 使い方
 
 ```kotlin
-func main(args: Array<String>) {
+fun main(args: Array<String>) {
     val p: Person = Person() // Person は abstract なのでインスタンス化はできない
     val m: Person = Man()    // これは OK
     val w: Person = Woman()  // これも OK
