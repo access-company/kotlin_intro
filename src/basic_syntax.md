@@ -55,8 +55,8 @@ val bar: String = "Hello"
 ```kotlin
 // var 変数名: 型 = 式
 
-val foo: Int = 123
-val bar: String = "Hello"
+var foo: Int = 123
+var bar: String = "Hello"
 
 // あとから値が変えられる
 
