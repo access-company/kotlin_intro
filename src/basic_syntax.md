@@ -327,6 +327,7 @@ sum // 55
 // 次のループまでスキップしたり (continue)
 var count = 0
 while (true) {
+    count++
     if (count == 10) {
         break // while ループを抜ける
     }
