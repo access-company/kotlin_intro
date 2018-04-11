@@ -468,8 +468,8 @@
 </ul>
 <pre><code class="lang-kotlin"><span class="hljs-comment">// var &#x5909;&#x6570;&#x540D;: &#x578B; = &#x5F0F;</span>
 
-<span class="hljs-variable"><span class="hljs-keyword">val</span> foo</span>: <span class="hljs-keyword">Int</span> = <span class="hljs-number">123</span>
-<span class="hljs-variable"><span class="hljs-keyword">val</span> bar</span>: String = <span class="hljs-string">&quot;Hello&quot;</span>
+<span class="hljs-variable"><span class="hljs-keyword">var</span> foo</span>: <span class="hljs-keyword">Int</span> = <span class="hljs-number">123</span>
+<span class="hljs-variable"><span class="hljs-keyword">var</span> bar</span>: String = <span class="hljs-string">&quot;Hello&quot;</span>
 
 <span class="hljs-comment">// &#x3042;&#x3068;&#x304B;&#x3089;&#x5024;&#x304C;&#x5909;&#x3048;&#x3089;&#x308C;&#x308B;</span>
 
@@ -720,6 +720,7 @@ sum <span class="hljs-comment">// 55</span>
 <span class="hljs-comment">// &#x6B21;&#x306E;&#x30EB;&#x30FC;&#x30D7;&#x307E;&#x3067;&#x30B9;&#x30AD;&#x30C3;&#x30D7;&#x3057;&#x305F;&#x308A; (continue)</span>
 <span class="hljs-variable"><span class="hljs-keyword">var</span> count</span> = <span class="hljs-number">0</span>
 <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
+    count++
     <span class="hljs-keyword">if</span> (count == <span class="hljs-number">10</span>) {
         <span class="hljs-keyword">break</span> <span class="hljs-comment">// while &#x30EB;&#x30FC;&#x30D7;&#x3092;&#x629C;&#x3051;&#x308B;</span>
     }
@@ -784,7 +785,7 @@ outer@ <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</s
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"基本的な文法","level":"1.5","depth":1,"next":{"title":"関数","level":"1.6","depth":1,"path":"function.md","ref":"./function.md","articles":[]},"previous":{"title":"開発環境の構築","level":"1.4","depth":1,"path":"development_environment.md","ref":"./development_environment.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"basic_syntax.md","mtime":"2018-04-11T01:58:59.978Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-11T01:59:46.364Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"基本的な文法","level":"1.5","depth":1,"next":{"title":"関数","level":"1.6","depth":1,"path":"function.md","ref":"./function.md","articles":[]},"previous":{"title":"開発環境の構築","level":"1.4","depth":1,"path":"development_environment.md","ref":"./development_environment.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"basic_syntax.md","mtime":"2018-04-11T08:13:11.543Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-11T08:13:15.109Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
