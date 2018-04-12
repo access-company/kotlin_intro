@@ -19,14 +19,14 @@ Null 安全について記載します。
   * NullPointerException とは、中身が null な変数を参照すると起こる例外のこと
   * 割とありふれた例外だが、きっちり対処しようとすると若干手間
 
-```java
-// 以下は Java のコード
+* 以下、Java のコード例には「Java」と記載 (特に注釈がなければ Kotlin のコード例)
 
+```java: Java
 String s = null;
 s.toUpperCase(); // NullPointerException 発生
 ```
 
-```java
+```java: Java
 // 上記を回避する
 String s = null;
 if (s != null) { // null じゃないことを確認する
@@ -39,13 +39,12 @@ if (s != null) { // null じゃないことを確認する
   * その点だけ捉えると全ての変数について使う前に null チェックするのが妥当か…？
   * 文脈上、絶対に null でないことが確定しているような場合はチェックするべき？
 
-```java
+```java: Java
 String s = "hoge";
 // s は明らかに null じゃないのでチェックしないで良さそう
 
 String ss = Fuga(); // 文字列か null を返す関数だとしたら
 // ss は要チェック
-
 ```
 
 * チェックの要・不要を判断するのはプログラマ → 往々にして間違いが起こり得る
@@ -54,7 +53,7 @@ String ss = Fuga(); // 文字列か null を返す関数だとしたら
   * Android Java では `@NonNull` のようなアノテーションをメソッドに付与できる
   * しかし基本的に無力
 
-```java
+```java: Java
 // アノテーションによって本メソッドは null を返さないことを表明する
 @NonNull
 String Fuga() {
