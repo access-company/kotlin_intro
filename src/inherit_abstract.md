@@ -195,7 +195,56 @@ fun main(args: Array<String>) {
 
 ## 可視性
 
-* パッケージトップレベルでの関数・変数宣言の場合
+* パッケージ
+  * パッケージ (`package`) とはクラスを分類する仕組み。基本的に全てのクラスはどこかのパッケージに属している
+  * パッケージを指定しない場合、デフォルトのパッケージ (名前はない) に属することになる
+
+```kotlin
+// パッケージを宣言。車パッケージとする
+package io.access.car
+
+// 以下、本ファイルに書くクラス、関数は io.access.car パッケージに属する
+
+class Car(val name: String)
+
+fun greet(): String {
+    ...
+}
+```
+
+* 他のパッケージから io.access.myutil を参照する場合、import 文を用いて利用したいパッケージをインポートする必要がある
+
+```kotlin
+// 上記の車パッケージとは別のパッケージ。店パッケージとする
+package io.access.store
+
+// car をインポートすると Car を使うことができる
+// 以下の書き方をすると myutil パッケージに含まれるクラス全てがインポートされる
+import io.access.myutil.*
+
+class Store {
+    val car = Car()
+}
+```
+
+* インポートしたクラスに `as` を使って別名をつけることもできる
+  * クラス名が別のパッケージに含まれるクラスと重複したときなどに有用
+  * クラス名が長い場合に短くしたりという使い方も
+
+```kotlin
+package io.access.store
+
+// as を使ってインポートしたクラスに別名をつける
+import io.access.myutil.Car as MyCar
+
+class Store {
+    // MyCar として利用できる
+    val car = MyCar()
+}
+```
+
+* 可視性
+  * 定義したクラスについて、他のパッケージ、他のクラスからどの程度参照可能にするかどうかを指定できる
   * `public`、`internal`、`private` から選択する
 
 ```kotlin
