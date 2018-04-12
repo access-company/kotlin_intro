@@ -13,21 +13,31 @@ Null 安全について記載します。
 * エルビス演算子 (`?:`)
 * 安全キャスト
 
-## 従来の null との戦い
+## null って何よ
 
-* NullPointerException と null check
-  * NullPointerException とは、中身が null な変数を参照すると起こる例外のこと
-  * 割とありふれた例外だが、きっちり対処しようとすると若干手間
+* `null` そのものの意味は、"空" とか "無" とか。ドイツ語らしい。
+* 変数に `null` を入れると、その変数はどこも参照していない (`null` を参照している) 状態になる
+* `null` を参照しているオブジェクトのメソッド呼び出しは例外 (`NullPointerException`) を発生させる
+  * `NullPointerException` になるのが期待動作ということは基本的になく、概してプログラミングのミスで発生する
 
-* 以下、Java のコード例には「Java」と記載 (特に注釈がなければ Kotlin のコード例)
+* Java のコードで `NullPointerException` が出る例は以下のような場合。
+  * 以下、Java のコード例には「Java」と記載 (特に注釈がなければ Kotlin のコード例)
 
 ```java: Java
-String s = null;
+String s = null; // null を入れる
 s.toUpperCase(); // NullPointerException 発生
 ```
 
+## 従来の null との戦い
+
+* NullPointerException と null チェック
+  * NullPointerException が起きないように、  
+  変数を参照する前に変数が `null` でないかを確認する必要が生じることがしばしばある
+  * 実はきっちり対処しようとするとそれなりに手間
+
 ```java: Java
-// 上記を回避する
+// 上述のコード例における NullPointerException を回避する
+
 String s = null;
 if (s != null) { // null じゃないことを確認する
     s.toUpperCase();
@@ -49,16 +59,20 @@ String ss = Fuga(); // 文字列か null を返す関数だとしたら
 
 * チェックの要・不要を判断するのはプログラマ → 往々にして間違いが起こり得る
 
-* アノテーションによる null 回避
+* アノテーションによる null 回避という案
   * Android Java では `@NonNull` のようなアノテーションをメソッドに付与できる
+  * `@NonNull` をつけておくと、コンパイル時にある程度 `null` にならないことをチェックできる
   * しかし基本的に無力
+    * 表明するためのものでありドキュメンテーションの色合いが強い
+    * IDE は `@NonNull` なところに `null` になりうる変数を渡すと警告してくれる (こともある)
+    * 制約に違反するコードがあってもコンパイルエラーにはしてくれない
 
 ```java: Java
 // アノテーションによって本メソッドは null を返さないことを表明する
 @NonNull
 String Fuga() {
     // ...
-    return null; // しかし null は返せる
+    return null; // しかし null は返すことはできてしまう (コンパイルエラーではない)
 }
 
 // null になりうることも表明できる
