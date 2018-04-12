@@ -244,7 +244,7 @@ class Woman: Person() {
         privateMethod()  // コンパイル NG
         publicMethod()   // コンパイル OK
         internalMethod() // 場合による
-        protectedMethod  // コンパイル OK
+        protectedMethod()  // コンパイル OK
     }
 }
 
