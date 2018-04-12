@@ -17,11 +17,15 @@
     
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-codeblock-filename/block.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -356,17 +360,20 @@
 </ul>
 <h2 id="&#x5F93;&#x6765;&#x306E;-null-&#x3068;&#x306E;&#x6226;&#x3044;">&#x5F93;&#x6765;&#x306E; null &#x3068;&#x306E;&#x6226;&#x3044;</h2>
 <ul>
-<li>NullPointerException &#x3068; null check<ul>
+<li><p>NullPointerException &#x3068; null check</p>
+<ul>
 <li>NullPointerException &#x3068;&#x306F;&#x3001;&#x4E2D;&#x8EAB;&#x304C; null &#x306A;&#x5909;&#x6570;&#x3092;&#x53C2;&#x7167;&#x3059;&#x308B;&#x3068;&#x8D77;&#x3053;&#x308B;&#x4F8B;&#x5916;&#x306E;&#x3053;&#x3068;</li>
 <li>&#x5272;&#x3068;&#x3042;&#x308A;&#x3075;&#x308C;&#x305F;&#x4F8B;&#x5916;&#x3060;&#x304C;&#x3001;&#x304D;&#x3063;&#x3061;&#x308A;&#x5BFE;&#x51E6;&#x3057;&#x3088;&#x3046;&#x3068;&#x3059;&#x308B;&#x3068;&#x82E5;&#x5E72;&#x624B;&#x9593;</li>
 </ul>
 </li>
+<li><p>&#x4EE5;&#x4E0B;&#x3001;Java &#x306E;&#x30B3;&#x30FC;&#x30C9;&#x4F8B;&#x306B;&#x306F;&#x300C;Java&#x300D;&#x3068;&#x8A18;&#x8F09; (&#x7279;&#x306B;&#x6CE8;&#x91C8;&#x304C;&#x306A;&#x3051;&#x308C;&#x3070; Kotlin &#x306E;&#x30B3;&#x30FC;&#x30C9;&#x4F8B;)</p>
+</li>
 </ul>
-<pre><code class="lang-java"><span class="hljs-comment">// &#x4EE5;&#x4E0B;&#x306F; Java &#x306E;&#x30B3;&#x30FC;&#x30C9;</span>
-
-String s = <span class="hljs-keyword">null</span>;
+<div><p class="code-filename">Java</p></div>
+<pre><code class="lang-java">String s = <span class="hljs-keyword">null</span>;
 s.toUpperCase(); <span class="hljs-comment">// NullPointerException &#x767A;&#x751F;</span>
 </code></pre>
+<div><p class="code-filename">Java</p></div>
 <pre><code class="lang-java"><span class="hljs-comment">// &#x4E0A;&#x8A18;&#x3092;&#x56DE;&#x907F;&#x3059;&#x308B;</span>
 String s = <span class="hljs-keyword">null</span>;
 <span class="hljs-keyword">if</span> (s != <span class="hljs-keyword">null</span>) { <span class="hljs-comment">// null &#x3058;&#x3083;&#x306A;&#x3044;&#x3053;&#x3068;&#x3092;&#x78BA;&#x8A8D;&#x3059;&#x308B;</span>
@@ -381,6 +388,7 @@ String s = <span class="hljs-keyword">null</span>;
 </ul>
 </li>
 </ul>
+<div><p class="code-filename">Java</p></div>
 <pre><code class="lang-java">String s = <span class="hljs-string">&quot;hoge&quot;</span>;
 <span class="hljs-comment">// s &#x306F;&#x660E;&#x3089;&#x304B;&#x306B; null &#x3058;&#x3083;&#x306A;&#x3044;&#x306E;&#x3067;&#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x3057;&#x306A;&#x3044;&#x3067;&#x826F;&#x3055;&#x305D;&#x3046;</span>
 
@@ -392,13 +400,14 @@ String ss = Fuga(); <span class="hljs-comment">// &#x6587;&#x5B57;&#x5217;&#x304
 </li>
 <li><p>&#x30A2;&#x30CE;&#x30C6;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306B;&#x3088;&#x308B; null &#x56DE;&#x907F;</p>
 <ul>
-<li>Java &#x3067;&#x306F; <code>@Nonnull</code> &#x306E;&#x3088;&#x3046;&#x306A;&#x30A2;&#x30CE;&#x30C6;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306B;&#x4ED8;&#x4E0E;&#x3067;&#x304D;&#x308B;</li>
+<li>Android Java &#x3067;&#x306F; <code>@NonNull</code> &#x306E;&#x3088;&#x3046;&#x306A;&#x30A2;&#x30CE;&#x30C6;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306B;&#x4ED8;&#x4E0E;&#x3067;&#x304D;&#x308B;</li>
 <li>&#x3057;&#x304B;&#x3057;&#x57FA;&#x672C;&#x7684;&#x306B;&#x7121;&#x529B;</li>
 </ul>
 </li>
 </ul>
+<div><p class="code-filename">Java</p></div>
 <pre><code class="lang-java"><span class="hljs-comment">// &#x30A2;&#x30CE;&#x30C6;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306B;&#x3088;&#x3063;&#x3066;&#x672C;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306F; null &#x3092;&#x8FD4;&#x3055;&#x306A;&#x3044;&#x3053;&#x3068;&#x3092;&#x8868;&#x660E;&#x3059;&#x308B;</span>
-<span class="hljs-meta">@Nonnull</span>
+<span class="hljs-meta">@NonNull</span>
 <span class="hljs-function">String <span class="hljs-title">Fuga</span><span class="hljs-params">()</span> </span>{
     <span class="hljs-comment">// ...</span>
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>; <span class="hljs-comment">// &#x3057;&#x304B;&#x3057; null &#x306F;&#x8FD4;&#x305B;&#x308B;</span>
@@ -590,7 +599,7 @@ println(a <span class="hljs-keyword">as</span>? <span class="hljs-keyword">Int</
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Null安全","level":"1.12","depth":1,"next":{"title":"その他豆知識","level":"1.13","depth":1,"path":"tips.md","ref":"./tips.md","articles":[]},"previous":{"title":"ジェネリクス","level":"1.11","depth":1,"path":"generics.md","ref":"./generics.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"null_safe.md","mtime":"2018-04-09T08:12:10.489Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-11T10:41:22.195Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Null安全","level":"1.12","depth":1,"next":{"title":"その他豆知識","level":"1.13","depth":1,"path":"tips.md","ref":"./tips.md","articles":[]},"previous":{"title":"ジェネリクス","level":"1.11","depth":1,"path":"generics.md","ref":"./generics.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","search","codeblock-filename"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"search":{},"codeblock-filename":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"null_safe.md","mtime":"2018-04-12T12:55:30.064Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-12T13:11:18.228Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
