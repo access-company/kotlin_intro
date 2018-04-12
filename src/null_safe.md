@@ -51,12 +51,12 @@ String ss = Fuga(); // 文字列か null を返す関数だとしたら
 * チェックの要・不要を判断するのはプログラマ → 往々にして間違いが起こり得る
 
 * アノテーションによる null 回避
-  * Java では `@Nonnull` のようなアノテーションをメソッドに付与できる
+  * Android Java では `@NonNull` のようなアノテーションをメソッドに付与できる
   * しかし基本的に無力
 
 ```java
 // アノテーションによって本メソッドは null を返さないことを表明する
-@Nonnull
+@NonNull
 String Fuga() {
     // ...
     return null; // しかし null は返せる

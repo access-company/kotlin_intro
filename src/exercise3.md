@@ -14,7 +14,7 @@
 public void sendMessageToClient(
     @Nullable Client client,
     @Nullable String message,
-    @NotNull Mailer mailer) {
+    @NonNull Mailer mailer) {
     if (client == null || message == null) return;
 
     PersonalInfo personalInfo = client.getPersonalInfo();
