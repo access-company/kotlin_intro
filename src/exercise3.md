@@ -10,7 +10,7 @@
   * 引数のアノテーションによると、`mailer` は null の可能性がない
   * 途中で `null` に出くわしたらに何もせず `return` している
 
-```java
+```java: Java
 public void sendMessageToClient(
     @Nullable Client client,
     @Nullable String message,
