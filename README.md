@@ -2,7 +2,7 @@
 
 Kotlin 導入のための資料です。  
 GitHub pages を使ってホスティングしています。  
-https://pankona.github.io/kotlin_intro/
+https://access-company.github.io/kotlin_intro/
 
 ## ドキュメントのビルド方法
 
