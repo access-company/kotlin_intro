@@ -212,15 +212,15 @@ fun greet(): String {
 }
 ```
 
-* 他のパッケージから io.access.myutil を参照する場合、import 文を用いて利用したいパッケージをインポートする必要がある
+* 他のパッケージから io.access.car パッケージを参照する場合、import 文を用いて利用したいパッケージをインポートする必要がある
 
 ```kotlin
 // 上記の車パッケージとは別のパッケージ。店パッケージとする
 package io.access.store
 
 // car をインポートすると Car を使うことができる
-// 以下の書き方をすると myutil パッケージに含まれるクラス全てがインポートされる
-import io.access.myutil.*
+// 以下の書き方をすると io.access.car パッケージに含まれるクラス全てがインポートされる
+import io.access.car.*
 
 class Store {
     val car = Car()
@@ -235,7 +235,7 @@ class Store {
 package io.access.store
 
 // as を使ってインポートしたクラスに別名をつける
-import io.access.myutil.Car as MyCar
+import io.access.car.Car as MyCar
 
 class Store {
     // MyCar として利用できる
