@@ -12,10 +12,23 @@ Kotlin を用いた開発を行うための環境構築について記載しま�
 * hello world を出す関数を SampleTest クラスから呼び出す
 * できあがったら GitHub へ push
 
+## 想定する事前準備
+
+以下はあらかじめ用意されていることを想定
+
+* GitHub のアカウントがあること
+* SSH の鍵を GitHub に登録してあること
+  * https でもいいが、ユーザ名とパスワードを通信のたびに打つことになる
+  * 何度も GitHub と通信するなら SSH のほうが楽
+* Android Studio (バージョン 3 以降) がインストールされている
+
 ## サンプルプロジェクトを fork する
 
-* [サンプルプロジェクトはココ](https://github.com/pankona/KotlinTraining)
-* ページ右上の「Fork」ボタンを押す
+* 本研修で Kotlin のコードをを書いては捨て書いては捨てするので、  
+そのためのサンプルプロジェクトを用意しておいた。
+  * [サンプルプロジェクトはココ](https://github.com/pankona/KotlinTraining)
+  * Fork して使ってね
+    * ページ右上の「Fork」ボタンを押す
 
 ## fork したリポジトリを clone する
 
