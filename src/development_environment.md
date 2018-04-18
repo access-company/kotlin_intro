@@ -4,60 +4,92 @@ Kotlin を用いた開発を行うための環境構築について記載しま�
 
 ## ゴール
 
-* IntelliJ IDEA を使って "Hello World" を出す。
+* サンプルプロジェクトを各位の GitHub アカウントに fork する
+* fork したリポジトリを clone する
+* clone したサンプルプロジェクトを Android Studio で読み込む
+* SampleTest を実行し、welcome メッセージを確認する
+* Sample.kt を編集し、hello world を出す関数を定義する
+* hello world を出す関数を SampleTest クラスから呼び出す
+* できあがったら GitHub へ push
 
-## IntelliJ IDEA の導入
+## サンプルプロジェクトを fork する
 
-* IntelliJ IDEA をインストールします。
-以下、公式サイトからダウンロードして導入する手順を紹介します。
+* [サンプルプロジェクトはココ](https://github.com/pankona/KotlinTraining)
+* ページ右上の「Fork」ボタンを押す
 
-### 公式サイトからダウンロード
+## fork したリポジトリを clone する
 
-* [JetBrains 公式のダウンロードページ](https://www.jetbrains.com/idea/download/) からダウンロードしてインストールします。
+* fork したリポジトリのページを開く
+  * URL は https://github.com/(各位のアカウント名)/KotlinTraining となっているはず
+* 「Clone or download」ボタンを押すと「Clone with SSH」となっているはず
+  * なってない場合は、そばに「Use SSH」というリンクがあるはずなのでそれを押す
+* 下部に表示されている URL をコピーする
+  * git@github.com:(各位のアカウント名)/KotlinTraining.git みたいになっているはず
+* ターミナルを開き、任意の位置に clone する
+  * 以下のようなコマンドを打つ
 
-## 新規プロジェクトの作成
+```bash
+$ git clone git@github.com:(各位のアカウント名)/KotlinTraining.git
+```
 
-* IntelliJ IDEA を起動し、「Create New Project」を選択します。
+* 正常に完了すると、リポジトリのソースコード一式がダウンロードされる
 
-![idea1.png](./assets/images/idea1.png)
-IntelliJ IDEA を起動したところ
+## clone したサンプルプロジェクトを Android Studio で読み込む
 
-* Kotlin を選択します。
+* 無事に clone は済んだだろうか
+* 次に clone したソースコードを Android Studio で読み込む
+* Android Studio を起動し、「Open an exisiting Android Studio project」を選ぶ
 
-![idea2.png](./assets/images/idea2.png)
-Kotlin を選んだところ
+![as1.png](./assets/images/as1.png)  
+↑ Android Studio を開いたところ
 
-* 適当に Project 名を付け、Finish を選択します。
+* ファイルエクスプローラが起動するので、先程 clone したところを選ぶ
 
-![idea3.png](./assets/images/idea3.png)
-SecondKotlin と名付けたところ
+![as2.png](./assets/images/as2.png)  
+↑ clone したサンプルプロジェクトを選ぶ (アイコンが緑の丸っぽいのを選ぶ)
 
-![idea4.png](./assets/images/idea4.png)
-プロジェクトが作成されたところ
+* 選ぶと自動的にビルドが始まり、必要なもののダウンロード等が始まったりする
 
-## ソースコードの追加
+## SampleTest を実行し、welcome メッセージを確認する
 
-* 画面左上の「src」を右クリックし、「New → Kotlin File/Class」を選択します。
-* ファイル名を「main.kt」として、OK を押します。
+* SampleTest クラスを見つけてみよう
+* 見つけたら、右クリックで選択し、`Run 'SampleTest'` を選択
+* welcome メッセージが出るかな
 
-![idea5.png](./assets/images/idea5.png)  
-main.kt を作るところ
+## Sample.kt を編集し、hello world を出す関数を定義する
 
-## ソースコードを書く 
-
-* 以下のようなコードを書いてみましょう。
+* Sample.kt を探し、以下のようなコードを書いてみましょう。
 
 ```kotlin
-fun main(args: Array<String>) {
-        println("Hello World!")
+fun hello() {
+    println("Hello World!")
 }
 ```
 
-## ビルドして実行する
+## `hello` を SampleTest クラスから呼び出す
 
-* main.kt をクリックして選択します。
-* メニューから「Run」→「Run」と選択します。  
-ファイルがコンパイルされ、実行が始まります。
+* SampleTest を編集し、先ほど Sample.kt に定義した `hello` を呼び出してみよう
+* うまく呼び出せただろうか
 
-![idea6.png](./assets/images/idea6.png)  
-プログラムを実行したところ
+## GitHub へ push
+
+* 変更したファイルを GitHub の master ブランチへ push しよう
+* 以下、git の使い方メモ
+
+```bash
+# 変更があるファイルを確認する
+$ git status
+
+# 変更内容の確認
+$ git diff
+
+# ファイルを staging する
+$ git add [staging したいファイルを選択]
+
+# commit する (コミットログには変更内容を簡単に書く)
+$ git commit -v # -v をつけると commit される内容の確認ができて便利よ！
+
+# master へ push する
+$ git push origin master
+```
+
