@@ -33,4 +33,11 @@ public void sendMessageToClient(
 fun sendMessageToClient(client: Client?, message: String?, mailer: Mailer) {
     // TODO: 実装する
 }
+
+// コンパイル通すための諸々
+class Client (val personalInfo: PersonalInfo?)
+class PersonalInfo (val email: String?)
+interface Mailer {
+    fun sendMessage(email: String, message: String)
+}
 ```
