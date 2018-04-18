@@ -377,6 +377,13 @@
 <pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sendMessageToClient</span><span class="hljs-params">(client: <span class="hljs-type">Client?, message: String?, mailer: Mailer</span>)</span> {</span>
     <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> &#x5B9F;&#x88C5;&#x3059;&#x308B;</span>
 }
+
+<span class="hljs-comment">// &#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB;&#x901A;&#x3059;&#x305F;&#x3081;&#x306E;&#x8AF8;&#x3005;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span> </span>(<span class="hljs-variable"><span class="hljs-keyword">val</span> personalInfo</span>: PersonalInfo?)
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PersonalInfo</span> </span>(<span class="hljs-variable"><span class="hljs-keyword">val</span> email</span>: String?)
+interface Mailer {
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sendMessage</span><span class="hljs-params">(email: <span class="hljs-type">String, message: String</span>)</span></span>
+}
 </code></pre>
 
                                 
@@ -417,7 +424,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Exercise (3)","level":"1.16","depth":1,"previous":{"title":"Exercise (2)","level":"1.15","depth":1,"path":"exercise2.md","ref":"./exercise2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","search","codeblock-filename"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"search":{},"codeblock-filename":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"exercise3.md","mtime":"2018-04-16T08:05:52.685Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-18T14:33:22.522Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Exercise (3)","level":"1.16","depth":1,"previous":{"title":"Exercise (2)","level":"1.15","depth":1,"path":"exercise2.md","ref":"./exercise2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","search","codeblock-filename"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"search":{},"codeblock-filename":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"exercise3.md","mtime":"2018-04-18T14:58:17.237Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-18T15:03:43.492Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
