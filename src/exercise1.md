@@ -66,6 +66,27 @@ fun main(args: Array<String>) {
   * どのようにしたら単体テストが書きやすくなるか？
   * 単体テストも書いてみよう！
 
+```kotlin
+// 単体テスト例
+// * fizzbuzz テスト用のクラスを新規に作って書いてもいい
+// * 既存のテストクラスにメソッドを追加してもよい
+
+package io.access.kotlintraining
+
+import org.junit.Test
+import kotlin.test.assertEquals
+
+class FizzBuzzTest {
+    @Test
+    fun testFizzBuzz() {
+        // TODO: テストを書く
+        // assertEquals 等の assert 系 function を使おう
+        // 以下の kotlin.test パッケージのリファレンスも参照のこと
+        // https://kotlinlang.org/api/latest/kotlin.test/kotlin.test/index.html
+    }
+}
+```
+
 ## うるう年
 
 入力された数字を西暦としたときに、うるう年かどうか判定する関数を書いてみよう！
