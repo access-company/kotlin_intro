@@ -421,7 +421,7 @@ printWith((<span class="hljs-number">1.</span><span class="hljs-number">.10</spa
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">powerGen</span><span class="hljs-params">(n: <span class="hljs-type">Int</span>)</span>: <span class="hljs-params">(<span class="hljs-keyword">Int</span>)</span> -&gt; <span class="hljs-keyword">Long</span> {</span>
     <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">power</span><span class="hljs-params">(num: <span class="hljs-type">Int</span>)</span>: <span class="hljs-keyword">Long</span> {</span>
         <span class="hljs-variable"><span class="hljs-keyword">var</span> result</span>: <span class="hljs-keyword">Long</span> = <span class="hljs-number">1</span>
-        <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> <span class="hljs-number">0.</span>.n) {
+        <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span>.n) {
             result *= num
         }
         <span class="hljs-keyword">return</span> result
@@ -431,11 +431,11 @@ printWith((<span class="hljs-number">1.</span><span class="hljs-number">.10</spa
 
 <span class="hljs-comment">// &#x5165;&#x529B;&#x3092; 5 &#x4E57;&#x3059;&#x308B;&#x95A2;&#x6570;&#x3092;&#x751F;&#x6210;</span>
 <span class="hljs-variable"><span class="hljs-keyword">val</span> fivePowerOf</span> = powerGen(<span class="hljs-number">5</span>)
-fivePowerOf(<span class="hljs-number">10</span>) <span class="hljs-comment">// 1000000</span>
+fivePowerOf(<span class="hljs-number">10</span>) <span class="hljs-comment">// 100000</span>
 
 <span class="hljs-comment">// &#x5165;&#x529B;&#x3092; 10 &#x4E57;&#x3059;&#x308B;&#x95A2;&#x6570;&#x3092;&#x751F;&#x6210;</span>
 <span class="hljs-variable"><span class="hljs-keyword">val</span> tenPowerOf</span> = powerGen(<span class="hljs-number">10</span>)
-tenPowerOf(<span class="hljs-number">2</span>)   <span class="hljs-comment">// 2048</span>
+tenPowerOf(<span class="hljs-number">2</span>)   <span class="hljs-comment">// 1024</span>
 </code></pre>
 <h2 id="&#x8272;&#x3005;&#x306A;&#x95A2;&#x6570;&#x306E;&#x4F5C;&#x308A;&#x65B9;">&#x8272;&#x3005;&#x306A;&#x95A2;&#x6570;&#x306E;&#x4F5C;&#x308A;&#x65B9;</h2>
 <ul>
@@ -656,7 +656,7 @@ println(square(<span class="hljs-number">3</span>)) <span class="hljs-comment">/
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ちょっと特殊な関数","level":"1.7","depth":1,"next":{"title":"クラス","level":"1.8","depth":1,"path":"class.md","ref":"./class.md","articles":[]},"previous":{"title":"関数","level":"1.6","depth":1,"path":"function.md","ref":"./function.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","search","codeblock-filename"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"search":{},"codeblock-filename":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"first_class_function.md","mtime":"2018-04-03T13:50:11.747Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-18T15:03:43.492Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ちょっと特殊な関数","level":"1.7","depth":1,"next":{"title":"クラス","level":"1.8","depth":1,"path":"class.md","ref":"./class.md","articles":[]},"previous":{"title":"関数","level":"1.6","depth":1,"path":"function.md","ref":"./function.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","search","codeblock-filename"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"search":{},"codeblock-filename":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"first_class_function.md","mtime":"2018-04-20T02:27:51.698Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-20T03:21:11.772Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

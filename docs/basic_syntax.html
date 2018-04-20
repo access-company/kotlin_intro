@@ -646,7 +646,7 @@ result <span class="hljs-comment">// 5 is in range</span>
 </code></pre>
 <ul>
 <li>when<ul>
-<li>switch &#x6587;&#x306E;&#x3088;&#x3046;&#x306A;&#x3082;&#x306E;</li>
+<li>switch &#x6587;&#x306E;&#x3088;&#x3046;&#x306A;&#x3082;&#x306E; (&#x306A;&#x304A; Kotlin &#x306B; switch &#x306F;&#x306A;&#x3044;)</li>
 <li>if &#x3068;&#x540C;&#x3058;&#x304F;&#x3001;else &#x3092;&#x4F34;&#x3046;&#x3053;&#x3068;&#x3067;&#x300C;&#x5F0F;&#x300D;&#x3068;&#x3057;&#x3066;&#x7528;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x53EF;&#x80FD;</li>
 </ul>
 </li>
@@ -659,21 +659,33 @@ result <span class="hljs-comment">// 5 is in range</span>
     <span class="hljs-keyword">else</span> -&gt; <span class="hljs-string">&quot;com&quot;</span>
 
 }
-
-<span class="hljs-comment">// &#x5B9A;&#x6570;&#x4EE5;&#x5916;&#x3082;&#x7528;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;</span>
+</code></pre>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x5B9A;&#x6570;&#x4EE5;&#x5916;&#x3082;&#x7528;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;</span>
 <span class="hljs-keyword">when</span> (n) {
     <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.5</span>              -&gt; <span class="hljs-string">&quot;access&quot;</span>
     isGreaterThanFive(n) -&gt; <span class="hljs-string">&quot;company&quot;</span>
     <span class="hljs-keyword">else</span>                 -&gt; <span class="hljs-string">&quot;com&quot;</span>
 }
-
-<span class="hljs-comment">// is &#x3092;&#x7528;&#x3044;&#x305F;&#x578B;&#x30C1;&#x30A7;&#x30C3;&#x30AF;</span>
-<span class="hljs-comment">// &#x5024;&#x306E;&#x4EE3;&#x5165;&#x3082;&#x30C8;&#x30E9;&#x30A4;</span>
+</code></pre>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// is &#x3092;&#x7528;&#x3044;&#x305F;&#x578B;&#x30C1;&#x30A7;&#x30C3;&#x30AF;</span>
+<span class="hljs-comment">// &#x5024;&#x306E;&#x4EE3;&#x5165;&#x3082;&#x3067;&#x304D;&#x308B;</span>
 <span class="hljs-variable"><span class="hljs-keyword">val</span> type</span> = <span class="hljs-keyword">when</span> (n) {
     <span class="hljs-keyword">is</span> <span class="hljs-keyword">Int</span>    -&gt; <span class="hljs-string">&quot;$n is Int&quot;</span>
     <span class="hljs-keyword">else</span>      -&gt; <span class="hljs-string">&quot;$n is not Int&quot;</span>
 }
 type <span class="hljs-comment">// 5 is Int</span>
+</code></pre>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// when &#x306E;&#x3042;&#x3068;&#x306B;&#x5024;&#x3092;&#x4F34;&#x308F;&#x306A;&#x3044;&#x66F8;&#x304D;&#x65B9;&#x3082;&#x3067;&#x304D;&#x308B;</span>
+
+<span class="hljs-variable"><span class="hljs-keyword">val</span> n</span> = <span class="hljs-number">5</span>
+<span class="hljs-keyword">when</span> {
+    <span class="hljs-comment">// &#x4EE5;&#x4E0B;&#x3001;&#x6761;&#x4EF6;&#x306B;&#x4E00;&#x81F4;&#x3057;&#x305F;&#x3082;&#x306E;&#x304C;&#x3069;&#x308C;&#x304B;&#x3072;&#x3068;&#x3064;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x308B;</span>
+    <span class="hljs-comment">// &#x8A55;&#x4FA1;&#x306F;&#x4E0A;&#x304B;&#x3089;&#x9806;&#x756A;&#x306B;&#x884C;&#x308F;&#x308C;&#x308B;</span>
+    n % <span class="hljs-number">15</span> == <span class="hljs-number">0</span> -&gt; println(<span class="hljs-string">&quot;fizzbuzz&quot;</span>)
+    n % <span class="hljs-number">5</span> == <span class="hljs-number">0</span> -&gt; println(<span class="hljs-string">&quot;buzz&quot;</span>)
+    n % <span class="hljs-number">3</span> == <span class="hljs-number">0</span> -&gt; println(<span class="hljs-string">&quot;fizz&quot;</span>)
+    <span class="hljs-keyword">else</span> -&gt; println(<span class="hljs-string">&quot;$n&quot;</span>)
+}
 </code></pre>
 <h2 id="&#x30EB;&#x30FC;&#x30D7;">&#x30EB;&#x30FC;&#x30D7;</h2>
 <ul>
@@ -799,7 +811,7 @@ outer@ <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</s
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"基本的な文法","level":"1.5","depth":1,"next":{"title":"関数","level":"1.6","depth":1,"path":"function.md","ref":"./function.md","articles":[]},"previous":{"title":"開発環境の構築","level":"1.4","depth":1,"path":"development_environment.md","ref":"./development_environment.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","search","codeblock-filename"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"search":{},"codeblock-filename":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"basic_syntax.md","mtime":"2018-04-16T08:05:52.682Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-18T15:03:43.492Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"基本的な文法","level":"1.5","depth":1,"next":{"title":"関数","level":"1.6","depth":1,"path":"function.md","ref":"./function.md","articles":[]},"previous":{"title":"開発環境の構築","level":"1.4","depth":1,"path":"development_environment.md","ref":"./development_environment.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","search","codeblock-filename"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"search":{},"codeblock-filename":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"basic_syntax.md","mtime":"2018-04-20T02:39:14.413Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-20T03:21:11.772Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
