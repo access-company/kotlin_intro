@@ -244,21 +244,39 @@ when (n) {
     else -> "com"
 
 }
+```
 
+```kotlin
 // 定数以外も用いることができる
 when (n) {
     in 1..5              -> "access"
     isGreaterThanFive(n) -> "company"
     else                 -> "com"
 }
+```
 
+```kotlin
 // is を用いた型チェック
-// 値の代入もトライ
+// 値の代入もできる
 val type = when (n) {
     is Int    -> "$n is Int"
     else      -> "$n is not Int"
 }
 type // 5 is Int
+```
+
+```kotlin
+// when のあとに値を伴わない書き方もできる
+
+val n = 5
+when {
+    // 以下、条件に一致したものがどれかひとつ実行される
+    // 評価は上から順番に行われる
+    n % 15 == 0 -> println("fizzbuzz")
+    n % 5 == 0 -> println("buzz")
+    n % 3 == 0 -> println("fizz")
+    else -> println("$n")
+}
 ```
 
 ## ループ
