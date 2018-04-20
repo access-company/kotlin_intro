@@ -1,4 +1,6 @@
 
+TMP_COMMIT_MSG_FILE=/tmp/commit_message.txt
+
 all: $(CURDIR)/src/node_modules
 	cd $(CURDIR)/src &&     \
 	gitbook build &&        \
@@ -9,6 +11,10 @@ $(CURDIR)/src/node_modules:
 	cd $(CURDIR)/src && \
 	gitbook install
 
-commit:
+commit: gen_commit_msg
 	git add $(CURDIR)/docs
-	git commit -m "update site"
+	git commit -F $(TMP_COMMIT_MSG_FILE)
+
+.PHONY:
+gen_commit_msg:
+	$(CURDIR)/commit_message.sh > $(TMP_COMMIT_MSG_FILE)
