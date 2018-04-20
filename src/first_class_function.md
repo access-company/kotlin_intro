@@ -82,7 +82,7 @@ printWith((1..10).toList(), ::myPrintFunc)
 fun powerGen(n: Int): (Int) -> Long {
     fun power(num: Int): Long {
         var result: Long = 1
-        for (i in 0..n) {
+        for (i in 1..n) {
             result *= num
         }
         return result
@@ -92,11 +92,11 @@ fun powerGen(n: Int): (Int) -> Long {
 
 // 入力を 5 乗する関数を生成
 val fivePowerOf = powerGen(5)
-fivePowerOf(10) // 1000000
+fivePowerOf(10) // 100000
 
 // 入力を 10 乗する関数を生成
 val tenPowerOf = powerGen(10)
-tenPowerOf(2)   // 2048
+tenPowerOf(2)   // 1024
 ```
 
 ## 色々な関数の作り方
