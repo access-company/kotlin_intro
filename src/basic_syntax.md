@@ -232,7 +232,7 @@ val fee = if (age > 12) {
 ```
 
 * when
-  * switch 文のようなもの
+  * switch 文のようなもの (なお Kotlin に switch はない)
   * if と同じく、else を伴うことで「式」として用いることが可能
 
 ```kotlin
