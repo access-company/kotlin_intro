@@ -30,7 +30,7 @@ fun main(args: Array<String>) {
     // 値を取り出すとき
     // as ◯◯ をつけてキャストする必要がある
     val i = intContainer.value as Int      // OK
-    val s = intContainer.value as String   // OK
+    val s = strContainer.value as String   // OK
 
     // ところがキャストは失敗する可能性がある
     val i2 = intContainer.value as String  // 実行時に ClassCastException の例外を吐かれる
@@ -49,7 +49,7 @@ class Container<T>(val value: T)
 
 fun main(args: Array<String>) {
     // 値を入れるとき
-    val intContainer: Contaienr<Int> = Container<Int>(10)
+    val intContainer: Container<Int> = Container<Int>(10)
 
     // 値を取り出すときにキャスト不要
     // キャスト不要なので ClassCastException も起こらない
