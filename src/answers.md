@@ -2,11 +2,11 @@
 
 各 exercise の解答例を記載します。  
 
-## exercise (1) より Hello World!
+## exercise (1) - Hello World!
 
 * 答えとなるソースコードは既に載せているので省略。
 
-## exercise (1) より Fizz Buzz
+## exercise (1) - Fizz Buzz
 
 * if を使った例
 
@@ -100,7 +100,7 @@ fun testFizzbuzz() {
 }
 ```
 
-## exercise (1) より うるう年
+## exercise (1) - うるう年
 
 * ちょっと複雑な条件式になりそうだが、うまく書けましたでしょうか
   * 一行で表すとこんな感じでしょうか。
@@ -138,7 +138,7 @@ fun testIsLeapYear() {
 }
 ```
 
-## exercise (1) より 累乗
+## exercise (1) - 累乗
 
 * ループさせればとりあえず解けると思います。
   * 普通に書くと `var` を使っていくコードになるかな、と。
@@ -163,7 +163,7 @@ fun power(a: Int, n: Int) : Long =
         else a * power(a, n - 1)
 ```
 
-## exercise (2) より 奇数か偶数か
+## exercise (2) - 奇数か偶数か
 
 * `Int` を拡張してみる練習
   * `this` を使う必要がある
@@ -173,7 +173,7 @@ fun Int.isOdd() = this % 2 == 0
 fun Int.isEven() = !this.isOdd()
 ```
 
-## exercise (2) より n 面のサイコロ
+## exercise (2) - n 面のサイコロ
 
 * クラスの基本的な使い方の練習
   * コンストラクタの利用、メソッドの定義、内部状態の変更、を行う必要がある
@@ -217,7 +217,7 @@ class DiceTest {
 }
 ```
 
-## exercise (2) より 呼び出した回数をカウントする
+## exercise (2) - 呼び出した回数をカウントする
 
 * カスタムセッターを生やしてみる問題
   * 見慣れない書き方かもしれないので目を慣らしておく
@@ -259,7 +259,7 @@ class MyCustomClassTest {
 }
 ```
 
-## exercise (2) より 世界のナベアツ
+## exercise (2) - 世界のナベアツ
 
 * 今までの色々組み合わせ
 
@@ -337,7 +337,7 @@ class Nabeatsu() {
 }
 ```
 
-## exercise (3) より ヌルとの戦い
+## exercise (3) - ヌルとの戦い
 
 * Null安全を駆使すると、Java のコードより簡単に安全なコードが書けるアピール
 
