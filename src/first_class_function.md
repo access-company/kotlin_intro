@@ -22,9 +22,6 @@
 fun square(i: Int) = i * i
 
 // 関数のオブジェクトを取得するときは "::" をつける
-// println してみる
-println(::square) // "fun square(kotlin.Int): kotlin.Int" みたいのが返される
-
 // 変数に代入できる
 val func = ::square
 
@@ -39,12 +36,9 @@ func(5)   // 25 (square を呼び出したのと同じ)
 ```kotlin
 // 入力を二乗する関数
 fun square(i: Int) = i * i
-println(::square) // "fun square(kotlin.Int): kotlin.Int"
 
-// 上の関数は「Int を引数にとって Int を返す関数」という型
-// (Int) -> Int と書く
-
-// 「Int を引数にとって Int を返す関数」という変数に代入
+// 上の関数は「Int を引数にとって Int を返す関数」という型なので、
+// 「Int を引数にとって Int を返す関数」型の変数に代入できる
 val func1: (Int) -> Int = ::square // 型があっていれば代入できる
 
 // 型があってないと代入できない
@@ -64,7 +58,7 @@ fun printWith(ints: List<Int>, printFunc: (Int) -> Unit) {
     }
 }
 
-// Int を引数にとる関数の例
+// 「Int を引数にとる関数」の例
 fun myPrintFunc(i: Int) {
     if (i % 3 == 0) {
         println("3の倍数です!")
@@ -73,7 +67,7 @@ fun myPrintFunc(i: Int) {
     }
 }
 
-// 関数を引数に指定して呼び出す
+// 関数オブジェクトを第二引数に指定して呼び出す
 printWith((1..10).toList(), ::myPrintFunc)
 ```
 
@@ -138,10 +132,15 @@ val square = { i: Int ->
     i * i
 }
 
-// 「Int を引数にとる」を型推論してもらい、
+// または「Int を引数にとる」を型推論してもらい、
 // 関数の実装における引数の型を省略
 val square: (Int) -> Int = { i ->
     i * i
+}
+
+// 両方省略するとiの型がわからないので、省略できない(コンパイルエラー)
+val square = { i ->
+    i * i   // コンパイルエラー
 }
 
 // 引数が一個の場合、「it」と書ける
@@ -155,7 +154,7 @@ val square: (Int) -> Int = {
 
 ```kotlin
 // 呼び出すたびに数字を1つ増やす関数を返す
-fun genCounterFunc(): ()->Int {
+fun genCounterFunc(): () -> Int {
     var count = 0
     // ラムダ式の形で関数オブジェクトを返す
     // 以下の関数オブジェクトは「count 変数をキャプチャ」している
@@ -173,7 +172,7 @@ fun main(args: Array<String>) {
     println(func1()) // 1
     println(func1()) // 2
 
-    // func1 を呼び出すたびに、「func2 内の」変数が変更される
+    // func2 を呼び出すたびに、「func2 内の」変数が変更される
     println(func2()) // 0
     println(func2()) // 1
     println(func2()) // 2
@@ -187,15 +186,25 @@ fun main(args: Array<String>) {
 ```kotlin
 // インライン展開なし
 
-fun log(debug: Boolean = true, message: () -> string) {
+fun log(debug: Boolean, message: () -> String) {
     if (debug) {
         println(message())
     }
 }
 
 fun main(args: Array<String>) {
-    log(/* true, */ { "log message" }) // 表示される
-    log(false,      { "log message" }) // 表示されない
+    log(true, { "log message" })    // 表示される
+    log(false, { "log message" })   // 表示されない
+}
+
+// もしくはlogの{}をカッコの外に出して、こう書ける
+fun main(args: Array<String>) {
+    log(true) {
+        "log message"   // 表示される
+    }
+    log(false) {
+        "log message"   // 表示されない
+    })
 }
 ```
 
@@ -206,6 +215,15 @@ inline fun log(debug: Boolean, message: () -> string) {
     if (debug) {
         println(message())
     }
+}
+
+fun main(args: Array<String>) {
+    log(true) {
+        "log message"   // 表示される
+    }
+    log(false) {
+        "log message"   // 表示されない
+    })
 }
 
 // 上述の main 関数は、以下と概ね同義になる。
@@ -236,7 +254,8 @@ fun containsDigit(str: String): Boolean {
     forEach(str) {
         if (it.isDigit()) {
             // forEach が inline 展開されるため、
-            // この return はラムダ式 (forEach の f 部分) じゃなくて containsDigit を抜ける。
+            // この return はラムダ式 (fun forEach の f(c) 部分) じゃなくて
+            // fun containsDigit を抜ける。
             return true 
         }
     }

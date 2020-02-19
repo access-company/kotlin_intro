@@ -15,8 +15,8 @@
 ## クラスの作り方と使い方
 
 * クラスって？
-  * 別講義「オブジェクト指向」にてまあまあ細かく紹介する予定
   * ざっくり言えば「変数と関数を集めてオブジェクトの雛形として使う」ためのもの
+  * ピンとこない方は👉オブジェクト指向
 
 * クラスを定義する
   * 以下、クラスにプロパティとメソッドを持たせる例。
@@ -154,7 +154,7 @@ class Person {
 
 ```kotlin
 // ヒトを表すクラス
-// コンストラクタの書き方はこう。
+// コンストラクタの書き方は従来はこう。
 class Person constructor(n: String, a: Int) {
     var name: String = n
     var age: Int = a
@@ -186,6 +186,8 @@ fun main(args: Array<String>) {
 // ちなみに、constructor の文字は省略が可能 (先述のものと意味は同じ)
 class Person (val name: String, val age: Int)
 ```
+
+データ保持だけのクラスは先頭にdataを付けるとよい（後で詳しく説明）
 
 ```kotlin
 // ヒトを表すクラス
