@@ -370,6 +370,11 @@
 <li>&#x6761;&#x4EF6;&#x5206;&#x5C90; (<code>if</code>&#x3001;<code>when</code>)</li>
 <li>&#x30EB;&#x30FC;&#x30D7; (<code>while</code>&#x3001;<code>for</code>)</li>
 </ul>
+<h2 id="try-kotlin">Try Kotlin</h2>
+<p>&#x30D6;&#x30E9;&#x30A6;&#x30B6;&#x4E0A;&#x3067;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x3092;&#x898B;&#x306A;&#x304C;&#x3089;&#x3001;&#x305D;&#x306E;&#x5834;&#x3067;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x66F8;&#x3044;&#x3066;&#x52D5;&#x4F5C;&#x78BA;&#x8A8D;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;&#x53C2;&#x8003;&#x307E;&#x3067;&#x3002;</p>
+<ul>
+<li><a href="https://try.kotlinlang.org/#/Examples/Hello,%20world!/Simplest%20version/Simplest%20version.kt" target="_blank">http://try.kotlinlang.org/</a></li>
+</ul>
 <h2 id="&#x3044;&#x308D;&#x3093;&#x306A;&#x578B;">&#x3044;&#x308D;&#x3093;&#x306A;&#x578B;</h2>
 <p>&#x4E3B;&#x306B;&#x4F7F;&#x308F;&#x308C;&#x308B;&#x578B;&#x3068;&#x3001;&#x5024;&#x306E;&#x4F8B;&#x3092;&#x4EE5;&#x4E0B;&#x306B;&#x8A18;&#x8F09;</p>
 <ul>
@@ -478,7 +483,10 @@
 <ul>
 <li><code>val</code><ul>
 <li><code>val</code> &#x3067;&#x5BA3;&#x8A00;&#x3057;&#x305F;&#x5909;&#x6570;&#x306F;&#x3001;&#x3042;&#x3068;&#x304B;&#x3089;&#x5024;&#x306E;&#x5909;&#x66F4; (&#x518D;&#x4EE3;&#x5165;) &#x304C;&#x3067;&#x304D;&#x306A;&#x3044;&#x3002;</li>
-<li>&#x5909;&#x6570;&#x3092;&#x6271;&#x3046;&#x969B;&#x306B;&#x306F;&#x3001;&#x53EF;&#x80FD;&#x306A;&#x9650;&#x308A;&#x306F; <code>val</code> &#x3092;&#x7528;&#x3044;&#x305F;&#x307B;&#x3046;&#x304C;&#x826F;&#x3044;&#x3002;</li>
+<li>&#x5909;&#x6570;&#x3092;&#x6271;&#x3046;&#x969B;&#x306B;&#x306F;&#x3001;&#x53EF;&#x80FD;&#x306A;&#x9650;&#x308A;&#x306F; <code>val</code> &#x3092;&#x7528;&#x3044;&#x305F;&#x307B;&#x3046;&#x304C;&#x826F;&#x3044;&#x3002;<ul>
+<li><code>var</code> &#x306F;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x8AAD;&#x307F;&#x306B;&#x304F;&#x3055;&#x3084;&#x30D0;&#x30B0;&#x3092;&#x62DB;&#x304D;&#x3084;&#x3059;&#x3044;&#x3002;</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -533,8 +541,11 @@ str.isEmpty()   <span class="hljs-comment">// false</span>
 <span class="hljs-variable"><span class="hljs-keyword">val</span> str2</span> = <span class="hljs-string">&quot;Hello &quot;</span> + str + <span class="hljs-string">&quot; !&quot;</span>  <span class="hljs-comment">// + &#x3092;&#x4F7F;&#x3063;&#x305F;&#x9023;&#x7D50;</span>
 str2 <span class="hljs-comment">// &quot;Hello access !&quot;</span>
 
-<span class="hljs-variable"><span class="hljs-keyword">val</span> str3</span> = <span class="hljs-string">&quot;Good night ${str}!&quot;</span>   <span class="hljs-comment">// String &#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x3092;&#x4F7F;&#x3063;&#x305F;&#x9023;&#x7D50;</span>
-str3 <span class="hljs-comment">// &quot;Good night access!</span>
+<span class="hljs-variable"><span class="hljs-keyword">val</span> str3</span> = <span class="hljs-string">&quot;Good evening ${str}!&quot;</span> <span class="hljs-comment">// String &#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x3092;&#x4F7F;&#x3063;&#x305F;&#x9023;&#x7D50;</span>
+str3 <span class="hljs-comment">// &quot;Good evening access!</span>
+
+<span class="hljs-variable"><span class="hljs-keyword">val</span> str4</span> = <span class="hljs-string">&quot;Good night $str!&quot;</span>     <span class="hljs-comment">// String &#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x3092;&#x4F7F;&#x3063;&#x305F;&#x9023;&#x7D50;</span>
+str4 <span class="hljs-comment">// &quot;Good night access!</span>
 </code></pre>
 <ul>
 <li>&#x914D;&#x5217;</li>
@@ -670,7 +681,6 @@ result <span class="hljs-comment">// 5 is in range</span>
     <span class="hljs-number">1</span>    -&gt; <span class="hljs-string">&quot;access&quot;</span>
     <span class="hljs-number">2</span>, <span class="hljs-number">3</span> -&gt; <span class="hljs-string">&quot;company&quot;</span>
     <span class="hljs-keyword">else</span> -&gt; <span class="hljs-string">&quot;com&quot;</span>
-
 }
 </code></pre>
 <pre><code class="lang-kotlin"><span class="hljs-comment">// &#x5B9A;&#x6570;&#x4EE5;&#x5916;&#x3082;&#x7528;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;</span>
@@ -824,7 +834,7 @@ outer@ <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</s
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"基本的な文法","level":"1.5","depth":1,"next":{"title":"関数","level":"1.6","depth":1,"path":"function.md","ref":"./function.md","articles":[]},"previous":{"title":"開発環境の構築","level":"1.4","depth":1,"path":"development_environment.md","ref":"./development_environment.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","search","codeblock-filename"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"search":{},"codeblock-filename":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"basic_syntax.md","mtime":"2018-04-20T02:39:14.413Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-24T13:23:19.274Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"基本的な文法","level":"1.5","depth":1,"next":{"title":"関数","level":"1.6","depth":1,"path":"function.md","ref":"./function.md","articles":[]},"previous":{"title":"開発環境の構築","level":"1.4","depth":1,"path":"development_environment.md","ref":"./development_environment.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","search","codeblock-filename"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"search":{},"codeblock-filename":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"basic_syntax.md","mtime":"2020-02-19T14:44:04.596Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-20T00:22:26.590Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
