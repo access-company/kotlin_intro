@@ -193,6 +193,8 @@ s!!.toUpperCase() // コンパイルOK、だが実行時に例外 (NullPointerEx
 
 * エルビス演算子
   * null のときに返す値を指定できる
+  * ちなみに三項演算子（`a > 0 ? "1以上" : "0以下"`）とは別物
+    * 三項の方はKotlinでは使えない
 
 ```kotlin
 val s: String? = null

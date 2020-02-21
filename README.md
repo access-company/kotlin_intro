@@ -22,3 +22,13 @@ $ make
 * ドキュメントが `docs` ディレクトリに生成されます。  
 (参照する場合は、docs ディレクトリを何らかの形でホスティングしてください)
 
+### トラブルシューティング
+
+```
+Error: Couldn't locate plugins "codeblock-filename", Run 'gitbook install' to install plugins from registry.
+```
+
+と出力された場合、npm経由でプラグインをインストールしてください。
+```
+npm i gitbook-plugin-codeblock-filename
+```

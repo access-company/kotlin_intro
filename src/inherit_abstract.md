@@ -14,8 +14,8 @@
 ## 継承
 
 * 継承とは
-  * 別講義「オブジェクト指向」にてまあまあ細かく紹介する予定
   * ざっくり言えば「あるクラスの性質を別のクラスに引き継ぐ」ための仕組み
+  * ピンとこない方は👉オブジェクト指向
 
 * クラスを継承
 
@@ -89,7 +89,7 @@ class Man(name: String) : Person(name) {
     // nameLength を Man 用の振る舞いにオーバーライド
     override val nameLength: Int
         get() {
-            print("$name (man) ") // 名前を woman を表示するようにした
+            print("$name (man) ") // 名前を man を表示するようにした
             return name.length
         }
     // bornFrom を Man 用の振る舞いにオーバーライド

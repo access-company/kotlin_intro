@@ -12,6 +12,12 @@ Kotlin の基本的な文法について記載します。
 * 条件分岐 (`if`、`when`)
 * ループ (`while`、`for`)
 
+## Try Kotlin
+
+ブラウザ上でサンプルを見ながら、その場でコードを書いて動作確認ができます。参考まで。
+
+* [http://try.kotlinlang.org/](https://try.kotlinlang.org/#/Examples/Hello,%20world!/Simplest%20version/Simplest%20version.kt)
+
 ## いろんな型
 
 主に使われる型と、値の例を以下に記載
@@ -48,6 +54,7 @@ Kotlin の基本的な文法について記載します。
 * `val`
   * `val` で宣言した変数は、あとから値の変更 (再代入) ができない。
   * 変数を扱う際には、可能な限りは `val` を用いたほうが良い。
+    * `var` はコードの読みにくさやバグを招きやすい。
 
 ```kotlin
 // val 変数名: 型 = 式
@@ -102,8 +109,11 @@ str.isEmpty()   // false
 val str2 = "Hello " + str + " !"  // + を使った連結
 str2 // "Hello access !"
 
-val str3 = "Good night ${str}!"   // String テンプレートを使った連結
-str3 // "Good night access!
+val str3 = "Good evening ${str}!" // String テンプレートを使った連結
+str3 // "Good evening access!
+
+val str4 = "Good night $str!"     // String テンプレートを使った連結
+str4 // "Good night access!
 ```
 
 * 配列
@@ -242,7 +252,6 @@ when (n) {
     1    -> "access"
     2, 3 -> "company"
     else -> "com"
-
 }
 ```
 
