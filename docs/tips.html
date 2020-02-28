@@ -364,6 +364,7 @@
 <h2 id="&#x30B4;&#x30FC;&#x30EB;">&#x30B4;&#x30FC;&#x30EB;</h2>
 <p>&#x4EE5;&#x4E0B;&#x306B;&#x3064;&#x3044;&#x3066;&#x7406;&#x89E3;&#x3057;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;</p>
 <ul>
+<li>Object&#x3068;Companion Object</li>
 <li>&#x6F14;&#x7B97;&#x5B50;&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30ED;&#x30FC;&#x30C9;</li>
 <li>&#x7B49;&#x4FA1;&#x3001;&#x540C;&#x5024; (<code>===</code> &#x3068; <code>==</code>)</li>
 <li>&#x5206;&#x89E3;&#x5BA3;&#x8A00;</li>
@@ -377,6 +378,84 @@
 <li>by lazy</li>
 </ul>
 <p>&#x203B;&#x4E00;&#x90E8;&#x306F;&#x6642;&#x9593;&#x306E;&#x90FD;&#x5408;&#x4E0A;&#x3001;&#x8A18;&#x8F09;&#x7701;&#x7565;</p>
+<h2 id="object&#x3068;companion-object">Object&#x3068;Companion Object</h2>
+<h3 id="object">Object</h3>
+<p>Object&#x306F;&#x4E00;&#x8A00;&#x3067;&#x8A00;&#x3048;&#x3070;&#x300C;&#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;&#xFF08;Singleton&#xFF09;&#x306A;&#x30AF;&#x30E9;&#x30B9;&#x300D;&#x3060;&#x304C;&#x3001;&#x3053;&#x3053;&#x3067;&#x306F;&#x4F7F;&#x7528;&#x4F8B;&#x3092;&#x898B;&#x305B;&#x306A;&#x304C;&#x3089;&#x8AAC;&#x660E;&#x3059;&#x308B;&#x3002;</p>
+<p><strong>&#x3069;&#x3053;&#x304B;&#x3089;&#x3067;&#x3082;&#x547C;&#x3073;&#x51FA;&#x305B;&#x308B;&#x30ED;&#x30B0;&#x51FA;&#x529B;&#x95A2;&#x6570;</strong>&#x304C;&#x6B32;&#x3057;&#x3044;&#x3068;&#x3057;&#x3088;&#x3046;&#x3002;</p>
+<p>&#x4ECA;&#x307E;&#x3067;&#x7FD2;&#x3063;&#x305F;&#x5185;&#x5BB9;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x66F8;&#x304F;&#x3068;&#x3053;&#x3046;&#x306A;&#x308B;&#x3002;</p>
+<pre><code>class Logger {
+    val TAG = &quot;MyApp&quot;
+    fun debug(text: String) {
+        println(&quot;$TAG: $text&quot;)
+    }
+}
+
+fun main() {
+    println(&quot;Logging to ${Logger().TAG}.&quot;)
+    Logger().debug(&quot;print&quot;)
+}
+</code></pre><p>&#x51FA;&#x529B;&#x7D50;&#x679C;</p>
+<pre><code>Logging to MyApp.
+MyApp: print
+</code></pre><p>&#x305F;&#x3060;&#x3057;&#x3001;&#x3053;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x306B;&#x306F;&#x554F;&#x984C;&#x304C;&#x3042;&#x3063;&#x3066;&#x3001;<code>Logger().</code>&#x3067;&#x6BCE;&#x56DE;&#x7570;&#x306A;&#x308B;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#xFF08;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x5B9F;&#x4F53;&#xFF09;&#x304C;&#x4F5C;&#x3089;&#x308C;&#x308B;&#x3002;&#x3053;&#x306E;&#x4F8B;&#x3060;&#x3068;<code>main</code>&#x306E;&#x4E2D;&#x3067;2&#x56DE;&#x4F5C;&#x3089;&#x308C;&#x3066;&#x3044;&#x308B;&#x3002;</p>
+<p>&#x3082;&#x3057;&#x3001;<code>debug</code>&#x304C;&#x3042;&#x3061;&#x3053;&#x3061;&#x304B;&#x3089;&#x5927;&#x91CF;&#x306B;&#x547C;&#x3070;&#x308C;&#x305F;&#x3089;&#x2026;&#x305F;&#x3061;&#x307E;&#x3061;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x304C;&#x4E71;&#x7ACB;&#x3057;&#x3066;&#x3001;&#x30E1;&#x30E2;&#x30EA;&#x3092;&#x5727;&#x8FEB;&#x3057;&#x3001;&#x30A2;&#x30D7;&#x30EA;&#x306E;&#x52D5;&#x4F5C;&#x304C;&#x91CD;&#x304F;&#x306A;&#x308B;&#x3060;&#x308D;&#x3046;&#x3002;</p>
+<p>&#x305D;&#x308C;&#x3092;&#x907F;&#x3051;&#x308B;&#x305F;&#x3081;&#x3001;&#x30AF;&#x30E9;&#x30B9;&#x3092;<code>object</code>&#x8B58;&#x5225;&#x5B50;&#x3067;&#x5B9A;&#x7FA9;&#x3059;&#x308B;&#x3002;</p>
+<pre><code>object Logger {
+    val TAG = &quot;MyApp&quot;
+    fun debug(text: String) {
+        println(&quot;$TAG: $text&quot;)
+    }
+}
+
+fun main() {
+    println(&quot;Logging to ${Logger.TAG}.&quot;)
+    Logger.debug(&quot;print&quot;)
+}
+</code></pre><p>&#x3053;&#x3046;&#x3059;&#x308B;&#x3068;&#x3001;&#x30AF;&#x30E9;&#x30B9;<code>Logger</code>&#x3068;&#x5909;&#x6570;<code>TAG</code>&#x306F;<strong>&#x4F55;&#x56DE;&#x547C;&#x3070;&#x308C;&#x3066;&#x3082;&#x5E38;&#x306B;&#x540C;&#x3058;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;</strong>&#x3092;&#x8FD4;&#x3059;&#x3002;&#x4F55;&#x5EA6;&#x547C;&#x3070;&#x308C;&#x3066;&#x3082;&#x3001;&#x30E1;&#x30E2;&#x30EA;&#x5727;&#x8FEB;&#x91CF;&#x306F;&#x5909;&#x308F;&#x3089;&#x306A;&#x3044;&#x3002;&#x3053;&#x308C;&#x304C;&#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;&#x3002;</p>
+<p>&#x547C;&#x3073;&#x51FA;&#x3057;&#x65B9;&#x306F;<code>Logger.</code>&#x306B;&#x5909;&#x308F;&#x308B;&#x3002;</p>
+<h3 id="companion-object">Companion Object</h3>
+<p>&#x3055;&#x3066;&#x3001;&#x4E0A;&#x8A18;&#x306E;&#x4F8B;&#x3060;&#x3068;&#x3001;<code>TAG</code>&#x3082;<code>debug</code>&#x3082;&#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;&#x3068;&#x3057;&#x3066;&#x751F;&#x6210;&#x3055;&#x308C;&#x308B;&#x304C;&#x3001;&#x6642;&#x306B;&#x306F;<code>TAG</code>&#x3060;&#x3051;&#x306B;&#x9069;&#x7528;&#x3057;&#x305F;&#x3044;&#x5834;&#x5408;&#x3082;&#x3042;&#x308B;&#x3002;</p>
+<p>&#x305D;&#x306E;&#x5834;&#x5408;&#x3001;<code>companion object</code>&#x8B58;&#x5225;&#x5B50;&#x3092;&#x4F7F;&#x3046;&#x3068;&#x3001;<code>TAG</code>&#x3092;<code>Logger</code>&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x5C5E;&#x3059;&#x308B;&#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;&#x5909;&#x6570;&#x3001;&#x3064;&#x307E;&#x308A;&#x300C;&#x5B9A;&#x6570;&#x300D;&#x306B;&#x3067;&#x304D;&#x308B;&#x3002;</p>
+<pre><code>class Logger(outputFilePath: String) {
+
+    companion object {
+        val TAG = &quot;MyApp&quot;
+    }
+
+    fun debug(text: String) {
+        // TODO &#x5B9F;&#x969B;&#x306F;outputFilePath&#x306B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x51FA;&#x529B;&#x3059;&#x308B;&#x3088;&#x3046;&#x4F5C;&#x308A;&#x66FF;&#x3048;&#x308B;
+        println(&quot;$TAG: $text&quot;)
+    }
+}
+
+fun main() {
+    println(&quot;Logging to ${Logger.TAG}.&quot;)
+    Logger(&quot;/log.txt&quot;).debug(&quot;print&quot;)
+}
+</code></pre><p><code>main</code>&#x3092;&#x898B;&#x308B;&#x3068;&#x3001;<code>Logger</code>&#x306F;&#x666E;&#x901A;&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x3060;&#x304C;&#x3001;<code>TAG</code>&#x306F;&#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;&#x3067;&#x3042;&#x308B;&#x3053;&#x3068;&#x304C;&#x308F;&#x304B;&#x308B;&#x3002;</p>
+<p>&#x5B9F;&#x969B;&#x3001;Key/Value&#x3092;&#x6271;&#x3044;&#x3001;Key&#x3060;&#x3051;&#x304C;&#x5B9A;&#x6570;&#x3001;&#x3068;&#x3044;&#x3046;&#x5B9F;&#x88C5;&#x304C;&#x3088;&#x304F;&#x3042;&#x308B;&#x3002;</p>
+<p>&#x307E;&#x305F;&#x3001;Android&#x3067;&#x306F;&#x753B;&#x9762;&#x304B;&#x3089;&#x4ED6;&#x753B;&#x9762;&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x6E21;&#x3057;&#x3067;&#x30EA;&#x30AF;&#x30A8;&#x30B9;&#x30C8;&#x30B3;&#x30FC;&#x30C9;&#x3084;Key/Value&#x30DA;&#x30A2;&#x306E;Bundle&#x3092;&#x4F7F;&#x3046;&#x306E;&#x3067;&#x3001;&#x305D;&#x3046;&#x3044;&#x3046;&#x3068;&#x304D;Companion Object&#x306F;&#x3088;&#x304F;&#x4F7F;&#x308F;&#x308C;&#x308B;&#x3002;</p>
+<h3 id="&#x4F59;&#x8AC7;">&#x4F59;&#x8AC7;</h3>
+<p>&#x52D8;&#x306E;&#x3044;&#x3044;&#x4EBA;&#x306A;&#x3089;&#x6C17;&#x3065;&#x3044;&#x305F;&#x3067;&#x3042;&#x308D;&#x3046;&#x304C;&#x3001;&#x3053;&#x306E;&#x4F8B;&#x306E;&#x5834;&#x5408;&#x3001;&#x5B9F;&#x306F;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x4F7F;&#x308F;&#x305A;<code>debug()</code>&#x3092;&#x5B9F;&#x88C5;&#x3059;&#x308B;&#x65B9;&#x6CD5;&#x3082;&#x3042;&#x308B;&#x3002;</p>
+<pre><code>val TAG = &quot;MyApp&quot;
+
+fun debug(text: String) {
+    println(&quot;$TAG: $text&quot;)
+}
+
+fun main() {
+    debug(&quot;print&quot;)
+}
+</code></pre><p>&#x3053;&#x306E;&#x3088;&#x3046;&#x306B;&#x30C8;&#x30C3;&#x30D7;&#x30EC;&#x30D9;&#x30EB;&#x95A2;&#x6570;&#x3092;&#x4F7F;&#x3046;&#x306E;&#x304C;&#x4E00;&#x756A;&#x30B7;&#x30F3;&#x30D7;&#x30EB;&#x3067;&#x3042;&#x308B;&#x3002;</p>
+<p>&#x4ECA;&#x307E;&#x3067;&#x306E;&#x4F8B;&#x306F;&#x3001;&#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;&#x3092;&#x308F;&#x304B;&#x308A;&#x3084;&#x3059;&#x304F;&#x8AAC;&#x660E;&#x3059;&#x308B;&#x305F;&#x3081;&#x3067;&#x3042;&#x308B;&#x3002;</p>
+<p>&#x307E;&#x305F;&#x3001;Java&#x3092;&#x77E5;&#x3063;&#x3066;&#x308B;&#x4EBA;&#x306A;&#x3089;<code>static</code>&#x304C;&#x3042;&#x308B;&#x3058;&#x3083;&#x306A;&#x3044;&#x304B;&#x3068;&#x601D;&#x3046;&#x304B;&#x3082;&#x3057;&#x308C;&#x306A;&#x3044;&#x304C;&#x3001;<code>static</code>&#x306F;Kotlin&#x3067;&#x306F;&#x4F7F;&#x3048;&#x306A;&#x3044;&#x3002;</p>
+<p>&#x9759;&#x7684;&#x306A;&#x3082;&#x306E;&#x306F;&#x975E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3060;&#x304B;&#x3089;&#x3001;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x6307;&#x5411;&#x306E;&#x8A00;&#x8A9E;&#x306B;&#x304A;&#x3044;&#x3066;&#x4E0D;&#x8981;&#x3060;&#x308D;&#x3046;&#x3068;&#x3044;&#x3046;&#x8A00;&#x8A9E;&#x8A2D;&#x8A08;&#x601D;&#x60F3;&#x306E;&#x305F;&#x3081;&#x3002;</p>
+<h3 id="&#x307E;&#x3068;&#x3081;">&#x307E;&#x3068;&#x3081;</h3>
+<ul>
+<li>Object&#x306F;&#x3001;&#x300C;&#x30AF;&#x30E9;&#x30B9;/&#x5909;&#x6570;&#x3068;&#x3057;&#x3066;&#x6BCE;&#x56DE;&#x540C;&#x3058;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3092;&#x8FD4;&#x3057;&#x305F;&#x3044;&#x5834;&#x5408;&#x300D;&#x306B;&#x4F7F;&#x3046;</li>
+<li>Companion Object&#x306F;&#x3001;&#x300C;&#x6BCE;&#x56DE;&#x540C;&#x3058;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3092;&#x8FD4;&#x3059;&#x5909;&#x6570;&#xFF08;&#x5B9A;&#x6570;&#xFF09;&#x3092;&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x6301;&#x305F;&#x305B;&#x305F;&#x3044;&#x5834;&#x5408;&#x300D;&#x306B;&#x4F7F;&#x3046;</li>
+</ul>
+<p>&#x3068;&#x899A;&#x3048;&#x3066;&#x304A;&#x3053;&#x3046;&#x3002;</p>
 <h2 id="&#x518D;&#x5E30;&#x547C;&#x3073;&#x51FA;&#x3057;">&#x518D;&#x5E30;&#x547C;&#x3073;&#x51FA;&#x3057;</h2>
 <ul>
 <li>&#x666E;&#x901A;&#x306E;&#x518D;&#x5E30;&#x547C;&#x3073;&#x51FA;&#x3057;</li>
@@ -523,7 +602,7 @@ println(s) <span class="hljs-comment">//=&gt; ACCESS</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"その他豆知識","level":"1.13","depth":1,"next":{"title":"Exercise (1)","level":"1.14","depth":1,"path":"exercise1.md","ref":"./exercise1.md","articles":[]},"previous":{"title":"Null安全","level":"1.12","depth":1,"path":"null_safe.md","ref":"./null_safe.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","search","codeblock-filename"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"search":{},"codeblock-filename":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"tips.md","mtime":"2020-02-19T14:44:04.605Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-20T00:22:26.590Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"その他豆知識","level":"1.13","depth":1,"next":{"title":"Exercise (1)","level":"1.14","depth":1,"path":"exercise1.md","ref":"./exercise1.md","articles":[]},"previous":{"title":"Null安全","level":"1.12","depth":1,"path":"null_safe.md","ref":"./null_safe.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","search","codeblock-filename"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"search":{},"codeblock-filename":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"tips.md","mtime":"2020-02-28T02:23:26.736Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-28T02:23:29.041Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
