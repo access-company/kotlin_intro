@@ -6,6 +6,7 @@
 
 以下について理解していること
 
+* ObjectとCompanion Object
 * 演算子オーバーロード
 * 等価、同値 (`===` と `==`)
 * 分解宣言
@@ -19,6 +20,122 @@
 * by lazy
 
 ※一部は時間の都合上、記載省略
+
+## ObjectとCompanion Object
+
+### Object
+
+Objectは一言で言えば「シングルトン（Singleton）なクラス」だが、ここでは使用例を見せながら説明する。
+
+**どこからでも呼び出せるログ出力関数**が欲しいとしよう。
+
+今まで習った内容を使って書くとこうなる。
+
+```
+class Logger {
+    val TAG = "MyApp"
+    fun debug(text: String) {
+        println("$TAG: $text")
+    }
+}
+
+fun main() {
+    println("Logging to ${Logger().TAG}.")
+    Logger().debug("print")
+}
+```
+
+出力結果
+```
+Logging to MyApp.
+MyApp: print
+```
+
+ただし、このコードには問題があって、`Logger().`で毎回異なるインスタンス（オブジェクトの実体）が作られる。この例だと`main`の中で2回作られている。
+
+もし、`debug`があちこちから大量に呼ばれたら…たちまちインスタンスが乱立して、メモリを圧迫し、アプリの動作が重くなるだろう。
+
+それを避けるため、クラスを`object`識別子で定義する。
+
+```
+object Logger {
+    val TAG = "MyApp"
+    fun debug(text: String) {
+        println("$TAG: $text")
+    }
+}
+
+fun main() {
+    println("Logging to ${Logger.TAG}.")
+    Logger.debug("print")
+}
+```
+
+こうすると、クラス`Logger`と変数`TAG`は**何回呼ばれても常に同じインスタンス**を返す。何度呼ばれても、メモリ圧迫量は変わらない。これがシングルトン。
+
+呼び出し方は`Logger.`に変わる。
+
+### Companion Object
+
+さて、上記の例だと、`TAG`も`debug`もシングルトンとして生成されるが、時には`TAG`だけに適用したい場合もある。
+
+その場合、`companion object`識別子を使うと、`TAG`を`Logger`クラスに属するシングルトン変数、つまり「定数」にできる。
+
+```
+class Logger(outputFilePath: String) {
+    
+    companion object {
+    	val TAG = "MyApp"
+    }
+    
+    fun debug(text: String) {
+        // TODO 実際はoutputFilePathにファイル出力するよう作り替える
+        println("$TAG: $text")
+    }
+}
+
+fun main() {
+    println("Logging to ${Logger.TAG}.")
+    Logger("/log.txt").debug("print")
+}
+```
+
+`main`を見ると、`Logger`は普通のクラスだが、`TAG`はシングルトンであることがわかる。
+
+実際、Key/Valueを扱い、Keyだけが定数、という実装がよくある。
+
+また、Androidでは画面から他画面のデータ渡しでリクエストコードやKey/ValueペアのBundleを使うので、そういうときCompanion Objectはよく使われる。
+
+### 余談
+
+勘のいい人なら気づいたであろうが、この例の場合、実はクラスを使わず`debug()`を実装する方法もある。
+
+```
+val TAG = "MyApp"
+
+fun debug(text: String) {
+    println("$TAG: $text")
+}
+
+fun main() {
+    debug("print")
+}
+```
+
+このようにトップレベル関数を使うのが一番シンプルである。
+
+今までの例は、シングルトンをわかりやすく説明するためである。
+
+また、Javaを知ってる人なら`static`があるじゃないかと思うかもしれないが、`static`はKotlinでは使えない。
+
+静的なものは非オブジェクトだから、オブジェクト指向の言語において不要だろうという言語設計思想のため。
+
+### まとめ
+
+* Objectは、「クラス/変数として毎回同じインスタンスを返したい場合」に使う
+* Companion Objectは、「毎回同じインスタンスを返す変数（定数）をクラスに持たせたい場合」に使う
+
+と覚えておこう。
 
 ## 再帰呼び出し
 
