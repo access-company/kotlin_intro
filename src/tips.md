@@ -137,6 +137,55 @@ fun main() {
 
 と覚えておこう。
 
+## 列挙型
+
+定数を列挙する場合に便利な書き方。
+
+```
+enum class Kanto{
+    IBARAGI,
+    TOCHIGI,
+    GUNMA,
+    SAITAMA,
+    CHIBA,
+    TOKYO,
+    KANAGAWA
+}
+
+fun main() {
+    println("Kanto Prefecture List: ")
+    for(prefecture in Kanto.values()){
+        println(prefecture)
+    }
+    println("I'm living in ${Kanto.TOKYO}.")
+}
+```
+
+## 例外
+
+異常が起こった場合、関数は例外をスローできる。関数の呼び出し元では、その例外をキャッチして処理できる。
+
+```
+fun validation(percentage :Int) {
+    if (percentage !in 0..100) {
+        throw IllegalArgumentException("A percentage must be between 0 and 100 [parameter: $percentage]")
+    }
+}
+
+fun main() {
+    validation(101)
+}
+```
+
+値が0〜100の範囲に収まっていない場合は、IllegalArgumentExceptionをスローする。
+
+```
+Exception in thread "main" java.lang.IllegalArgumentException: A percentage must be between 0 and 100 [parameter: 101]
+ at FileKt.validation (File.kt:3) 
+ at FileKt.main (File.kt:8) 
+ at FileKt.main (File.kt:-1) 
+```
+
 ## 再帰呼び出し
 
 * 普通の再帰呼び出し

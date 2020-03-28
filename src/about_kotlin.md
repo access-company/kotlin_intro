@@ -5,8 +5,8 @@
 * JetBrains 社が中心となって開発を行っているプログラミング言語
 * 2011年夏に発表。現在は OSS ([github のリポジトリ](https://github.com/JetBrains/kotlin)) として開発されている
   * ライセンスは Apache 2.0
-* 2020年2月現在、Kotlin はバージョン 1.3
-  * [1.3.61](https://github.com/JetBrains/kotlin/releases/tag/v1.3.61) が最新、[1.3.70 EAP](https://discuss.kotlinlang.org/t/kotlin-1-3-70-early-access-preview/15876) あたりが出ている
+* 2020年4月現在、Kotlin はバージョン 1.3
+  * [1.3.70](https://github.com/JetBrains/kotlin/releases/tag/v1.3.70) が最新、[1.3.72 EAP](https://github.com/JetBrains/kotlin/releases/tag/build-1.3.72-eap-455) あたりが出ている
 
 ## どんな言語か
 
