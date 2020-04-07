@@ -291,7 +291,7 @@ val String.size: Int
     get() = this.length
 
 fun main(args: Array<String>) {
-    "hogehoge".size() // 8
+    "hogehoge".size // 8
 }
 ```
 
