@@ -63,7 +63,7 @@ fun myPrintFunc(i: Int) {
     if (i % 3 == 0) {
         println("3の倍数です!")
     } else {
-        pritnln(i)
+        println(i)
     }
 }
 
@@ -103,7 +103,7 @@ tenPowerOf(2)   // 1024
 
 // 関数定義
 fun square(n: Int): Int {
-    n * n
+    return n * n
 }
 
 // 定義された関数の名前に :: をつけて関数オブジェクトを得る
@@ -119,30 +119,35 @@ val square: (Int) -> Int = { i: Int ->
 }
 
 println(square)    // (kotlin.Int) -> kotlin.Int
-println(::square)  // val Line_2.square: (kotlin.Int) -> kotlin.Int
 println(square(3)) // 9
 ```
 
-```kotlin
-// 型推論すると短く書ける
+* 型推論すると短く書ける
 
+```kotlin
 // 「Int を引数にとって Int を返す」を型推論してもらい、
 // 関数の型の記載を省略
 val square = { i: Int ->
     i * i
 }
+```
 
+```kotlin
 // または「Int を引数にとる」を型推論してもらい、
 // 関数の実装における引数の型を省略
 val square: (Int) -> Int = { i ->
     i * i
 }
+```
 
+```kotlin
 // 両方省略するとiの型がわからないので、省略できない(コンパイルエラー)
 val square = { i ->
     i * i   // コンパイルエラー
 }
+```
 
+```kotlin
 // 引数が一個の場合、「it」と書ける
 val square: (Int) -> Int = {
     it * it
@@ -196,22 +201,31 @@ fun main(args: Array<String>) {
     log(true, { "log message" })    // 表示される
     log(false, { "log message" })   // 表示されない
 }
+```
 
+```kotlin
 // もしくはlogの{}をカッコの外に出して、こう書ける
+        
+fun log(debug: Boolean, message: () -> String) {
+    if (debug) {
+       println(message())
+    }
+}
+
 fun main(args: Array<String>) {
     log(true) {
         "log message"   // 表示される
     }
     log(false) {
         "log message"   // 表示されない
-    })
+    }
 }
 ```
 
 ```kotlin
 // インライン展開する
 
-inline fun log(debug: Boolean, message: () -> string) {
+inline fun log(debug: Boolean, message: () -> String) {
     if (debug) {
         println(message())
     }
@@ -225,9 +239,12 @@ fun main(args: Array<String>) {
         "log message"   // 表示されない
     })
 }
+```
 
-// 上述の main 関数は、以下と概ね同義になる。
-// debug が true でないときは、関数呼び出しまで到達しないコードになる。
+```kotlin
+// 上述の main 関数は、以下と概ね同義になる
+// debug が true でないときは、関数呼び出しまで到達しないコードになる
+
 fun main(args: Array<String>) {
     if (true) {
         println("log message") // 表示される
@@ -270,7 +287,7 @@ fun containsDigit(str: String): Boolean {
 // 入力した文字列 (str) に数字が含まれているかどうかを返す関数
 fun containsDigit(str: String): Boolean {
     var result = false
-    forEach(str) @loop {
+    forEach(str) loop@ {
         if (it.isDigit()) {
             result = true 
             return@loop // forEach を抜ける
@@ -290,13 +307,17 @@ fun containsDigit(str: String): Boolean {
 val square: (Int) -> Int = { i: Int ->
     i * i
 }
+```
 
+```kotlin
 // 無名関数
 // 上記のラムダ式にあたる部分に関数を書くイメージ
 val square: (Int) -> Int = fun(i: Int): Int {
     return i * i // ラムダ式と違って要 return 文
 }
+```
 
+```kotlin
 // 無名関数 省略版
 val square: (Int) -> Int = fun(i : Int) = i * i
 ```

@@ -13,6 +13,15 @@ fun main(args: Array<String>) {
 }
 ```
 
+* もしAndroid StudioでKotlinTrainingプロジェクトを使っている場合は、SampleTest.ktに以下のように書こう！
+
+```kotlin
+@Test
+fun testExercise() {
+    println("Hello world!")
+}
+```
+
 ## Fizz Buzz
 
 基本的な文法、関数の使い方を抑えたところで、以下の練習をやってみよう！
