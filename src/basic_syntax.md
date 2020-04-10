@@ -102,9 +102,9 @@ name = 12           // name の型は String なのでコンパイルエラー�
 ```kotlin
 val str = "access"
 
-str.length      // 6
-str.captalize() // "Access"
-str.isEmpty()   // false
+str.length       // 6
+str.capitalize() // "Access"
+str.isEmpty()    // false
 
 // 文字列の連結
 
@@ -140,7 +140,7 @@ ints.size // 10
 
 // arrayOf で書くと型推論される
 // 以下は String の配列ということにされる
-val array = arrayOf{"access", "company", "com"}
+val array = arrayOf("access", "company", "com")
 array[0] // "access"
 array[1] // "company"
 array[2] // "com"
@@ -234,6 +234,7 @@ val result = if (n in r) {
 result // 5 is in range
 
 // else if で次々つなげることも可能
+val age = 7
 val fee = if (age > 12) {
     "大人料金"
 } else if (age >= 6) {
@@ -258,17 +259,9 @@ when (n) {
 ```
 
 ```kotlin
-// 定数以外も用いることができる
-when (n) {
-    in 1..5              -> "access"
-    isGreaterThanFive(n) -> "company"
-    else                 -> "com"
-}
-```
-
-```kotlin
 // is を用いた型チェック
 // 値の代入もできる
+val n = 5
 val type = when (n) {
     is Int    -> "$n is Int"
     else      -> "$n is not Int"
@@ -278,7 +271,6 @@ type // 5 is Int
 
 ```kotlin
 // when のあとに値を伴わない書き方もできる
-
 val n = 5
 when {
     // 以下、条件に一致したものがどれかひとつ実行される
@@ -287,6 +279,16 @@ when {
     n % 5 == 0 -> println("buzz")
     n % 3 == 0 -> println("fizz")
     else -> println("$n")
+}
+```
+
+```kotlin
+// 定数以外も用いることができる
+val n = 5
+when {
+    n in 1..5 -> "access"
+    n > 5     -> "company"
+    else      -> "com"
 }
 ```
 
@@ -351,7 +353,7 @@ sum // 55
 ```kotlin
 // リストを使う場合
 var sum = 0
-val list = 1..10.toList()
+val list = (1..10).toList()
 for (n in list) {
     sum += n
 }
@@ -381,7 +383,7 @@ while (true) {
 outer@ for (i in 1..10) { // ← outer というラベルをつけたところ
     for (j in 1..10) {
         if ((i+j) % 3 == 0) {
-            break outer // 外側のループを抜ける
+            break@outer // 外側のループを抜ける
             // break のように何も指定しない場合、内側のループを抜ける
         }
     }

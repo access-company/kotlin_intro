@@ -112,20 +112,20 @@ interface Greeter {
 
 // 英語で挨拶クラス
 open class EnglishGreeter : Greeter {
-    open fun sayHello() {
+    override fun sayHello() {
         // 名前を省略したら anonymous さんに挨拶する
         sayHello("anonymous")
     }
 
-    open fun sayHello(target: String) {
+    override fun sayHello(target: String) {
         println("Hello, $target!")
     }
 }
 
 // 名前を指定されたときはすごい挨拶をする
 // 英語で挨拶クラスを継承して拡張した
-class EnglishGreeterGreatAgain : EnglishGreeter {
-    override sayHello(target: String) {
+class EnglishGreeterGreatAgain : EnglishGreeter() {
+    override fun sayHello(target: String) {
         // スーパークラスの実装を呼び出す
         super.sayHello("$target great again!") // Hello $target great again!
     }
@@ -236,9 +236,9 @@ class GermanyGreeter : Greeter {
 fun main(args: Array<String>) {
     // greeting 関数は Greeter インターフェースを実装したクラスを
     // 引数にとるので、以下はいずれも有効な書き方
-    greeting(JapaneseGreeter("world")) // こんにちは、world さん！
-    greeting(EnglishGreeter("world"))  // Hello, world!
-    greeting(GermanyGreeter("world"))  // Guten morgen, world!
+    greeting(JapaneseGreeter(), "world") // こんにちは、world さん！
+    greeting(EnglishGreeter(), "world")  // Hello, world!
+    greeting(GermanyGreeter(), "world")  // Guten morgen, world!
 }
 ```
 

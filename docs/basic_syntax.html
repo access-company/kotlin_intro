@@ -533,9 +533,9 @@ name = <span class="hljs-number">12</span>           <span class="hljs-comment">
 </ul>
 <pre><code class="lang-kotlin"><span class="hljs-variable"><span class="hljs-keyword">val</span> str</span> = <span class="hljs-string">&quot;access&quot;</span>
 
-str.length      <span class="hljs-comment">// 6</span>
-str.captalize() <span class="hljs-comment">// &quot;Access&quot;</span>
-str.isEmpty()   <span class="hljs-comment">// false</span>
+str.length       <span class="hljs-comment">// 6</span>
+str.capitalize() <span class="hljs-comment">// &quot;Access&quot;</span>
+str.isEmpty()    <span class="hljs-comment">// false</span>
 
 <span class="hljs-comment">// &#x6587;&#x5B57;&#x5217;&#x306E;&#x9023;&#x7D50;</span>
 
@@ -570,7 +570,7 @@ ints.size <span class="hljs-comment">// 10</span>
 
 <span class="hljs-comment">// arrayOf &#x3067;&#x66F8;&#x304F;&#x3068;&#x578B;&#x63A8;&#x8AD6;&#x3055;&#x308C;&#x308B;</span>
 <span class="hljs-comment">// &#x4EE5;&#x4E0B;&#x306F; String &#x306E;&#x914D;&#x5217;&#x3068;&#x3044;&#x3046;&#x3053;&#x3068;&#x306B;&#x3055;&#x308C;&#x308B;</span>
-<span class="hljs-variable"><span class="hljs-keyword">val</span> array</span> = arrayOf{<span class="hljs-string">&quot;access&quot;</span>, <span class="hljs-string">&quot;company&quot;</span>, <span class="hljs-string">&quot;com&quot;</span>}
+<span class="hljs-variable"><span class="hljs-keyword">val</span> array</span> = arrayOf(<span class="hljs-string">&quot;access&quot;</span>, <span class="hljs-string">&quot;company&quot;</span>, <span class="hljs-string">&quot;com&quot;</span>)
 array[<span class="hljs-number">0</span>] <span class="hljs-comment">// &quot;access&quot;</span>
 array[<span class="hljs-number">1</span>] <span class="hljs-comment">// &quot;company&quot;</span>
 array[<span class="hljs-number">2</span>] <span class="hljs-comment">// &quot;com&quot;</span>
@@ -661,6 +661,7 @@ list <span class="hljs-comment">// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span>
 result <span class="hljs-comment">// 5 is in range</span>
 
 <span class="hljs-comment">// else if &#x3067;&#x6B21;&#x3005;&#x3064;&#x306A;&#x3052;&#x308B;&#x3053;&#x3068;&#x3082;&#x53EF;&#x80FD;</span>
+<span class="hljs-variable"><span class="hljs-keyword">val</span> age</span> = <span class="hljs-number">7</span>
 <span class="hljs-variable"><span class="hljs-keyword">val</span> fee</span> = <span class="hljs-keyword">if</span> (age &gt; <span class="hljs-number">12</span>) {
     <span class="hljs-string">&quot;&#x5927;&#x4EBA;&#x6599;&#x91D1;&quot;</span>
 } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (age &gt;= <span class="hljs-number">6</span>) {
@@ -684,15 +685,9 @@ result <span class="hljs-comment">// 5 is in range</span>
     <span class="hljs-keyword">else</span> -&gt; <span class="hljs-string">&quot;com&quot;</span>
 }
 </code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x5B9A;&#x6570;&#x4EE5;&#x5916;&#x3082;&#x7528;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;</span>
-<span class="hljs-keyword">when</span> (n) {
-    <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.5</span>              -&gt; <span class="hljs-string">&quot;access&quot;</span>
-    isGreaterThanFive(n) -&gt; <span class="hljs-string">&quot;company&quot;</span>
-    <span class="hljs-keyword">else</span>                 -&gt; <span class="hljs-string">&quot;com&quot;</span>
-}
-</code></pre>
 <pre><code class="lang-kotlin"><span class="hljs-comment">// is &#x3092;&#x7528;&#x3044;&#x305F;&#x578B;&#x30C1;&#x30A7;&#x30C3;&#x30AF;</span>
 <span class="hljs-comment">// &#x5024;&#x306E;&#x4EE3;&#x5165;&#x3082;&#x3067;&#x304D;&#x308B;</span>
+<span class="hljs-variable"><span class="hljs-keyword">val</span> n</span> = <span class="hljs-number">5</span>
 <span class="hljs-variable"><span class="hljs-keyword">val</span> type</span> = <span class="hljs-keyword">when</span> (n) {
     <span class="hljs-keyword">is</span> <span class="hljs-keyword">Int</span>    -&gt; <span class="hljs-string">&quot;$n is Int&quot;</span>
     <span class="hljs-keyword">else</span>      -&gt; <span class="hljs-string">&quot;$n is not Int&quot;</span>
@@ -700,7 +695,6 @@ result <span class="hljs-comment">// 5 is in range</span>
 type <span class="hljs-comment">// 5 is Int</span>
 </code></pre>
 <pre><code class="lang-kotlin"><span class="hljs-comment">// when &#x306E;&#x3042;&#x3068;&#x306B;&#x5024;&#x3092;&#x4F34;&#x308F;&#x306A;&#x3044;&#x66F8;&#x304D;&#x65B9;&#x3082;&#x3067;&#x304D;&#x308B;</span>
-
 <span class="hljs-variable"><span class="hljs-keyword">val</span> n</span> = <span class="hljs-number">5</span>
 <span class="hljs-keyword">when</span> {
     <span class="hljs-comment">// &#x4EE5;&#x4E0B;&#x3001;&#x6761;&#x4EF6;&#x306B;&#x4E00;&#x81F4;&#x3057;&#x305F;&#x3082;&#x306E;&#x304C;&#x3069;&#x308C;&#x304B;&#x3072;&#x3068;&#x3064;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x308B;</span>
@@ -709,6 +703,14 @@ type <span class="hljs-comment">// 5 is Int</span>
     n % <span class="hljs-number">5</span> == <span class="hljs-number">0</span> -&gt; println(<span class="hljs-string">&quot;buzz&quot;</span>)
     n % <span class="hljs-number">3</span> == <span class="hljs-number">0</span> -&gt; println(<span class="hljs-string">&quot;fizz&quot;</span>)
     <span class="hljs-keyword">else</span> -&gt; println(<span class="hljs-string">&quot;$n&quot;</span>)
+}
+</code></pre>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x5B9A;&#x6570;&#x4EE5;&#x5916;&#x3082;&#x7528;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;</span>
+<span class="hljs-variable"><span class="hljs-keyword">val</span> n</span> = <span class="hljs-number">5</span>
+<span class="hljs-keyword">when</span> {
+    n <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.5</span> -&gt; <span class="hljs-string">&quot;access&quot;</span>
+    n &gt; <span class="hljs-number">5</span>     -&gt; <span class="hljs-string">&quot;company&quot;</span>
+    <span class="hljs-keyword">else</span>      -&gt; <span class="hljs-string">&quot;com&quot;</span>
 }
 </code></pre>
 <h2 id="&#x30EB;&#x30FC;&#x30D7;">&#x30EB;&#x30FC;&#x30D7;</h2>
@@ -760,7 +762,7 @@ sum <span class="hljs-comment">// 55</span>
 </code></pre>
 <pre><code class="lang-kotlin"><span class="hljs-comment">// &#x30EA;&#x30B9;&#x30C8;&#x3092;&#x4F7F;&#x3046;&#x5834;&#x5408;</span>
 <span class="hljs-variable"><span class="hljs-keyword">var</span> sum</span> = <span class="hljs-number">0</span>
-<span class="hljs-variable"><span class="hljs-keyword">val</span> list</span> = <span class="hljs-number">1.</span><span class="hljs-number">.10</span>.toList()
+<span class="hljs-variable"><span class="hljs-keyword">val</span> list</span> = (<span class="hljs-number">1.</span><span class="hljs-number">.10</span>).toList()
 <span class="hljs-keyword">for</span> (n <span class="hljs-keyword">in</span> list) {
     sum += n
 }
@@ -786,7 +788,7 @@ sum <span class="hljs-comment">// 55</span>
 outer@ <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.10</span>) { <span class="hljs-comment">// &#x2190; outer &#x3068;&#x3044;&#x3046;&#x30E9;&#x30D9;&#x30EB;&#x3092;&#x3064;&#x3051;&#x305F;&#x3068;&#x3053;&#x308D;</span>
     <span class="hljs-keyword">for</span> (j <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.10</span>) {
         <span class="hljs-keyword">if</span> ((i+j) % <span class="hljs-number">3</span> == <span class="hljs-number">0</span>) {
-            <span class="hljs-keyword">break</span> outer <span class="hljs-comment">// &#x5916;&#x5074;&#x306E;&#x30EB;&#x30FC;&#x30D7;&#x3092;&#x629C;&#x3051;&#x308B;</span>
+            <span class="hljs-keyword">break</span>@outer <span class="hljs-comment">// &#x5916;&#x5074;&#x306E;&#x30EB;&#x30FC;&#x30D7;&#x3092;&#x629C;&#x3051;&#x308B;</span>
             <span class="hljs-comment">// break &#x306E;&#x3088;&#x3046;&#x306B;&#x4F55;&#x3082;&#x6307;&#x5B9A;&#x3057;&#x306A;&#x3044;&#x5834;&#x5408;&#x3001;&#x5185;&#x5074;&#x306E;&#x30EB;&#x30FC;&#x30D7;&#x3092;&#x629C;&#x3051;&#x308B;</span>
         }
     }
@@ -835,7 +837,7 @@ outer@ <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</s
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"基本的な文法","level":"1.5","depth":1,"next":{"title":"関数","level":"1.6","depth":1,"path":"function.md","ref":"./function.md","articles":[]},"previous":{"title":"開発環境の構築","level":"1.4","depth":1,"path":"development_environment.md","ref":"./development_environment.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","search","codeblock-filename"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"search":{},"codeblock-filename":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"basic_syntax.md","mtime":"2020-03-28T12:17:30.943Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-28T12:26:17.290Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"基本的な文法","level":"1.5","depth":1,"next":{"title":"関数","level":"1.6","depth":1,"path":"function.md","ref":"./function.md","articles":[]},"previous":{"title":"開発環境の構築","level":"1.4","depth":1,"path":"development_environment.md","ref":"./development_environment.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","search","codeblock-filename"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"search":{},"codeblock-filename":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"basic_syntax.md","mtime":"2020-04-10T01:29:44.249Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-10T02:32:56.516Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

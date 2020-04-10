@@ -417,7 +417,7 @@ func(<span class="hljs-number">5</span>)   <span class="hljs-comment">// 25 (squ
     <span class="hljs-keyword">if</span> (i % <span class="hljs-number">3</span> == <span class="hljs-number">0</span>) {
         println(<span class="hljs-string">&quot;3&#x306E;&#x500D;&#x6570;&#x3067;&#x3059;!&quot;</span>)
     } <span class="hljs-keyword">else</span> {
-        pritnln(i)
+        println(i)
     }
 }
 
@@ -455,7 +455,7 @@ tenPowerOf(<span class="hljs-number">2</span>)   <span class="hljs-comment">// 1
 
 <span class="hljs-comment">// &#x95A2;&#x6570;&#x5B9A;&#x7FA9;</span>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">square</span><span class="hljs-params">(n: <span class="hljs-type">Int</span>)</span>: <span class="hljs-keyword">Int</span> {</span>
-    n * n
+    <span class="hljs-keyword">return</span> n * n
 }
 
 <span class="hljs-comment">// &#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x305F;&#x95A2;&#x6570;&#x306E;&#x540D;&#x524D;&#x306B; :: &#x3092;&#x3064;&#x3051;&#x3066;&#x95A2;&#x6570;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x5F97;&#x308B;</span>
@@ -469,29 +469,29 @@ println(::square) <span class="hljs-comment">// fun square(kotlin.Int): kotlin.I
 }
 
 println(square)    <span class="hljs-comment">// (kotlin.Int) -&gt; kotlin.Int</span>
-println(::square)  <span class="hljs-comment">// val Line_2.square: (kotlin.Int) -&gt; kotlin.Int</span>
 println(square(<span class="hljs-number">3</span>)) <span class="hljs-comment">// 9</span>
 </code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x578B;&#x63A8;&#x8AD6;&#x3059;&#x308B;&#x3068;&#x77ED;&#x304F;&#x66F8;&#x3051;&#x308B;</span>
-
-<span class="hljs-comment">// &#x300C;Int &#x3092;&#x5F15;&#x6570;&#x306B;&#x3068;&#x3063;&#x3066; Int &#x3092;&#x8FD4;&#x3059;&#x300D;&#x3092;&#x578B;&#x63A8;&#x8AD6;&#x3057;&#x3066;&#x3082;&#x3089;&#x3044;&#x3001;</span>
+<ul>
+<li>&#x578B;&#x63A8;&#x8AD6;&#x3059;&#x308B;&#x3068;&#x77ED;&#x304F;&#x66F8;&#x3051;&#x308B;</li>
+</ul>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x300C;Int &#x3092;&#x5F15;&#x6570;&#x306B;&#x3068;&#x3063;&#x3066; Int &#x3092;&#x8FD4;&#x3059;&#x300D;&#x3092;&#x578B;&#x63A8;&#x8AD6;&#x3057;&#x3066;&#x3082;&#x3089;&#x3044;&#x3001;</span>
 <span class="hljs-comment">// &#x95A2;&#x6570;&#x306E;&#x578B;&#x306E;&#x8A18;&#x8F09;&#x3092;&#x7701;&#x7565;</span>
 <span class="hljs-variable"><span class="hljs-keyword">val</span> square</span> = { i: <span class="hljs-keyword">Int</span> -&gt;
     i * i
 }
-
-<span class="hljs-comment">// &#x307E;&#x305F;&#x306F;&#x300C;Int &#x3092;&#x5F15;&#x6570;&#x306B;&#x3068;&#x308B;&#x300D;&#x3092;&#x578B;&#x63A8;&#x8AD6;&#x3057;&#x3066;&#x3082;&#x3089;&#x3044;&#x3001;</span>
+</code></pre>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x307E;&#x305F;&#x306F;&#x300C;Int &#x3092;&#x5F15;&#x6570;&#x306B;&#x3068;&#x308B;&#x300D;&#x3092;&#x578B;&#x63A8;&#x8AD6;&#x3057;&#x3066;&#x3082;&#x3089;&#x3044;&#x3001;</span>
 <span class="hljs-comment">// &#x95A2;&#x6570;&#x306E;&#x5B9F;&#x88C5;&#x306B;&#x304A;&#x3051;&#x308B;&#x5F15;&#x6570;&#x306E;&#x578B;&#x3092;&#x7701;&#x7565;</span>
 <span class="hljs-variable"><span class="hljs-keyword">val</span> square</span>: (<span class="hljs-keyword">Int</span>) -&gt; <span class="hljs-keyword">Int</span> = { i -&gt;
     i * i
 }
-
-<span class="hljs-comment">// &#x4E21;&#x65B9;&#x7701;&#x7565;&#x3059;&#x308B;&#x3068;i&#x306E;&#x578B;&#x304C;&#x308F;&#x304B;&#x3089;&#x306A;&#x3044;&#x306E;&#x3067;&#x3001;&#x7701;&#x7565;&#x3067;&#x304D;&#x306A;&#x3044;(&#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB;&#x30A8;&#x30E9;&#x30FC;)</span>
+</code></pre>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x4E21;&#x65B9;&#x7701;&#x7565;&#x3059;&#x308B;&#x3068;i&#x306E;&#x578B;&#x304C;&#x308F;&#x304B;&#x3089;&#x306A;&#x3044;&#x306E;&#x3067;&#x3001;&#x7701;&#x7565;&#x3067;&#x304D;&#x306A;&#x3044;(&#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB;&#x30A8;&#x30E9;&#x30FC;)</span>
 <span class="hljs-variable"><span class="hljs-keyword">val</span> square</span> = { i -&gt;
     i * i   <span class="hljs-comment">// &#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB;&#x30A8;&#x30E9;&#x30FC;</span>
 }
-
-<span class="hljs-comment">// &#x5F15;&#x6570;&#x304C;&#x4E00;&#x500B;&#x306E;&#x5834;&#x5408;&#x3001;&#x300C;it&#x300D;&#x3068;&#x66F8;&#x3051;&#x308B;</span>
+</code></pre>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x5F15;&#x6570;&#x304C;&#x4E00;&#x500B;&#x306E;&#x5834;&#x5408;&#x3001;&#x300C;it&#x300D;&#x3068;&#x66F8;&#x3051;&#x308B;</span>
 <span class="hljs-variable"><span class="hljs-keyword">val</span> square</span>: (<span class="hljs-keyword">Int</span>) -&gt; <span class="hljs-keyword">Int</span> = {
     it * it
 }
@@ -546,20 +546,27 @@ println(square(<span class="hljs-number">3</span>)) <span class="hljs-comment">/
     log(<span class="hljs-literal">true</span>, { <span class="hljs-string">&quot;log message&quot;</span> })    <span class="hljs-comment">// &#x8868;&#x793A;&#x3055;&#x308C;&#x308B;</span>
     log(<span class="hljs-literal">false</span>, { <span class="hljs-string">&quot;log message&quot;</span> })   <span class="hljs-comment">// &#x8868;&#x793A;&#x3055;&#x308C;&#x306A;&#x3044;</span>
 }
+</code></pre>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x3082;&#x3057;&#x304F;&#x306F;log&#x306E;{}&#x3092;&#x30AB;&#x30C3;&#x30B3;&#x306E;&#x5916;&#x306B;&#x51FA;&#x3057;&#x3066;&#x3001;&#x3053;&#x3046;&#x66F8;&#x3051;&#x308B;</span>
 
-<span class="hljs-comment">// &#x3082;&#x3057;&#x304F;&#x306F;log&#x306E;{}&#x3092;&#x30AB;&#x30C3;&#x30B3;&#x306E;&#x5916;&#x306B;&#x51FA;&#x3057;&#x3066;&#x3001;&#x3053;&#x3046;&#x66F8;&#x3051;&#x308B;</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">log</span><span class="hljs-params">(debug: <span class="hljs-type">Boolean, message: (</span>)</span> -&gt; String) {</span>
+    <span class="hljs-keyword">if</span> (debug) {
+       println(message())
+    }
+}
+
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
     log(<span class="hljs-literal">true</span>) {
         <span class="hljs-string">&quot;log message&quot;</span>   <span class="hljs-comment">// &#x8868;&#x793A;&#x3055;&#x308C;&#x308B;</span>
     }
     log(<span class="hljs-literal">false</span>) {
         <span class="hljs-string">&quot;log message&quot;</span>   <span class="hljs-comment">// &#x8868;&#x793A;&#x3055;&#x308C;&#x306A;&#x3044;</span>
-    })
+    }
 }
 </code></pre>
 <pre><code class="lang-kotlin"><span class="hljs-comment">// &#x30A4;&#x30F3;&#x30E9;&#x30A4;&#x30F3;&#x5C55;&#x958B;&#x3059;&#x308B;</span>
 
-<span class="hljs-keyword">inline</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">log</span><span class="hljs-params">(debug: <span class="hljs-type">Boolean, message: (</span>)</span> -&gt; string) {</span>
+<span class="hljs-keyword">inline</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">log</span><span class="hljs-params">(debug: <span class="hljs-type">Boolean, message: (</span>)</span> -&gt; String) {</span>
     <span class="hljs-keyword">if</span> (debug) {
         println(message())
     }
@@ -573,9 +580,10 @@ println(square(<span class="hljs-number">3</span>)) <span class="hljs-comment">/
         <span class="hljs-string">&quot;log message&quot;</span>   <span class="hljs-comment">// &#x8868;&#x793A;&#x3055;&#x308C;&#x306A;&#x3044;</span>
     })
 }
+</code></pre>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x4E0A;&#x8FF0;&#x306E; main &#x95A2;&#x6570;&#x306F;&#x3001;&#x4EE5;&#x4E0B;&#x3068;&#x6982;&#x306D;&#x540C;&#x7FA9;&#x306B;&#x306A;&#x308B;</span>
+<span class="hljs-comment">// debug &#x304C; true &#x3067;&#x306A;&#x3044;&#x3068;&#x304D;&#x306F;&#x3001;&#x95A2;&#x6570;&#x547C;&#x3073;&#x51FA;&#x3057;&#x307E;&#x3067;&#x5230;&#x9054;&#x3057;&#x306A;&#x3044;&#x30B3;&#x30FC;&#x30C9;&#x306B;&#x306A;&#x308B;</span>
 
-<span class="hljs-comment">// &#x4E0A;&#x8FF0;&#x306E; main &#x95A2;&#x6570;&#x306F;&#x3001;&#x4EE5;&#x4E0B;&#x3068;&#x6982;&#x306D;&#x540C;&#x7FA9;&#x306B;&#x306A;&#x308B;&#x3002;</span>
-<span class="hljs-comment">// debug &#x304C; true &#x3067;&#x306A;&#x3044;&#x3068;&#x304D;&#x306F;&#x3001;&#x95A2;&#x6570;&#x547C;&#x3073;&#x51FA;&#x3057;&#x307E;&#x3067;&#x5230;&#x9054;&#x3057;&#x306A;&#x3044;&#x30B3;&#x30FC;&#x30C9;&#x306B;&#x306A;&#x308B;&#x3002;</span>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
     <span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span>) {
         println(<span class="hljs-string">&quot;log message&quot;</span>) <span class="hljs-comment">// &#x8868;&#x793A;&#x3055;&#x308C;&#x308B;</span>
@@ -614,7 +622,7 @@ println(square(<span class="hljs-number">3</span>)) <span class="hljs-comment">/
 <span class="hljs-comment">// &#x5165;&#x529B;&#x3057;&#x305F;&#x6587;&#x5B57;&#x5217; (str) &#x306B;&#x6570;&#x5B57;&#x304C;&#x542B;&#x307E;&#x308C;&#x3066;&#x3044;&#x308B;&#x304B;&#x3069;&#x3046;&#x304B;&#x3092;&#x8FD4;&#x3059;&#x95A2;&#x6570;</span>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">containsDigit</span><span class="hljs-params">(str: <span class="hljs-type">String</span>)</span>: <span class="hljs-keyword">Boolean</span> {</span>
     <span class="hljs-variable"><span class="hljs-keyword">var</span> result</span> = <span class="hljs-literal">false</span>
-    forEach(str) @loop {
+    forEach(str) loop@ {
         <span class="hljs-keyword">if</span> (it.isDigit()) {
             result = <span class="hljs-literal">true</span> 
             <span class="hljs-keyword">return</span>@loop <span class="hljs-comment">// forEach &#x3092;&#x629C;&#x3051;&#x308B;</span>
@@ -635,14 +643,14 @@ println(square(<span class="hljs-number">3</span>)) <span class="hljs-comment">/
 <span class="hljs-variable"><span class="hljs-keyword">val</span> square</span>: (<span class="hljs-keyword">Int</span>) -&gt; <span class="hljs-keyword">Int</span> = { i: <span class="hljs-keyword">Int</span> -&gt;
     i * i
 }
-
-<span class="hljs-comment">// &#x7121;&#x540D;&#x95A2;&#x6570;</span>
+</code></pre>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x7121;&#x540D;&#x95A2;&#x6570;</span>
 <span class="hljs-comment">// &#x4E0A;&#x8A18;&#x306E;&#x30E9;&#x30E0;&#x30C0;&#x5F0F;&#x306B;&#x3042;&#x305F;&#x308B;&#x90E8;&#x5206;&#x306B;&#x95A2;&#x6570;&#x3092;&#x66F8;&#x304F;&#x30A4;&#x30E1;&#x30FC;&#x30B8;</span>
 <span class="hljs-variable"><span class="hljs-keyword">val</span> square</span>: (<span class="hljs-keyword">Int</span>) -&gt; <span class="hljs-keyword">Int</span> = <span class="hljs-function"><span class="hljs-title">fun</span><span class="hljs-params">(i: <span class="hljs-type">Int</span>)</span>: <span class="hljs-keyword">Int</span> {</span>
     <span class="hljs-keyword">return</span> i * i <span class="hljs-comment">// &#x30E9;&#x30E0;&#x30C0;&#x5F0F;&#x3068;&#x9055;&#x3063;&#x3066;&#x8981; return &#x6587;</span>
 }
-
-<span class="hljs-comment">// &#x7121;&#x540D;&#x95A2;&#x6570; &#x7701;&#x7565;&#x7248;</span>
+</code></pre>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x7121;&#x540D;&#x95A2;&#x6570; &#x7701;&#x7565;&#x7248;</span>
 <span class="hljs-variable"><span class="hljs-keyword">val</span> square</span>: (<span class="hljs-keyword">Int</span>) -&gt; <span class="hljs-keyword">Int</span> = <span class="hljs-function"><span class="hljs-title">fun</span><span class="hljs-params">(i : <span class="hljs-type">Int</span>)</span> = i * i</span>
 </code></pre>
 
@@ -688,7 +696,7 @@ println(square(<span class="hljs-number">3</span>)) <span class="hljs-comment">/
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ちょっと特殊な関数","level":"1.7","depth":1,"next":{"title":"クラス","level":"1.8","depth":1,"path":"class.md","ref":"./class.md","articles":[]},"previous":{"title":"関数","level":"1.6","depth":1,"path":"function.md","ref":"./function.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","search","codeblock-filename"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"search":{},"codeblock-filename":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"first_class_function.md","mtime":"2020-02-19T14:44:04.600Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-20T00:22:26.590Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ちょっと特殊な関数","level":"1.7","depth":1,"next":{"title":"クラス","level":"1.8","depth":1,"path":"class.md","ref":"./class.md","articles":[]},"previous":{"title":"関数","level":"1.6","depth":1,"path":"function.md","ref":"./function.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","search","codeblock-filename"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"search":{},"codeblock-filename":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"first_class_function.md","mtime":"2020-04-10T02:32:31.714Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-10T02:32:56.516Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

@@ -93,11 +93,11 @@ fun main(args: Array<String>) {
 
     // プロパティに値をセット
     pankona.name = "yosuke akatsuka"
-    pankona.age  = 35
+    pankona.age  = 37
 
     // プロパティの値を参照する
     println(pankona.name)       // yosuke akatsuka
-    println(pankona.age)        // 35
+    println(pankona.age)        // 37
     println(pankona.nameLength) // 15
 
     // メソッドの呼び出し
@@ -152,7 +152,6 @@ class Person {
 class Person {
     // lateinit を使うと、宣言時に初期化しなくて良い
     lateinit var name: String
-    lateinit var age: Int
 }
 
 fun main(args: Array<String>) {
@@ -191,9 +190,9 @@ class Person constructor(n: String, a: Int) {
 
 fun main(args: Array<String>) {
     // コンストラクタを用いたインスタンスの初期化
-    val p = Person("yosuke akatsuka", 35)
+    val p = Person("yosuke akatsuka", 37)
     println(p.name) // yosuke akatsuka
-    println(p.age)  // 35
+    println(p.age)  // 37
 }
 ```
 
@@ -204,9 +203,9 @@ class Person constructor(val name: String, val age: Int)
 
 fun main(args: Array<String>) {
     // 前の例と同じように使える
-    val p = Person("yosuke akatsuka", 35)
+    val p = Person("yosuke akatsuka", 37)
     println(p.name) // yosuke akatsuka
-    println(p.age)  // 35
+    println(p.age)  // 37
 }
 ```
 
@@ -220,7 +219,7 @@ class Person (val name: String, val age: Int)
 
 ```kotlin
 // ヒトを表すクラス
-// ふたつめのコンストラクタを定義することもできる
+// 別引数を持つ2つ目のコンストラクタを定義することもできる
 class Person (val name: String, val age: Int) {
     // 引数なしのコンストラクタを定義
     // this を使って ↑ のコンストラクタを呼び出す
@@ -264,7 +263,7 @@ fun main(args: Array<String>) {
 
 ```kotlin
 // 文字列の長さを取得する関数を普通に作ると
-fun strlen(str: String) = return str.size
+fun strlen(str: String) = str.length
 
 fun main(args: Array<String>) {
     strlen("hogehoge") // 8
@@ -291,7 +290,7 @@ val String.size: Int
     get() = this.length
 
 fun main(args: Array<String>) {
-    "hogehoge".size() // 8
+    "hogehoge".size // 8
 }
 ```
 
@@ -303,29 +302,29 @@ fun main(args: Array<String>) {
 
 ```kotlin
 // ヒトクラス (data が頭にくっついている)
-data class Person(val name String, val age: Int)
+data class Person(val name: String, val age: Int)
 ```
 
 * data class の特徴
 
 ```kotlin
 // 同じ名前と年齢を与える
-val p1 = Person("access", 35)
-val p2 = Person("access", 35)
+val p1 = Person("access", 37)
+val p2 = Person("access", 37)
 
 // 以下は true になる
 p1 == p2    // true
 
 // println に渡すといい感じに表示される
-println(p1) // Person(name=access, age=35)
+println(p1) // Person(name = access, age = 37)
 
 // copy 等の便利メソッドが生える
 val p3 = p1.copy()
-println(p3) // Person(name=access, age=35)
+println(p3) // Person(name = access, age = 37)
 
 // copy は一部のプロパティだけついでに変更したりもできる
-val p4 = p1.copy(age: 15)
-println(p4) // Person(name=access, age=15)
+val p4 = p1.copy(age = 17)
+println(p4) // Person(name = access, age = 15)
 ```
 
 * data class を使うと嬉しい場面
@@ -335,11 +334,11 @@ println(p4) // Person(name=access, age=15)
 
 ```kotlin
 // ヒトクラス
-class Person(val name String, val age: Int)
+class Person(val name: String, val age: Int)
 
 // 同じ名前と年齢を与える
-val p1 = Person("access", 35)
-val p2 = Person("access", 35)
+val p1 = Person("access", 37)
+val p2 = Person("access", 37)
 
 // p1 と p2 は、「値は同じかもしれないが違うオブジェクト」なので
 // 下記の評価結果は false になる

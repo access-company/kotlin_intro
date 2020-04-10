@@ -476,20 +476,20 @@ interface Greeter {
 
 <span class="hljs-comment">// &#x82F1;&#x8A9E;&#x3067;&#x6328;&#x62F6;&#x30AF;&#x30E9;&#x30B9;</span>
 <span class="hljs-keyword">open</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EnglishGreeter</span> : <span class="hljs-type">Greeter {</span></span>
-    <span class="hljs-keyword">open</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">()</span> {</span>
         <span class="hljs-comment">// &#x540D;&#x524D;&#x3092;&#x7701;&#x7565;&#x3057;&#x305F;&#x3089; anonymous &#x3055;&#x3093;&#x306B;&#x6328;&#x62F6;&#x3059;&#x308B;</span>
         sayHello(<span class="hljs-string">&quot;anonymous&quot;</span>)
     }
 
-    <span class="hljs-keyword">open</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span> {</span>
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span> {</span>
         println(<span class="hljs-string">&quot;Hello, $target!&quot;</span>)
     }
 }
 
 <span class="hljs-comment">// &#x540D;&#x524D;&#x3092;&#x6307;&#x5B9A;&#x3055;&#x308C;&#x305F;&#x3068;&#x304D;&#x306F;&#x3059;&#x3054;&#x3044;&#x6328;&#x62F6;&#x3092;&#x3059;&#x308B;</span>
 <span class="hljs-comment">// &#x82F1;&#x8A9E;&#x3067;&#x6328;&#x62F6;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x7D99;&#x627F;&#x3057;&#x3066;&#x62E1;&#x5F35;&#x3057;&#x305F;</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EnglishGreeterGreatAgain</span> : <span class="hljs-type">EnglishGreeter {</span></span>
-    <span class="hljs-keyword">override</span> sayHello(target: String) {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EnglishGreeterGreatAgain</span> : <span class="hljs-type">EnglishGreeter</span></span>() {
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span> {</span>
         <span class="hljs-comment">// &#x30B9;&#x30FC;&#x30D1;&#x30FC;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x5B9F;&#x88C5;&#x3092;&#x547C;&#x3073;&#x51FA;&#x3059;</span>
         super.sayHello(<span class="hljs-string">&quot;$target great again!&quot;</span>) <span class="hljs-comment">// Hello $target great again!</span>
     }
@@ -599,9 +599,9 @@ interface Greeter {
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
     <span class="hljs-comment">// greeting &#x95A2;&#x6570;&#x306F; Greeter &#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x305F;&#x30AF;&#x30E9;&#x30B9;&#x3092;</span>
     <span class="hljs-comment">// &#x5F15;&#x6570;&#x306B;&#x3068;&#x308B;&#x306E;&#x3067;&#x3001;&#x4EE5;&#x4E0B;&#x306F;&#x3044;&#x305A;&#x308C;&#x3082;&#x6709;&#x52B9;&#x306A;&#x66F8;&#x304D;&#x65B9;</span>
-    greeting(JapaneseGreeter(<span class="hljs-string">&quot;world&quot;</span>)) <span class="hljs-comment">// &#x3053;&#x3093;&#x306B;&#x3061;&#x306F;&#x3001;world &#x3055;&#x3093;&#xFF01;</span>
-    greeting(EnglishGreeter(<span class="hljs-string">&quot;world&quot;</span>))  <span class="hljs-comment">// Hello, world!</span>
-    greeting(GermanyGreeter(<span class="hljs-string">&quot;world&quot;</span>))  <span class="hljs-comment">// Guten morgen, world!</span>
+    greeting(JapaneseGreeter(), <span class="hljs-string">&quot;world&quot;</span>) <span class="hljs-comment">// &#x3053;&#x3093;&#x306B;&#x3061;&#x306F;&#x3001;world &#x3055;&#x3093;&#xFF01;</span>
+    greeting(EnglishGreeter(), <span class="hljs-string">&quot;world&quot;</span>)  <span class="hljs-comment">// Hello, world!</span>
+    greeting(GermanyGreeter(), <span class="hljs-string">&quot;world&quot;</span>)  <span class="hljs-comment">// Guten morgen, world!</span>
 }
 </code></pre>
 <ul>
@@ -655,7 +655,7 @@ interface Greeter {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"インターフェース","level":"1.10","depth":1,"next":{"title":"ジェネリクス","level":"1.11","depth":1,"path":"generics.md","ref":"./generics.md","articles":[]},"previous":{"title":"継承・抽象クラス","level":"1.9","depth":1,"path":"inherit_abstract.md","ref":"./inherit_abstract.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","search","codeblock-filename"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"search":{},"codeblock-filename":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"interface.md","mtime":"2020-02-19T14:44:04.603Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-20T00:22:26.590Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"インターフェース","level":"1.10","depth":1,"next":{"title":"ジェネリクス","level":"1.11","depth":1,"path":"generics.md","ref":"./generics.md","articles":[]},"previous":{"title":"継承・抽象クラス","level":"1.9","depth":1,"path":"inherit_abstract.md","ref":"./inherit_abstract.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","search","codeblock-filename"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"search":{},"codeblock-filename":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"interface.md","mtime":"2020-04-10T02:31:07.570Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-10T02:32:56.516Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

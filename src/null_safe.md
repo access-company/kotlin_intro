@@ -141,7 +141,7 @@ val u = s?.toUpperCase()
 
 // 上記は以下と同じ処理
 val u = if (s != null) {
-    s.toUppercase()
+    s.toUpperCase()
 } else {
     null
 }

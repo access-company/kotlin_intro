@@ -80,7 +80,7 @@ name("taro", "yamada") // taro yamada
 
 // 名前を指定して呼び出すとき
 // 関数定義の順番に従う必要がなく、意味も分かりやすくなる場合もある
-name(last: "yamada", first: "taro") // taro yamada
+name(last = "yamada", first = "taro") // taro yamada
 ```
 
 * デフォルト引数
