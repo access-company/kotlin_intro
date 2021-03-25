@@ -62,7 +62,7 @@ class Person {
             if (i < 0) {
                 println("invalid argument. only positive value can be specified to age property.")
                 // field という変数で代入する。age = 0 とやると…？
-                field = 0 
+                field = 0
             } else {
                 field = i
             }
@@ -159,7 +159,7 @@ fun main(args: Array<String>) {
 
     // p.name は未初期化なので、このまま触ると
     // kotlin.UninitializedPropertyAccessException が発生
-    println(p.name) 
+    println(p.name)
 }
 ```
 
@@ -215,7 +215,12 @@ fun main(args: Array<String>) {
 class Person (val name: String, val age: Int)
 ```
 
-データ保持だけのクラスは先頭にdataを付けるとよい（後で詳しく説明）
+* コンストラクタの色々
+  * クラス名の横にコンストラクタを書く場合、それを「primary constructor」と呼ぶ。
+  * クラスの中にふたつめ以上のコンストラクタを書く場合、それ (ら) を「secondary constructor」と呼ぶ。
+  * primary constructor がある場合、secondary constructor は primary constructor を呼び出す必要がある。
+  * primary constructor に処理は書けないが、secondary constructor には処理が書ける。
+  * primary constructor で処理が書きたい場合は、後述のイニシャライザを用いる。
 
 ```kotlin
 // ヒトを表すクラス
@@ -228,13 +233,6 @@ class Person (val name: String, val age: Int) {
     }
 }
 ```
-
-* コンストラクタの色々
-  * クラス名の横にコンストラクタを書く場合、それを「primary constructor」と呼ぶ。
-  * クラスの中にふたつめ以上のコンストラクタを書く場合、それ (ら) を「secondary constructor」と呼ぶ。
-  * primary constructor がある場合、secondary constructor は primary constructor を呼び出す必要がある。
-  * primary constructor に処理は書けないが、secondary constructor には処理が書ける。
-  * primary constructor で処理が書きたい場合は、後述のイニシャライザを用いる。
 
 * イニシャライザ
   * primary constructor が解決された後に呼び出される部分
@@ -353,4 +351,3 @@ val p3 = p1.copy() // メソッドがないのでエラー
 // 以下をやると参照のコピーになる (p1 を変更すると p4 も変更される)
 val p4 = p1
 ```
-

@@ -6,17 +6,17 @@ Kotlin の基本的な文法について記載します。
 
 以下について、使い方を理解すること。
 
-* 変数宣言 (`var`、`val`) 
+* 変数宣言 (`var`、`val`)
 * 基本的なデータ型
 * 基本的なデータ構造 (文字列、配列、リスト、セット、マップ、レンジ)
 * 条件分岐 (`if`、`when`)
 * ループ (`while`、`for`)
 
-## Try Kotlin
+## Kotlin Playground
 
 ブラウザ上でサンプルを見ながら、その場でコードを書いて動作確認ができます。参考まで。
 
-* [http://try.kotlinlang.org/](https://try.kotlinlang.org/#/Examples/Hello,%20world!/Simplest%20version/Simplest%20version.kt)
+* https://play.kotlinlang.org
 
 ## いろんな型
 
@@ -389,5 +389,3 @@ outer@ for (i in 1..10) { // ← outer というラベルをつけたところ
     }
 }
 ```
-
-

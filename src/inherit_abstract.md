@@ -88,7 +88,7 @@ class Man(name: String) : Person(name) {
     // nameLength を Man 用の振る舞いにオーバーライド
     override val nameLength: Int
         get() {
-            print("$name (man) ") // 名前を man を表示するようにした
+            print("$name (man) ") // 名前の後ろに (man) を表示するようにした
             return name.length
         }
     // bornFrom を Man 用の振る舞いにオーバーライド
@@ -103,7 +103,7 @@ class Woman(name: String) : Person(name) {
     // nameLength を Woman 用の振る舞いにオーバーライド
     override val nameLength: Int
         get() {
-            print("$name (woman) ") // 名前を woman を表示するようにした
+            print("$name (woman) ") // 名前の後ろに (woman) を表示するようにした
             return name.length
         }
     // bornFrom を Woman 用の振る舞いにオーバーライド
@@ -307,4 +307,3 @@ class Foot {
     }
 }
 ```
-

@@ -136,7 +136,7 @@ fun main(args: Array<String>) {
     g.sayHello("America") // Hello America great again!
     g.sayHello("Japan")   // Hello Japan great again!
     g.sayHello("Germany") // Hello Germany great again!
-    g.sayHello("")        // Hello anonymous great again ← ！？
+    g.sayHello()        // Hello anonymous great again ← ！？
 }
 ```
 
@@ -167,7 +167,7 @@ fun main(args: Array<String>) {
     g.sayHello("America") // Hello America great again!
     g.sayHello("Japan")   // Hello Japan great again!
     g.sayHello("Germany") // Hello Germany great again!
-    g.sayHello("")        // Hello anonymous!
+    g.sayHello()        // Hello anonymous!
 }
 ```
 
@@ -193,13 +193,12 @@ fun main(args: Array<String>) {
     g.sayHello("America") // Hello America great again!
     g.sayHello("Japan")   // Hello Japan great again!
     g.sayHello("Germany") // Hello Germany great again!
-    g.sayHello("")        // Hello anonymous!
+    g.sayHello()        // Hello anonymous!
 }
 ```
 
 * インターフェースがあると嬉しい場面
-  * インターフェースを実装したクラスは、  
-  インターフェースのほうの「型」として扱うことができる
+  * インターフェースを実装したクラスは、インターフェースのほうの「型」として扱うことができる
 
 ```kotlin
 // Greeter インターフェース
