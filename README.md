@@ -9,6 +9,8 @@ https://access-company.github.io/kotlin_intro/
 ### 必要なツール
 
 * npm
+* gitbook-cli
+    * `npm install -g gitbook-cli`
 
 ### ビルド方法
 
@@ -30,5 +32,5 @@ Error: Couldn't locate plugins "codeblock-filename", Run 'gitbook install' to in
 
 と出力された場合、npm経由でプラグインをインストールしてください。
 ```
-npm i gitbook-plugin-codeblock-filename
+npm i -g gitbook-plugin-codeblock-filename
 ```

@@ -31,7 +31,7 @@ Objectは一言で言えば「シングルトン（Singleton）なクラス」�
 
 今まで習った内容を使って書くとこうなる。
 
-```
+```kotlin
 class Logger {
     val TAG = "MyApp"
     fun debug(text: String) {
@@ -57,7 +57,7 @@ MyApp: print
 
 それを避けるため、クラスを`object`識別子で定義する。
 
-```
+```kotlin
 object Logger {
     val TAG = "MyApp"
     fun debug(text: String) {
@@ -81,7 +81,7 @@ fun main() {
 
 その場合、`companion object`識別子を使うと、`TAG`を`Logger`クラスに属するシングルトン変数、つまり「定数」にできる。
 
-```
+```kotlin
 class Logger(outputFilePath: String) {
     
     companion object {
@@ -110,7 +110,7 @@ fun main() {
 
 勘のいい人なら気づいたであろうが、この例の場合、実はクラスを使わず`debug()`を実装する方法もある。
 
-```
+```kotlin
 val TAG = "MyApp"
 
 fun debug(text: String) {
@@ -141,7 +141,7 @@ fun main() {
 
 定数を列挙する場合に便利な書き方。
 
-```
+```kotlin
 enum class Kanto{
     IBARAGI,
     TOCHIGI,
