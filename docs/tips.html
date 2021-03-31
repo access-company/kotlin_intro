@@ -469,16 +469,17 @@ MyApp: print
 </code></pre>
 <h2 id="&#x4F8B;&#x5916;">&#x4F8B;&#x5916;</h2>
 <p>&#x7570;&#x5E38;&#x304C;&#x8D77;&#x3053;&#x3063;&#x305F;&#x5834;&#x5408;&#x3001;&#x95A2;&#x6570;&#x306F;&#x4F8B;&#x5916;&#x3092;&#x30B9;&#x30ED;&#x30FC;&#x3067;&#x304D;&#x308B;&#x3002;&#x95A2;&#x6570;&#x306E;&#x547C;&#x3073;&#x51FA;&#x3057;&#x5143;&#x3067;&#x306F;&#x3001;&#x305D;&#x306E;&#x4F8B;&#x5916;&#x3092;&#x30AD;&#x30E3;&#x30C3;&#x30C1;&#x3057;&#x3066;&#x51E6;&#x7406;&#x3067;&#x304D;&#x308B;&#x3002;</p>
-<pre><code>fun validation(percentage :Int) {
-    if (percentage !in 0..100) {
-        throw IllegalArgumentException(&quot;A percentage must be between 0 and 100 [parameter: $percentage]&quot;)
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">validation</span><span class="hljs-params">(percentage :<span class="hljs-type">Int</span>)</span> {</span>
+    <span class="hljs-keyword">if</span> (percentage !<span class="hljs-keyword">in</span> <span class="hljs-number">0.</span><span class="hljs-number">.100</span>) {
+        <span class="hljs-keyword">throw</span> IllegalArgumentException(<span class="hljs-string">&quot;A percentage must be between 0 and 100 [parameter: $percentage]&quot;</span>)
     }
 }
 
-fun main() {
-    validation(101)
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> {</span>
+    validation(<span class="hljs-number">101</span>)
 }
-</code></pre><p>&#x5024;&#x304C;0&#x301C;100&#x306E;&#x7BC4;&#x56F2;&#x306B;&#x53CE;&#x307E;&#x3063;&#x3066;&#x3044;&#x306A;&#x3044;&#x5834;&#x5408;&#x306F;&#x3001;IllegalArgumentException&#x3092;&#x30B9;&#x30ED;&#x30FC;&#x3059;&#x308B;&#x3002;</p>
+</code></pre>
+<p>&#x5024;&#x304C;0&#x301C;100&#x306E;&#x7BC4;&#x56F2;&#x306B;&#x53CE;&#x307E;&#x3063;&#x3066;&#x3044;&#x306A;&#x3044;&#x5834;&#x5408;&#x306F;&#x3001;IllegalArgumentException&#x3092;&#x30B9;&#x30ED;&#x30FC;&#x3059;&#x308B;&#x3002;</p>
 <pre><code>Exception in thread &quot;main&quot; java.lang.IllegalArgumentException: A percentage must be between 0 and 100 [parameter: 101]
  at FileKt.validation (File.kt:3) 
  at FileKt.main (File.kt:8) 
@@ -629,7 +630,7 @@ println(s) <span class="hljs-comment">//=&gt; ACCESS</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"その他豆知識","level":"1.13","depth":1,"next":{"title":"Exercise (1)","level":"1.14","depth":1,"path":"exercise1.md","ref":"./exercise1.md","articles":[]},"previous":{"title":"Null安全","level":"1.12","depth":1,"path":"null_safe.md","ref":"./null_safe.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","search","codeblock-filename"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"search":{},"codeblock-filename":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"tips.md","mtime":"2021-03-31T08:43:43.165Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-31T09:14:27.589Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"その他豆知識","level":"1.13","depth":1,"next":{"title":"Exercise (1)","level":"1.14","depth":1,"path":"exercise1.md","ref":"./exercise1.md","articles":[]},"previous":{"title":"Null安全","level":"1.12","depth":1,"path":"null_safe.md","ref":"./null_safe.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","search","codeblock-filename"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"search":{},"codeblock-filename":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"tips.md","mtime":"2021-03-31T10:16:20.749Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-31T10:30:35.936Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
