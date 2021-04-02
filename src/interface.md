@@ -99,7 +99,7 @@ fun main(args: Array<String>) {
     * スーパークラスの変更はただちにサブクラスに影響する (変更の影響範囲を小さくできない)
   * 継承せずに別クラスに処理を委譲するやり方をデリゲーションと呼ぶ
 
-  継承と移譲それぞれの実装例を見てみよう。
+  継承と委譲それぞれの実装例を見てみよう。
 
 ```kotlin
 // 継承するパターン
@@ -207,7 +207,7 @@ interface Greeter {
 }
 
 // Greeter インターフェースを受け取って呼び出すだけの関数
-fun greeting(g: Greeter, target:String) {
+fun greeting(g: Greeter, target: String) {
     g.sayHello(target)
 }
 

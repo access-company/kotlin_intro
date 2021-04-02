@@ -142,7 +142,7 @@ fun main() {
 定数を列挙する場合に便利な書き方。
 
 ```kotlin
-enum class Kanto{
+enum class Kanto {
     IBARAGI,
     TOCHIGI,
     GUNMA,
@@ -154,7 +154,7 @@ enum class Kanto{
 
 fun main() {
     println("Kanto Prefecture List: ")
-    for(prefecture in Kanto.values()){
+    for (prefecture in Kanto.values()) {
         println(prefecture)
     }
     println("I'm living in ${Kanto.TOKYO}.")
@@ -166,7 +166,7 @@ fun main() {
 異常が起こった場合、関数は例外をスローできる。関数の呼び出し元では、その例外をキャッチして処理できる。
 
 ```kotlin
-fun validation(percentage :Int) {
+fun validation(percentage: Int) {
     if (percentage !in 0..100) {
         throw IllegalArgumentException("A percentage must be between 0 and 100 [parameter: $percentage]")
     }
