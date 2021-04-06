@@ -59,7 +59,6 @@ fun getFizzBuzzString(i: Int) =
         i % 3  == 0 -> "fizz"
         else        -> "$i"
     }
-}
 ```
 
 * 元のコードがテストしにくい理由
@@ -68,12 +67,12 @@ fun getFizzBuzzString(i: Int) =
   * "ある入力に対して期待する出力がある"状態がテストしやすい
   * 入力と出力を取れる部分を切り出してテスト可能な状態にすればよい
 
-* 以下、テストコードの例
+* 以下、テストコードの例 (一部classを使っています。)
 
 ```kotlin
-@Test
-fun testFizzbuzz() {
+fun testFizzBuzz() {
     data class TestCase(val input: Int, val want: String)
+
     val tcs = arrayOf(
             TestCase(1, "1"),
             TestCase(2, "2"),
@@ -90,50 +89,15 @@ fun testFizzbuzz() {
             TestCase(13, "13"),
             TestCase(14, "14"),
             TestCase(15, "fizzbuzz"),
-            TestCase(30, "fizzbuzz")
+            TestCase(30, "fizzbuzz"),
             TestCase(45, "fizzbuzz")
     )
 
     for (tc in tcs) {
-        assertEquals(fizzbuzz(tc.input), tc.want)
-    }
-}
-```
-
-## exercise (1) - うるう年
-
-* ちょっと複雑な条件式になりそうだが、うまく書けましたでしょうか
-  * 一行で表すとこんな感じでしょうか。
-
-```kotlin
-fun isLeapYear(year : Int) = 
-    year % 4 == 0 && year % 100 != 0 || year % 400 == 0
-```
-
-* テストも書いてみました。
-
-```kotlin
-@Test
-fun testIsLeapYear() {
-    data class TestCase(val input: Int, val want: Boolean)
-    val tcs = arrayOf(
-            TestCase(1600, true),
-            TestCase(2000, true),
-            TestCase(2004, true),
-            TestCase(2008, true),
-            TestCase(2400, true),
-            TestCase(1700, false),
-            TestCase(1800, false),
-            TestCase(1900, false),
-            TestCase(2100, false),
-            TestCase(2200, false),
-            TestCase(2300, false),
-            TestCase(2500, false),
-            TestCase(2600, false)
-    )
-
-    for (tc in tcs) {
-        assertEquals(isLeapYear(tc.input), tc.want)
+        assertEquals(
+                expected = getFizzBuzzString(tc.input),
+                actual   = tc.want
+        )
     }
 }
 ```
