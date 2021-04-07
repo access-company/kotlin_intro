@@ -71,7 +71,7 @@ fun getFizzBuzzString(i: Int) =
 
 ```kotlin
 @Test
-fun testFizzbuzz() {
+fun testFizzBuzz() {
     data class TestCase(val input: Int, val want: String)
     val tcs = arrayOf(
             TestCase(1, "1"),
@@ -95,8 +95,8 @@ fun testFizzbuzz() {
 
     for (tc in tcs) {
         assertEquals(
-                expected = getFizzBuzzString(tc.input),
-                actual   = tc.want
+                expected = tc.want,
+                actual   = getFizzBuzzString(tc.input)
         )
     }
 }
@@ -135,7 +135,10 @@ fun testIsLeapYear() {
     )
 
     for (tc in tcs) {
-        assertEquals(isLeapYear(tc.input), tc.want)
+        assertEquals(
+                expected = tc.want,
+                actual   = isLeapYear(tc.input)
+        )
     }
 }
 ```
@@ -171,8 +174,8 @@ fun power(a: Int, n: Int) : Long =
   * `this` を使う必要がある
 
 ```kotlin
-fun Int.isOdd() = this % 2 == 0
-fun Int.isEven() = !this.isOdd()
+fun Int.isEven() = this % 2 == 0
+fun Int.isOdd()  = !this.isEven()
 ```
 
 ## exercise (2) - n 面のサイコロ
@@ -183,7 +186,7 @@ fun Int.isEven() = !this.isOdd()
 ```kotlin
 import java.util.Random
 
-class Dice(val n: Int, var rollCount: Int = 0) {
+class Dice(private val n: Int, var rollCount: Int = 0) {
     fun roll(): Int {
         rollCount++
         if (rollCount > 100) {
@@ -213,7 +216,7 @@ class DiceTest {
         try {
             d.roll()
         } catch(e:Exception) {
-            assertEquals(e.message, "I was broken!")
+            assertEquals("I was broken!", e.message)
         }
     }
 }

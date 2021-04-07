@@ -322,7 +322,7 @@ println(p3) // Person(name = access, age = 37)
 
 // copy は一部のプロパティだけついでに変更したりもできる
 val p4 = p1.copy(age = 17)
-println(p4) // Person(name = access, age = 15)
+println(p4) // Person(name = access, age = 17)
 ```
 
 * data class を使うと嬉しい場面
