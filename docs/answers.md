@@ -252,14 +252,14 @@ class MyCustomClassTest {
     fun testMyCustomSetter() {
         val c = MyCustomClass()
 
-        assertEquals(c.counter, 0)
+        assertEquals(0, c.counter)
         c.propertyWithCounter = 123
-        assertEquals(c.propertyWithCounter, 123)
+        assertEquals(123, c.propertyWithCounter)
         c.propertyWithCounter = 456
-        assertEquals(c.propertyWithCounter, 456)
+        assertEquals(456, c.propertyWithCounter)
         c.propertyWithCounter = 789
-        assertEquals(c.propertyWithCounter, 789)
-        assertEquals(c.counter, 3)
+        assertEquals(789, c.propertyWithCounter)
+        assertEquals(3, c.counter)
     }
 }
 ```
