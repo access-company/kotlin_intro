@@ -449,7 +449,7 @@ MyApp: print
 <p>&#x3068;&#x899A;&#x3048;&#x3066;&#x304A;&#x3053;&#x3046;&#x3002;</p>
 <h2 id="&#x5217;&#x6319;&#x578B;">&#x5217;&#x6319;&#x578B;</h2>
 <p>&#x5B9A;&#x6570;&#x3092;&#x5217;&#x6319;&#x3059;&#x308B;&#x5834;&#x5408;&#x306B;&#x4FBF;&#x5229;&#x306A;&#x66F8;&#x304D;&#x65B9;&#x3002;</p>
-<pre><code class="lang-kotlin"><span class="hljs-keyword">enum</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Kanto</span></span>{
+<pre><code class="lang-kotlin"><span class="hljs-keyword">enum</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Kanto</span> </span>{
     IBARAGI,
     TOCHIGI,
     GUNMA,
@@ -461,7 +461,7 @@ MyApp: print
 
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> {</span>
     println(<span class="hljs-string">&quot;Kanto Prefecture List: &quot;</span>)
-    <span class="hljs-keyword">for</span>(prefecture <span class="hljs-keyword">in</span> Kanto.values()){
+    <span class="hljs-keyword">for</span> (prefecture <span class="hljs-keyword">in</span> Kanto.values()) {
         println(prefecture)
     }
     println(<span class="hljs-string">&quot;I&apos;m living in ${Kanto.TOKYO}.&quot;</span>)
@@ -469,7 +469,7 @@ MyApp: print
 </code></pre>
 <h2 id="&#x4F8B;&#x5916;">&#x4F8B;&#x5916;</h2>
 <p>&#x7570;&#x5E38;&#x304C;&#x8D77;&#x3053;&#x3063;&#x305F;&#x5834;&#x5408;&#x3001;&#x95A2;&#x6570;&#x306F;&#x4F8B;&#x5916;&#x3092;&#x30B9;&#x30ED;&#x30FC;&#x3067;&#x304D;&#x308B;&#x3002;&#x95A2;&#x6570;&#x306E;&#x547C;&#x3073;&#x51FA;&#x3057;&#x5143;&#x3067;&#x306F;&#x3001;&#x305D;&#x306E;&#x4F8B;&#x5916;&#x3092;&#x30AD;&#x30E3;&#x30C3;&#x30C1;&#x3057;&#x3066;&#x51E6;&#x7406;&#x3067;&#x304D;&#x308B;&#x3002;</p>
-<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">validation</span><span class="hljs-params">(percentage :<span class="hljs-type">Int</span>)</span> {</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">validation</span><span class="hljs-params">(percentage: <span class="hljs-type">Int</span>)</span> {</span>
     <span class="hljs-keyword">if</span> (percentage !<span class="hljs-keyword">in</span> <span class="hljs-number">0.</span><span class="hljs-number">.100</span>) {
         <span class="hljs-keyword">throw</span> IllegalArgumentException(<span class="hljs-string">&quot;A percentage must be between 0 and 100 [parameter: $percentage]&quot;</span>)
     }
@@ -630,7 +630,7 @@ println(s) <span class="hljs-comment">//=&gt; ACCESS</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"その他豆知識","level":"1.13","depth":1,"next":{"title":"Exercise (1)","level":"1.14","depth":1,"path":"exercise1.md","ref":"./exercise1.md","articles":[]},"previous":{"title":"Null安全","level":"1.12","depth":1,"path":"null_safe.md","ref":"./null_safe.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","search","codeblock-filename"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"search":{},"codeblock-filename":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"tips.md","mtime":"2021-03-31T10:16:20.749Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-07T10:35:15.149Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"その他豆知識","level":"1.13","depth":1,"next":{"title":"Exercise (1)","level":"1.14","depth":1,"path":"exercise1.md","ref":"./exercise1.md","articles":[]},"previous":{"title":"Null安全","level":"1.12","depth":1,"path":"null_safe.md","ref":"./null_safe.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","search","codeblock-filename"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"search":{},"codeblock-filename":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"tips.md","mtime":"2021-04-09T03:43:34.408Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-09T03:43:37.837Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
