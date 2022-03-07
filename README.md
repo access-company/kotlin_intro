@@ -41,18 +41,20 @@ $ make
 
 1. VSCodeでkotlin_introフォルダを開く
 2. VSCodeのターミナル→新しいターミナル
-3. `docker build .`
-4. `docker-sync start`
-5. VSCodeの左下端<img src="./src/assets/images/vscode_remote_container.png" width=140 />をタップ
-6. Reopen in Containerを選択
+3. `docker-sync start`
+4. VSCodeの左下端<img src="./src/assets/images/vscode_remote_container.png" width=140 />をタップ
+5. Reopen in Containerを選択
 
 #### ビルド方法
 
-1. `make`
+1. Dockerコンテナ内で`make`を実行
 
-ドキュメントがDockerコンテナ内の`docs`に生成されます。
+ドキュメントがDockerコンテナ内の`docs`に生成され、ホスト側にもsyncされます。
 
-プレビューは準備中。
+#### プレビュー方法
+
+1. Dockerコンテナ内で`http-server docs`を実行
+2. `http://localhost:8080/`をブラウザで開く
 
 ### トラブルシューティング
 
