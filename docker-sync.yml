@@ -1,0 +1,5 @@
+version: "2"
+syncs:
+  appcode-native-osx-sync:
+    src: '.'
+    sync_excludes: ['Dockerfile', '.docker-sync.yml']
