@@ -3,11 +3,10 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>基本的な文法 · GitBook</title>
+        <title>基本的な文法 · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="generator" content="HonKit 3.7.1">
         
         
         
@@ -17,11 +16,11 @@
     
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-codeblock-filename/block.css">
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-codeblock-filename/block.css">
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro-kui/search.css">
                 
             
                 
@@ -70,7 +69,7 @@
     </head>
     <body>
         
-<div class="book">
+<div class="book honkit-cloak">
     <div class="book-summary">
         
             
@@ -307,8 +306,8 @@
     <li class="divider"></li>
 
     <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
         </a>
     </li>
 </ul>
@@ -346,437 +345,437 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x57FA;&#x672C;&#x7684;&#x306A;&#x6587;&#x6CD5;">&#x57FA;&#x672C;&#x7684;&#x306A;&#x6587;&#x6CD5;</h1>
-<p>Kotlin &#x306E;&#x57FA;&#x672C;&#x7684;&#x306A;&#x6587;&#x6CD5;&#x306B;&#x3064;&#x3044;&#x3066;&#x8A18;&#x8F09;&#x3057;&#x307E;&#x3059;&#x3002;</p>
-<h2 id="&#x30B4;&#x30FC;&#x30EB;">&#x30B4;&#x30FC;&#x30EB;</h2>
-<p>&#x4EE5;&#x4E0B;&#x306B;&#x3064;&#x3044;&#x3066;&#x3001;&#x4F7F;&#x3044;&#x65B9;&#x3092;&#x7406;&#x89E3;&#x3059;&#x308B;&#x3053;&#x3068;&#x3002;</p>
+                                <h1 id="基本的な文法">基本的な文法</h1>
+<p>Kotlin の基本的な文法について記載します。</p>
+<h2 id="ゴール">ゴール</h2>
+<p>以下について、使い方を理解すること。</p>
 <ul>
-<li>&#x5909;&#x6570;&#x5BA3;&#x8A00; (<code>var</code>&#x3001;<code>val</code>)</li>
-<li>&#x57FA;&#x672C;&#x7684;&#x306A;&#x30C7;&#x30FC;&#x30BF;&#x578B;</li>
-<li>&#x57FA;&#x672C;&#x7684;&#x306A;&#x30C7;&#x30FC;&#x30BF;&#x69CB;&#x9020; (&#x6587;&#x5B57;&#x5217;&#x3001;&#x914D;&#x5217;&#x3001;&#x30EA;&#x30B9;&#x30C8;&#x3001;&#x30BB;&#x30C3;&#x30C8;&#x3001;&#x30DE;&#x30C3;&#x30D7;&#x3001;&#x30EC;&#x30F3;&#x30B8;)</li>
-<li>&#x6761;&#x4EF6;&#x5206;&#x5C90; (<code>if</code>&#x3001;<code>when</code>)</li>
-<li>&#x30EB;&#x30FC;&#x30D7; (<code>while</code>&#x3001;<code>for</code>)</li>
+<li>変数宣言 (<code>var</code>、<code>val</code>)</li>
+<li>基本的なデータ型</li>
+<li>基本的なデータ構造 (文字列、配列、リスト、セット、マップ、レンジ)</li>
+<li>条件分岐 (<code>if</code>、<code>when</code>)</li>
+<li>ループ (<code>while</code>、<code>for</code>)</li>
 </ul>
 <h2 id="kotlin-playground">Kotlin Playground</h2>
-<p>&#x30D6;&#x30E9;&#x30A6;&#x30B6;&#x4E0A;&#x3067;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x3092;&#x898B;&#x306A;&#x304C;&#x3089;&#x3001;&#x305D;&#x306E;&#x5834;&#x3067;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x66F8;&#x3044;&#x3066;&#x52D5;&#x4F5C;&#x78BA;&#x8A8D;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;&#x53C2;&#x8003;&#x307E;&#x3067;&#x3002;</p>
+<p>ブラウザ上でサンプルを見ながら、その場でコードを書いて動作確認ができます。参考まで。</p>
 <ul>
 <li><a href="https://play.kotlinlang.org" target="_blank">https://play.kotlinlang.org</a></li>
 </ul>
-<h2 id="&#x3044;&#x308D;&#x3093;&#x306A;&#x578B;">&#x3044;&#x308D;&#x3093;&#x306A;&#x578B;</h2>
-<p>&#x4E3B;&#x306B;&#x4F7F;&#x308F;&#x308C;&#x308B;&#x578B;&#x3068;&#x3001;&#x5024;&#x306E;&#x4F8B;&#x3092;&#x4EE5;&#x4E0B;&#x306B;&#x8A18;&#x8F09;</p>
+<h2 id="いろんな型">いろんな型</h2>
+<p>主に使われる型と、値の例を以下に記載</p>
 <ul>
-<li>&#x6570;&#x5024;&#x578B;</li>
+<li>数値型</li>
 </ul>
 <table>
 <thead>
 <tr>
-<th>&#x578B;&#x540D;</th>
-<th>&#x30D3;&#x30C3;&#x30C8;&#x5E45;</th>
-<th>&#x7528;&#x9014;</th>
-<th>&#x4F8B;</th>
-<th>&#x5099;&#x8003;</th>
+<th>型名</th>
+<th>ビット幅</th>
+<th>用途</th>
+<th>例</th>
+<th>備考</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>Byte</code></td>
 <td>8 bit</td>
-<td>&#x6574;&#x6570;</td>
+<td>整数</td>
 <td>0x0f, 0b0101, 123</td>
 <td>-128 ~ 127</td>
 </tr>
 <tr>
 <td><code>Short</code></td>
 <td>16 bit</td>
-<td>&#x6574;&#x6570;</td>
+<td>整数</td>
 <td>0x0f, 0b0101, 1234</td>
 <td>-32,768 ~ 32767</td>
 </tr>
 <tr>
 <td><code>Int</code></td>
 <td>32 bit</td>
-<td>&#x6574;&#x6570;</td>
+<td>整数</td>
 <td>0x0f, 0b0101, 1234</td>
 <td>-2,147,483,648 ~ 2,147,483,647</td>
 </tr>
 <tr>
 <td><code>Long</code></td>
 <td>64 bit</td>
-<td>&#x6574;&#x6570;</td>
+<td>整数</td>
 <td>123456789L</td>
 <td>-9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807</td>
 </tr>
 <tr>
 <td><code>Float</code></td>
 <td>32 bit</td>
-<td>&#x6D6E;&#x52D5;&#x5C0F;&#x6570;&#x70B9;</td>
+<td>浮動小数点</td>
 <td>123.456F</td>
-<td>&#x5358;&#x7CBE;&#x5EA6;&#x6D6E;&#x52D5;&#x5C0F;&#x6570;&#x70B9;</td>
+<td>単精度浮動小数点</td>
 </tr>
 <tr>
 <td><code>Double</code></td>
 <td>64 bit</td>
-<td>&#x6D6E;&#x52D5;&#x5C0F;&#x6570;&#x70B9;</td>
+<td>浮動小数点</td>
 <td>123.456</td>
-<td>&#x500D;&#x7CBE;&#x5EA6;&#x4E0D;&#x52D5;&#x5C0F;&#x6570;&#x70B9;</td>
+<td>倍精度不動小数点</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li><p>&#x3061;&#x306A;&#x307F;&#x306B;&#x3001;&#x6570;&#x5024;&#x306F;&#x8AAD;&#x307F;&#x3084;&#x3059;&#x3055;&#x5411;&#x4E0A;&#x306E;&#x305F;&#x3081;&#x306B;&#x4EFB;&#x610F;&#x306E;&#x4F4D;&#x7F6E;&#x306B; <code>_</code> &#x3092;&#x88DC;&#x3063;&#x305F;&#x66F8;&#x304D;&#x65B9;&#x304C;&#x3067;&#x304D;&#x308B;</p>
+<li><p>ちなみに、数値は読みやすさ向上のために任意の位置に <code>_</code> を補った書き方ができる</p>
 <ul>
-<li>Int &#x306E;&#x6700;&#x5927;&#x5024; &#x2192;  <code>2_147_483_674</code></li>
-<li>&#x30AF;&#x30EC;&#x30B8;&#x30C3;&#x30C8;&#x30AB;&#x30FC;&#x30C9;&#x756A;&#x53F7; &#x2192; <code>1234_5678_9012</code></li>
-<li>&#x30DE;&#x30A4;&#x30CA;&#x30F3;&#x30D0;&#x30FC; &#x2192; <code>987_65_4321</code></li>
-<li>16&#x9032;&#x6570;&#x3092; 1 byte &#x305A;&#x3064;&#x533A;&#x5207;&#x308B; &#x2192; <code>0xFF_EE_DD_CC</code></li>
-<li>2&#x9032;&#x6570;&#x3092; 1 byte &#x305A;&#x3064;&#x533A;&#x5207;&#x308B; &#x2192; <code>0b11010101_01011111_01010101</code></li>
+<li>Int の最大値 →  <code>2_147_483_674</code></li>
+<li>クレジットカード番号 → <code>1234_5678_9012</code></li>
+<li>マイナンバー → <code>987_65_4321</code></li>
+<li>16進数を 1 byte ずつ区切る → <code>0xFF_EE_DD_CC</code></li>
+<li>2進数を 1 byte ずつ区切る → <code>0b11010101_01011111_01010101</code></li>
 </ul>
 </li>
-<li><p>&#x305D;&#x306E;&#x4ED6;&#x306E;&#x57FA;&#x672C;&#x578B;</p>
+<li><p>その他の基本型</p>
 </li>
 </ul>
 <table>
 <thead>
 <tr>
-<th>&#x578B;&#x540D;</th>
-<th>&#x7528;&#x9014;</th>
-<th>&#x4F8B;</th>
+<th>型名</th>
+<th>用途</th>
+<th>例</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>Char</code></td>
-<td>&#x6587;&#x5B57;</td>
+<td>文字</td>
 <td>&apos;a&apos;, &apos;b&apos;, &apos;0&apos;, &apos;\u8d64&apos;</td>
 </tr>
 <tr>
 <td><code>String</code></td>
-<td>&#x6587;&#x5B57;&#x5217;</td>
+<td>文字列</td>
 <td>&quot;hello&quot;, &quot;How are you!&quot;</td>
 </tr>
 <tr>
 <td><code>Boolean</code></td>
-<td>&#x771F;&#x507D;&#x5024;</td>
+<td>真偽値</td>
 <td>true, false</td>
 </tr>
 <tr>
 <td><code>Unit</code></td>
-<td>&quot;&#x306A;&#x3044;&quot;&#x3053;&#x3068;&#x3092;&#x8868;&#x3059; (Java &#x306E; <code>void</code> &#x306B;&#x3042;&#x305F;&#x308B;)</td>
-<td><code>fun hoge(): Unit</code><br>(&#x623B;&#x308A;&#x5024;&#x304C;&#x306A;&#x3044;&#x95A2;&#x6570;&#x306E;&#x5B9A;&#x7FA9;)</td>
+<td>&quot;ない&quot;ことを表す (Java の <code>void</code> にあたる)</td>
+<td><code>fun hoge(): Unit</code><br>(戻り値がない関数の定義)</td>
 </tr>
 </tbody>
 </table>
-<h2 id="&#x5909;&#x6570;">&#x5909;&#x6570;</h2>
+<h2 id="変数">変数</h2>
 <ul>
 <li><code>val</code><ul>
-<li><code>val</code> &#x3067;&#x5BA3;&#x8A00;&#x3057;&#x305F;&#x5909;&#x6570;&#x306F;&#x3001;&#x3042;&#x3068;&#x304B;&#x3089;&#x5024;&#x306E;&#x5909;&#x66F4; (&#x518D;&#x4EE3;&#x5165;) &#x304C;&#x3067;&#x304D;&#x306A;&#x3044;&#x3002;</li>
-<li>&#x5909;&#x6570;&#x3092;&#x6271;&#x3046;&#x969B;&#x306B;&#x306F;&#x3001;&#x53EF;&#x80FD;&#x306A;&#x9650;&#x308A;&#x306F; <code>val</code> &#x3092;&#x7528;&#x3044;&#x305F;&#x307B;&#x3046;&#x304C;&#x826F;&#x3044;&#x3002;<ul>
-<li><code>var</code> &#x306F;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x8AAD;&#x307F;&#x306B;&#x304F;&#x3055;&#x3084;&#x30D0;&#x30B0;&#x3092;&#x62DB;&#x304D;&#x3084;&#x3059;&#x3044;&#x3002;</li>
+<li><code>val</code> で宣言した変数は、あとから値の変更 (再代入) ができない。</li>
+<li>変数を扱う際には、可能な限りは <code>val</code> を用いたほうが良い。<ul>
+<li><code>var</code> はコードの読みにくさやバグを招きやすい。</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// val &#x5909;&#x6570;&#x540D;: &#x578B; = &#x5F0F;</span>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// val 変数名: 型 = 式</span>
 
-<span class="hljs-variable"><span class="hljs-keyword">val</span> foo</span>: <span class="hljs-keyword">Int</span> = <span class="hljs-number">123</span>
-<span class="hljs-variable"><span class="hljs-keyword">val</span> bar</span>: String = <span class="hljs-string">&quot;Hello&quot;</span>
+<span class="hljs-keyword">val</span> foo: <span class="hljs-built_in">Int</span> = <span class="hljs-number">123</span>
+<span class="hljs-keyword">val</span> bar: String = <span class="hljs-string">&quot;Hello&quot;</span>
 </code></pre>
 <ul>
 <li><code>var</code><ul>
-<li><code>var</code> &#x3067;&#x5BA3;&#x8A00;&#x3057;&#x305F;&#x5909;&#x6570;&#x306F;&#x518D;&#x4EE3;&#x5165;&#x304C;&#x53EF;&#x80FD;&#x3002;</li>
+<li><code>var</code> で宣言した変数は再代入が可能。</li>
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// var &#x5909;&#x6570;&#x540D;: &#x578B; = &#x5F0F;</span>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// var 変数名: 型 = 式</span>
 
-<span class="hljs-variable"><span class="hljs-keyword">var</span> foo</span>: <span class="hljs-keyword">Int</span> = <span class="hljs-number">123</span>
-<span class="hljs-variable"><span class="hljs-keyword">var</span> bar</span>: String = <span class="hljs-string">&quot;Hello&quot;</span>
+<span class="hljs-keyword">var</span> foo: <span class="hljs-built_in">Int</span> = <span class="hljs-number">123</span>
+<span class="hljs-keyword">var</span> bar: String = <span class="hljs-string">&quot;Hello&quot;</span>
 
-<span class="hljs-comment">// &#x3042;&#x3068;&#x304B;&#x3089;&#x5024;&#x304C;&#x5909;&#x3048;&#x3089;&#x308C;&#x308B;</span>
+<span class="hljs-comment">// あとから値が変えられる</span>
 
 foo = <span class="hljs-number">100</span>
 bar = <span class="hljs-string">&quot;World!&quot;</span>
 </code></pre>
-<h2 id="&#x578B;&#x63A8;&#x8AD6;">&#x578B;&#x63A8;&#x8AD6;</h2>
+<h2 id="型推論">型推論</h2>
 <ul>
-<li>Kotlin &#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30E9;&#x306B;&#x3001;&#x53F3;&#x8FBA;&#x304B;&#x3089;&#x5909;&#x6570;&#x306E;&#x578B;&#x3092;&#x63A8;&#x8AD6;&#x3057;&#x3066;&#x3082;&#x3089;&#x3046;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;&#x3002;</li>
-<li>&#x578B;&#x63A8;&#x8AD6;&#x3092;&#x884C;&#x3046;&#x5834;&#x5408;&#x306F;&#x3001;&#x578B;&#x540D;&#x3092;&#x7701;&#x7565;&#x3057;&#x3066;&#x4EE3;&#x5165;&#x3092;&#x884C;&#x3046;&#x3002;</li>
+<li>Kotlin コンパイラに、右辺から変数の型を推論してもらうことができる。</li>
+<li>型推論を行う場合は、型名を省略して代入を行う。</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-variable"><span class="hljs-keyword">val</span> age</span>  = <span class="hljs-number">35</span>       <span class="hljs-comment">// age &#x306E;&#x578B;&#x306F; Int &#x306B;&#x306A;&#x308B;</span>
+<pre><code class="lang-kotlin"><span class="hljs-keyword">val</span> age  = <span class="hljs-number">35</span>       <span class="hljs-comment">// age の型は Int になる</span>
 
-<span class="hljs-variable"><span class="hljs-keyword">var</span> name</span> = <span class="hljs-string">&quot;access&quot;</span> <span class="hljs-comment">// name &#x306E;&#x578B;&#x306F; String &#x306B;&#x306A;&#x308B;</span>
-name = <span class="hljs-number">12</span>           <span class="hljs-comment">// name &#x306E;&#x578B;&#x306F; String &#x306A;&#x306E;&#x3067;&#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB;&#x30A8;&#x30E9;&#x30FC;&#x306B;&#x306A;&#x308B;</span>
+<span class="hljs-keyword">var</span> name = <span class="hljs-string">&quot;access&quot;</span> <span class="hljs-comment">// name の型は String になる</span>
+name = <span class="hljs-number">12</span>           <span class="hljs-comment">// name の型は String なのでコンパイルエラーになる</span>
 </code></pre>
-<h2 id="&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;">&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;</h2>
-<p>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3068;&#x306F;&#xFF1F;&#x2192;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x30DA;&#x30FC;&#x30B8;&#x3067;&#x8A73;&#x3057;&#x304F;&#x89E6;&#x308C;&#x308B;&#x3002;</p>
+<h2 id="オブジェクト">オブジェクト</h2>
+<p>オブジェクトとは？→クラスのページで詳しく触れる。</p>
 <ul>
-<li>&#x6587;&#x5B57;&#x5217; (String)<ul>
-<li>&#x6587;&#x5B57;&#x5217;&#x3092;&#x8868;&#x3059;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3002;</li>
-<li>&#x8272;&#x3005;&#x306A;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3001;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x304C;&#x53D6;&#x308A;&#x63C3;&#x3048;&#x3089;&#x308C;&#x3066;&#x3044;&#x308B;&#x3002;</li>
-<li><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html" target="_blank">String - Kotlin Programming Language (&#x516C;&#x5F0F; API Reference)</a></li>
+<li>文字列 (String)<ul>
+<li>文字列を表すオブジェクト。</li>
+<li>色々なメソッド、プロパティが取り揃えられている。</li>
+<li><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html" target="_blank">String - Kotlin Programming Language (公式 API Reference)</a></li>
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-variable"><span class="hljs-keyword">val</span> str</span> = <span class="hljs-string">&quot;access&quot;</span>
+<pre><code class="lang-kotlin"><span class="hljs-keyword">val</span> str = <span class="hljs-string">&quot;access&quot;</span>
 
 str.length       <span class="hljs-comment">// 6</span>
 str.capitalize() <span class="hljs-comment">// &quot;Access&quot;</span>
 str.isEmpty()    <span class="hljs-comment">// false</span>
 
-<span class="hljs-comment">// &#x6587;&#x5B57;&#x5217;&#x306E;&#x9023;&#x7D50;</span>
+<span class="hljs-comment">// 文字列の連結</span>
 
-<span class="hljs-variable"><span class="hljs-keyword">val</span> str2</span> = <span class="hljs-string">&quot;Hello &quot;</span> + str + <span class="hljs-string">&quot; !&quot;</span>  <span class="hljs-comment">// + &#x3092;&#x4F7F;&#x3063;&#x305F;&#x9023;&#x7D50;</span>
+<span class="hljs-keyword">val</span> str2 = <span class="hljs-string">&quot;Hello &quot;</span> + str + <span class="hljs-string">&quot; !&quot;</span>  <span class="hljs-comment">// + を使った連結</span>
 str2 <span class="hljs-comment">// &quot;Hello access !&quot;</span>
 
-<span class="hljs-variable"><span class="hljs-keyword">val</span> str3</span> = <span class="hljs-string">&quot;Good evening ${str}!&quot;</span> <span class="hljs-comment">// String &#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x3092;&#x4F7F;&#x3063;&#x305F;&#x9023;&#x7D50;</span>
+<span class="hljs-keyword">val</span> str3 = <span class="hljs-string">&quot;Good evening <span class="hljs-subst">${str}</span>!&quot;</span> <span class="hljs-comment">// String テンプレートを使った連結</span>
 str3 <span class="hljs-comment">// &quot;Good evening access!</span>
 
-<span class="hljs-variable"><span class="hljs-keyword">val</span> str4</span> = <span class="hljs-string">&quot;Good night $str!&quot;</span>     <span class="hljs-comment">// String &#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x3092;&#x4F7F;&#x3063;&#x305F;&#x9023;&#x7D50;</span>
+<span class="hljs-keyword">val</span> str4 = <span class="hljs-string">&quot;Good night <span class="hljs-variable">$str</span>!&quot;</span>     <span class="hljs-comment">// String テンプレートを使った連結</span>
 str4 <span class="hljs-comment">// &quot;Good night access!</span>
 </code></pre>
 <ul>
-<li>&#x914D;&#x5217;</li>
+<li>配列</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x914D;&#x5217;&#x3092;&#x4F5C;&#x308B;&#x306B;&#x306F; arrayOfNulls &#x3092;&#x4F7F;&#x3046;</span>
-<span class="hljs-comment">// Int &#x306E;&#x914D;&#x5217;&#x306E;&#x5834;&#x5408;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A;&#x66F8;&#x304D;&#x65B9;</span>
-<span class="hljs-variable"><span class="hljs-keyword">val</span> ints</span> = arrayOfNulls<span class="hljs-type">&lt;Int&gt;</span>(<span class="hljs-number">10</span>)
+<pre><code class="lang-kotlin"><span class="hljs-comment">// 配列を作るには arrayOfNulls を使う</span>
+<span class="hljs-comment">// Int の配列の場合は以下のような書き方</span>
+<span class="hljs-keyword">val</span> ints = arrayOfNulls&lt;<span class="hljs-built_in">Int</span>&gt;(<span class="hljs-number">10</span>)
 
-<span class="hljs-comment">// &#x5404;&#x8981;&#x7D20;&#x3078;&#x306E;&#x5024;&#x306E;&#x4EE3;&#x5165;</span>
-<span class="hljs-comment">// (&#x518D;&#x4EE3;&#x5165;&#x3082;&#x53EF;&#x80FD;)</span>
+<span class="hljs-comment">// 各要素への値の代入</span>
+<span class="hljs-comment">// (再代入も可能)</span>
 ints[<span class="hljs-number">0</span>] = <span class="hljs-number">10</span>
 ints[<span class="hljs-number">1</span>] = <span class="hljs-number">20</span>
 
-<span class="hljs-comment">// &#x4E2D;&#x8EAB;&#x306F;&#x3053;&#x3046;&#x306A;&#x308B;</span>
+<span class="hljs-comment">// 中身はこうなる</span>
 ints[<span class="hljs-number">0</span>] <span class="hljs-comment">// 10</span>
 ints[<span class="hljs-number">1</span>] <span class="hljs-comment">// 20</span>
 ints[<span class="hljs-number">2</span>] <span class="hljs-comment">// null</span>
 
-<span class="hljs-comment">// &#x8981;&#x7D20;&#x6570;&#x306E;&#x53D6;&#x5F97;&#x306B;&#x306F; size &#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x4F7F;&#x3046;</span>
+<span class="hljs-comment">// 要素数の取得には size プロパティを使う</span>
 ints.size <span class="hljs-comment">// 10</span>
 
-<span class="hljs-comment">// arrayOf &#x3067;&#x66F8;&#x304F;&#x3068;&#x578B;&#x63A8;&#x8AD6;&#x3055;&#x308C;&#x308B;</span>
-<span class="hljs-comment">// &#x4EE5;&#x4E0B;&#x306F; String &#x306E;&#x914D;&#x5217;&#x3068;&#x3044;&#x3046;&#x3053;&#x3068;&#x306B;&#x3055;&#x308C;&#x308B;</span>
-<span class="hljs-variable"><span class="hljs-keyword">val</span> array</span> = arrayOf(<span class="hljs-string">&quot;access&quot;</span>, <span class="hljs-string">&quot;company&quot;</span>, <span class="hljs-string">&quot;com&quot;</span>)
+<span class="hljs-comment">// arrayOf で書くと型推論される</span>
+<span class="hljs-comment">// 以下は String の配列ということにされる</span>
+<span class="hljs-keyword">val</span> array = arrayOf(<span class="hljs-string">&quot;access&quot;</span>, <span class="hljs-string">&quot;company&quot;</span>, <span class="hljs-string">&quot;com&quot;</span>)
 array[<span class="hljs-number">0</span>] <span class="hljs-comment">// &quot;access&quot;</span>
 array[<span class="hljs-number">1</span>] <span class="hljs-comment">// &quot;company&quot;</span>
 array[<span class="hljs-number">2</span>] <span class="hljs-comment">// &quot;com&quot;</span>
 </code></pre>
 <ul>
-<li>&#x30EA;&#x30B9;&#x30C8;</li>
+<li>リスト</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// listOf &#x3067;&#x30EA;&#x30B9;&#x30C8;&#x3092;&#x4F5C;&#x308B;&#x3002;</span>
-<span class="hljs-variable"><span class="hljs-keyword">val</span> list</span> = listOf<span class="hljs-type">&lt;Int&gt;</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+<pre><code class="lang-kotlin"><span class="hljs-comment">// listOf でリストを作る。</span>
+<span class="hljs-keyword">val</span> list = listOf&lt;<span class="hljs-built_in">Int</span>&gt;(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
 
-<span class="hljs-comment">// &#x914D;&#x5217;&#x3068;&#x540C;&#x3058;&#x3088;&#x3046;&#x306B;&#x8981;&#x7D20;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3067;&#x304D;&#x308B;</span>
+<span class="hljs-comment">// 配列と同じように要素アクセスできる</span>
 list[<span class="hljs-number">0</span>] <span class="hljs-comment">// 1</span>
 
-<span class="hljs-comment">// &#x5358;&#x306A;&#x308B;&#x30EA;&#x30B9;&#x30C8;&#x306F;&#x8981;&#x7D20;&#x306E;&#x5024;&#x3092;&#x5909;&#x66F4;&#x3067;&#x304D;&#x306A;&#x3044;</span>
-<span class="hljs-comment">// &#x8981;&#x7D20;&#x306E;&#x5024;&#x3092;&#x5909;&#x66F4;&#x53EF;&#x80FD;&#x306A;&#x30EA;&#x30B9;&#x30C8;&#x304C;&#x6B32;&#x3057;&#x3044;&#x5834;&#x5408;&#x306F; MutableList &#x3092;&#x4F7F;&#x3046;</span>
-list[<span class="hljs-number">0</span>] = <span class="hljs-number">100</span> <span class="hljs-comment">// &#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB;&#x30A8;&#x30E9;&#x30FC;</span>
+<span class="hljs-comment">// 単なるリストは要素の値を変更できない</span>
+<span class="hljs-comment">// 要素の値を変更可能なリストが欲しい場合は MutableList を使う</span>
+list[<span class="hljs-number">0</span>] = <span class="hljs-number">100</span> <span class="hljs-comment">// コンパイルエラー</span>
 </code></pre>
 <ul>
-<li>&#x30BB;&#x30C3;&#x30C8;</li>
+<li>セット</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x30BB;&#x30C3;&#x30C8;&#x306F;&#x300C;&#x91CD;&#x8907;&#x306E;&#x306A;&#x3044;&#x300D;&#x96C6;&#x5408;&#x3092;&#x6271;&#x3046;&#x5834;&#x5408;&#x306B;&#x7528;&#x3044;&#x308B;</span>
-<span class="hljs-variable"><span class="hljs-keyword">val</span> intSet</span> = setOf(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>)
+<pre><code class="lang-kotlin"><span class="hljs-comment">// セットは「重複のない」集合を扱う場合に用いる</span>
+<span class="hljs-keyword">val</span> intSet = setOf(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>)
 intSet <span class="hljs-comment">// [1, 2, 3, 4]</span>
 
-<span class="hljs-comment">// &#x5358;&#x306A;&#x308B;&#x30BB;&#x30C3;&#x30C8;&#x306F;&#x8981;&#x7D20;&#x306E;&#x5024;&#x3092;&#x5909;&#x66F4;&#x3067;&#x304D;&#x306A;&#x3044;</span>
-<span class="hljs-comment">// &#x8981;&#x7D20;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x305F;&#x308A;&#x524A;&#x9664;&#x3057;&#x305F;&#x308A;&#x3059;&#x308B;&#x5834;&#x5408;&#x306F; MutableSet &#x3092;&#x7528;&#x3044;&#x308B;</span>
-intSet += <span class="hljs-number">5</span> <span class="hljs-comment">// &#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB;&#x30A8;&#x30E9;&#x30FC;</span>
+<span class="hljs-comment">// 単なるセットは要素の値を変更できない</span>
+<span class="hljs-comment">// 要素を追加したり削除したりする場合は MutableSet を用いる</span>
+intSet += <span class="hljs-number">5</span> <span class="hljs-comment">// コンパイルエラー</span>
 
-<span class="hljs-comment">// &#x30BB;&#x30C3;&#x30C8;&#x306F;&#x8981;&#x7D20;&#x306E;&#x9806;&#x756A;&#x3092;&#x4FDD;&#x8A3C;&#x3057;&#x306A;&#x3044;&#x306E;&#x3067;&#x3001;&#x914D;&#x5217;&#x307F;&#x305F;&#x3044;&#x306A;&#x6DFB;&#x5B57;&#x3067;&#x306E;&#x8981;&#x7D20;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x306F;&#x3067;&#x304D;&#x306A;&#x3044;</span>
-intSet[<span class="hljs-number">2</span>] <span class="hljs-comment">// &#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB;&#x30A8;&#x30E9;&#x30FC;</span>
+<span class="hljs-comment">// セットは要素の順番を保証しないので、配列みたいな添字での要素アクセスはできない</span>
+intSet[<span class="hljs-number">2</span>] <span class="hljs-comment">// コンパイルエラー</span>
 </code></pre>
 <ul>
-<li>&#x30DE;&#x30C3;&#x30D7;</li>
+<li>マップ</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x30DE;&#x30C3;&#x30D7;&#x306F;&#x30AD;&#x30FC;&#x3068;&#x5024;&#x306E;&#x30DA;&#x30A2;&#x3092;&#x4FDD;&#x6301;&#x3059;&#x308B;&#x30B3;&#x30EC;&#x30AF;&#x30B7;&#x30E7;&#x30F3;</span>
-<span class="hljs-comment">// &#x4EE5;&#x4E0B;&#x306F; &lt;String, Int&gt; &#x3068;&#x3044;&#x3046;&#x5F62;&#x306E;&#x30DA;&#x30A2;&#x3092;&#x4FDD;&#x6301;&#x3067;&#x304D;&#x308B;&#x30DE;&#x30C3;&#x30D7;</span>
-<span class="hljs-variable"><span class="hljs-keyword">val</span> map</span> = mapOf(<span class="hljs-number">1</span> to <span class="hljs-string">&quot;access&quot;</span>, <span class="hljs-number">2</span> to <span class="hljs-string">&quot;company&quot;</span>, <span class="hljs-number">3</span> to <span class="hljs-string">&quot;com&quot;</span>)
+<pre><code class="lang-kotlin"><span class="hljs-comment">// マップはキーと値のペアを保持するコレクション</span>
+<span class="hljs-comment">// 以下は &lt;String, Int&gt; という形のペアを保持できるマップ</span>
+<span class="hljs-keyword">val</span> map = mapOf(<span class="hljs-number">1</span> to <span class="hljs-string">&quot;access&quot;</span>, <span class="hljs-number">2</span> to <span class="hljs-string">&quot;company&quot;</span>, <span class="hljs-number">3</span> to <span class="hljs-string">&quot;com&quot;</span>)
 map[<span class="hljs-number">1</span>] <span class="hljs-comment">// &quot;access&quot;</span>
 map[<span class="hljs-number">2</span>] <span class="hljs-comment">// &quot;company&quot;</span>
 map[<span class="hljs-number">3</span>] <span class="hljs-comment">// &quot;com&quot;</span>
 map[<span class="hljs-number">4</span>] <span class="hljs-comment">// null</span>
 
-<span class="hljs-comment">// &#x3054;&#x591A;&#x5206;&#x306B;&#x6F0F;&#x308C;&#x305A;&#x3001;&#x5358;&#x306A;&#x308B;&#x30DE;&#x30C3;&#x30D7;&#x306F;&#x5024;&#x306E;&#x5909;&#x66F4;&#x304C;&#x3067;&#x304D;&#x306A;&#x3044;</span>
-<span class="hljs-comment">// &#x8981;&#x7D20;&#x306E;&#x5024;&#x3092;&#x5909;&#x66F4;&#x53EF;&#x80FD;&#x306A;&#x30DE;&#x30C3;&#x30D7;&#x304C;&#x6B32;&#x3057;&#x3044;&#x5834;&#x5408;&#x306F; MutableMap &#x3092;&#x4F7F;&#x3046;</span>
-map[<span class="hljs-number">1</span>] = <span class="hljs-string">&quot;fuga&quot;</span> <span class="hljs-comment">// &#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB;&#x30A8;&#x30E9;&#x30FC;</span>
+<span class="hljs-comment">// ご多分に漏れず、単なるマップは値の変更ができない</span>
+<span class="hljs-comment">// 要素の値を変更可能なマップが欲しい場合は MutableMap を使う</span>
+map[<span class="hljs-number">1</span>] = <span class="hljs-string">&quot;fuga&quot;</span> <span class="hljs-comment">// コンパイルエラー</span>
 </code></pre>
 <ul>
-<li>&#x30EC;&#x30F3;&#x30B8;<ul>
-<li><code>..</code> &#x3092;&#x4F7F;&#x3063;&#x3066;&#x7BC4;&#x56F2;&#x3092;&#x8868;&#x3059;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;</li>
+<li>レンジ<ul>
+<li><code>..</code> を使って範囲を表すことができる</li>
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-number">1.</span><span class="hljs-number">.10</span> <span class="hljs-comment">// 1&#x301C;10 &#x306E;&#x7BC4;&#x56F2;&#x3092;&#x793A;&#x3059;</span>
+<pre><code class="lang-kotlin"><span class="hljs-number">1.</span><span class="hljs-number">.10</span> <span class="hljs-comment">// 1〜10 の範囲を示す</span>
 
-<span class="hljs-comment">// in &#x3092;&#x4F7F;&#x3063;&#x3066;&#x3001;&#x6307;&#x5B9A;&#x3057;&#x305F;&#x5024;&#x304C;&#x7BC4;&#x56F2;&#x5185;&#x306B;&#x3042;&#x308B;&#x304B;&#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x3059;&#x308B;</span>
+<span class="hljs-comment">// in を使って、指定した値が範囲内にあるかチェックする</span>
 <span class="hljs-number">5</span> <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.10</span>   <span class="hljs-comment">// true</span>
 <span class="hljs-number">100</span> <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.10</span> <span class="hljs-comment">// false</span>
 
-<span class="hljs-comment">// range &#x3082;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306A;&#x306E;&#x3067;&#x5909;&#x6570;&#x306B;&#x5165;&#x308C;&#x305F;&#x308A;&#x3067;&#x304D;&#x308B;</span>
-<span class="hljs-variable"><span class="hljs-keyword">val</span> r</span> = <span class="hljs-number">1.</span><span class="hljs-number">.10</span>
+<span class="hljs-comment">// range もオブジェクトなので変数に入れたりできる</span>
+<span class="hljs-keyword">val</span> r = <span class="hljs-number">1.</span><span class="hljs-number">.10</span>
 <span class="hljs-number">5</span> <span class="hljs-keyword">in</span> r <span class="hljs-comment">// true</span>
 
-<span class="hljs-comment">// &#x30EC;&#x30F3;&#x30B8;&#x304B;&#x3089;&#x30EA;&#x30B9;&#x30C8;&#x3092;&#x5F97;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;</span>
-<span class="hljs-variable"><span class="hljs-keyword">val</span> list</span> = r.toList()
+<span class="hljs-comment">// レンジからリストを得ることができる</span>
+<span class="hljs-keyword">val</span> list = r.toList()
 list <span class="hljs-comment">// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span>
 </code></pre>
-<h2 id="&#x6761;&#x4EF6;&#x5206;&#x5C90;">&#x6761;&#x4EF6;&#x5206;&#x5C90;</h2>
+<h2 id="条件分岐">条件分岐</h2>
 <ul>
 <li>if<ul>
-<li>&#x6761;&#x4EF6;&#x5206;&#x5C90;&#x306B;&#x7528;&#x3044;&#x308B;</li>
-<li>else &#x3092;&#x4F34;&#x3046;&#x3053;&#x3068;&#x3067;&#x300C;&#x5F0F;&#x300D;&#x3068;&#x3057;&#x3066;&#x7528;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x53EF;&#x80FD; (&#x5909;&#x6570;&#x306B;&#x4EE3;&#x5165;&#x3057;&#x305F;&#x308A;&#x3067;&#x304D;&#x308B;)</li>
+<li>条件分岐に用いる</li>
+<li>else を伴うことで「式」として用いることが可能 (変数に代入したりできる)</li>
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-variable"><span class="hljs-keyword">val</span> r</span> = <span class="hljs-number">1.</span><span class="hljs-number">.10</span>
+<pre><code class="lang-kotlin"><span class="hljs-keyword">val</span> r = <span class="hljs-number">1.</span><span class="hljs-number">.10</span>
 <span class="hljs-keyword">if</span> (<span class="hljs-number">5</span> <span class="hljs-keyword">in</span> r) {
     println(<span class="hljs-string">&quot;5 is in range&quot;</span>)
 }
 
-<span class="hljs-comment">// &#x5F0F;&#x3068;&#x3057;&#x3066;&#x7528;&#x3044;&#x3066;&#x5909;&#x6570;&#x306B;&#x4EE3;&#x5165;&#x3059;&#x308B;&#x3053;&#x3068;&#x3082;&#x53EF;&#x80FD;</span>
-<span class="hljs-variable"><span class="hljs-keyword">val</span> n</span> = <span class="hljs-number">5</span>
-<span class="hljs-variable"><span class="hljs-keyword">val</span> result</span> = <span class="hljs-keyword">if</span> (n <span class="hljs-keyword">in</span> r) {
-    <span class="hljs-string">&quot;$n is in range&quot;</span>
+<span class="hljs-comment">// 式として用いて変数に代入することも可能</span>
+<span class="hljs-keyword">val</span> n = <span class="hljs-number">5</span>
+<span class="hljs-keyword">val</span> result = <span class="hljs-keyword">if</span> (n <span class="hljs-keyword">in</span> r) {
+    <span class="hljs-string">&quot;<span class="hljs-variable">$n</span> is in range&quot;</span>
 } <span class="hljs-keyword">else</span> {
-    <span class="hljs-comment">// &#x5F0F;&#x3068;&#x3057;&#x3066;&#x7528;&#x3044;&#x308B;&#x3068;&#x304D;&#x306B;&#x306F; else &#x5FC5;&#x9808;</span>
-    <span class="hljs-string">&quot;$n is not in range&quot;</span>
+    <span class="hljs-comment">// 式として用いるときには else 必須</span>
+    <span class="hljs-string">&quot;<span class="hljs-variable">$n</span> is not in range&quot;</span>
 }
 result <span class="hljs-comment">// 5 is in range</span>
 
-<span class="hljs-comment">// else if &#x3067;&#x6B21;&#x3005;&#x3064;&#x306A;&#x3052;&#x308B;&#x3053;&#x3068;&#x3082;&#x53EF;&#x80FD;</span>
-<span class="hljs-variable"><span class="hljs-keyword">val</span> age</span> = <span class="hljs-number">7</span>
-<span class="hljs-variable"><span class="hljs-keyword">val</span> fee</span> = <span class="hljs-keyword">if</span> (age &gt; <span class="hljs-number">12</span>) {
-    <span class="hljs-string">&quot;&#x5927;&#x4EBA;&#x6599;&#x91D1;&quot;</span>
+<span class="hljs-comment">// else if で次々つなげることも可能</span>
+<span class="hljs-keyword">val</span> age = <span class="hljs-number">7</span>
+<span class="hljs-keyword">val</span> fee = <span class="hljs-keyword">if</span> (age &gt; <span class="hljs-number">12</span>) {
+    <span class="hljs-string">&quot;大人料金&quot;</span>
 } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (age &gt;= <span class="hljs-number">6</span>) {
-    <span class="hljs-string">&quot;&#x5C0F;&#x4EBA;&#x6599;&#x91D1;&quot;</span>
+    <span class="hljs-string">&quot;小人料金&quot;</span>
 } <span class="hljs-keyword">else</span> {
-    <span class="hljs-string">&quot;&#x7121;&#x6599;&quot;</span>
+    <span class="hljs-string">&quot;無料&quot;</span>
 }
 </code></pre>
 <ul>
 <li>when<ul>
-<li>switch &#x6587;&#x306E;&#x3088;&#x3046;&#x306A;&#x3082;&#x306E; (&#x306A;&#x304A; Kotlin &#x306B; switch &#x306F;&#x306A;&#x3044;)</li>
-<li>if &#x3068;&#x540C;&#x3058;&#x304F;&#x3001;else &#x3092;&#x4F34;&#x3046;&#x3053;&#x3068;&#x3067;&#x300C;&#x5F0F;&#x300D;&#x3068;&#x3057;&#x3066;&#x7528;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x53EF;&#x80FD;</li>
+<li>switch 文のようなもの (なお Kotlin に switch はない)</li>
+<li>if と同じく、else を伴うことで「式」として用いることが可能</li>
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x30AA;&#x30FC;&#x30BD;&#x30C9;&#x30C3;&#x30AF;&#x30B9;&#x306A; when &#x306E;&#x4F7F;&#x3044;&#x65B9;</span>
-<span class="hljs-variable"><span class="hljs-keyword">val</span> n</span> = <span class="hljs-number">5</span>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// オーソドックスな when の使い方</span>
+<span class="hljs-keyword">val</span> n = <span class="hljs-number">5</span>
 <span class="hljs-keyword">when</span> (n) {
     <span class="hljs-number">1</span>    -&gt; <span class="hljs-string">&quot;access&quot;</span>
     <span class="hljs-number">2</span>, <span class="hljs-number">3</span> -&gt; <span class="hljs-string">&quot;company&quot;</span>
     <span class="hljs-keyword">else</span> -&gt; <span class="hljs-string">&quot;com&quot;</span>
 }
 </code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// is &#x3092;&#x7528;&#x3044;&#x305F;&#x578B;&#x30C1;&#x30A7;&#x30C3;&#x30AF;</span>
-<span class="hljs-comment">// &#x5024;&#x306E;&#x4EE3;&#x5165;&#x3082;&#x3067;&#x304D;&#x308B;</span>
-<span class="hljs-variable"><span class="hljs-keyword">val</span> n</span> = <span class="hljs-number">5</span>
-<span class="hljs-variable"><span class="hljs-keyword">val</span> type</span> = <span class="hljs-keyword">when</span> (n) {
-    <span class="hljs-keyword">is</span> <span class="hljs-keyword">Int</span>    -&gt; <span class="hljs-string">&quot;$n is Int&quot;</span>
-    <span class="hljs-keyword">else</span>      -&gt; <span class="hljs-string">&quot;$n is not Int&quot;</span>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// is を用いた型チェック</span>
+<span class="hljs-comment">// 値の代入もできる</span>
+<span class="hljs-keyword">val</span> n = <span class="hljs-number">5</span>
+<span class="hljs-keyword">val</span> type = <span class="hljs-keyword">when</span> (n) {
+    <span class="hljs-keyword">is</span> <span class="hljs-built_in">Int</span>    -&gt; <span class="hljs-string">&quot;<span class="hljs-variable">$n</span> is Int&quot;</span>
+    <span class="hljs-keyword">else</span>      -&gt; <span class="hljs-string">&quot;<span class="hljs-variable">$n</span> is not Int&quot;</span>
 }
 type <span class="hljs-comment">// 5 is Int</span>
 </code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// when &#x306E;&#x3042;&#x3068;&#x306B;&#x5024;&#x3092;&#x4F34;&#x308F;&#x306A;&#x3044;&#x66F8;&#x304D;&#x65B9;&#x3082;&#x3067;&#x304D;&#x308B;</span>
-<span class="hljs-variable"><span class="hljs-keyword">val</span> n</span> = <span class="hljs-number">5</span>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// when のあとに値を伴わない書き方もできる</span>
+<span class="hljs-keyword">val</span> n = <span class="hljs-number">5</span>
 <span class="hljs-keyword">when</span> {
-    <span class="hljs-comment">// &#x4EE5;&#x4E0B;&#x3001;&#x6761;&#x4EF6;&#x306B;&#x4E00;&#x81F4;&#x3057;&#x305F;&#x3082;&#x306E;&#x304C;&#x3069;&#x308C;&#x304B;&#x3072;&#x3068;&#x3064;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x308B;</span>
-    <span class="hljs-comment">// &#x8A55;&#x4FA1;&#x306F;&#x4E0A;&#x304B;&#x3089;&#x9806;&#x756A;&#x306B;&#x884C;&#x308F;&#x308C;&#x308B;</span>
+    <span class="hljs-comment">// 以下、条件に一致したものがどれかひとつ実行される</span>
+    <span class="hljs-comment">// 評価は上から順番に行われる</span>
     n % <span class="hljs-number">15</span> == <span class="hljs-number">0</span> -&gt; println(<span class="hljs-string">&quot;fizzbuzz&quot;</span>)
     n % <span class="hljs-number">5</span> == <span class="hljs-number">0</span> -&gt; println(<span class="hljs-string">&quot;buzz&quot;</span>)
     n % <span class="hljs-number">3</span> == <span class="hljs-number">0</span> -&gt; println(<span class="hljs-string">&quot;fizz&quot;</span>)
-    <span class="hljs-keyword">else</span> -&gt; println(<span class="hljs-string">&quot;$n&quot;</span>)
+    <span class="hljs-keyword">else</span> -&gt; println(<span class="hljs-string">&quot;<span class="hljs-variable">$n</span>&quot;</span>)
 }
 </code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x5B9A;&#x6570;&#x4EE5;&#x5916;&#x3082;&#x7528;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;</span>
-<span class="hljs-variable"><span class="hljs-keyword">val</span> n</span> = <span class="hljs-number">5</span>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// 定数以外も用いることができる</span>
+<span class="hljs-keyword">val</span> n = <span class="hljs-number">5</span>
 <span class="hljs-keyword">when</span> {
     n <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.5</span> -&gt; <span class="hljs-string">&quot;access&quot;</span>
     n &gt; <span class="hljs-number">5</span>     -&gt; <span class="hljs-string">&quot;company&quot;</span>
     <span class="hljs-keyword">else</span>      -&gt; <span class="hljs-string">&quot;com&quot;</span>
 }
 </code></pre>
-<h2 id="&#x30EB;&#x30FC;&#x30D7;">&#x30EB;&#x30FC;&#x30D7;</h2>
+<h2 id="ループ">ループ</h2>
 <ul>
 <li>while</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// while &#x306B;&#x3088;&#x308B;&#x7E70;&#x308A;&#x8FD4;&#x3057;</span>
-<span class="hljs-variable"><span class="hljs-keyword">var</span> count1</span> = <span class="hljs-number">0</span>
-<span class="hljs-keyword">while</span> (count1 <span class="hljs-type">&lt; 5) {
-    // &#x7E70;&#x308A;&#x8FD4;&#x3057;&#x305F;&#x3044;&#x51E6;&#x7406;
+<pre><code class="lang-kotlin"><span class="hljs-comment">// while による繰り返し</span>
+<span class="hljs-keyword">var</span> count1 = <span class="hljs-number">0</span>
+<span class="hljs-keyword">while</span> (count1 &lt; <span class="hljs-number">5</span>) {
+    <span class="hljs-comment">// 繰り返したい処理</span>
     count1++
 }
-</span></code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// do-while &#x3082;&#x4F7F;&#x3048;&#x307E;&#x3059;</span>
-<span class="hljs-comment">// &#x5358;&#x306A;&#x308B; while &#x306F;&#x7E70;&#x308A;&#x8FD4;&#x3057; 0 &#x56DE; (&#xFF1D;&#x4F55;&#x3082;&#x3057;&#x306A;&#x3044;) &#x3082;&#x3067;&#x304D;&#x308B;&#x304C;&#x3001;</span>
-<span class="hljs-comment">// do-while &#x306E;&#x5834;&#x5408;&#x306F;&#x307E;&#x305A; do &#x306E;&#x4E2D;&#x8EAB;&#x3092;&#x4E00;&#x5EA6;&#x5B9F;&#x884C;&#x3057;&#x3066;&#x304B;&#x3089;&#x7E70;&#x308A;&#x8FD4;&#x3059;</span>
-<span class="hljs-variable"><span class="hljs-keyword">var</span> count2</span> = <span class="hljs-number">0</span>
+</code></pre>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// do-while も使えます</span>
+<span class="hljs-comment">// 単なる while は繰り返し 0 回 (＝何もしない) もできるが、</span>
+<span class="hljs-comment">// do-while の場合はまず do の中身を一度実行してから繰り返す</span>
+<span class="hljs-keyword">var</span> count2 = <span class="hljs-number">0</span>
 <span class="hljs-keyword">do</span> {
-    <span class="hljs-comment">// &#x7E70;&#x308A;&#x8FD4;&#x3057;&#x305F;&#x3044;&#x51E6;&#x7406;</span>
+    <span class="hljs-comment">// 繰り返したい処理</span>
     count2++
-} <span class="hljs-keyword">while</span>(count2 <span class="hljs-type">&lt; 5)
-</span></code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x7121;&#x9650;&#x30EB;&#x30FC;&#x30D7;</span>
+} <span class="hljs-keyword">while</span>(count2 &lt; <span class="hljs-number">5</span>)
+</code></pre>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// 無限ループ</span>
 <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
-    <span class="hljs-comment">// &#x7E70;&#x308A;&#x8FD4;&#x3057;&#x305F;&#x3044;&#x51E6;&#x7406;</span>
+    <span class="hljs-comment">// 繰り返したい処理</span>
 }
 </code></pre>
 <ul>
 <li>for</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// for &#x6587;&#x3067;&#x7E70;&#x308A;&#x8FD4;&#x3057;&#x5B9F;&#x884C;&#x304C;&#x53EF;&#x80FD;&#x306A;&#x306E;&#x306F;&#x3001;</span>
-<span class="hljs-comment">// &#x30A4;&#x30C6;&#x30EC;&#x30FC;&#x30BF;&#x3092;&#x63D0;&#x4F9B;&#x3059;&#x308B;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8; (&#x914D;&#x5217;&#x3001;&#x30EA;&#x30B9;&#x30C8;&#x3001;&#x30EC;&#x30F3;&#x30B8;&#x3001;&#x7B49;)</span>
-<span class="hljs-keyword">for</span> (&#x8981;&#x7D20;&#x540D; <span class="hljs-keyword">in</span> &#x30A4;&#x30C6;&#x30EC;&#x30FC;&#x30BF;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;) {
-    <span class="hljs-comment">// &#x7E70;&#x308A;&#x8FD4;&#x3057;&#x305F;&#x3044;&#x51E6;&#x7406;</span>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// for 文で繰り返し実行が可能なのは、</span>
+<span class="hljs-comment">// イテレータを提供するオブジェクト (配列、リスト、レンジ、等)</span>
+<span class="hljs-keyword">for</span> (要素名 <span class="hljs-keyword">in</span> イテレータオブジェクト) {
+    <span class="hljs-comment">// 繰り返したい処理</span>
 }
 </code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// Int &#x306E;&#x914D;&#x5217;&#x306E;&#x5834;&#x5408;</span>
-<span class="hljs-variable"><span class="hljs-keyword">val</span> ints</span> = arrayOf(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+<pre><code class="lang-kotlin"><span class="hljs-comment">// Int の配列の場合</span>
+<span class="hljs-keyword">val</span> ints = arrayOf(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
 <span class="hljs-keyword">for</span> (n <span class="hljs-keyword">in</span> ints) {
-    println(n) <span class="hljs-comment">// 1, 2, 3 &#x304C;&#x9806;&#x756A;&#x306B;&#x51FA;&#x529B;&#x3055;&#x308C;&#x308B;</span>
+    println(n) <span class="hljs-comment">// 1, 2, 3 が順番に出力される</span>
 }
 </code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x30EC;&#x30F3;&#x30B8;&#x3092;&#x4F7F;&#x3046;&#x5834;&#x5408;</span>
-<span class="hljs-variable"><span class="hljs-keyword">var</span> sum</span> = <span class="hljs-number">0</span>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// レンジを使う場合</span>
+<span class="hljs-keyword">var</span> sum = <span class="hljs-number">0</span>
 <span class="hljs-keyword">for</span> (n <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.10</span>) {
     sum += n
 }
 sum <span class="hljs-comment">// 55</span>
 </code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x30EA;&#x30B9;&#x30C8;&#x3092;&#x4F7F;&#x3046;&#x5834;&#x5408;</span>
-<span class="hljs-variable"><span class="hljs-keyword">var</span> sum</span> = <span class="hljs-number">0</span>
-<span class="hljs-variable"><span class="hljs-keyword">val</span> list</span> = (<span class="hljs-number">1.</span><span class="hljs-number">.10</span>).toList()
+<pre><code class="lang-kotlin"><span class="hljs-comment">// リストを使う場合</span>
+<span class="hljs-keyword">var</span> sum = <span class="hljs-number">0</span>
+<span class="hljs-keyword">val</span> list = (<span class="hljs-number">1.</span><span class="hljs-number">.10</span>).toList()
 <span class="hljs-keyword">for</span> (n <span class="hljs-keyword">in</span> list) {
     sum += n
 }
 sum <span class="hljs-comment">// 55</span>
 </code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x9014;&#x4E2D;&#x3067;&#x30EB;&#x30FC;&#x30D7;&#x3092;&#x629C;&#x3051;&#x305F;&#x308A; (break)</span>
-<span class="hljs-comment">// &#x6B21;&#x306E;&#x30EB;&#x30FC;&#x30D7;&#x307E;&#x3067;&#x30B9;&#x30AD;&#x30C3;&#x30D7;&#x3057;&#x305F;&#x308A; (continue)</span>
-<span class="hljs-variable"><span class="hljs-keyword">var</span> count</span> = <span class="hljs-number">0</span>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// 途中でループを抜けたり (break)</span>
+<span class="hljs-comment">// 次のループまでスキップしたり (continue)</span>
+<span class="hljs-keyword">var</span> count = <span class="hljs-number">0</span>
 <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
     count++
     <span class="hljs-keyword">if</span> (count == <span class="hljs-number">10</span>) {
-        <span class="hljs-keyword">break</span> <span class="hljs-comment">// while &#x30EB;&#x30FC;&#x30D7;&#x3092;&#x629C;&#x3051;&#x308B;</span>
+        <span class="hljs-keyword">break</span> <span class="hljs-comment">// while ループを抜ける</span>
     }
     <span class="hljs-keyword">if</span> (count % <span class="hljs-number">3</span> == <span class="hljs-number">0</span>) {
-        println(<span class="hljs-string">&quot;3&#x306E;&#x500D;&#x6570;&#x3067;&#x3059;&#xFF01;&quot;</span>)
-        <span class="hljs-keyword">continue</span> <span class="hljs-comment">// &#x5F8C;&#x308D;&#x306E;&#x51E6;&#x7406;&#x3092;&#x884C;&#x308F;&#x305A;&#x306B;&#x6B21;&#x306E;&#x30EB;&#x30FC;&#x30D7;&#x3092;&#x958B;&#x59CB;&#x3059;&#x308B;</span>
+        println(<span class="hljs-string">&quot;3の倍数です！&quot;</span>)
+        <span class="hljs-keyword">continue</span> <span class="hljs-comment">// 後ろの処理を行わずに次のループを開始する</span>
     }
     println(count)
 }
 </code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x30EB;&#x30FC;&#x30D7;&#x304C;&#x591A;&#x91CD;&#x306E;&#x5834;&#x5408;&#x306F;&#x3001;</span>
-<span class="hljs-comment">// &#x3069;&#x306E;&#x30EB;&#x30FC;&#x30D7;&#x3092;&#x629C;&#x3051;&#x308B;&#x304B;&#x30E9;&#x30D9;&#x30EB;&#x3067;&#x6307;&#x5B9A;&#x3059;&#x308B;</span>
-outer@ <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.10</span>) { <span class="hljs-comment">// &#x2190; outer &#x3068;&#x3044;&#x3046;&#x30E9;&#x30D9;&#x30EB;&#x3092;&#x3064;&#x3051;&#x305F;&#x3068;&#x3053;&#x308D;</span>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// ループが多重の場合は、</span>
+<span class="hljs-comment">// どのループを抜けるかラベルで指定する</span>
+<span class="hljs-symbol">outer@</span> <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.10</span>) { <span class="hljs-comment">// ← outer というラベルをつけたところ</span>
     <span class="hljs-keyword">for</span> (j <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.10</span>) {
         <span class="hljs-keyword">if</span> ((i+j) % <span class="hljs-number">3</span> == <span class="hljs-number">0</span>) {
-            <span class="hljs-keyword">break</span>@outer <span class="hljs-comment">// &#x5916;&#x5074;&#x306E;&#x30EB;&#x30FC;&#x30D7;&#x3092;&#x629C;&#x3051;&#x308B;</span>
-            <span class="hljs-comment">// break &#x306E;&#x3088;&#x3046;&#x306B;&#x4F55;&#x3082;&#x6307;&#x5B9A;&#x3057;&#x306A;&#x3044;&#x5834;&#x5408;&#x3001;&#x5185;&#x5074;&#x306E;&#x30EB;&#x30FC;&#x30D7;&#x3092;&#x629C;&#x3051;&#x308B;</span>
+            <span class="hljs-keyword">break</span><span class="hljs-symbol">@outer</span> <span class="hljs-comment">// 外側のループを抜ける</span>
+            <span class="hljs-comment">// break のように何も指定しない場合、内側のループを抜ける</span>
         }
     }
 }
@@ -824,33 +823,65 @@ outer@ <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</s
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"基本的な文法","level":"1.5","depth":1,"next":{"title":"関数","level":"1.6","depth":1,"path":"function.md","ref":"./function.md","articles":[]},"previous":{"title":"開発環境の構築","level":"1.4","depth":1,"path":"development_environment.md","ref":"./development_environment.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","search","codeblock-filename"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"search":{},"codeblock-filename":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"basic_syntax.md","mtime":"2021-03-31T10:03:18.647Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-09T03:43:37.837Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"基本的な文法","level":"1.5","depth":1,"next":{"title":"関数","level":"1.6","depth":1,"path":"function.md","ref":"./function.md","articles":[]},"previous":{"title":"開発環境の構築","level":"1.4","depth":1,"path":"development_environment.md","ref":"./development_environment.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"lunr":{"maxIndexSize":200000},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"basic_syntax.md","mtime":"2022-02-19T13:21:37.789Z","type":"markdown"},"gitbook":{"version":"3.7.1","time":"2022-03-10T15:14:20.051Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
     <script src="gitbook/gitbook.js"></script>
     <script src="gitbook/theme.js"></script>
     
         
-        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="gitbook/gitbook-plugin-search-pro-kui/jquery.mark.min.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="gitbook/gitbook-plugin-search-pro-kui/search.js"></script>
         
     
         

@@ -3,11 +3,10 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>その他豆知識 · GitBook</title>
+        <title>その他豆知識 · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="generator" content="HonKit 3.7.1">
         
         
         
@@ -17,11 +16,11 @@
     
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-codeblock-filename/block.css">
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-codeblock-filename/block.css">
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro-kui/search.css">
                 
             
                 
@@ -70,7 +69,7 @@
     </head>
     <body>
         
-<div class="book">
+<div class="book honkit-cloak">
     <div class="book-summary">
         
             
@@ -307,8 +306,8 @@
     <li class="divider"></li>
 
     <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
         </a>
     </li>
 </ul>
@@ -346,109 +345,109 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x305D;&#x306E;&#x4ED6;&#x8C46;&#x77E5;&#x8B58;">&#x305D;&#x306E;&#x4ED6;&#x8C46;&#x77E5;&#x8B58;</h1>
-<p>&#x305D;&#x306E;&#x4ED6;&#x3001;&#x8C46;&#x77E5;&#x8B58;&#x3092;&#x8A18;&#x8F09;&#x3057;&#x307E;&#x3059;&#x3002;</p>
-<h2 id="&#x30B4;&#x30FC;&#x30EB;">&#x30B4;&#x30FC;&#x30EB;</h2>
-<p>&#x4EE5;&#x4E0B;&#x306B;&#x3064;&#x3044;&#x3066;&#x7406;&#x89E3;&#x3057;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;</p>
+                                <h1 id="その他豆知識">その他豆知識</h1>
+<p>その他、豆知識を記載します。</p>
+<h2 id="ゴール">ゴール</h2>
+<p>以下について理解していること</p>
 <ul>
-<li>Object&#x3068;Companion Object</li>
-<li>&#x6F14;&#x7B97;&#x5B50;&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30ED;&#x30FC;&#x30C9;</li>
-<li>&#x7B49;&#x4FA1;&#x3001;&#x540C;&#x5024; (<code>===</code> &#x3068; <code>==</code>)</li>
-<li>&#x5206;&#x89E3;&#x5BA3;&#x8A00;</li>
-<li>&#x5217;&#x6319;&#x578B;</li>
-<li>&#x4F8B;&#x5916;</li>
-<li>&#x518D;&#x8D77;&#x547C;&#x3073;&#x51FA;&#x3057;&#x3068;&#x672B;&#x5C3E;&#x518D;&#x8D77;&#x547C;&#x3073;&#x51FA;&#x3057;&#x6700;&#x9069;&#x5316;</li>
-<li>&#x30ED;&#x30FC;&#x30AB;&#x30EB;&#x95A2;&#x6570;</li>
+<li>ObjectとCompanion Object</li>
+<li>演算子オーバーロード</li>
+<li>等価、同値 (<code>===</code> と <code>==</code>)</li>
+<li>分解宣言</li>
+<li>列挙型</li>
+<li>例外</li>
+<li>再起呼び出しと末尾再起呼び出し最適化</li>
+<li>ローカル関数</li>
 <li>coroutine</li>
 <li>apply</li>
 <li>also</li>
 <li>by lazy</li>
 </ul>
-<p>&#x203B;&#x4E00;&#x90E8;&#x306F;&#x6642;&#x9593;&#x306E;&#x90FD;&#x5408;&#x4E0A;&#x3001;&#x8A18;&#x8F09;&#x7701;&#x7565;</p>
-<h2 id="object&#x3068;companion-object">Object&#x3068;Companion Object</h2>
+<p>※一部は時間の都合上、記載省略</p>
+<h2 id="objectとcompanion-object">ObjectとCompanion Object</h2>
 <h3 id="object">Object</h3>
-<p>Object&#x306F;&#x4E00;&#x8A00;&#x3067;&#x8A00;&#x3048;&#x3070;&#x300C;&#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;&#xFF08;Singleton&#xFF09;&#x306A;&#x30AF;&#x30E9;&#x30B9;&#x300D;&#x3060;&#x304C;&#x3001;&#x3053;&#x3053;&#x3067;&#x306F;&#x4F7F;&#x7528;&#x4F8B;&#x3092;&#x898B;&#x305B;&#x306A;&#x304C;&#x3089;&#x8AAC;&#x660E;&#x3059;&#x308B;&#x3002;</p>
-<p><strong>&#x3069;&#x3053;&#x304B;&#x3089;&#x3067;&#x3082;&#x547C;&#x3073;&#x51FA;&#x305B;&#x308B;&#x30ED;&#x30B0;&#x51FA;&#x529B;&#x95A2;&#x6570;</strong>&#x304C;&#x6B32;&#x3057;&#x3044;&#x3068;&#x3057;&#x3088;&#x3046;&#x3002;</p>
-<p>&#x4ECA;&#x307E;&#x3067;&#x7FD2;&#x3063;&#x305F;&#x5185;&#x5BB9;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x66F8;&#x304F;&#x3068;&#x3053;&#x3046;&#x306A;&#x308B;&#x3002;</p>
+<p>Objectは一言で言えば「シングルトン（Singleton）なクラス」だが、ここでは使用例を見せながら説明する。</p>
+<p><strong>どこからでも呼び出せるログ出力関数</strong>が欲しいとしよう。</p>
+<p>今まで習った内容を使って書くとこうなる。</p>
 <pre><code class="lang-kotlin"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Logger</span> </span>{
-    <span class="hljs-variable"><span class="hljs-keyword">val</span> TAG</span> = <span class="hljs-string">&quot;MyApp&quot;</span>
-    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">debug</span><span class="hljs-params">(text: <span class="hljs-type">String</span>)</span> {</span>
-        println(<span class="hljs-string">&quot;$TAG: $text&quot;</span>)
+    <span class="hljs-keyword">val</span> TAG = <span class="hljs-string">&quot;MyApp&quot;</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">debug</span><span class="hljs-params">(text: <span class="hljs-type">String</span>)</span></span> {
+        println(<span class="hljs-string">&quot;<span class="hljs-variable">$TAG</span>: <span class="hljs-variable">$text</span>&quot;</span>)
     }
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> {</span>
-    println(<span class="hljs-string">&quot;Logging to ${Logger().TAG}.&quot;</span>)
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    println(<span class="hljs-string">&quot;Logging to <span class="hljs-subst">${Logger().TAG}</span>.&quot;</span>)
     Logger().debug(<span class="hljs-string">&quot;print&quot;</span>)
 }
 </code></pre>
-<p>&#x51FA;&#x529B;&#x7D50;&#x679C;</p>
+<p>出力結果</p>
 <pre><code>Logging to MyApp.
 MyApp: print
-</code></pre><p>&#x305F;&#x3060;&#x3057;&#x3001;&#x3053;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x306B;&#x306F;&#x554F;&#x984C;&#x304C;&#x3042;&#x3063;&#x3066;&#x3001;<code>Logger().</code>&#x3067;&#x6BCE;&#x56DE;&#x7570;&#x306A;&#x308B;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#xFF08;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x5B9F;&#x4F53;&#xFF09;&#x304C;&#x4F5C;&#x3089;&#x308C;&#x308B;&#x3002;&#x3053;&#x306E;&#x4F8B;&#x3060;&#x3068;<code>main</code>&#x306E;&#x4E2D;&#x3067;2&#x56DE;&#x4F5C;&#x3089;&#x308C;&#x3066;&#x3044;&#x308B;&#x3002;</p>
-<p>&#x3082;&#x3057;&#x3001;<code>debug</code>&#x304C;&#x3042;&#x3061;&#x3053;&#x3061;&#x304B;&#x3089;&#x5927;&#x91CF;&#x306B;&#x547C;&#x3070;&#x308C;&#x305F;&#x3089;&#x2026;&#x305F;&#x3061;&#x307E;&#x3061;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x304C;&#x4E71;&#x7ACB;&#x3057;&#x3066;&#x3001;&#x30E1;&#x30E2;&#x30EA;&#x3092;&#x5727;&#x8FEB;&#x3057;&#x3001;&#x30A2;&#x30D7;&#x30EA;&#x306E;&#x52D5;&#x4F5C;&#x304C;&#x91CD;&#x304F;&#x306A;&#x308B;&#x3060;&#x308D;&#x3046;&#x3002;</p>
-<p>&#x305D;&#x308C;&#x3092;&#x907F;&#x3051;&#x308B;&#x305F;&#x3081;&#x3001;&#x30AF;&#x30E9;&#x30B9;&#x3092;<code>object</code>&#x8B58;&#x5225;&#x5B50;&#x3067;&#x5B9A;&#x7FA9;&#x3059;&#x308B;&#x3002;</p>
+</code></pre><p>ただし、このコードには問題があって、<code>Logger().</code>で毎回異なるインスタンス（オブジェクトの実体）が作られる。この例だと<code>main</code>の中で2回作られている。</p>
+<p>もし、<code>debug</code>があちこちから大量に呼ばれたら…たちまちインスタンスが乱立して、メモリを圧迫し、アプリの動作が重くなるだろう。</p>
+<p>それを避けるため、クラスを<code>object</code>識別子で定義する。</p>
 <pre><code class="lang-kotlin"><span class="hljs-keyword">object</span> Logger {
-    <span class="hljs-variable"><span class="hljs-keyword">val</span> TAG</span> = <span class="hljs-string">&quot;MyApp&quot;</span>
-    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">debug</span><span class="hljs-params">(text: <span class="hljs-type">String</span>)</span> {</span>
-        println(<span class="hljs-string">&quot;$TAG: $text&quot;</span>)
+    <span class="hljs-keyword">val</span> TAG = <span class="hljs-string">&quot;MyApp&quot;</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">debug</span><span class="hljs-params">(text: <span class="hljs-type">String</span>)</span></span> {
+        println(<span class="hljs-string">&quot;<span class="hljs-variable">$TAG</span>: <span class="hljs-variable">$text</span>&quot;</span>)
     }
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> {</span>
-    println(<span class="hljs-string">&quot;Logging to ${Logger.TAG}.&quot;</span>)
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    println(<span class="hljs-string">&quot;Logging to <span class="hljs-subst">${Logger.TAG}</span>.&quot;</span>)
     Logger.debug(<span class="hljs-string">&quot;print&quot;</span>)
 }
 </code></pre>
-<p>&#x3053;&#x3046;&#x3059;&#x308B;&#x3068;&#x3001;&#x30AF;&#x30E9;&#x30B9;<code>Logger</code>&#x3068;&#x5909;&#x6570;<code>TAG</code>&#x306F;<strong>&#x4F55;&#x56DE;&#x547C;&#x3070;&#x308C;&#x3066;&#x3082;&#x5E38;&#x306B;&#x540C;&#x3058;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;</strong>&#x3092;&#x8FD4;&#x3059;&#x3002;&#x4F55;&#x5EA6;&#x547C;&#x3070;&#x308C;&#x3066;&#x3082;&#x3001;&#x30E1;&#x30E2;&#x30EA;&#x5727;&#x8FEB;&#x91CF;&#x306F;&#x5909;&#x308F;&#x3089;&#x306A;&#x3044;&#x3002;&#x3053;&#x308C;&#x304C;&#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;&#x3002;</p>
-<p>&#x547C;&#x3073;&#x51FA;&#x3057;&#x65B9;&#x306F;<code>Logger.</code>&#x306B;&#x5909;&#x308F;&#x308B;&#x3002;</p>
+<p>こうすると、クラス<code>Logger</code>と変数<code>TAG</code>は<strong>何回呼ばれても常に同じインスタンス</strong>を返す。何度呼ばれても、メモリ圧迫量は変わらない。これがシングルトン。</p>
+<p>呼び出し方は<code>Logger.</code>に変わる。</p>
 <h3 id="companion-object">Companion Object</h3>
-<p>&#x3055;&#x3066;&#x3001;&#x4E0A;&#x8A18;&#x306E;&#x4F8B;&#x3060;&#x3068;&#x3001;<code>TAG</code>&#x3082;<code>debug</code>&#x3082;&#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;&#x3068;&#x3057;&#x3066;&#x751F;&#x6210;&#x3055;&#x308C;&#x308B;&#x304C;&#x3001;&#x6642;&#x306B;&#x306F;<code>TAG</code>&#x3060;&#x3051;&#x306B;&#x9069;&#x7528;&#x3057;&#x305F;&#x3044;&#x5834;&#x5408;&#x3082;&#x3042;&#x308B;&#x3002;</p>
-<p>&#x305D;&#x306E;&#x5834;&#x5408;&#x3001;<code>companion object</code>&#x8B58;&#x5225;&#x5B50;&#x3092;&#x4F7F;&#x3046;&#x3068;&#x3001;<code>TAG</code>&#x3092;<code>Logger</code>&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x5C5E;&#x3059;&#x308B;&#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;&#x5909;&#x6570;&#x3001;&#x3064;&#x307E;&#x308A;&#x300C;&#x5B9A;&#x6570;&#x300D;&#x306B;&#x3067;&#x304D;&#x308B;&#x3002;</p>
+<p>さて、上記の例だと、<code>TAG</code>も<code>debug</code>もシングルトンとして生成されるが、時には<code>TAG</code>だけに適用したい場合もある。</p>
+<p>その場合、<code>companion object</code>識別子を使うと、<code>TAG</code>を<code>Logger</code>クラスに属するシングルトン変数、つまり「定数」にできる。</p>
 <pre><code class="lang-kotlin"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Logger</span></span>(outputFilePath: String) {
 
     <span class="hljs-keyword">companion</span> <span class="hljs-keyword">object</span> {
-        <span class="hljs-variable"><span class="hljs-keyword">val</span> TAG</span> = <span class="hljs-string">&quot;MyApp&quot;</span>
+        <span class="hljs-keyword">val</span> TAG = <span class="hljs-string">&quot;MyApp&quot;</span>
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">debug</span><span class="hljs-params">(text: <span class="hljs-type">String</span>)</span> {</span>
-        <span class="hljs-comment">// TODO &#x5B9F;&#x969B;&#x306F;outputFilePath&#x306B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x51FA;&#x529B;&#x3059;&#x308B;&#x3088;&#x3046;&#x4F5C;&#x308A;&#x66FF;&#x3048;&#x308B;</span>
-        println(<span class="hljs-string">&quot;$TAG: $text&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">debug</span><span class="hljs-params">(text: <span class="hljs-type">String</span>)</span></span> {
+        <span class="hljs-comment">// TODO 実際はoutputFilePathにファイル出力するよう作り替える</span>
+        println(<span class="hljs-string">&quot;<span class="hljs-variable">$TAG</span>: <span class="hljs-variable">$text</span>&quot;</span>)
     }
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> {</span>
-    println(<span class="hljs-string">&quot;Logging to ${Logger.TAG}.&quot;</span>)
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    println(<span class="hljs-string">&quot;Logging to <span class="hljs-subst">${Logger.TAG}</span>.&quot;</span>)
     Logger(<span class="hljs-string">&quot;/log.txt&quot;</span>).debug(<span class="hljs-string">&quot;print&quot;</span>)
 }
 </code></pre>
-<p><code>main</code>&#x3092;&#x898B;&#x308B;&#x3068;&#x3001;<code>Logger</code>&#x306F;&#x666E;&#x901A;&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x3060;&#x304C;&#x3001;<code>TAG</code>&#x306F;&#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;&#x3067;&#x3042;&#x308B;&#x3053;&#x3068;&#x304C;&#x308F;&#x304B;&#x308B;&#x3002;</p>
-<p>&#x5B9F;&#x969B;&#x3001;Key/Value&#x3092;&#x6271;&#x3044;&#x3001;Key&#x3060;&#x3051;&#x304C;&#x5B9A;&#x6570;&#x3001;&#x3068;&#x3044;&#x3046;&#x5B9F;&#x88C5;&#x304C;&#x3088;&#x304F;&#x3042;&#x308B;&#x3002;</p>
-<p>&#x307E;&#x305F;&#x3001;Android&#x3067;&#x306F;&#x753B;&#x9762;&#x304B;&#x3089;&#x4ED6;&#x753B;&#x9762;&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x6E21;&#x3057;&#x3067;&#x30EA;&#x30AF;&#x30A8;&#x30B9;&#x30C8;&#x30B3;&#x30FC;&#x30C9;&#x3084;Key/Value&#x30DA;&#x30A2;&#x306E;Bundle&#x3092;&#x4F7F;&#x3046;&#x306E;&#x3067;&#x3001;&#x305D;&#x3046;&#x3044;&#x3046;&#x3068;&#x304D;Companion Object&#x306F;&#x3088;&#x304F;&#x4F7F;&#x308F;&#x308C;&#x308B;&#x3002;</p>
-<h3 id="&#x4F59;&#x8AC7;">&#x4F59;&#x8AC7;</h3>
-<p>&#x52D8;&#x306E;&#x3044;&#x3044;&#x4EBA;&#x306A;&#x3089;&#x6C17;&#x3065;&#x3044;&#x305F;&#x3067;&#x3042;&#x308D;&#x3046;&#x304C;&#x3001;&#x3053;&#x306E;&#x4F8B;&#x306E;&#x5834;&#x5408;&#x3001;&#x5B9F;&#x306F;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x4F7F;&#x308F;&#x305A;<code>debug()</code>&#x3092;&#x5B9F;&#x88C5;&#x3059;&#x308B;&#x65B9;&#x6CD5;&#x3082;&#x3042;&#x308B;&#x3002;</p>
-<pre><code class="lang-kotlin"><span class="hljs-variable"><span class="hljs-keyword">val</span> TAG</span> = <span class="hljs-string">&quot;MyApp&quot;</span>
+<p><code>main</code>を見ると、<code>Logger</code>は普通のクラスだが、<code>TAG</code>はシングルトンであることがわかる。</p>
+<p>実際、Key/Valueを扱い、Keyだけが定数、という実装がよくある。</p>
+<p>また、Androidでは画面から他画面のデータ渡しでリクエストコードやKey/ValueペアのBundleを使うので、そういうときCompanion Objectはよく使われる。</p>
+<h3 id="余談">余談</h3>
+<p>勘のいい人なら気づいたであろうが、この例の場合、実はクラスを使わず<code>debug()</code>を実装する方法もある。</p>
+<pre><code class="lang-kotlin"><span class="hljs-keyword">val</span> TAG = <span class="hljs-string">&quot;MyApp&quot;</span>
 
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">debug</span><span class="hljs-params">(text: <span class="hljs-type">String</span>)</span> {</span>
-    println(<span class="hljs-string">&quot;$TAG: $text&quot;</span>)
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">debug</span><span class="hljs-params">(text: <span class="hljs-type">String</span>)</span></span> {
+    println(<span class="hljs-string">&quot;<span class="hljs-variable">$TAG</span>: <span class="hljs-variable">$text</span>&quot;</span>)
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> {</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
     debug(<span class="hljs-string">&quot;print&quot;</span>)
 }
 </code></pre>
-<p>&#x3053;&#x306E;&#x3088;&#x3046;&#x306B;&#x30C8;&#x30C3;&#x30D7;&#x30EC;&#x30D9;&#x30EB;&#x95A2;&#x6570;&#x3092;&#x4F7F;&#x3046;&#x306E;&#x304C;&#x4E00;&#x756A;&#x30B7;&#x30F3;&#x30D7;&#x30EB;&#x3067;&#x3042;&#x308B;&#x3002;</p>
-<p>&#x4ECA;&#x307E;&#x3067;&#x306E;&#x4F8B;&#x306F;&#x3001;&#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30C8;&#x30F3;&#x3092;&#x308F;&#x304B;&#x308A;&#x3084;&#x3059;&#x304F;&#x8AAC;&#x660E;&#x3059;&#x308B;&#x305F;&#x3081;&#x3067;&#x3042;&#x308B;&#x3002;</p>
-<p>&#x307E;&#x305F;&#x3001;Java&#x3092;&#x77E5;&#x3063;&#x3066;&#x308B;&#x4EBA;&#x306A;&#x3089;<code>static</code>&#x304C;&#x3042;&#x308B;&#x3058;&#x3083;&#x306A;&#x3044;&#x304B;&#x3068;&#x601D;&#x3046;&#x304B;&#x3082;&#x3057;&#x308C;&#x306A;&#x3044;&#x304C;&#x3001;<code>static</code>&#x306F;Kotlin&#x3067;&#x306F;&#x4F7F;&#x3048;&#x306A;&#x3044;&#x3002;</p>
-<p>&#x9759;&#x7684;&#x306A;&#x3082;&#x306E;&#x306F;&#x975E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3060;&#x304B;&#x3089;&#x3001;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x6307;&#x5411;&#x306E;&#x8A00;&#x8A9E;&#x306B;&#x304A;&#x3044;&#x3066;&#x4E0D;&#x8981;&#x3060;&#x308D;&#x3046;&#x3068;&#x3044;&#x3046;&#x8A00;&#x8A9E;&#x8A2D;&#x8A08;&#x601D;&#x60F3;&#x306E;&#x305F;&#x3081;&#x3002;</p>
-<h3 id="&#x307E;&#x3068;&#x3081;">&#x307E;&#x3068;&#x3081;</h3>
+<p>このようにトップレベル関数を使うのが一番シンプルである。</p>
+<p>今までの例は、シングルトンをわかりやすく説明するためである。</p>
+<p>また、Javaを知ってる人なら<code>static</code>があるじゃないかと思うかもしれないが、<code>static</code>はKotlinでは使えない。</p>
+<p>静的なものは非オブジェクトだから、オブジェクト指向の言語において不要だろうという言語設計思想のため。</p>
+<h3 id="まとめ">まとめ</h3>
 <ul>
-<li>Object&#x306F;&#x3001;&#x300C;&#x30AF;&#x30E9;&#x30B9;/&#x5909;&#x6570;&#x3068;&#x3057;&#x3066;&#x6BCE;&#x56DE;&#x540C;&#x3058;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3092;&#x8FD4;&#x3057;&#x305F;&#x3044;&#x5834;&#x5408;&#x300D;&#x306B;&#x4F7F;&#x3046;</li>
-<li>Companion Object&#x306F;&#x3001;&#x300C;&#x6BCE;&#x56DE;&#x540C;&#x3058;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3092;&#x8FD4;&#x3059;&#x5909;&#x6570;&#xFF08;&#x5B9A;&#x6570;&#xFF09;&#x3092;&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x6301;&#x305F;&#x305B;&#x305F;&#x3044;&#x5834;&#x5408;&#x300D;&#x306B;&#x4F7F;&#x3046;</li>
+<li>Objectは、「クラス/変数として毎回同じインスタンスを返したい場合」に使う</li>
+<li>Companion Objectは、「毎回同じインスタンスを返す変数（定数）をクラスに持たせたい場合」に使う</li>
 </ul>
-<p>&#x3068;&#x899A;&#x3048;&#x3066;&#x304A;&#x3053;&#x3046;&#x3002;</p>
-<h2 id="&#x5217;&#x6319;&#x578B;">&#x5217;&#x6319;&#x578B;</h2>
-<p>&#x5B9A;&#x6570;&#x3092;&#x5217;&#x6319;&#x3059;&#x308B;&#x5834;&#x5408;&#x306B;&#x4FBF;&#x5229;&#x306A;&#x66F8;&#x304D;&#x65B9;&#x3002;</p>
+<p>と覚えておこう。</p>
+<h2 id="列挙型">列挙型</h2>
+<p>定数を列挙する場合に便利な書き方。</p>
 <pre><code class="lang-kotlin"><span class="hljs-keyword">enum</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Kanto</span> </span>{
     IBARAGI,
     TOCHIGI,
@@ -459,71 +458,71 @@ MyApp: print
     KANAGAWA
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> {</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
     println(<span class="hljs-string">&quot;Kanto Prefecture List: &quot;</span>)
     <span class="hljs-keyword">for</span> (prefecture <span class="hljs-keyword">in</span> Kanto.values()) {
         println(prefecture)
     }
-    println(<span class="hljs-string">&quot;I&apos;m living in ${Kanto.TOKYO}.&quot;</span>)
+    println(<span class="hljs-string">&quot;I&apos;m living in <span class="hljs-subst">${Kanto.TOKYO}</span>.&quot;</span>)
 }
 </code></pre>
-<h2 id="&#x4F8B;&#x5916;">&#x4F8B;&#x5916;</h2>
-<p>&#x7570;&#x5E38;&#x304C;&#x8D77;&#x3053;&#x3063;&#x305F;&#x5834;&#x5408;&#x3001;&#x95A2;&#x6570;&#x306F;&#x4F8B;&#x5916;&#x3092;&#x30B9;&#x30ED;&#x30FC;&#x3067;&#x304D;&#x308B;&#x3002;&#x95A2;&#x6570;&#x306E;&#x547C;&#x3073;&#x51FA;&#x3057;&#x5143;&#x3067;&#x306F;&#x3001;&#x305D;&#x306E;&#x4F8B;&#x5916;&#x3092;&#x30AD;&#x30E3;&#x30C3;&#x30C1;&#x3057;&#x3066;&#x51E6;&#x7406;&#x3067;&#x304D;&#x308B;&#x3002;</p>
-<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">validation</span><span class="hljs-params">(percentage: <span class="hljs-type">Int</span>)</span> {</span>
+<h2 id="例外">例外</h2>
+<p>異常が起こった場合、関数は例外をスローできる。関数の呼び出し元では、その例外をキャッチして処理できる。</p>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">validation</span><span class="hljs-params">(percentage: <span class="hljs-type">Int</span>)</span></span> {
     <span class="hljs-keyword">if</span> (percentage !<span class="hljs-keyword">in</span> <span class="hljs-number">0.</span><span class="hljs-number">.100</span>) {
-        <span class="hljs-keyword">throw</span> IllegalArgumentException(<span class="hljs-string">&quot;A percentage must be between 0 and 100 [parameter: $percentage]&quot;</span>)
+        <span class="hljs-keyword">throw</span> IllegalArgumentException(<span class="hljs-string">&quot;A percentage must be between 0 and 100 [parameter: <span class="hljs-variable">$percentage</span>]&quot;</span>)
     }
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> {</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
     validation(<span class="hljs-number">101</span>)
 }
 </code></pre>
-<p>&#x5024;&#x304C;0&#x301C;100&#x306E;&#x7BC4;&#x56F2;&#x306B;&#x53CE;&#x307E;&#x3063;&#x3066;&#x3044;&#x306A;&#x3044;&#x5834;&#x5408;&#x306F;&#x3001;IllegalArgumentException&#x3092;&#x30B9;&#x30ED;&#x30FC;&#x3059;&#x308B;&#x3002;</p>
+<p>値が0〜100の範囲に収まっていない場合は、IllegalArgumentExceptionをスローする。</p>
 <pre><code>Exception in thread &quot;main&quot; java.lang.IllegalArgumentException: A percentage must be between 0 and 100 [parameter: 101]
  at FileKt.validation (File.kt:3) 
  at FileKt.main (File.kt:8) 
  at FileKt.main (File.kt:-1)
-</code></pre><h2 id="&#x518D;&#x5E30;&#x547C;&#x3073;&#x51FA;&#x3057;">&#x518D;&#x5E30;&#x547C;&#x3073;&#x51FA;&#x3057;</h2>
+</code></pre><h2 id="再帰呼び出し">再帰呼び出し</h2>
 <ul>
-<li>&#x666E;&#x901A;&#x306E;&#x518D;&#x5E30;&#x547C;&#x3073;&#x51FA;&#x3057;</li>
+<li>普通の再帰呼び出し</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// Long &#x306E;&#x30EA;&#x30B9;&#x30C8;&#x3092;&#x5F15;&#x6570;&#x306B;&#x3068;&#x3063;&#x3066;&#x5408;&#x8A08;&#x3092;&#x8FD4;&#x3059;&#x95A2;&#x6570;</span>
-<span class="hljs-comment">// sum &#x95A2;&#x6570;&#x5185;&#x3067; sum &#x81EA;&#x8EAB;&#x3092;&#x547C;&#x3073;&#x51FA;&#x3057;&#x3066;&#x3044;&#x308B;</span>
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sum</span><span class="hljs-params">(numbers: <span class="hljs-type">List&lt;Long&gt;</span>)</span>: <span class="hljs-keyword">Long</span> =</span>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// Long のリストを引数にとって合計を返す関数</span>
+<span class="hljs-comment">// sum 関数内で sum 自身を呼び出している</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sum</span><span class="hljs-params">(numbers: <span class="hljs-type">List</span>&lt;<span class="hljs-type">Long</span>&gt;)</span></span>: <span class="hljs-built_in">Long</span> =
     <span class="hljs-keyword">if</span> (numbers.isEmpty()) <span class="hljs-number">0</span>
     <span class="hljs-keyword">else</span> numbers.first() + sum(numbers.drop(<span class="hljs-number">1</span>))
 
-<span class="hljs-comment">// &#x4E0A;&#x8A18;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x306F;&#x5F15;&#x6570;&#x306B;&#x6E21;&#x3057;&#x305F;&#x914D;&#x5217;&#x304C;&#x8D85;&#x9577;&#x3044;&#x5834;&#x5408;&#x306A;&#x3069;&#x306B;&#x3061;&#x3083;&#x3093;&#x3068;&#x52D5;&#x304B;&#x306A;&#x304F;&#x306A;&#x308B;</span>
-<span class="hljs-comment">// (stack overflow &#x3057;&#x3066;&#x3057;&#x307E;&#x3046;)</span>
-sum((<span class="hljs-number">1</span>L.<span class="hljs-number">.123456</span>).toList()) <span class="hljs-comment">// stack overflow &#x3057;&#x3061;&#x3083;&#x3046;&#xFF01;</span>
+<span class="hljs-comment">// 上記のコードは引数に渡した配列が超長い場合などにちゃんと動かなくなる</span>
+<span class="hljs-comment">// (stack overflow してしまう)</span>
+sum((<span class="hljs-number">1L</span>.<span class="hljs-number">.123456</span>).toList()) <span class="hljs-comment">// stack overflow しちゃう！</span>
 </code></pre>
 <ul>
-<li>&#x672B;&#x5C3E;&#x547C;&#x3073;&#x51FA;&#x3057;&#x6700;&#x9069;&#x5316;</li>
+<li>末尾呼び出し最適化</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x518D;&#x5E30;&#x7684;&#x306B;&#x95A2;&#x6570;&#x3092;&#x547C;&#x3073;&#x51FA;&#x3059;&#x5834;&#x5408;&#x306B;&#x304A;&#x3044;&#x3066;&#x3001;&#x305D;&#x306E;&#x95A2;&#x6570;&#x547C;&#x3073;&#x51FA;&#x3057;&#x304C;&#x95A2;&#x6570;&#x306E;&#x4E00;&#x756A;&#x6700;&#x5F8C;&#x306B;&#x304F;&#x308B;&#x5834;&#x5408;&#x3001;</span>
-<span class="hljs-comment">// &#x300C;&#x672B;&#x5C3E;&#x547C;&#x3073;&#x51FA;&#x3057;&#x6700;&#x9069;&#x5316; (Tail Call Optimization)&#x300D;&#x3068;&#x547C;&#x3070;&#x308C;&#x308B;&#x6700;&#x9069;&#x5316;&#x3092;&#x884C;&#x3046;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;</span>
-<span class="hljs-comment">// * &#x95A2;&#x6570;&#x5B9A;&#x7FA9;&#x306E;&#x982D;&#x306B; tailrec &#x3092;&#x3064;&#x3051;&#x308B;</span>
-<span class="hljs-comment">// * &#x518D;&#x5E30;&#x547C;&#x3073;&#x51FA;&#x3057;&#x3092;&#x95A2;&#x6570;&#x306E;&#x6700;&#x5F8C;&#x306B;&#x3082;&#x3063;&#x3066;&#x3044;&#x304F;</span>
-tailrec <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sum</span><span class="hljs-params">(numbers: <span class="hljs-type">List&lt;Long&gt;, acc: Long</span> = 0)</span>: <span class="hljs-keyword">Long</span> = <span class="hljs-comment">// &#x2190; tailrec &#x3068;&#x3044;&#x3046;&#x306E;&#x3092;&#x3064;&#x3051;&#x305F;</span></span>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// 再帰的に関数を呼び出す場合において、その関数呼び出しが関数の一番最後にくる場合、</span>
+<span class="hljs-comment">// 「末尾呼び出し最適化 (Tail Call Optimization)」と呼ばれる最適化を行うことができる</span>
+<span class="hljs-comment">// * 関数定義の頭に tailrec をつける</span>
+<span class="hljs-comment">// * 再帰呼び出しを関数の最後にもっていく</span>
+<span class="hljs-keyword">tailrec</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sum</span><span class="hljs-params">(numbers: <span class="hljs-type">List</span>&lt;<span class="hljs-type">Long</span>&gt;, acc: <span class="hljs-type">Long</span> = <span class="hljs-number">0</span>)</span></span>: <span class="hljs-built_in">Long</span> = <span class="hljs-comment">// ← tailrec というのをつけた</span>
     <span class="hljs-keyword">if</span> (numbers.isEmpty()) acc
-    <span class="hljs-keyword">else</span> sum(numbers.drop(<span class="hljs-number">1</span>), acc + numbers.first()) <span class="hljs-comment">// sum &#x306E;&#x518D;&#x5E30;&#x547C;&#x3073;&#x51FA;&#x3057;&#x304C;&#x95A2;&#x6570;&#x306E;&#x6700;&#x5F8C;&#x306B;&#x304D;&#x3066;&#x3044;&#x308B;</span>
+    <span class="hljs-keyword">else</span> sum(numbers.drop(<span class="hljs-number">1</span>), acc + numbers.first()) <span class="hljs-comment">// sum の再帰呼び出しが関数の最後にきている</span>
 
-<span class="hljs-comment">// &#x52D5;&#x304F;&#xFF01;</span>
-sum((<span class="hljs-number">1</span>L.<span class="hljs-number">.123456</span>).toList())
+<span class="hljs-comment">// 動く！</span>
+sum((<span class="hljs-number">1L</span>.<span class="hljs-number">.123456</span>).toList())
 </code></pre>
-<h2 id="&#x30ED;&#x30FC;&#x30AB;&#x30EB;&#x95A2;&#x6570;">&#x30ED;&#x30FC;&#x30AB;&#x30EB;&#x95A2;&#x6570;</h2>
+<h2 id="ローカル関数">ローカル関数</h2>
 <ul>
-<li>&#x30ED;&#x30FC;&#x30AB;&#x30EB;&#x95A2;&#x6570;&#x306F;&#x95A2;&#x6570;&#x306E;&#x4E2D;&#x306B;&#x95A2;&#x6570;&#x3092;&#x5B9A;&#x7FA9;&#x3067;&#x304D;&#x308B;&#x4ED5;&#x7D44;&#x307F;<ul>
-<li>&#x4ED6;&#x306E;&#x95A2;&#x6570;&#x304B;&#x3089;&#x306F;&#x547C;&#x3073;&#x51FA;&#x3059;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x306A;&#x3044; (&#x95A2;&#x6570;&#x5185;&#x306B;&#x30B9;&#x30B3;&#x30FC;&#x30D7;&#x3092;&#x9650;&#x5B9A;)</li>
-<li>&#x4EE5;&#x4E0B;&#x306F;&#x30ED;&#x30FC;&#x30AB;&#x30EB;&#x95A2;&#x6570;&#x3068;&#x518D;&#x5E30;&#x547C;&#x51FA;&#x3057;&#x306E;&#x7D44;&#x307F;&#x5408;&#x308F;&#x305B;</li>
+<li>ローカル関数は関数の中に関数を定義できる仕組み<ul>
+<li>他の関数からは呼び出すことができない (関数内にスコープを限定)</li>
+<li>以下はローカル関数と再帰呼出しの組み合わせ</li>
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sum</span><span class="hljs-params">(numbers: <span class="hljs-type">List&lt;Long&gt;</span>)</span>: <span class="hljs-keyword">Long</span> {</span>
-    <span class="hljs-comment">// &#x5F15;&#x6570;&#x3092; 2 &#x3064;&#x3068;&#x308B;&#x95A2;&#x6570;&#x3092;&#x30ED;&#x30FC;&#x30AB;&#x30EB;&#x95A2;&#x6570;&#x5316;&#x3057;&#x3001;</span>
-    <span class="hljs-comment">// &#x5916;&#x9762;&#x3092;&#x826F;&#x304F; (&#x5F15;&#x6570; 1 &#x500B;&#x3067;&#x6E08;&#x3080;&#x3088;&#x3046;&#x306B;) &#x3057;&#x305F;</span>
-    tailrec <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">go</span><span class="hljs-params">(numbers: <span class="hljs-type">List&lt;Long&gt;, acc: Long</span>)</span>: <span class="hljs-keyword">Long</span> = </span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sum</span><span class="hljs-params">(numbers: <span class="hljs-type">List</span>&lt;<span class="hljs-type">Long</span>&gt;)</span></span>: <span class="hljs-built_in">Long</span> {
+    <span class="hljs-comment">// 引数を 2 つとる関数をローカル関数化し、</span>
+    <span class="hljs-comment">// 外面を良く (引数 1 個で済むように) した</span>
+    <span class="hljs-keyword">tailrec</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">go</span><span class="hljs-params">(numbers: <span class="hljs-type">List</span>&lt;<span class="hljs-type">Long</span>&gt;, acc: <span class="hljs-type">Long</span>)</span></span>: <span class="hljs-built_in">Long</span> = 
         <span class="hljs-keyword">if</span> (numbers.isEmpty()) acc
         <span class="hljs-keyword">else</span> go(numbers.drop(<span class="hljs-number">1</span>), acc + numbers.first())
 
@@ -532,58 +531,58 @@ sum((<span class="hljs-number">1</span>L.<span class="hljs-number">.123456</span
 </code></pre>
 <h2 id="apply">apply</h2>
 <ul>
-<li>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x5BFE;&#x3057;&#x3001;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306E;&#x5909;&#x66F4;&#x3092;&#x4E00;&#x62EC;&#x9069;&#x7528;&#x3059;&#x308B;</li>
+<li>オブジェクトに対し、プロパティの変更を一括適用する</li>
 </ul>
 <pre><code class="lang-kotlin"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Company</span> </span>(
-    <span class="hljs-variable"><span class="hljs-keyword">var</span> name</span>: String,
-    <span class="hljs-variable"><span class="hljs-keyword">var</span> numberOfEmployees</span>: <span class="hljs-keyword">Int</span> = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">var</span> name: String,
+    <span class="hljs-keyword">var</span> numberOfEmployees: <span class="hljs-built_in">Int</span> = <span class="hljs-number">0</span>
 )
 
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
-    <span class="hljs-variable"><span class="hljs-keyword">val</span> c</span> = Company(<span class="hljs-string">&quot;ACCESS&quot;</span>, <span class="hljs-number">310</span>).apply {
-        <span class="hljs-comment">// &#x4ECA;&#x5E74;&#x306E;&#x65B0;&#x5352;&#x793E;&#x54E1;&#x6570;&#x3092;&#x52A0;&#x7B97;</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-keyword">val</span> c = Company(<span class="hljs-string">&quot;ACCESS&quot;</span>, <span class="hljs-number">310</span>).apply {
+        <span class="hljs-comment">// 今年の新卒社員数を加算</span>
         numberOfEmployees += <span class="hljs-number">15</span>
     }
-    <span class="hljs-variable"><span class="hljs-keyword">val</span> s</span> = <span class="hljs-string">&quot;${c.name} has ${c.numberOfEmployees} employees.&quot;</span>
+    <span class="hljs-keyword">val</span> s = <span class="hljs-string">&quot;<span class="hljs-subst">${c.name}</span> has <span class="hljs-subst">${c.numberOfEmployees}</span> employees.&quot;</span>
     println(s) <span class="hljs-comment">// ACCESS has 325 employees.</span>
 }
 </code></pre>
 <ul>
-<li>&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306E;&#x6570;&#x304C;&#x591A;&#x3044;&#x5834;&#x5408;&#x3001;<code>c.xxx = yyy</code>&#x307F;&#x305F;&#x3044;&#x306A;&#x8A18;&#x8FF0;&#x3092;&#x7E70;&#x308A;&#x8FD4;&#x3059;&#x624B;&#x9593;&#x304C;&#x7701;&#x3051;&#x308B;</li>
+<li>プロパティの数が多い場合、<code>c.xxx = yyy</code>みたいな記述を繰り返す手間が省ける</li>
 </ul>
 <h2 id="also">also</h2>
 <ul>
-<li>apply&#x3068;&#x4F3C;&#x3066;&#x308B;&#x304C;&#x3001;also&#x306F;&#x30E9;&#x30E0;&#x30C0;&#x5F0F;&#x306E;&#x4E2D;&#x3067;&#x5225;&#x306E;&#x540D;&#x524D;&#x3092;&#x4ED8;&#x3051;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;<ul>
-<li>&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x306F;it</li>
-<li>&#x3064;&#x307E;&#x308A;&#x3001;apply&#x306E;&#x5834;&#x5408;&#x306F;&#x30E9;&#x30E0;&#x30C0;&#x5F0F;&#x306E;&#x5185;&#x5916;&#x3067;<code>this</code>&#x306E;&#x6307;&#x3059;&#x5148;&#x304C;&#x7570;&#x306A;&#x308B;&#x304C;&#x3001;also&#x3092;&#x4F7F;&#x3046;&#x3068;&#x540C;&#x3058;&#x306B;&#x306A;&#x308B;</li>
+<li>applyと似てるが、alsoはラムダ式の中で別の名前を付けることができる<ul>
+<li>デフォルトはit</li>
+<li>つまり、applyの場合はラムダ式の内外で<code>this</code>の指す先が異なるが、alsoを使うと同じになる</li>
 </ul>
 </li>
-<li>let&#x3068;&#x3082;&#x4F3C;&#x3066;&#x308B;&#x304C;&#x3001;let&#x306F;&#x6700;&#x5F8C;&#x306E;&#x884C;&#x3092;&#x8FD4;&#x3059;&#x306E;&#x306B;&#x5BFE;&#x3057;&#x3001;also&#x306F;&#x5143;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x8FD4;&#x3059;</li>
+<li>letとも似てるが、letは最後の行を返すのに対し、alsoは元のオブジェクトを返す</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-variable"><span class="hljs-keyword">val</span> s</span> = <span class="hljs-string">&quot;access&quot;</span>.also { it.toUpperCase() }
+<pre><code class="lang-kotlin"><span class="hljs-keyword">val</span> s = <span class="hljs-string">&quot;access&quot;</span>.also { it.toUpperCase() }
 println(s) <span class="hljs-comment">//=&gt; ACCESS</span>
 </code></pre>
 <h2 id="by-lazy">by lazy</h2>
 <ul>
-<li>&#x9045;&#x5EF6;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3068;&#x547C;&#x3070;&#x308C;&#x308B;</li>
-<li>&#x6700;&#x521D;&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x304C;&#x3042;&#x3063;&#x305F;&#x6642;&#x306B;&#x3001;&#x30E9;&#x30E0;&#x30C0;&#x306E;&#x4E2D;&#x8EAB;&#x3092;&#x8A08;&#x7B97;&#x3057;&#x3001;&#x6700;&#x7D42;&#x884C;&#x306E;&#x5024;&#x3092;val&#x306B;&#x4FDD;&#x6301;&#x3059;&#x308B;<ul>
-<li>&#x305D;&#x308C;&#x4EE5;&#x964D;&#x306F;&#x3001;&#x5358;&#x306B;&#x4FDD;&#x6301;&#x3055;&#x308C;&#x305F;&#x7D50;&#x679C;&#x3092;&#x8FD4;&#x3059;</li>
+<li>遅延プロパティと呼ばれる</li>
+<li>最初にアクセスがあった時に、ラムダの中身を計算し、最終行の値をvalに保持する<ul>
+<li>それ以降は、単に保持された結果を返す</li>
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-variable"><span class="hljs-keyword">val</span> greetMessage</span>: String by lazy {
+<pre><code class="lang-kotlin"><span class="hljs-keyword">val</span> greetMessage: String <span class="hljs-keyword">by</span> lazy {
     println(<span class="hljs-string">&quot;First time!&quot;</span>)
     <span class="hljs-string">&quot;Hello!&quot;</span>
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     println(greetMessage) <span class="hljs-comment">// &quot;First time!\nHello!&quot;</span>
     println(greetMessage) <span class="hljs-comment">// &quot;Hello!&quot;</span>
 }
 </code></pre>
 <ul>
-<li>&#x5B9F;&#x969B;&#x306F;&#x3001;&#x753B;&#x9762;&#x306E;&#x8D77;&#x52D5;&#x6642;&#x306B;&#x306F;&#x8A2D;&#x5B9A;&#x3067;&#x304D;&#x306A;&#x3044;&#x3051;&#x3069;&#x3001;&#x66F4;&#x65B0;&#x6642;&#x306B;&#x306F;&#x3058;&#x3081;&#x3066;&#x8A2D;&#x5B9A;&#x3067;&#x304D;&#x308B;&#x3082;&#x306E;&#x3068;&#x304B;&#x306B;&#x4F7F;&#x3046;<ul>
-<li>&#x305D;&#x308C;&#x306F;var&#x3067;&#x3082;&#x5B9F;&#x88C5;&#x3067;&#x304D;&#x308B;&#x304C;&#x3001;by lazy&#x306E;&#x5834;&#x5408;val&#x306B;&#x3067;&#x304D;&#x308B;&#x306E;&#x304C;&#x5229;&#x70B9;</li>
+<li>実際は、画面の起動時には設定できないけど、更新時にはじめて設定できるものとかに使う<ul>
+<li>それはvarでも実装できるが、by lazyの場合valにできるのが利点</li>
 </ul>
 </li>
 </ul>
@@ -630,33 +629,65 @@ println(s) <span class="hljs-comment">//=&gt; ACCESS</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"その他豆知識","level":"1.13","depth":1,"next":{"title":"Exercise (1)","level":"1.14","depth":1,"path":"exercise1.md","ref":"./exercise1.md","articles":[]},"previous":{"title":"Null安全","level":"1.12","depth":1,"path":"null_safe.md","ref":"./null_safe.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","search","codeblock-filename"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"search":{},"codeblock-filename":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"tips.md","mtime":"2021-04-09T03:43:34.408Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-09T03:43:37.837Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"その他豆知識","level":"1.13","depth":1,"next":{"title":"Exercise (1)","level":"1.14","depth":1,"path":"exercise1.md","ref":"./exercise1.md","articles":[]},"previous":{"title":"Null安全","level":"1.12","depth":1,"path":"null_safe.md","ref":"./null_safe.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"lunr":{"maxIndexSize":200000},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"tips.md","mtime":"2022-02-19T13:21:37.792Z","type":"markdown"},"gitbook":{"version":"3.7.1","time":"2022-03-10T15:14:20.051Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
     <script src="gitbook/gitbook.js"></script>
     <script src="gitbook/theme.js"></script>
     
         
-        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="gitbook/gitbook-plugin-search-pro-kui/jquery.mark.min.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="gitbook/gitbook-plugin-search-pro-kui/search.js"></script>
         
     
         

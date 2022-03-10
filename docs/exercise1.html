@@ -3,11 +3,10 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Exercise (1) · GitBook</title>
+        <title>Exercise (1) · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="generator" content="HonKit 3.7.1">
         
         
         
@@ -17,11 +16,11 @@
     
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-codeblock-filename/block.css">
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-codeblock-filename/block.css">
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro-kui/search.css">
                 
             
                 
@@ -70,7 +69,7 @@
     </head>
     <body>
         
-<div class="book">
+<div class="book honkit-cloak">
     <div class="book-summary">
         
             
@@ -307,8 +306,8 @@
     <li class="divider"></li>
 
     <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
         </a>
     </li>
 </ul>
@@ -348,33 +347,33 @@
                                 
                                 <h1 id="exercise-1">Exercise (1)</h1>
 <h2 id="hello-world">Hello World!</h2>
-<p>&#x307E;&#x305A;&#x306F;&#x3053;&#x308C;&#xFF01;&#x30BD;&#x30FC;&#x30B9;&#x3092;&#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB;&#x3057;&#x3066;&#x3068;&#x308A;&#x3042;&#x3048;&#x305A;&#x52D5;&#x304B;&#x3059;&#x3068;&#x3053;&#x308D;&#x307E;&#x3067;&#x3084;&#x3063;&#x3066;&#x307F;&#x3088;&#x3046;&#xFF01;</p>
+<p>まずはこれ！ソースをコンパイルしてとりあえず動かすところまでやってみよう！</p>
 <ul>
-<li>&#x74B0;&#x5883;&#x69CB;&#x7BC9;&#x306E;&#x65B9;&#x6CD5;&#x306B;&#x3064;&#x3044;&#x3066;&#x306F;&#x3001;<a href="development_environment.html">&#x958B;&#x767A;&#x74B0;&#x5883;&#x306E;&#x69CB;&#x7BC9;</a> &#x3092;&#x53C2;&#x7167;&#x306E;&#x3053;&#x3068;&#x3002;</li>
-<li>&#x6700;&#x521D;&#x306E;&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x305F;&#x3089;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x66F8;&#x3044;&#x3066;&#x3001;Run &#x3057;&#x3066;&#x307F;&#x3088;&#x3046;&#xFF01;</li>
+<li>環境構築の方法については、<a href="development_environment.html">開発環境の構築</a> を参照のこと。</li>
+<li>最初のプロジェクトを作成したら、以下のソースコードを書いて、Run してみよう！</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     println(<span class="hljs-string">&quot;Hello world!&quot;</span>)
 }
 </code></pre>
 <ul>
-<li>&#x3082;&#x3057;Android Studio&#x3067;KotlinTraining&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x3044;&#x308B;&#x5834;&#x5408;&#x306F;&#x3001;SampleTest.kt&#x306B;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x66F8;&#x3053;&#x3046;&#xFF01;</li>
+<li>もしAndroid StudioでKotlinTrainingプロジェクトを使っている場合は、SampleTest.ktに以下のように書こう！</li>
 </ul>
-<pre><code class="lang-kotlin">@Test
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">testExercise</span><span class="hljs-params">()</span> {</span>
+<pre><code class="lang-kotlin"><span class="hljs-meta">@Test</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">testExercise</span><span class="hljs-params">()</span></span> {
     println(<span class="hljs-string">&quot;Hello world!&quot;</span>)
 }
 </code></pre>
 <h2 id="fizz-buzz">Fizz Buzz</h2>
-<p>&#x57FA;&#x672C;&#x7684;&#x306A;&#x6587;&#x6CD5;&#x3001;&#x95A2;&#x6570;&#x306E;&#x4F7F;&#x3044;&#x65B9;&#x3092;&#x6291;&#x3048;&#x305F;&#x3068;&#x3053;&#x308D;&#x3067;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x7DF4;&#x7FD2;&#x3092;&#x3084;&#x3063;&#x3066;&#x307F;&#x3088;&#x3046;&#xFF01;</p>
+<p>基本的な文法、関数の使い方を抑えたところで、以下の練習をやってみよう！</p>
 <ul>
-<li>&#x5165;&#x529B;&#x306F; 1&#x301C;100</li>
-<li>3&#x306E;&#x500D;&#x6570;&#x306E;&#x6642;&#x306F;&#x300C;Fizz&#x300D;&#x3092;&#x51FA;&#x529B;</li>
-<li>5&#x306E;&#x500D;&#x6570;&#x306E;&#x6642;&#x306F;&#x300C;Buzz&#x300D;&#x3092;&#x51FA;&#x529B;</li>
-<li>3&#x306E;&#x500D;&#x6570;&#x304B;&#x3064;5&#x306E;&#x500D;&#x6570;&#x306E;&#x6642;&#x306F;&#x300C;FizzBuzz&#x300D;&#x3092;&#x51FA;&#x529B;</li>
-<li><p>&#x305D;&#x308C;&#x4EE5;&#x5916;&#x306E;&#x3068;&#x304D;&#x306F;&#x305D;&#x306E;&#x307E;&#x307E;&#x6570;&#x5B57;&#x3092;&#x51FA;&#x529B;</p>
+<li>入力は 1〜100</li>
+<li>3の倍数の時は「Fizz」を出力</li>
+<li>5の倍数の時は「Buzz」を出力</li>
+<li>3の倍数かつ5の倍数の時は「FizzBuzz」を出力</li>
+<li><p>それ以外のときはそのまま数字を出力</p>
 </li>
-<li><p>&#x51FA;&#x529B;&#x4F8B;</p>
+<li><p>出力例</p>
 </li>
 </ul>
 <pre><code>1
@@ -400,28 +399,28 @@ Fizz
 Fizz
 Buzz
 </code></pre><ul>
-<li>&#x30DD;&#x30A4;&#x30F3;&#x30C8;<ul>
-<li><code>if</code> &#x6587;&#x3001;<code>for</code> &#x30EB;&#x30FC;&#x30D7;&#x304C;&#x4F7F;&#x3048;&#x308C;&#x3070;&#x89E3;&#x3051;&#x308B;&#x306F;&#x305A;</li>
-<li><code>when</code> &#x3092;&#x4F7F;&#x3063;&#x3066;&#x77ED;&#x304F;&#x66F8;&#x3044;&#x305F;&#x308A;&#x3082;&#x3067;&#x304D;&#x308B;</li>
+<li>ポイント<ul>
+<li><code>if</code> 文、<code>for</code> ループが使えれば解けるはず</li>
+<li><code>when</code> を使って短く書いたりもできる</li>
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.100</span>) {
-        <span class="hljs-comment">// &#x5B9F;&#x88C5;&#x3059;&#x308B;</span>
+        <span class="hljs-comment">// 実装する</span>
     }
 }
 </code></pre>
 <ul>
-<li>&#x3068;&#x3053;&#x308D;&#x3067;&#x4E0A;&#x8A18;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3060;&#x3068;&#x5358;&#x4F53;&#x30C6;&#x30B9;&#x30C8;&#x304C;&#x66F8;&#x304D;&#x306B;&#x304F;&#x3044;...<ul>
-<li>&#x3069;&#x306E;&#x3088;&#x3046;&#x306B;&#x3057;&#x305F;&#x3089;&#x5358;&#x4F53;&#x30C6;&#x30B9;&#x30C8;&#x304C;&#x66F8;&#x304D;&#x3084;&#x3059;&#x304F;&#x306A;&#x308B;&#x304B;&#xFF1F;</li>
-<li>&#x5358;&#x4F53;&#x30C6;&#x30B9;&#x30C8;&#x3082;&#x66F8;&#x3044;&#x3066;&#x307F;&#x3088;&#x3046;&#xFF01;</li>
+<li>ところで上記のコードだと単体テストが書きにくい...<ul>
+<li>どのようにしたら単体テストが書きやすくなるか？</li>
+<li>単体テストも書いてみよう！</li>
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x5358;&#x4F53;&#x30C6;&#x30B9;&#x30C8;&#x4F8B;</span>
-<span class="hljs-comment">// * fizzbuzz &#x30C6;&#x30B9;&#x30C8;&#x7528;&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x65B0;&#x898F;&#x306B;&#x4F5C;&#x3063;&#x3066;&#x66F8;&#x3044;&#x3066;&#x3082;&#x3044;&#x3044;</span>
-<span class="hljs-comment">// * &#x65E2;&#x5B58;&#x306E;&#x30C6;&#x30B9;&#x30C8;&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x3066;&#x3082;&#x3088;&#x3044;</span>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// 単体テスト例</span>
+<span class="hljs-comment">// * fizzbuzz テスト用のクラスを新規に作って書いてもいい</span>
+<span class="hljs-comment">// * 既存のテストクラスにメソッドを追加してもよい</span>
 
 <span class="hljs-keyword">package</span> io.access.kotlintraining
 
@@ -429,50 +428,50 @@ Buzz
 <span class="hljs-keyword">import</span> kotlin.test.assertEquals
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FizzBuzzTest</span> </span>{
-    @Test
-    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">testFizzBuzz</span><span class="hljs-params">()</span> {</span>
-        <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> &#x30C6;&#x30B9;&#x30C8;&#x3092;&#x66F8;&#x304F;</span>
-        <span class="hljs-comment">// assertEquals &#x7B49;&#x306E; assert &#x7CFB; function &#x3092;&#x4F7F;&#x304A;&#x3046;</span>
-        <span class="hljs-comment">// &#x4EE5;&#x4E0B;&#x306E; kotlin.test &#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x306E;&#x30EA;&#x30D5;&#x30A1;&#x30EC;&#x30F3;&#x30B9;&#x3082;&#x53C2;&#x7167;&#x306E;&#x3053;&#x3068;</span>
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">testFizzBuzz</span><span class="hljs-params">()</span></span> {
+        <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> テストを書く</span>
+        <span class="hljs-comment">// assertEquals 等の assert 系 function を使おう</span>
+        <span class="hljs-comment">// 以下の kotlin.test パッケージのリファレンスも参照のこと</span>
         <span class="hljs-comment">// https://kotlinlang.org/api/latest/kotlin.test/kotlin.test/index.html</span>
     }
 }
 </code></pre>
-<h2 id="&#x3046;&#x308B;&#x3046;&#x5E74;">&#x3046;&#x308B;&#x3046;&#x5E74;</h2>
-<p>&#x5165;&#x529B;&#x3055;&#x308C;&#x305F;&#x6570;&#x5B57;&#x3092;&#x897F;&#x66A6;&#x3068;&#x3057;&#x305F;&#x3068;&#x304D;&#x306B;&#x3001;&#x3046;&#x308B;&#x3046;&#x5E74;&#x304B;&#x3069;&#x3046;&#x304B;&#x5224;&#x5B9A;&#x3059;&#x308B;&#x95A2;&#x6570;&#x3092;&#x66F8;&#x3044;&#x3066;&#x307F;&#x3088;&#x3046;&#xFF01;</p>
+<h2 id="うるう年">うるう年</h2>
+<p>入力された数字を西暦としたときに、うるう年かどうか判定する関数を書いてみよう！</p>
 <ul>
-<li>&#x5165;&#x529B;&#x306F; 0 &#x4EE5;&#x4E0A;&#x306E; <code>Int</code></li>
-<li>&#x3046;&#x308B;&#x3046;&#x5E74;&#x306A;&#x3089;&#x3070; <code>true</code>&#x3001;&#x305D;&#x3046;&#x3067;&#x306A;&#x3044;&#x306A;&#x3089;&#x3070; <code>false</code> &#x3092;&#x8FD4;&#x3059;</li>
-<li>&#x3068;&#x3053;&#x308D;&#x3067;&#x3046;&#x308B;&#x3046;&#x5E74;&#x3063;&#x3066;&#xFF1F;<ul>
-<li>&#x5E74;&#x304C; 4 &#x3067;&#x5272;&#x308A;&#x5207;&#x308C;&#x308B;&#x5834;&#x5408;&#x3001;&#x305D;&#x306E;&#x5E74;&#x306F;&#x3046;&#x308B;&#x3046;&#x5E74;&#x3068;&#x3057;&#x3066;&#x6271;&#x3046;&#x3002;<br>&#x305F;&#x3060;&#x3057;&#x3001;100 &#x3067;&#x5272;&#x308A;&#x5207;&#x308C;&#x3066;&#x304B;&#x3064; 400 &#x3067;&#x5272;&#x308A;&#x5207;&#x308C;&#x306A;&#x3044;&#x5E74;&#x306F;&#x9664;&#x304F;</li>
-<li>1700&#x3001;1800&#x3001;1900&#x3001;2100&#x3001;2200&#x3001;2300&#x3001;2500&#x3001;2600 &#x306F;&#x3046;&#x308B;&#x3046;&#x5E74;&#x3067;&#x306F;&#x306A;&#x3044;</li>
-<li>1600&#x3001;2000&#x3001;2400 &#x306F;&#x3046;&#x308B;&#x3046;&#x5E74;</li>
+<li>入力は 0 以上の <code>Int</code></li>
+<li>うるう年ならば <code>true</code>、そうでないならば <code>false</code> を返す</li>
+<li>ところでうるう年って？<ul>
+<li>年が 4 で割り切れる場合、その年はうるう年として扱う。<br>ただし、100 で割り切れてかつ 400 で割り切れない年は除く</li>
+<li>1700、1800、1900、2100、2200、2300、2500、2600 はうるう年ではない</li>
+<li>1600、2000、2400 はうるう年</li>
 </ul>
 </li>
-<li>&#x5358;&#x4F53;&#x30C6;&#x30B9;&#x30C8;&#x3082;&#x66F8;&#x3044;&#x3066;&#x307F;&#x3088;&#x3046;&#xFF01;</li>
+<li>単体テストも書いてみよう！</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// &#x3046;&#x308B;&#x3046;&#x5E74;&#x304B;&#x3069;&#x3046;&#x304B;&#x3092;&#x5224;&#x5B9A;&#x3059;&#x308B;&#x95A2;&#x6570;</span>
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">isLeapYear</span><span class="hljs-params">(y: <span class="hljs-type">Int</span>)</span>: <span class="hljs-keyword">Boolean</span> {</span>
-    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> &#x5B9F;&#x88C5;&#x3059;&#x308B;</span>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// うるう年かどうかを判定する関数</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">isLeapYear</span><span class="hljs-params">(y: <span class="hljs-type">Int</span>)</span></span>: <span class="hljs-built_in">Boolean</span> {
+    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> 実装する</span>
 }
 </code></pre>
-<h2 id="&#x7D2F;&#x4E57;">&#x7D2F;&#x4E57;</h2>
-<p>&#x6570;&#x5B57;&#x3092;&#x3075;&#x305F;&#x3064;&#x5F15;&#x6570;&#x306B;&#x3068;&#x3063;&#x3066; (<code>a</code>&#x3001;<code>n</code> &#x3068;&#x3059;&#x308B;)&#x3001;a &#x306E; n &#x4E57;&#x3092;&#x8FD4;&#x3059;&#x95A2;&#x6570;&#x3092;&#x66F8;&#x3044;&#x3066;&#x307F;&#x3088;&#x3046;&#xFF01;</p>
+<h2 id="累乗">累乗</h2>
+<p>数字をふたつ引数にとって (<code>a</code>、<code>n</code> とする)、a の n 乗を返す関数を書いてみよう！</p>
 <ul>
-<li>&#x5165;&#x529B;&#x306F; <code>a</code>&#x3001;<code>n</code> &#x5171;&#x306B;&#x4EFB;&#x610F;&#x306E;&#x6570; (&#x6B63;&#x306E;&#x6570;&#x3067;&#x3082;&#x8CA0;&#x306E;&#x6570;&#x3067;&#x3082;&#x6D6E;&#x52D5;&#x5C0F;&#x6570;&#x70B9;&#x3067;&#x3082; OK) &#x3068;&#x3059;&#x308B;</li>
-<li>&#x2026;&#x3068;&#x3059;&#x308B;&#x3068;&#x8003;&#x616E;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x975E;&#x5E38;&#x306B;&#x5897;&#x3048;&#x308B;&#x306E;&#x3067;&#x3001;&#x3053;&#x3053;&#x3067;&#x306F;&#x3072;&#x3068;&#x307E;&#x305A;&#x3001;&#x3044;&#x305A;&#x308C;&#x3082;&#x6B63;&#x306E;&#x6574;&#x6570;&#x3068;&#x3059;&#x308B;<ul>
-<li>&#x4F59;&#x88D5;&#x304C;&#x3042;&#x3063;&#x305F;&#x3089;&#x6D6E;&#x52D5;&#x5C0F;&#x6570;&#x70B9;&#x3082;&#x53D6;&#x308C;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x3066;&#x307F;&#x3088;&#x3046;&#xFF01;</li>
+<li>入力は <code>a</code>、<code>n</code> 共に任意の数 (正の数でも負の数でも浮動小数点でも OK) とする</li>
+<li>…とすると考慮することが非常に増えるので、ここではひとまず、いずれも正の整数とする<ul>
+<li>余裕があったら浮動小数点も取れるようにしてみよう！</li>
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">power</span><span class="hljs-params">(a: <span class="hljs-type">Int, n: Int</span>)</span>: <span class="hljs-keyword">Long</span> {</span>
-    <span class="hljs-keyword">if</span> (a <span class="hljs-type">&lt; 0 || n &lt; 0) {
-        println(&quot;inputs must be positive. return 0&quot;)
-        return 0
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">power</span><span class="hljs-params">(a: <span class="hljs-type">Int</span>, n: <span class="hljs-type">Int</span>)</span></span>: <span class="hljs-built_in">Long</span> {
+    <span class="hljs-keyword">if</span> (a &lt; <span class="hljs-number">0</span> || n &lt; <span class="hljs-number">0</span>) {
+        println(<span class="hljs-string">&quot;inputs must be positive. return 0&quot;</span>)
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>
     }
-    // TODO: &#x5B9F;&#x88C5;&#x3059;&#x308B;
+    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> 実装する</span>
 }
-</span></code></pre>
+</code></pre>
 
                                 
                                 </section>
@@ -516,33 +515,65 @@ Buzz
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Exercise (1)","level":"1.14","depth":1,"next":{"title":"Exercise (2)","level":"1.15","depth":1,"path":"exercise2.md","ref":"./exercise2.md","articles":[]},"previous":{"title":"その他豆知識","level":"1.13","depth":1,"path":"tips.md","ref":"./tips.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","search","codeblock-filename"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"search":{},"codeblock-filename":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"exercise1.md","mtime":"2021-03-25T14:42:41.642Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-09T03:43:37.837Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Exercise (1)","level":"1.14","depth":1,"next":{"title":"Exercise (2)","level":"1.15","depth":1,"path":"exercise2.md","ref":"./exercise2.md","articles":[]},"previous":{"title":"その他豆知識","level":"1.13","depth":1,"path":"tips.md","ref":"./tips.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"lunr":{"maxIndexSize":200000},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"exercise1.md","mtime":"2022-02-19T13:21:37.789Z","type":"markdown"},"gitbook":{"version":"3.7.1","time":"2022-03-10T15:14:20.051Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
     <script src="gitbook/gitbook.js"></script>
     <script src="gitbook/theme.js"></script>
     
         
-        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="gitbook/gitbook-plugin-search-pro-kui/jquery.mark.min.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="gitbook/gitbook-plugin-search-pro-kui/search.js"></script>
         
     
         
