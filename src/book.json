@@ -5,9 +5,6 @@
             "format"  : "svg",
             "charset" : "UTF-8",
             "nailgun" : false
-        },
-        "lunr": {
-            "maxIndexSize": 200000
         }
     }
 }
