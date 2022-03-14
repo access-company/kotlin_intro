@@ -11,8 +11,10 @@ https://access-company.github.io/kotlin_intro/
 #### 必要なツール
 
 * npm
-* gitbook-cli
-    * `npm install -g gitbook-cli`
+* [HonKit](https://github.com/honkit/honkit)
+  * `npm install -g honkit`
+* GitBook各種プラグイン
+  * [Dockerfile](./Dockerfile#L6)を参考に入れてください
 
 
 #### ビルド方法
@@ -25,7 +27,7 @@ $ make
 ```
 
 * ドキュメントが `docs` ディレクトリに生成されます。  
-(参照する場合は、docs ディレクトリを何らかの形でホスティングしてください)
+* 参照する場合は、docs ディレクトリを何らかの形でホスティングしてください。
 
 ### おすすめ（Docker利用）
 
@@ -34,8 +36,7 @@ $ make
 1. [Docker Desktop](https://www.docker.com/products/docker-desktop)
 2. [VSCode](https://code.visualstudio.com/)
 3. [Remote Containers](https://code.visualstudio.com/docs/remote/containers-tutorial#_install-the-extension)
-4. [Ruby](https://www.ruby-lang.org/ja/documentation/installation/)
-5. [docker-sync](https://docker-sync.readthedocs.io/en/latest/index.html#) via `gem install docker-sync`
+4. [docker-sync](https://docker-sync.readthedocs.io/en/latest/index.html#) via `gem install docker-sync`（[Ruby](https://www.ruby-lang.org/ja/documentation/installation/)も必要）
 
 #### ビルド準備
 
