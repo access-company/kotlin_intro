@@ -6,9 +6,9 @@
 
 N内さんは、上司の指示でJavaのコードをKotlinに書き直して、あなたにレビューをお願いして来ました。
 
-N内さんは「**漏れなくnullチェックできてるし！！**」と自信満々だが、そのコードはビルドすら通りません。
+N内さんは「**漏れなくnullチェックできてるし！！**」と自信満々だが、そのコードにはたくさんのビルドエラーがあります。
 
-あなたは呆れ顔で、このコードを修正してあげる必要があります。
+あなたは呆れ顔で、このコードの問題を指摘します。
 
 ### 問題
 正しい出力結果
@@ -16,11 +16,15 @@ N内さんは「**漏れなくnullチェックできてるし！！**」と自�
 To: antonio@abc-company.com
 message: Hello, Antonio!
 ```
-が出るよう、以下のコードを**できる限り短く読みやすく**修正してください。
+が出るよう、以下の条件を守り、コードを**できる限り短く読みやすく**修正してください。
 
+* `/* ここからは変えない */`〜`/* ここまでは変えない */`の間は変えないこと
+* 予め定義されているクラスをすべて使うこと
+  * つまり`main`に`println`で直接出力結果を書くことは許されない
 * `if`を使うのは1回まで
 
 ```kotlin
+/* ここからは変えない */
 class Client (val personalInfo: PersonalInfo?)
 
 class PersonalInfo (val email: String?)
@@ -34,6 +38,7 @@ class CosmosMailer: Mailer {
         println("To: $email\nmessage: $message")
     }
 }
+/* ここまでは変えない */
 
 fun sendMessageToClient(client: Client?, message: String?, mailer: Mailer) {
     if (client == null || message == null) {

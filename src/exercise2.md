@@ -9,13 +9,13 @@
 * `isOdd` ... 数が奇数であるときに `true` を返し、偶数のときに `false` を返すメソッド
 * `isEven` ... 数が偶数であるときに `true` を返し、奇数のときに `false` を返すメソッド
 
-* 使い方イメージ
-
 ```kotlin
+// TODO: isOdd と isEven を拡張メソッドで実装する
+
 fun main(args: Array<String>) {
     val a = 5
-    a.isOdd()  // true
-    a.isEven() // false
+    println(a.isOdd())  // true
+    println(a.isEven()) // false
 }
 ```
 
@@ -29,24 +29,20 @@ fun main(args: Array<String>) {
 * ちなみに 100 回振ると壊れて例外 `Exception("I was broken")` を吐く
   * 以後、`roll` を呼び出すと例外を吐く
   * 別の Dice インスタンスを作ればまた `roll` できる
-* ランダムな数を得る方法は、たとえば以下
 
 ```kotlin
 import java.util.Random
 
-fun main(args: Array<String>) {
-    val random = Random()
-    val n = random.nextInt(100) // 0〜99 までの範囲の値がランダムで返る
-    println(n)
+class Dice(private val diceFace: Int) {
+    // TODO: class Dice を完成させる
+
+    fun roll(): Int {
+        // ヒント：以下は、0〜5 までの値がランダムで返る
+        val random = Random()
+        val n = random.nextInt(6) 
+        return n
+    }
 }
-```
-
-* 以下、`Dice` クラスの使い方イメージ
-
-```kotlin
-import java.util.Random
-
-// TODO: class Dice を書く
 
 fun main(args: Array<String>) {
     val d = Dice(16)
@@ -60,8 +56,6 @@ fun main(args: Array<String>) {
 ## 呼び出した回数をカウントする
 
 カスタムセッターを使って、何度呼び出されたかをカウントしてみよう！
-
-* 使い方イメージ
 
 ```kotlin
 class MyCustomClass {
@@ -101,10 +95,9 @@ class NabeAtsu {
     }
 }
 
-// 呼び出しイメージ
 fun main(args: Array<String>) {
     val n = NabeAtsu()
-    for (i 1..100) {
+    for (i in 1..100) {
         println(n.next())
     }
 }
