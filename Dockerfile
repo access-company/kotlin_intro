@@ -8,7 +8,7 @@ RUN npm install -g honkit http-server gitbook-plugin-search-pro-kui gitbook-plug
 WORKDIR /workspaces
 VOLUME /workspaces
 
-RUN make
+#RUN make
 
 ENTRYPOINT ["honkit"]
 EXPOSE 8080
