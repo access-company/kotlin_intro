@@ -8,6 +8,8 @@ RUN npm install -g honkit http-server gitbook-plugin-search-pro-kui gitbook-plug
 WORKDIR /workspaces
 VOLUME /workspaces
 
+#FIXME: Solve below make error, and enable "RUN make"
+# 10 0.203 make: *** No targets specified and no makefile found.  Stop.
 #RUN make
 
 ENTRYPOINT ["honkit"]
