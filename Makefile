@@ -7,7 +7,7 @@ $(CURDIR)/src/node_modules:
 	cd $(CURDIR)/src && \
 	npx honkit build --reload && \
 	cd .. && \
-	rm -r $(CURDIR)/docs && \
+	rm -rf $(CURDIR)/docs && \
 	mv $(CURDIR)/src/_book $(CURDIR)/docs
 
 commit: gen_commit_msg
