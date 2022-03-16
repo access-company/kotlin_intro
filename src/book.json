@@ -1,5 +1,5 @@
 {
-    "plugins": ["uml","search","codeblock-filename"],
+    "plugins": ["uml","codeblock-filename","-lunr","-search","search-pro-kui"],
     "pluginsConfig": {
         "uml": {
             "format"  : "svg",

@@ -3,11 +3,10 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Exercise (2) · GitBook</title>
+        <title>Exercise (2) · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="generator" content="HonKit 3.7.1">
         
         
         
@@ -17,11 +16,11 @@
     
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-codeblock-filename/block.css">
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-codeblock-filename/block.css">
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro-kui/search.css">
                 
             
                 
@@ -70,7 +69,7 @@
     </head>
     <body>
         
-<div class="book">
+<div class="book honkit-cloak">
     <div class="book-summary">
         
             
@@ -307,8 +306,8 @@
     <li class="divider"></li>
 
     <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
         </a>
     </li>
 </ul>
@@ -347,110 +346,110 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="exercise-2">Exercise (2)</h1>
-<p>&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x4F7F;&#x3044;&#x65B9;&#x3092;&#x6291;&#x3048;&#x305F;&#x3068;&#x3053;&#x308D;&#x3067;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x7DF4;&#x7FD2;&#x3092;&#x3084;&#x3063;&#x3066;&#x307F;&#x3088;&#x3046;&#xFF01;</p>
-<h2 id="&#x5947;&#x6570;&#x304B;&#x5076;&#x6570;&#x304B;">&#x5947;&#x6570;&#x304B;&#x5076;&#x6570;&#x304B;</h2>
-<p><code>Int</code> &#x3092;&#x62E1;&#x5F35;&#x3057;&#x3066;&#x3001;<code>isOdd</code>&#x3001;<code>isEven</code> &#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x3066;&#x307F;&#x3088;&#x3046;&#xFF01;</p>
+<p>クラスの使い方を抑えたところで、以下の練習をやってみよう！</p>
+<h2 id="奇数か偶数か">奇数か偶数か</h2>
+<p><code>Int</code> を拡張して、<code>isOdd</code>、<code>isEven</code> メソッドを追加してみよう！</p>
 <ul>
-<li><code>isOdd</code> ... &#x6570;&#x304C;&#x5947;&#x6570;&#x3067;&#x3042;&#x308B;&#x3068;&#x304D;&#x306B; <code>true</code> &#x3092;&#x8FD4;&#x3057;&#x3001;&#x5076;&#x6570;&#x306E;&#x3068;&#x304D;&#x306B; <code>false</code> &#x3092;&#x8FD4;&#x3059;&#x30E1;&#x30BD;&#x30C3;&#x30C9;</li>
-<li><p><code>isEven</code> ... &#x6570;&#x304C;&#x5076;&#x6570;&#x3067;&#x3042;&#x308B;&#x3068;&#x304D;&#x306B; <code>true</code> &#x3092;&#x8FD4;&#x3057;&#x3001;&#x5947;&#x6570;&#x306E;&#x3068;&#x304D;&#x306B; <code>false</code> &#x3092;&#x8FD4;&#x3059;&#x30E1;&#x30BD;&#x30C3;&#x30C9;</p>
+<li><code>isOdd</code> ... 数が奇数であるときに <code>true</code> を返し、偶数のときに <code>false</code> を返すメソッド</li>
+<li><p><code>isEven</code> ... 数が偶数であるときに <code>true</code> を返し、奇数のときに <code>false</code> を返すメソッド</p>
 </li>
-<li><p>&#x4F7F;&#x3044;&#x65B9;&#x30A4;&#x30E1;&#x30FC;&#x30B8;</p>
+<li><p>使い方イメージ</p>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
-    <span class="hljs-variable"><span class="hljs-keyword">val</span> a</span> = <span class="hljs-number">5</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-keyword">val</span> a = <span class="hljs-number">5</span>
     a.isOdd()  <span class="hljs-comment">// true</span>
     a.isEven() <span class="hljs-comment">// false</span>
 }
 </code></pre>
-<h2 id="n-&#x9762;&#x306E;&#x30B5;&#x30A4;&#x30B3;&#x30ED;">n &#x9762;&#x306E;&#x30B5;&#x30A4;&#x30B3;&#x30ED;</h2>
-<p>&#x30B5;&#x30A4;&#x30B3;&#x30ED;&#x30AF;&#x30E9;&#x30B9; (Dice &#x30AF;&#x30E9;&#x30B9;) &#x3092;&#x4F5C;&#x308B;&#x3088;&#xFF01;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3001;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3068;&#x3057;&#x3066;&#x4EE5;&#x4E0B;&#x3092;&#x5099;&#x3048;&#x308B;&#x3068;&#x3059;&#x308B;&#x3002;</p>
+<h2 id="n-面のサイコロ">n 面のサイコロ</h2>
+<p>サイコロクラス (Dice クラス) を作るよ！プロパティ、メソッドとして以下を備えるとする。</p>
 <ul>
-<li>n &#x9762;&#x306E;&#x30B5;&#x30A4;&#x30B3;&#x30ED;&#x3092;&#x8868;&#x3059; <code>n: Int</code> &#x3092;&#x30B3;&#x30F3;&#x30B9;&#x30C8;&#x30E9;&#x30AF;&#x30BF;&#x3067;&#x53D6;&#x308B;</li>
-<li>&#x300C;&#x30B5;&#x30A4;&#x30B3;&#x30ED;&#x3092;&#x632F;&#x308B;&#x300D;&#x30E1;&#x30BD;&#x30C3;&#x30C9; <code>roll</code> &#x3092;&#x5099;&#x3048;&#x308B;<ul>
-<li><code>roll</code> &#x306F; Int &#x3092;&#x3072;&#x3068;&#x3064;&#x8FD4;&#x3059; (&#x8FD4;&#x308B;&#x5024;&#x306F; 1 &#x4EE5;&#x4E0A; n &#x4EE5;&#x4E0B;) &#x30E1;&#x30BD;&#x30C3;&#x30C9;</li>
+<li>n 面のサイコロを表す <code>n: Int</code> をコンストラクタで取る</li>
+<li>「サイコロを振る」メソッド <code>roll</code> を備える<ul>
+<li><code>roll</code> は Int をひとつ返す (返る値は 1 以上 n 以下) メソッド</li>
 </ul>
 </li>
-<li>&#x3061;&#x306A;&#x307F;&#x306B; 100 &#x56DE;&#x632F;&#x308B;&#x3068;&#x58CA;&#x308C;&#x3066;&#x4F8B;&#x5916; <code>Exception(&quot;I was broken&quot;)</code> &#x3092;&#x5410;&#x304F;<ul>
-<li>&#x4EE5;&#x5F8C;&#x3001;<code>roll</code> &#x3092;&#x547C;&#x3073;&#x51FA;&#x3059;&#x3068;&#x4F8B;&#x5916;&#x3092;&#x5410;&#x304F;</li>
-<li>&#x5225;&#x306E; Dice &#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3092;&#x4F5C;&#x308C;&#x3070;&#x307E;&#x305F; <code>roll</code> &#x3067;&#x304D;&#x308B;</li>
+<li>ちなみに 100 回振ると壊れて例外 <code>Exception(&quot;I was broken&quot;)</code> を吐く<ul>
+<li>以後、<code>roll</code> を呼び出すと例外を吐く</li>
+<li>別の Dice インスタンスを作ればまた <code>roll</code> できる</li>
 </ul>
 </li>
-<li>&#x30E9;&#x30F3;&#x30C0;&#x30E0;&#x306A;&#x6570;&#x3092;&#x5F97;&#x308B;&#x65B9;&#x6CD5;&#x306F;&#x3001;&#x305F;&#x3068;&#x3048;&#x3070;&#x4EE5;&#x4E0B;</li>
+<li>ランダムな数を得る方法は、たとえば以下</li>
 </ul>
 <pre><code class="lang-kotlin"><span class="hljs-keyword">import</span> java.util.Random
 
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
-    <span class="hljs-variable"><span class="hljs-keyword">val</span> random</span> = Random()
-    <span class="hljs-variable"><span class="hljs-keyword">val</span> n</span> = random.nextInt(<span class="hljs-number">100</span>) <span class="hljs-comment">// 0&#x301C;99 &#x307E;&#x3067;&#x306E;&#x7BC4;&#x56F2;&#x306E;&#x5024;&#x304C;&#x30E9;&#x30F3;&#x30C0;&#x30E0;&#x3067;&#x8FD4;&#x308B;</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-keyword">val</span> random = Random()
+    <span class="hljs-keyword">val</span> n = random.nextInt(<span class="hljs-number">100</span>) <span class="hljs-comment">// 0〜99 までの範囲の値がランダムで返る</span>
     println(n)
 }
 </code></pre>
 <ul>
-<li>&#x4EE5;&#x4E0B;&#x3001;<code>Dice</code> &#x30AF;&#x30E9;&#x30B9;&#x306E;&#x4F7F;&#x3044;&#x65B9;&#x30A4;&#x30E1;&#x30FC;&#x30B8;</li>
+<li>以下、<code>Dice</code> クラスの使い方イメージ</li>
 </ul>
 <pre><code class="lang-kotlin"><span class="hljs-keyword">import</span> java.util.Random
 
-<span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> class Dice &#x3092;&#x66F8;&#x304F;</span>
+<span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> class Dice を書く</span>
 
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
-    <span class="hljs-variable"><span class="hljs-keyword">val</span> d</span> = Dice(<span class="hljs-number">16</span>)
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-keyword">val</span> d = Dice(<span class="hljs-number">16</span>)
     <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.100</span>) {
-        println(d.roll()) <span class="hljs-comment">// 1&#x301C;16 &#x307E;&#x3067;&#x306E;&#x6570;&#x5B57;</span>
+        println(d.roll()) <span class="hljs-comment">// 1〜16 までの数字</span>
     }
     println(d.roll()) <span class="hljs-comment">// Exception</span>
 }
 </code></pre>
-<h2 id="&#x547C;&#x3073;&#x51FA;&#x3057;&#x305F;&#x56DE;&#x6570;&#x3092;&#x30AB;&#x30A6;&#x30F3;&#x30C8;&#x3059;&#x308B;">&#x547C;&#x3073;&#x51FA;&#x3057;&#x305F;&#x56DE;&#x6570;&#x3092;&#x30AB;&#x30A6;&#x30F3;&#x30C8;&#x3059;&#x308B;</h2>
-<p>&#x30AB;&#x30B9;&#x30BF;&#x30E0;&#x30BB;&#x30C3;&#x30BF;&#x30FC;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x3001;&#x4F55;&#x5EA6;&#x547C;&#x3073;&#x51FA;&#x3055;&#x308C;&#x305F;&#x304B;&#x3092;&#x30AB;&#x30A6;&#x30F3;&#x30C8;&#x3057;&#x3066;&#x307F;&#x3088;&#x3046;&#xFF01;</p>
+<h2 id="呼び出した回数をカウントする">呼び出した回数をカウントする</h2>
+<p>カスタムセッターを使って、何度呼び出されたかをカウントしてみよう！</p>
 <ul>
-<li>&#x4F7F;&#x3044;&#x65B9;&#x30A4;&#x30E1;&#x30FC;&#x30B8;</li>
+<li>使い方イメージ</li>
 </ul>
 <pre><code class="lang-kotlin"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyCustomClass</span> </span>{
-    <span class="hljs-variable"><span class="hljs-keyword">var</span> counter</span>: <span class="hljs-keyword">Int</span> = <span class="hljs-number">0</span>
-    <span class="hljs-variable"><span class="hljs-keyword">var</span> propertyWithCounter</span>: <span class="hljs-keyword">Int</span> = <span class="hljs-number">0</span>
-        <span class="hljs-comment">/* <span class="hljs-doctag">TODO:</span> &#x3053;&#x3053;&#x306B;&#x30AB;&#x30B9;&#x30BF;&#x30E0;&#x30BB;&#x30C3;&#x30BF;&#x30FC;&#x3092;&#x66F8;&#x304F; */</span>
+    <span class="hljs-keyword">var</span> counter: <span class="hljs-built_in">Int</span> = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">var</span> propertyWithCounter: <span class="hljs-built_in">Int</span> = <span class="hljs-number">0</span>
+        <span class="hljs-comment">/* <span class="hljs-doctag">TODO:</span> ここにカスタムセッターを書く */</span>
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
-    <span class="hljs-variable"><span class="hljs-keyword">val</span> p</span> = MyCustomClass()
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-keyword">val</span> p = MyCustomClass()
     p.propertyWithCounter = <span class="hljs-number">123</span>
     p.propertyWithCounter = <span class="hljs-number">456</span>
     p.propertyWithCounter = <span class="hljs-number">789</span>
     println(p.counter) <span class="hljs-comment">// 3</span>
 }
 </code></pre>
-<h2 id="&#x4E16;&#x754C;&#x306E;&#x30CA;&#x30D9;&#x30A2;&#x30C4;">&#x4E16;&#x754C;&#x306E;&#x30CA;&#x30D9;&#x30A2;&#x30C4;</h2>
-<p>&#x3068;&#x3053;&#x308D;&#x3067;&#x3001;&#x4E16;&#x754C;&#x306E;&#x30CA;&#x30D9;&#x30A2;&#x30C4;&#x306F;&#x3054;&#x5B58;&#x77E5;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#x3002;</p>
+<h2 id="世界のナベアツ">世界のナベアツ</h2>
+<p>ところで、世界のナベアツはご存知でしょうか。</p>
 <ul>
-<li>&#x73FE;&#x5728;&#x306F;&#x843D;&#x8A9E;&#x5BB6;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x3089;&#x3063;&#x3057;&#x3083;&#x308B;&#x3002;&#x9AD8;&#x5EA7;&#x540D;&#x306F;&#x300C;&#x6842;&#x4E09;&#x5EA6;&#x300D;</li>
-<li>&#x5F7C;&#x306E;&#x6301;&#x3061;&#x30CD;&#x30BF;&#x300C;3&#x306E;&#x500D;&#x6570;&#x3068;3&#x304C;&#x4ED8;&#x304F;&#x6570;&#x5B57;&#x306E;&#x3068;&#x304D;&#x3060;&#x3051;&#x30A2;&#x30DB;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x300D;&#x3068;&#x3044;&#x3046;&#x306E;&#x304C;&#x3044;&#x3063;&#x3068;&#x304D; (2008&#x5E74;&#x524D;&#x5F8C;&#x3068;&#x601D;&#x308F;&#x308C;&#x308B;) &#x6D41;&#x884C;&#x3063;&#x305F;</li>
-<li>&#x8A73;&#x7D30;&#x306F; wikipedia &#x7B49;&#x3092;&#x53C2;&#x7167;&#x3055;&#x308C;&#x305F;&#x3057;</li>
+<li>現在は落語家になっていらっしゃる。高座名は「桂三度」</li>
+<li>彼の持ちネタ「3の倍数と3が付く数字のときだけアホになります」というのがいっとき (2008年前後と思われる) 流行った</li>
+<li>詳細は wikipedia 等を参照されたし</li>
 </ul>
-<p>&#x3068;&#x3044;&#x3046;&#x3053;&#x3068;&#x3067;&#x3001;&#x30CA;&#x30D9;&#x30A2;&#x30C4;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x4F5C;&#x3063;&#x3066;&#x307F;&#x3088;&#x3046;&#xFF01;</p>
+<p>ということで、ナベアツクラスを作ってみよう！</p>
 <ul>
-<li><code>next</code> &#x3068;&#x3044;&#x3046;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x6301;&#x3064;&#x3002;&#x623B;&#x308A;&#x5024;&#x306F; <code>String</code></li>
-<li>&#x30CA;&#x30D9;&#x30A2;&#x30C4;&#x306F;&#x5185;&#x90E8;&#x7684;&#x306B;&#x30AB;&#x30A6;&#x30F3;&#x30BF;&#x30FC;&#x3092;&#x6301;&#x3063;&#x3066;&#x304A;&#x308A;&#x3001;<code>next</code> &#x304C;&#x547C;&#x3073;&#x51FA;&#x3055;&#x308C;&#x308B;&#x305F;&#x3073;&#x306B;&#x30AB;&#x30A6;&#x30F3;&#x30BF;&#x30FC;&#x3092; 1 &#x3064;&#x305A;&#x3064;&#x5897;&#x3084;&#x3057;&#x3066;&#x3044;&#x304F;</li>
-<li>&#x5185;&#x90E8;&#x30AB;&#x30A6;&#x30F3;&#x30BF;&#x30FC;&#x304C;&#x300C;3&#x306E;&#x500D;&#x6570;&#x3068;3&#x304C;&#x4ED8;&#x304F;&#x6570;&#x5B57;&#x306E;&#x3068;&#x304D;&#x300D;&#x3001;<code>next</code> &#x306F; <code>Aho</code> &#x3092;&#x8FD4;&#x3059;</li>
-<li>&#x305D;&#x308C;&#x610F;&#x5916;&#x306E;&#x3068;&#x304D;&#x306F;&#x3001;&#x30AB;&#x30A6;&#x30F3;&#x30BF;&#x30FC;&#x306E;&#x5024;&#x3092;&#x6587;&#x5B57;&#x5217;&#x306B;&#x3057;&#x305F;&#x3082;&#x306E;&#x3092;&#x305D;&#x306E;&#x307E;&#x307E;&#x8FD4;&#x3059;</li>
+<li><code>next</code> というメソッドを持つ。戻り値は <code>String</code></li>
+<li>ナベアツは内部的にカウンターを持っており、<code>next</code> が呼び出されるたびにカウンターを 1 つずつ増やしていく</li>
+<li>内部カウンターが「3の倍数と3が付く数字のとき」、<code>next</code> は <code>Aho</code> を返す</li>
+<li>それ意外のときは、カウンターの値を文字列にしたものをそのまま返す</li>
 </ul>
 <pre><code class="lang-kotlin"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NabeAtsu</span> </span>{
-    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> &#x5B9F;&#x88C5;&#x3059;&#x308B;</span>
+    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> 実装する</span>
 
-    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">next</span><span class="hljs-params">()</span>: String {</span>
-        <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> &#x5B9F;&#x88C5;&#x3059;&#x308B;</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">next</span><span class="hljs-params">()</span></span>: String {
+        <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> 実装する</span>
     }
 }
 
-<span class="hljs-comment">// &#x547C;&#x3073;&#x51FA;&#x3057;&#x30A4;&#x30E1;&#x30FC;&#x30B8;</span>
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array&lt;String&gt;</span>)</span> {</span>
-    <span class="hljs-variable"><span class="hljs-keyword">val</span> n</span> = NabeAtsu()
+<span class="hljs-comment">// 呼び出しイメージ</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-keyword">val</span> n = NabeAtsu()
     <span class="hljs-keyword">for</span> (i <span class="hljs-number">1.</span><span class="hljs-number">.100</span>) {
         println(n.next())
     }
 }
 </code></pre>
-<pre><code class="lang-bash"><span class="hljs-comment"># &#x5B9F;&#x884C;&#x4F8B; (&#x5B9F;&#x969B;&#x306F;&#x6539;&#x884C;&#x3055;&#x308C;&#x307E;&#x3059;&#x304C;&#x30B9;&#x30DA;&#x30FC;&#x30B9;&#x306E;&#x95A2;&#x4FC2;&#x3067;&#x6A2A;&#x306B;&#x66F8;&#x304D;&#x307E;&#x3059;)</span>
+<pre><code class="lang-bash"><span class="hljs-comment"># 実行例 (実際は改行されますがスペースの関係で横に書きます)</span>
 1 2 Aho 4 5 Aho 7 8 Aho 10 11 Aho Aho 14 Aho 16 17 Aho 19 20 Aho 22 Aho Aho 25 26 Aho 28 29 Aho
 Aho Aho Aho Aho Aho Aho Aho Aho Aho 40 41 Aho Aho ...
 </code></pre>
@@ -497,33 +496,65 @@ Aho Aho Aho Aho Aho Aho Aho Aho Aho 40 41 Aho Aho ...
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Exercise (2)","level":"1.15","depth":1,"next":{"title":"Exercise (3)","level":"1.16","depth":1,"path":"exercise3.md","ref":"./exercise3.md","articles":[]},"previous":{"title":"Exercise (1)","level":"1.14","depth":1,"path":"exercise1.md","ref":"./exercise1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","search","codeblock-filename"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"search":{},"codeblock-filename":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"exercise2.md","mtime":"2021-03-25T14:42:41.642Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-09T03:43:37.837Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Exercise (2)","level":"1.15","depth":1,"next":{"title":"Exercise (3)","level":"1.16","depth":1,"path":"exercise3.md","ref":"./exercise3.md","articles":[]},"previous":{"title":"Exercise (1)","level":"1.14","depth":1,"path":"exercise1.md","ref":"./exercise1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"exercise2.md","mtime":"2022-02-19T13:21:37.790Z","type":"markdown"},"gitbook":{"version":"3.7.1","time":"2022-03-10T15:30:40.485Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
     <script src="gitbook/gitbook.js"></script>
     <script src="gitbook/theme.js"></script>
     
         
-        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="gitbook/gitbook-plugin-search-pro-kui/jquery.mark.min.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="gitbook/gitbook-plugin-search-pro-kui/search.js"></script>
         
     
         

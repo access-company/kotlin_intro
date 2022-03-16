@@ -3,11 +3,10 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Kotlin について · GitBook</title>
+        <title>Kotlin について · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="generator" content="HonKit 3.7.1">
         
         
         
@@ -17,11 +16,11 @@
     
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-codeblock-filename/block.css">
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-codeblock-filename/block.css">
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro-kui/search.css">
                 
             
                 
@@ -70,7 +69,7 @@
     </head>
     <body>
         
-<div class="book">
+<div class="book honkit-cloak">
     <div class="book-summary">
         
             
@@ -307,8 +306,8 @@
     <li class="divider"></li>
 
     <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
         </a>
     </li>
 </ul>
@@ -346,65 +345,65 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="kotlin-&#x306B;&#x3064;&#x3044;&#x3066;">Kotlin &#x306B;&#x3064;&#x3044;&#x3066;</h1>
-<h2 id="&#x751F;&#x3044;&#x7ACB;&#x3061;">&#x751F;&#x3044;&#x7ACB;&#x3061;</h2>
+                                <h1 id="kotlin-について">Kotlin について</h1>
+<h2 id="生い立ち">生い立ち</h2>
 <ul>
-<li>JetBrains &#x793E;&#x304C;&#x4E2D;&#x5FC3;&#x3068;&#x306A;&#x3063;&#x3066;&#x958B;&#x767A;&#x3092;&#x884C;&#x3063;&#x3066;&#x3044;&#x308B;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30DF;&#x30F3;&#x30B0;&#x8A00;&#x8A9E;</li>
-<li>2011&#x5E74;&#x590F;&#x306B;&#x767A;&#x8868;&#x3002;&#x73FE;&#x5728;&#x306F; OSS (<a href="https://github.com/JetBrains/kotlin" target="_blank">github &#x306E;&#x30EA;&#x30DD;&#x30B8;&#x30C8;&#x30EA;</a>) &#x3068;&#x3057;&#x3066;&#x958B;&#x767A;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;<ul>
-<li>&#x30E9;&#x30A4;&#x30BB;&#x30F3;&#x30B9;&#x306F; Apache 2.0</li>
+<li>JetBrains 社が中心となって開発を行っているプログラミング言語</li>
+<li>2011年夏に発表。現在は OSS (<a href="https://github.com/JetBrains/kotlin" target="_blank">github のリポジトリ</a>) として開発されている<ul>
+<li>ライセンスは Apache 2.0</li>
 </ul>
 </li>
-<li>2021&#x5E74;4&#x6708;&#x73FE;&#x5728;&#x3001;Kotlin &#x306F;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3; 1.4<ul>
-<li><a href="https://github.com/JetBrains/kotlin/releases/tag/v1.4.31" target="_blank">1.4.31</a> &#x304C;&#x6700;&#x65B0;</li>
-<li>&#x30D7;&#x30EC;&#x30D3;&#x30E5;&#x30FC;&#x7248;&#x3068;&#x3057;&#x3066;&#x306F; <a href="https://github.com/JetBrains/kotlin/releases/tag/v1.5.0-M1" target="_blank">1.5.0-M1</a> &#x3042;&#x305F;&#x308A;&#x304C;&#x51FA;&#x3066;&#x3044;&#x308B;</li>
+<li>2021年4月現在、Kotlin はバージョン 1.4<ul>
+<li><a href="https://github.com/JetBrains/kotlin/releases/tag/v1.4.31" target="_blank">1.4.31</a> が最新</li>
+<li>プレビュー版としては <a href="https://github.com/JetBrains/kotlin/releases/tag/v1.5.0-M1" target="_blank">1.5.0-M1</a> あたりが出ている</li>
 </ul>
 </li>
 </ul>
-<h2 id="&#x3069;&#x3093;&#x306A;&#x8A00;&#x8A9E;&#x304B;">&#x3069;&#x3093;&#x306A;&#x8A00;&#x8A9E;&#x304B;</h2>
+<h2 id="どんな言語か">どんな言語か</h2>
 <ul>
-<li>JVM &#x8A00;&#x8A9E;<ul>
-<li>&#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB;&#x3059;&#x308B;&#x3068; Java &#x30D0;&#x30A4;&#x30C8;&#x30B3;&#x30FC;&#x30C9;&#x306B;&#x306A;&#x308B;</li>
-<li>Scala&#x3001;Groovy &#x306A;&#x3093;&#x304B;&#x3082; JVM &#x8A00;&#x8A9E;</li>
+<li>JVM 言語<ul>
+<li>コンパイルすると Java バイトコードになる</li>
+<li>Scala、Groovy なんかも JVM 言語</li>
 </ul>
 </li>
-<li>Java &#x4E92;&#x63DB; 100&#xFF05;<ul>
-<li>Java &#x3067;&#x4F5C;&#x3089;&#x308C;&#x305F;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x3092;&#x547C;&#x3073;&#x51FA;&#x3059;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;</li>
-<li>&#x9006;&#x306B;&#x3001;Kotlin &#x3067;&#x4F5C;&#x3089;&#x308C;&#x305F;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x3092; Java &#x304B;&#x3089;&#x547C;&#x3073;&#x51FA;&#x3059;&#x3053;&#x3068;&#x3082;&#x3067;&#x304D;&#x308B;</li>
-<li>&#x306A;&#x306E;&#x3067;&#x3001;&#x300C;Java &#x304B; Kotlin &#x304B;&#x300D;&#x3067;&#x306F;&#x306A;&#x304F;&#x3001;&#x5171;&#x5B58;&#x304C;&#x53EF;&#x80FD;</li>
+<li>Java 互換 100％<ul>
+<li>Java で作られたライブラリを呼び出すことができる</li>
+<li>逆に、Kotlin で作られたライブラリを Java から呼び出すこともできる</li>
+<li>なので、「Java か Kotlin か」ではなく、共存が可能</li>
 </ul>
 </li>
-<li>&#x9759;&#x7684;&#x578B;&#x4ED8;&#x3051;<ul>
-<li>(&#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB;&#x3057;&#x306A;&#x3044;&#x7CFB;&#x306E;&#x8A00;&#x8A9E;&#x306B;&#x6BD4;&#x3079;&#x3066;) &#x30B3;&#x30F3;&#x30D1;&#x30A4;&#x30EB;&#x6642;&#x306B;&#x8AA4;&#x308A;&#x304C;&#x767A;&#x898B;&#x3055;&#x308C;&#x308B;&#x3068;&#x3044;&#x3046;&#x5229;&#x70B9;</li>
+<li>静的型付け<ul>
+<li>(コンパイルしない系の言語に比べて) コンパイル時に誤りが発見されるという利点</li>
 </ul>
 </li>
-<li>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x6307;&#x5411;<ul>
-<li>&#x3044;&#x308F;&#x3086;&#x308B; C++&#x3001;Java &#x7B49;&#x3068;&#x540C;&#x69D8;&#x3067;&#x3001;&#x30AF;&#x30E9;&#x30B9;&#x30D9;&#x30FC;&#x30B9;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x6307;&#x5411;&#x8A00;&#x8A9E;</li>
+<li>オブジェクト指向<ul>
+<li>いわゆる C++、Java 等と同様で、クラスベースのオブジェクト指向言語</li>
 </ul>
 </li>
-<li>Android Studio 3.0 &#x3067;&#x6A19;&#x6E96;&#x30B5;&#x30DD;&#x30FC;&#x30C8;<ul>
-<li>&#x521D;&#x671F; (2016&#x301C;2018&#x5E74;&#x9803;) &#x306F;&#x3082;&#x3063;&#x3071;&#x3089; Android &#x306E;&#x30A2;&#x30D7;&#x30EA;&#x4F5C;&#x6210;&#x306B;&#x7528;&#x3044;&#x3089;&#x308C;&#x3066;&#x3044;&#x305F;</li>
-<li>&#x5F90;&#x3005;&#x306B;&#x4ED6;&#x306E;&#x30D7;&#x30E9;&#x30C3;&#x30C8;&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x3001;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x30B5;&#x30A4;&#x30C9;&#x3001;Web&#x3001;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30DF;&#x30F3;&#x30B0;&#x3067;&#x3082;&#x4F7F;&#x308F;&#x308C;&#x59CB;&#x3081;&#x305F;</li>
+<li>Android Studio 3.0 で標準サポート<ul>
+<li>初期 (2016〜2018年頃) はもっぱら Android のアプリ作成に用いられていた</li>
+<li>徐々に他のプラットフォーム、サーバーサイド、Web、システムプログラミングでも使われ始めた</li>
 </ul>
 </li>
-<li>&#x30E2;&#x30C0;&#x30F3;&#x306A;&#x8A00;&#x8A9E;&#x4ED5;&#x69D8;<ul>
-<li>&#x578B;&#x63A8;&#x8AD6;&#x3001;&#x30E9;&#x30E0;&#x30C0;&#x5F0F;&#x3001;&#x30C8;&#x30EC;&#x30A4;&#x30C8;&#x306A;&#x3069;</li>
+<li>モダンな言語仕様<ul>
+<li>型推論、ラムダ式、トレイトなど</li>
 </ul>
 </li>
-<li>(Kotlin 1.2 &#x304B;&#x3089;) JavaScript &#x3078;&#x306E;&#x30C8;&#x30E9;&#x30F3;&#x30B9;&#x30D1;&#x30A4;&#x30EB;&#x3082;&#x30B5;&#x30DD;&#x30FC;&#x30C8;</li>
+<li>(Kotlin 1.2 から) JavaScript へのトランスパイルもサポート</li>
 </ul>
-<h2 id="java-&#x3067;&#x306F;&#x306A;&#x304F;&#x3066;-kotlin-&#x3092;&#x4F7F;&#x3046;&#x7406;&#x7531;">Java &#x3067;&#x306F;&#x306A;&#x304F;&#x3066; Kotlin &#x3092;&#x4F7F;&#x3046;&#x7406;&#x7531;</h2>
+<h2 id="java-ではなくて-kotlin-を使う理由">Java ではなくて Kotlin を使う理由</h2>
 <ul>
-<li>Java &#x3088;&#x308A;&#x8A18;&#x8FF0;&#x304C;&#x7C21;&#x6F54;<ul>
-<li>&#x578B;&#x63A8;&#x8AD6;&#x3001;&#x30E9;&#x30E0;&#x30C0;&#x5F0F;&#x3001;&#x30B9;&#x30DE;&#x30FC;&#x30C8;&#x30AD;&#x30E3;&#x30B9;&#x30C8;&#x3001;&#x7B49;&#x306E;&#x8A00;&#x8A9E;&#x4ED5;&#x69D8;</li>
+<li>Java より記述が簡潔<ul>
+<li>型推論、ラムダ式、スマートキャスト、等の言語仕様</li>
 </ul>
 </li>
-<li>Java &#x3088;&#x308A;&#x5B89;&#x5168;<ul>
-<li>Null&#x5B89;&#x5168;&#x3001;&#x30AD;&#x30E3;&#x30B9;&#x30C8;&#x5468;&#x308A;&#x306E;&#x5B89;&#x5168;&#x6027;</li>
+<li>Java より安全<ul>
+<li>Null安全、キャスト周りの安全性</li>
 </ul>
 </li>
-<li>Kotlin &#x306F;&#x65B0;&#x3057;&#x3044;<ul>
-<li>Java &#x306B;&#x306F;&#x30E2;&#x30C0;&#x30F3;&#x306A;&#x8A00;&#x8A9E;&#x4ED5;&#x69D8;&#x3092;&#x5165;&#x308C;&#x306B;&#x304F;&#x3044;&#x3002;&#x4E0B;&#x4F4D;&#x4E92;&#x63DB;&#x3092;&#x30B5;&#x30DD;&#x30FC;&#x30C8;&#x3057;&#x306A;&#x3051;&#x308C;&#x3070;&#x306A;&#x3089;&#x306A;&#x3044;&#x3068;&#x3044;&#x3046;&#x4E8B;&#x60C5;</li>
-<li>Kotlin &#x306F;&#x6BD4;&#x8F03;&#x7684;&#x65B0;&#x3057;&#x3044;&#x306E;&#x3067;&#x3001;&#x3044;&#x308F;&#x3086;&#x308B;&#x3057;&#x304C;&#x3089;&#x307F;&#x304C;&#x5C11;&#x306A;&#x304F;&#x3001;&#x30E2;&#x30C0;&#x30F3;&#x306A;&#x8A00;&#x8A9E;&#x4ED5;&#x69D8;&#x3092;&#x30B5;&#x30DD;&#x30FC;&#x30C8;&#x3057;&#x3084;&#x3059;&#x3044;</li>
+<li>Kotlin は新しい<ul>
+<li>Java にはモダンな言語仕様を入れにくい。下位互換をサポートしなければならないという事情</li>
+<li>Kotlin は比較的新しいので、いわゆるしがらみが少なく、モダンな言語仕様をサポートしやすい</li>
 </ul>
 </li>
 </ul>
@@ -451,33 +450,65 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Kotlin について","level":"1.3","depth":1,"next":{"title":"開発環境の構築","level":"1.4","depth":1,"path":"development_environment.md","ref":"./development_environment.md","articles":[]},"previous":{"title":"はじめに","level":"1.2","depth":1,"path":"overview.md","ref":"./overview.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","search","codeblock-filename"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"search":{},"codeblock-filename":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"about_kotlin.md","mtime":"2021-03-31T10:03:18.646Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-09T03:43:37.837Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Kotlin について","level":"1.3","depth":1,"next":{"title":"開発環境の構築","level":"1.4","depth":1,"path":"development_environment.md","ref":"./development_environment.md","articles":[]},"previous":{"title":"はじめに","level":"1.2","depth":1,"path":"overview.md","ref":"./overview.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"about_kotlin.md","mtime":"2022-03-07T01:42:29.144Z","type":"markdown"},"gitbook":{"version":"3.7.1","time":"2022-03-10T15:30:40.485Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
     <script src="gitbook/gitbook.js"></script>
     <script src="gitbook/theme.js"></script>
     
         
-        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="gitbook/gitbook-plugin-search-pro-kui/jquery.mark.min.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="gitbook/gitbook-plugin-search-pro-kui/search.js"></script>
         
     
         
