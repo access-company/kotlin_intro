@@ -55,7 +55,7 @@ $ make
 #### プレビュー方法
 
 1. Dockerコンテナ内で`http-server docs`を実行
-2. `http://localhost:8080/`をブラウザで開く
+2. http://localhost:8080/ をブラウザで開く
 
 ### トラブルシューティング
 
