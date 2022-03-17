@@ -15,6 +15,6 @@ https://github.com/access-company/kotlin_intro/
 以下を参考にして作成されています。
 
 * [Kotlin スタートブック](https://www.amazon.co.jp/dp/B06XHJMR65/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1)
-* [Reference - Kotlin Programming Language](http://kotlinlang.org/docs/reference/)
+* [Kotlin Docs](https://kotlinlang.org/docs/home.html)
 * [Kotlin koans](https://github.com/Kotlin/kotlin-koans)
   * たくさん課題があるので、一通りやってみるととても良い！
