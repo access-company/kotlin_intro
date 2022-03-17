@@ -44,6 +44,7 @@ Kotlin 研修おつかれさまでした！
 ## サンプルを実行しよう
 
 * Android 端末を PC に USB で接続しよう
+  * 事前に Android 側で開発者向けオプションと USB デバッグを有効にすること([参考](https://developer.android.com/studio/debug/dev-options?hl=ja)）
 * Android Studio の Run メニューからサンプルアプリを実行しよう
 
 ![as3.png](./assets/images/as3.png)
