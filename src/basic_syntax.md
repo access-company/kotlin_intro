@@ -67,12 +67,14 @@ fun main(args: Array<String>) {
 
 ```kotlin
 fun main(args: Array<String>) {
+    //sampleStart
     // val 変数名: 型 = 式
 
     val foo: Int = 123
     val bar: String = "Hello"
 
     println("foo=$foo, bar=$bar")
+    //sampleEnd
 }
 ```
 
@@ -81,6 +83,7 @@ fun main(args: Array<String>) {
 
 ```kotlin
 fun main(args: Array<String>) {
+    //sampleStart
     // var 変数名: 型 = 式
 
     var foo: Int = 123
@@ -92,6 +95,7 @@ fun main(args: Array<String>) {
     bar = "World!"
 
     println("foo=$foo, bar=$bar")
+    //sampleEnd
 }
 ```
 
@@ -102,12 +106,14 @@ fun main(args: Array<String>) {
 
 ```kotlin
 fun main(args: Array<String>) {
+    //sampleStart
     val age  = 35       // age の型は Int になる
 
     var name = "access" // name の型は String になる
     name = 12           // name の型は String なのでコンパイルエラーになる
 
     println("name=$name, age=$age")
+    //sampleEnd
 }
 ```
 
@@ -122,6 +128,7 @@ fun main(args: Array<String>) {
 
 ```kotlin
 fun main(args: Array<String>) {
+    //sampleStart
     val str = "access"
 
     println(str.length)         // 6
@@ -138,6 +145,7 @@ fun main(args: Array<String>) {
 
     val str4 = "Good night $str!"       // String テンプレートを使った連結
     println(str4) // "Good night access!
+    //sampleEnd
 }
 ```
 
@@ -145,6 +153,7 @@ fun main(args: Array<String>) {
 
 ```kotlin
 fun main(args: Array<String>) {
+    //sampleStart
     // 配列を作るには arrayOfNulls を使う
     // Int の配列の場合は以下のような書き方
     val ints = arrayOfNulls<Int>(10)
@@ -168,6 +177,7 @@ fun main(args: Array<String>) {
     println(array[0])   // "access"
     println(array[1])   // "company"
     println(array[2])   // "com"
+    //sampleEnd
 }
 ```
 
@@ -175,6 +185,7 @@ fun main(args: Array<String>) {
 
 ```kotlin
 fun main(args: Array<String>) {
+    //sampleStart
     // listOf でリストを作る。
     val list = listOf<Int>(1, 2, 3)
 
@@ -186,6 +197,7 @@ fun main(args: Array<String>) {
     // listOf を mutableListOf に変えてみよう
     list[0] = 100   // コンパイルエラー
     println(list[0])
+    //sampleEnd
 }
 ```
 
@@ -193,6 +205,7 @@ fun main(args: Array<String>) {
 
 ```kotlin
 fun main(args: Array<String>) {
+    //sampleStart
     // セットは「重複のない」集合を扱う場合に用いる
     val intSet = setOf(1, 2, 3, 4, 1, 3, 2)
     println(intSet) // [1, 2, 3, 4]
@@ -207,6 +220,7 @@ fun main(args: Array<String>) {
     // intSet[2] を intSet.toList()[2] に変えてみよう
     intSet[2]   // コンパイルエラー
     println(intSet)
+    //sampleEnd
 }
 ```
 
@@ -214,6 +228,7 @@ fun main(args: Array<String>) {
 
 ```kotlin
 fun main(args: Array<String>) {
+    //sampleStart
     // マップはキーと値のペアを保持するコレクション
     // 以下は <String, Int> という形のペアを保持できるマップ
     val map = mapOf(1 to "access", 2 to "company", 3 to "com")
@@ -227,6 +242,7 @@ fun main(args: Array<String>) {
     // mapOf を mutableMapOf に変えてみよう
     map[1] = "fuga" // コンパイルエラー
     println(map[1])
+    //sampleEnd
 }
 ```
 
@@ -235,6 +251,7 @@ fun main(args: Array<String>) {
 
 ```kotlin
 fun main(args: Array<String>) {
+    //sampleStart
     // 1..10 で、 1〜10 の範囲を示す
 
     // in を使って、指定した値が範囲内にあるかチェックする
@@ -248,6 +265,7 @@ fun main(args: Array<String>) {
     // レンジからリストを得ることができる
     val list = r.toList()
     println(list)   // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    //sampleEnd
 }
 ```
 
@@ -259,6 +277,7 @@ fun main(args: Array<String>) {
 
 ```kotlin
 fun main(args: Array<String>) {
+    //sampleStart
     val r = 1..10
     if (5 in r) {
         println("5 is in range")
@@ -284,6 +303,7 @@ fun main(args: Array<String>) {
         "無料"
     }
     println("$age 歳は $fee")
+    //sampleEnd
 }
 ```
 
@@ -293,6 +313,7 @@ fun main(args: Array<String>) {
 
 ```kotlin
 fun main(args: Array<String>) {
+    //sampleStart
     // オーソドックスな when の使い方
     val n = 5
     when (n) {
@@ -300,11 +321,13 @@ fun main(args: Array<String>) {
         2, 3 -> println("company")
         else -> println("com")
     }
+    //sampleEnd
 }
 ```
 
 ```kotlin
 fun main(args: Array<String>) {
+    //sampleStart
     // is を用いた型チェック
     // 値の代入もできる
     val n = 5
@@ -313,11 +336,13 @@ fun main(args: Array<String>) {
         else      -> "$n is not Int"
     }
     println(type)   // 5 is Int
+    //sampleEnd
 }
 ```
 
 ```kotlin
 fun main(args: Array<String>) {
+    //sampleStart
     // when のあとに値を伴わない書き方もできる
     val n = 5
     when {
@@ -328,11 +353,13 @@ fun main(args: Array<String>) {
         n % 3 == 0 -> println("fizz")
         else -> println("$n")
     }
+    //sampleEnd
 }
 ```
 
 ```kotlin
 fun main(args: Array<String>) {
+    //sampleStart
     // 定数以外も用いることができる
     val n = 5
     when {
@@ -340,6 +367,7 @@ fun main(args: Array<String>) {
         n > 5     -> println("company")
         else      -> println("com")
     }
+    //sampleEnd
 }
 ```
 
@@ -349,6 +377,7 @@ fun main(args: Array<String>) {
 
 ```kotlin
 fun main(args: Array<String>) {
+    //sampleStart
     // while による繰り返し
     var count1 = 0
     while (count1 < 5) {
@@ -356,11 +385,13 @@ fun main(args: Array<String>) {
         count1++
     }
     println(count1)
+    //sampleEnd
 }
 ```
 
 ```kotlin
 fun main(args: Array<String>) {
+    //sampleStart
     // do-while も使えます
     // 単なる while は繰り返し 0 回 (＝何もしない) もできるが、
     // do-while の場合はまず do の中身を一度実行してから繰り返す
@@ -370,16 +401,19 @@ fun main(args: Array<String>) {
         count2++
     } while(count2 < 5) // 5 を 0 にして確認しよう
     println(count2)
+    //sampleEnd
 }
 ```
 
 ```kotlin
 fun main(args: Array<String>) {
+    //sampleStart
     // 無限ループ
     while (true) {
         // 繰り返したい処理
         println("押しちゃ駄目だ、押しちゃ駄目だ、押しちゃ駄目だ、押しちゃ駄目だ、押しちゃ駄目だ")
     }
+    //sampleEnd
 }
 ```
 
@@ -387,6 +421,7 @@ fun main(args: Array<String>) {
 
 ```kotlin
 fun main(args: Array<String>) {
+    //sampleStart
     // for 文で繰り返し実行が可能なのは、
     // イテレータを提供するオブジェクト (配列、リスト、レンジ、等)
     
@@ -395,22 +430,26 @@ fun main(args: Array<String>) {
     for (n in ints) {   // 要素名 in イテレータオブジェクト
         println(n)  // 1, 2, 3 が順番に出力される
     }
+    //sampleEnd
 }
 ```
 
 ```kotlin
 fun main(args: Array<String>) {
+    //sampleStart
     // レンジを使う場合
     var sum = 0
     for (n in 1..10) {
         sum += n
     }
     println(sum)    // 55
+    //sampleEnd
 }
 ```
 
 ```kotlin
 fun main(args: Array<String>) {
+    //sampleStart
     // リストを使う場合
     var sum = 0
     val list = (1..10).toList()
@@ -418,11 +457,13 @@ fun main(args: Array<String>) {
         sum += n
     }
     println(sum)    // 55
+    //sampleEnd
 }
 ```
 
 ```kotlin
 fun main(args: Array<String>) {
+    //sampleStart
     // 途中でループを抜けたり (break)
     // 次のループまでスキップしたり (continue)
     var count = 0
@@ -437,11 +478,13 @@ fun main(args: Array<String>) {
         }
         println(count)
     }
+    //sampleEnd
 }
 ```
 
 ```kotlin
 fun main(args: Array<String>) {
+    //sampleStart
     // ループが多重の場合は、
     // どのループを抜けるかラベルで指定する
     outer@ for (i in 1..10) { // ← outer というラベルをつけたところ
@@ -454,5 +497,6 @@ fun main(args: Array<String>) {
             }
         }
     }
+    //sampleEnd
 }
 ```
