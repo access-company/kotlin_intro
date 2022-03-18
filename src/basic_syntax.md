@@ -14,9 +14,18 @@ Kotlin の基本的な文法について記載します。
 
 ## Kotlin Playground
 
-ブラウザ上でサンプルを見ながら、その場でコードを書いて動作確認ができます。参考まで。
+ブラウザ上でコードを書いて動作確認できます。
 
 * https://play.kotlinlang.org
+
+このサイトにも Playground のスクリプトを埋め込んでいます。
+
+```kotlin
+fun main(args: Array<String>) {
+    println("Hello world!")
+}
+```
+↑ためしに`Hello あなたの名前!`に書き変えて、緑矢印を押してください。
 
 ## いろんな型
 

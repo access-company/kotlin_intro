@@ -4,20 +4,11 @@
 
 まずはこれ！ソースをコンパイルしてとりあえず動かすところまでやってみよう！
 
-* 環境構築の方法については、[開発環境の構築](./development_environment.md) を参照のこと。
-* 最初のプロジェクトを作成したら、以下のソースコードを書いて、Run してみよう！
+* 動作確認の方法については、[基本的な文法 - Kotlin Playground](./basic_syntax.md#kotlin-playground) を参照のこと。
+* つまり、以下を Run してみよう！
 
 ```kotlin
 fun main(args: Array<String>) {
-    println("Hello world!")
-}
-```
-
-* もしAndroid StudioでKotlinTrainingプロジェクトを使っている場合は、SampleTest.ktに以下のように書こう！
-
-```kotlin
-@Test
-fun testExercise() {
     println("Hello world!")
 }
 ```
@@ -71,30 +62,7 @@ fun main(args: Array<String>) {
 }
 ```
 
-* ところで上記のコードだと単体テストが書きにくい...
-  * どのようにしたら単体テストが書きやすくなるか？
-  * 単体テストも書いてみよう！
-
-```kotlin
-// 単体テスト例
-// * fizzbuzz テスト用のクラスを新規に作って書いてもいい
-// * 既存のテストクラスにメソッドを追加してもよい
-
-package io.access.kotlintraining
-
-import org.junit.Test
-import kotlin.test.assertEquals
-
-class FizzBuzzTest {
-    @Test
-    fun testFizzBuzz() {
-        // TODO: テストを書く
-        // assertEquals 等の assert 系 function を使おう
-        // 以下の kotlin.test パッケージのリファレンスも参照のこと
-        // https://kotlinlang.org/api/latest/kotlin.test/kotlin.test/index.html
-    }
-}
-```
+* 余裕があれば fizzBuzz 関数を書いて main を短くしよう！
 
 ## うるう年
 
@@ -107,14 +75,24 @@ class FizzBuzzTest {
   ただし、100 で割り切れてかつ 400 で割り切れない年は除く
   * 1700、1800、1900、2100、2200、2300、2500、2600 はうるう年ではない
   * 1600、2000、2400 はうるう年
-* 単体テストも書いてみよう！
 
 ```kotlin
 // うるう年かどうかを判定する関数
 fun isLeapYear(y: Int): Boolean {
     // TODO: 実装する
 }
+
+fun main(args: Array<String>) {
+    for (i in 2000..2100) {
+        if (isLeapYear(i)) {
+            println("$i 年はうるう年です！")
+        }
+    }
+}
 ```
+
+* 結果を検証しよう！
+  * https://citizen.jp/support-jp/manual/terms/deeper_01.html
 
 ## 累乗
 
@@ -131,6 +109,12 @@ fun power(a: Int, n: Int): Long {
         return 0
     }
     // TODO: 実装する
+}
+
+fun main(args: Array<String>) {
+    println(power(2.0, 3.0))    // 8.0
+    println(power(4.5, 6.7))    // 23797
+    println(power(-1.0, 2.0))   // inputs must be positive. return 0 -> 0.0
 }
 ```
 

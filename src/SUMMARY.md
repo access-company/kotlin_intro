@@ -1,6 +1,5 @@
 * [はじめに](./overview.md)
 * [Kotlin について](./about_kotlin.md)
-* [開発環境の構築](./development_environment.md)
 * [基本的な文法](./basic_syntax.md)
 * [関数](./function.md)
 * [ちょっと特殊な関数](./first_class_function.md)
@@ -13,3 +12,4 @@
 * [Exercise (1)](./exercise1.md)
 * [Exercise (2)](./exercise2.md)
 * [Exercise (3)](./exercise3.md)
+* [Android開発環境の構築](./android_dev_environment.md)
