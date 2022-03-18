@@ -59,7 +59,7 @@ fun sendMessageToClient(client: Client?, message: String?, mailer: Mailer) {
 }
 
 fun main(args: Array<String>) {
-    val personalInfo: PersonalInfo = PersonalInfo(email: "antonio@abc-company.com")
+    val personalInfo: PersonalInfo = PersonalInfo(email: "antonio@example.com")
     val client: Client = Client(personalInfo: personalInfo)
     val mailer: Mailer = CosmosMailer()
     sendMessageToClient(
