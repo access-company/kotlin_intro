@@ -13,7 +13,7 @@ N内さんは「**漏れなくnullチェックできてるし！！**」と自�
 ### 問題
 正しい出力結果
 ```
-To: antonio@abc-company.com
+To: antonio@example.com
 message: Hello, Antonio!
 ```
 が出るよう、以下の条件を守り、コードを**できる限り短く読みやすく**修正してください。
