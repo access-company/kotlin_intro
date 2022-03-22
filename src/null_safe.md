@@ -88,29 +88,37 @@ String Piyo() {
   * Kotlin では、**「null になりうるか」「null になりえないか」を「型」で区別している**
 
 ```kotlin
-// たとえば、以下のコードはコンパイルに失敗する
-// String は「null になりえない」型であるから
+fun main(args: Array<String>) {
+    //sampleStart
+    // たとえば、以下のコードはコンパイルに失敗する
+    // String は「null になりえない」型であるから
 
-val s: String = null // error: null can not be a value of a non-null type String
+    val s: String = null // error: null can not be a value of a non-null type String
+    //sampleEnd
+}
 ```
 
 ```kotlin
-// 「null になりえる」型を宣言するためには、? を補う
-// 以下はコンパイル OK
+fun main(args: Array<String>) {
+    //sampleStart
+    // 「null になりえる」型を宣言するためには、? を補う
+    // 以下はコンパイル OK
 
-val s: String? = null
+    val s: String? = null
 
-// ただし、「null になりえる」の状態のままではメソッド、プロパティの呼び出しができない
-// error: only safe (?.) or non-null asserted (!!.) calls are
-// allowed on a nullable receiver of type String?
-s.toUpperCase()
+    // ただし、「null になりえる」の状態のままではメソッド、プロパティの呼び出しができない
+    // error: only safe (?.) or non-null asserted (!!.) calls are
+    // allowed on a nullable receiver of type String?
+    println(s.toUpperCase())
 
-// たとえ値が入っていても同様
-val ss: String? = "hoge"
+    // たとえ値が入っていても同様
+    val ss: String? = "hoge"
 
-// error: only safe (?.) or non-null asserted (!!.) calls are
-// allowed on a nullable receiver of type String?
-ss.toUpperCase() 
+    // error: only safe (?.) or non-null asserted (!!.) calls are
+    // allowed on a nullable receiver of type String?
+    println(ss.toUpperCase())
+    //sampleEnd
+}
 ```
 
 * スマートキャスト
@@ -119,12 +127,16 @@ ss.toUpperCase()
   * たとえば if 文による null チェックで対象が「null になりえない」ことが分かれば良い
 
 ```kotlin
-// スマートキャストを使った「null になりえる」から「null になりえない」への変換
+fun main(args: Array<String>) {
+    //sampleStart
+    // スマートキャストを使った「null になりえる」から「null になりえない」への変換
 
-val s: String? = "hoge" // 「null になりえる」状態
+    val s: String? = "hoge" // 「null になりえる」状態
 
-if (s != null) { // null チェックすることで s は「null になりえない」になる
-    println(s.toUpperCase()) // メソッドが呼び出せる
+    if (s != null) {  // null チェックすることで s は「null になりえない」になる
+        println(s.toUpperCase())  // メソッドが呼び出せる
+    }
+    //sampleEnd
 }
 ```
 
@@ -132,47 +144,64 @@ if (s != null) { // null チェックすることで s は「null になりえ�
   * 対象が「null だったら null、null じゃなかったら中身」を使うやり方
 
 ```kotlin
-// ? をつけると「null になりえる」型
-val s: String? = "hoge"
+fun main(args: Array<String>) {
+    //sampleStart
+    // ? をつけると「null になりえる」型
+    val s: String? = "hoge"
 
-// 通常、このままでは s のメソッドを呼べないが、
-// ? を補うことで呼び出せる
-val u = s?.toUpperCase()
+    // 通常、このままでは s のメソッドを呼べないが、
+    // ? を補うことで呼び出せる
+    val u = s?.toUpperCase()
+    println(u)
 
-// 上記は以下と同じ処理
-val u = if (s != null) {
-    s.toUpperCase()
-} else {
-    null
+    // 上記は以下と同じ処理
+    val up = if (s != null) {
+        s.toUpperCase()
+    } else {
+        null
+    }
+    println(up)
+    //sampleEnd
 }
 ```
 
 * メソッドの引数に「null になりうる」を渡す場合
 
 ```kotlin
-// 以下の関数の引数の型は「null になりえない」という記述
-fun greet(name: String) {
-    println("hello, $name!")
+fun main(args: Array<String>) {
+    //sampleStart
+    // 以下の関数の引数の型は「null になりえない」という記述
+    fun greet(name: String) {
+        println("hello, $name!")
+    }
+
+    val s: String? = "hoge"
+    greet(s)  // コンパイルエラー
+
+    if (s != null) {
+        greet(s)  // これなら OK
+    }
+    //sampleEnd
 }
-
-val s: String? = "hoge"
-greet(s) // コンパイルエラー
-
-if (s != null) {
-    greet(s) // これなら OK
-}
-
 ```
 
 * 上記のような例の場合に、`let` を用いることができる
   * `let` は任意の型とラムダ式を引数にとり、ラムダ式を呼び出す
 
 ```kotlin
-val s: String? = "hoge"
+fun greet(name: String) {
+    println("hello, $name!")
+}
 
-// コンパイル OK
-// s が null ならラムダ式は呼び出されない
-s?.let { greet(it) }
+fun main(args: Array<String>) {
+    //sampleStart
+    val s: String? = "hoge"
+
+    // コンパイル OK
+    // s が null ならラムダ式は呼び出されない
+    s?.let { greet(it) }
+    //sampleEnd
+}
 ```
 
 * 強制呼び出し
@@ -182,13 +211,21 @@ s?.let { greet(it) }
   * が、そういうときにもあえて強制呼び出しオペレータを用いる必要はなく、もっと良い書き方ができるはず
 
 ```kotlin
-val s: String? = "hoge"
-s!!.toUpperCase() // コンパイルOK、実行も可能
+fun main(args: Array<String>) {
+    //sampleStart
+    val s: String? = "hoge"
+    println(s!!.toUpperCase())  // コンパイルOK、実行も可能
+    //sampleEnd
+}
 ```
 
 ```kotlin
-val s: String? = null
-s!!.toUpperCase() // コンパイルOK、だが実行時に例外 (NullPointerException) を吐く
+fun main(args: Array<String>) {
+    //sampleStart
+    val s: String? = null
+    println(s!!.toUpperCase())  // コンパイルOK、だが実行時に例外 (NullPointerException) を吐く
+    //sampleEnd
+}
 ```
 
 * エルビス演算子
@@ -197,15 +234,19 @@ s!!.toUpperCase() // コンパイルOK、だが実行時に例外 (NullPointerEx
     * 三項の方はKotlinでは使えない
 
 ```kotlin
-val s: String? = null
+fun main(args: Array<String>) {
+    //sampleStart
+    val s: String? = null
 
-s ?: "null です！" // null だったら「null です！」を返す
+    s ?: "null です！" // null だったら「null です！」を出力
 
-// 以下と同義
-if (s != null) {
-    s
-} else {
-    "null です！"
+    // 以下と同義
+    if (s != null) {
+        println(s)
+    } else {
+        println("null です！")
+    }
+    //sampleEnd
 }
 ```
 
@@ -214,13 +255,21 @@ if (s != null) {
   * キャストに失敗したときに例外ではなくて null が返る
 
 ```kotlin
-val a: Any = "string" // String を Any に入れる
-println(a as String) // String へのキャストは OK ("string" が表示される)
-println(a as Int) // java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
+fun main(args: Array<String>) {
+    //sampleStart
+    val a: Any = "string" // String を Any に入れる
+    println(a as String) // String へのキャストは OK ("string" が表示される)
+    println(a as Int) // java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
+    //sampleEnd
+}
 ```
 
 ```kotlin
-val a: Any = "string" // String を Any に入れる
-println(a as? String) // String へのキャストは OK ("string" が表示される)
-println(a as? Int) // null が表示される
+fun main(args: Array<String>) {
+    //sampleStart
+    val a: Any = "string" // String を Any に入れる
+    println(a as? String) // String へのキャストは OK ("string" が表示される)
+    println(a as? Int) // null が表示される
+    //sampleEnd
+}
 ```
