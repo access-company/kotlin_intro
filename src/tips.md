@@ -39,7 +39,7 @@ class Logger {
     }
 }
 
-fun main() {
+fun main(args: Array<String>) {
     println("Logging to ${Logger().TAG}.")
     Logger().debug("print")
 }
@@ -65,7 +65,7 @@ object Logger {
     }
 }
 
-fun main() {
+fun main(args: Array<String>) {
     println("Logging to ${Logger.TAG}.")
     Logger.debug("print")
 }
@@ -94,7 +94,7 @@ class Logger(outputFilePath: String) {
     }
 }
 
-fun main() {
+fun main(args: Array<String>) {
     println("Logging to ${Logger.TAG}.")
     Logger("/log.txt").debug("print")
 }
@@ -117,7 +117,7 @@ fun debug(text: String) {
     println("$TAG: $text")
 }
 
-fun main() {
+fun main(args: Array<String>) {
     debug("print")
 }
 ```
@@ -152,7 +152,7 @@ enum class Kanto {
     KANAGAWA
 }
 
-fun main() {
+fun main(args: Array<String>) {
     println("Kanto Prefecture List: ")
     for (prefecture in Kanto.values()) {
         println(prefecture)
@@ -172,7 +172,7 @@ fun validation(percentage: Int) {
     }
 }
 
-fun main() {
+fun main(args: Array<String>) {
     validation(101)
 }
 ```
@@ -191,30 +191,38 @@ Exception in thread "main" java.lang.IllegalArgumentException: A percentage must
 * 普通の再帰呼び出し
 
 ```kotlin
-// Long のリストを引数にとって合計を返す関数
-// sum 関数内で sum 自身を呼び出している
-fun sum(numbers: List<Long>): Long =
-    if (numbers.isEmpty()) 0
-    else numbers.first() + sum(numbers.drop(1))
+fun main(args: Array<String>) {
+    //sampleStart
+    // Long のリストを引数にとって合計を返す関数
+    // sum 関数内で sum 自身を呼び出している
+    fun sum(numbers: List<Long>): Long =
+        if (numbers.isEmpty()) 0
+        else numbers.first() + sum(numbers.drop(1))
 
-// 上記のコードは引数に渡した配列が超長い場合などにちゃんと動かなくなる
-// (stack overflow してしまう)
-sum((1L..123456).toList()) // stack overflow しちゃう！
+    // 上記のコードは引数に渡した配列が超長い場合などにちゃんと動かなくなる
+    // (stack overflow してしまう)
+    sum((1L..123456).toList()) // stack overflow しちゃう！
+    //sampleEnd
+}
 ```
 
 * 末尾呼び出し最適化
 
 ```kotlin
-// 再帰的に関数を呼び出す場合において、その関数呼び出しが関数の一番最後にくる場合、
-// 「末尾呼び出し最適化 (Tail Call Optimization)」と呼ばれる最適化を行うことができる
-// * 関数定義の頭に tailrec をつける
-// * 再帰呼び出しを関数の最後にもっていく
-tailrec fun sum(numbers: List<Long>, acc: Long = 0): Long = // ← tailrec というのをつけた
-    if (numbers.isEmpty()) acc
-    else sum(numbers.drop(1), acc + numbers.first()) // sum の再帰呼び出しが関数の最後にきている
+fun main(args: Array<String>) {
+    //sampleStart
+    // 再帰的に関数を呼び出す場合において、その関数呼び出しが関数の一番最後にくる場合、
+    // 「末尾呼び出し最適化 (Tail Call Optimization)」と呼ばれる最適化を行うことができる
+    // * 関数定義の頭に tailrec をつける
+    // * 再帰呼び出しを関数の最後にもっていく
+    tailrec fun sum(numbers: List<Long>, acc: Long = 0): Long = // ← tailrec というのをつけた
+        if (numbers.isEmpty()) acc
+        else sum(numbers.drop(1), acc + numbers.first()) // sum の再帰呼び出しが関数の最後にきている
 
-// 動く！
-sum((1L..123456).toList())
+    // 動く！ただしタイムアウトするかも
+    sum((1L..123456).toList())
+    //sampleEnd
+}
 ```
 
 ## ローカル関数
@@ -224,14 +232,20 @@ sum((1L..123456).toList())
   * 以下はローカル関数と再帰呼出しの組み合わせ
 
 ```kotlin
-fun sum(numbers: List<Long>): Long {
-    // 引数を 2 つとる関数をローカル関数化し、
-    // 外面を良く (引数 1 個で済むように) した
-    tailrec fun go(numbers: List<Long>, acc: Long): Long = 
-        if (numbers.isEmpty()) acc
-        else go(numbers.drop(1), acc + numbers.first())
+fun main(args: Array<String>) {
+    //sampleStart
+    fun sum(numbers: List<Long>): Long {
+        // 引数を 2 つとる関数をローカル関数化し、
+        // 外面を良く (引数 1 個で済むように) した
+        tailrec fun go(numbers: List<Long>, acc: Long): Long = 
+            if (numbers.isEmpty()) acc
+            else go(numbers.drop(1), acc + numbers.first())
 
-    return go(numbers, 0)
+        return go(numbers, 0)
+    }
+
+    sum((1L..10).toList())
+    //sampleEnd
 }
 ```
 
@@ -257,16 +271,30 @@ fun main(args: Array<String>) {
 
 * プロパティの数が多い場合、`c.xxx = yyy`みたいな記述を繰り返す手間が省ける
 
-## also
+## also, let
 
-* applyと似てるが、alsoはラムダ式の中で別の名前を付けることができる
-  * デフォルトはit
+* alsoはapplyと似ており、applyがラムダ式の中で`this`（あるいはアクセッサーを省略）を使うのに対し、alsoはラムダ式の中で別の名前を付けられる
+  * デフォルトは`it`
   * つまり、applyの場合はラムダ式の内外で`this`の指す先が異なるが、alsoを使うと同じになる
-* letとも似てるが、letは最後の行を返すのに対し、alsoは元のオブジェクトを返す
 
 ```kotlin
-val s = "access".also { it.toUpperCase() }
-println(s) //=> ACCESS
+fun main(args: Array<String>) {
+    //sampleStart
+    val s = "access".also { it.toUpperCase() }
+    println(s) //=> access
+    //sampleEnd
+}
+```
+
+* letはalsoと似ており、letが最後の行を返すのに対し、alsoは元のオブジェクトを返す
+
+```kotlin
+fun main(args: Array<String>) {
+    //sampleStart
+    val s = "access".let { it.toUpperCase() }
+    println(s) //=> ACCESS
+    //sampleEnd
+}
 ```
 
 

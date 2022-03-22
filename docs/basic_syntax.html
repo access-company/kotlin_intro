@@ -64,7 +64,7 @@
     <link rel="next" href="function.html" />
     
     
-    <link rel="prev" href="development_environment.html" />
+    <link rel="prev" href="about_kotlin.html" />
     
 
 <script src="https://unpkg.com/kotlin-playground@1"></script>
@@ -139,20 +139,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="development_environment.html">
-            
-                <a href="development_environment.html">
-            
-                    
-                    開発環境の構築
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="1.5" data-path="basic_syntax.html">
+        <li class="chapter active" data-level="1.4" data-path="basic_syntax.html">
             
                 <a href="basic_syntax.html">
             
@@ -165,7 +152,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="function.html">
+        <li class="chapter " data-level="1.5" data-path="function.html">
             
                 <a href="function.html">
             
@@ -178,7 +165,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="first_class_function.html">
+        <li class="chapter " data-level="1.6" data-path="first_class_function.html">
             
                 <a href="first_class_function.html">
             
@@ -191,7 +178,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="class.html">
+        <li class="chapter " data-level="1.7" data-path="class.html">
             
                 <a href="class.html">
             
@@ -204,7 +191,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.9" data-path="inherit_abstract.html">
+        <li class="chapter " data-level="1.8" data-path="inherit_abstract.html">
             
                 <a href="inherit_abstract.html">
             
@@ -217,7 +204,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.10" data-path="interface.html">
+        <li class="chapter " data-level="1.9" data-path="interface.html">
             
                 <a href="interface.html">
             
@@ -230,7 +217,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.11" data-path="generics.html">
+        <li class="chapter " data-level="1.10" data-path="generics.html">
             
                 <a href="generics.html">
             
@@ -243,7 +230,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.12" data-path="null_safe.html">
+        <li class="chapter " data-level="1.11" data-path="null_safe.html">
             
                 <a href="null_safe.html">
             
@@ -256,7 +243,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.13" data-path="tips.html">
+        <li class="chapter " data-level="1.12" data-path="tips.html">
             
                 <a href="tips.html">
             
@@ -269,7 +256,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.14" data-path="exercise1.html">
+        <li class="chapter " data-level="1.13" data-path="exercise1.html">
             
                 <a href="exercise1.html">
             
@@ -282,7 +269,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.15" data-path="exercise2.html">
+        <li class="chapter " data-level="1.14" data-path="exercise2.html">
             
                 <a href="exercise2.html">
             
@@ -295,12 +282,25 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.16" data-path="exercise3.html">
+        <li class="chapter " data-level="1.15" data-path="exercise3.html">
             
                 <a href="exercise3.html">
             
                     
                     Exercise (3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="android_dev_environment.html">
+            
+                <a href="android_dev_environment.html">
+            
+                    
+                    Android開発環境の構築
             
                 </a>
             
@@ -365,10 +365,16 @@ KotlinPlayground('.lang-kotlin');
 <li>ループ (<code>while</code>、<code>for</code>)</li>
 </ul>
 <h2 id="kotlin-playground">Kotlin Playground</h2>
-<p>ブラウザ上でサンプルを見ながら、その場でコードを書いて動作確認ができます。参考まで。</p>
+<p>ブラウザ上でコードを書いて動作確認できます。</p>
 <ul>
 <li><a href="https://play.kotlinlang.org" target="_blank">https://play.kotlinlang.org</a></li>
 </ul>
+<p>このサイトにも Playground のスクリプトを埋め込んでいます。</p>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    println(<span class="hljs-string">&quot;Hello world!&quot;</span>)
+}
+</code></pre>
+<p>↑ためしに<code>Hello あなたの名前!</code>に書き変えて、緑矢印を押してください。</p>
 <h2 id="いろんな型">いろんな型</h2>
 <p>主に使われる型と、値の例を以下に記載</p>
 <ul>
@@ -484,10 +490,16 @@ KotlinPlayground('.lang-kotlin');
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// val 変数名: 型 = 式</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// val 変数名: 型 = 式</span>
 
-<span class="hljs-keyword">val</span> foo: <span class="hljs-built_in">Int</span> = <span class="hljs-number">123</span>
-<span class="hljs-keyword">val</span> bar: String = <span class="hljs-string">&quot;Hello&quot;</span>
+    <span class="hljs-keyword">val</span> foo: <span class="hljs-built_in">Int</span> = <span class="hljs-number">123</span>
+    <span class="hljs-keyword">val</span> bar: String = <span class="hljs-string">&quot;Hello&quot;</span>
+
+    println(<span class="hljs-string">&quot;foo=<span class="hljs-variable">$foo</span>, bar=<span class="hljs-variable">$bar</span>&quot;</span>)
+    <span class="hljs-comment">//sampleEnd</span>
+}
 </code></pre>
 <ul>
 <li><code>var</code><ul>
@@ -495,25 +507,37 @@ KotlinPlayground('.lang-kotlin');
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// var 変数名: 型 = 式</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// var 変数名: 型 = 式</span>
 
-<span class="hljs-keyword">var</span> foo: <span class="hljs-built_in">Int</span> = <span class="hljs-number">123</span>
-<span class="hljs-keyword">var</span> bar: String = <span class="hljs-string">&quot;Hello&quot;</span>
+    <span class="hljs-keyword">var</span> foo: <span class="hljs-built_in">Int</span> = <span class="hljs-number">123</span>
+    <span class="hljs-keyword">var</span> bar: String = <span class="hljs-string">&quot;Hello&quot;</span>
 
-<span class="hljs-comment">// あとから値が変えられる</span>
+    <span class="hljs-comment">// あとから値が変えられる</span>
 
-foo = <span class="hljs-number">100</span>
-bar = <span class="hljs-string">&quot;World!&quot;</span>
+    foo = <span class="hljs-number">100</span>
+    bar = <span class="hljs-string">&quot;World!&quot;</span>
+
+    println(<span class="hljs-string">&quot;foo=<span class="hljs-variable">$foo</span>, bar=<span class="hljs-variable">$bar</span>&quot;</span>)
+    <span class="hljs-comment">//sampleEnd</span>
+}
 </code></pre>
 <h2 id="型推論">型推論</h2>
 <ul>
 <li>Kotlin コンパイラに、右辺から変数の型を推論してもらうことができる。</li>
 <li>型推論を行う場合は、型名を省略して代入を行う。</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-keyword">val</span> age  = <span class="hljs-number">35</span>       <span class="hljs-comment">// age の型は Int になる</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-keyword">val</span> age  = <span class="hljs-number">35</span>       <span class="hljs-comment">// age の型は Int になる</span>
 
-<span class="hljs-keyword">var</span> name = <span class="hljs-string">&quot;access&quot;</span> <span class="hljs-comment">// name の型は String になる</span>
-name = <span class="hljs-number">12</span>           <span class="hljs-comment">// name の型は String なのでコンパイルエラーになる</span>
+    <span class="hljs-keyword">var</span> name = <span class="hljs-string">&quot;access&quot;</span> <span class="hljs-comment">// name の型は String になる</span>
+    name = <span class="hljs-number">12</span>           <span class="hljs-comment">// name の型は String なのでコンパイルエラーになる</span>
+
+    println(<span class="hljs-string">&quot;name=<span class="hljs-variable">$name</span>, age=<span class="hljs-variable">$age</span>&quot;</span>)
+    <span class="hljs-comment">//sampleEnd</span>
+}
 </code></pre>
 <h2 id="オブジェクト">オブジェクト</h2>
 <p>オブジェクトとは？→クラスのページで詳しく触れる。</p>
@@ -525,91 +549,119 @@ name = <span class="hljs-number">12</span>           <span class="hljs-comment">
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-keyword">val</span> str = <span class="hljs-string">&quot;access&quot;</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-keyword">val</span> str = <span class="hljs-string">&quot;access&quot;</span>
 
-str.length       <span class="hljs-comment">// 6</span>
-str.capitalize() <span class="hljs-comment">// &quot;Access&quot;</span>
-str.isEmpty()    <span class="hljs-comment">// false</span>
+    println(str.length)         <span class="hljs-comment">// 6</span>
+    println(str.capitalize())   <span class="hljs-comment">// &quot;Access&quot;</span>
+    println(str.isEmpty())      <span class="hljs-comment">// false</span>
 
-<span class="hljs-comment">// 文字列の連結</span>
+    <span class="hljs-comment">// 文字列の連結</span>
 
-<span class="hljs-keyword">val</span> str2 = <span class="hljs-string">&quot;Hello &quot;</span> + str + <span class="hljs-string">&quot; !&quot;</span>  <span class="hljs-comment">// + を使った連結</span>
-str2 <span class="hljs-comment">// &quot;Hello access !&quot;</span>
+    <span class="hljs-keyword">val</span> str2 = <span class="hljs-string">&quot;Hello &quot;</span> + str + <span class="hljs-string">&quot; !&quot;</span>    <span class="hljs-comment">// + を使った連結</span>
+    println(str2) <span class="hljs-comment">// &quot;Hello access !&quot;</span>
 
-<span class="hljs-keyword">val</span> str3 = <span class="hljs-string">&quot;Good evening <span class="hljs-subst">${str}</span>!&quot;</span> <span class="hljs-comment">// String テンプレートを使った連結</span>
-str3 <span class="hljs-comment">// &quot;Good evening access!</span>
+    <span class="hljs-keyword">val</span> str3 = <span class="hljs-string">&quot;Good evening <span class="hljs-subst">${str}</span>!&quot;</span>   <span class="hljs-comment">// String テンプレートを使った連結</span>
+    println(str3) <span class="hljs-comment">// &quot;Good evening access!</span>
 
-<span class="hljs-keyword">val</span> str4 = <span class="hljs-string">&quot;Good night <span class="hljs-variable">$str</span>!&quot;</span>     <span class="hljs-comment">// String テンプレートを使った連結</span>
-str4 <span class="hljs-comment">// &quot;Good night access!</span>
+    <span class="hljs-keyword">val</span> str4 = <span class="hljs-string">&quot;Good night <span class="hljs-variable">$str</span>!&quot;</span>       <span class="hljs-comment">// String テンプレートを使った連結</span>
+    println(str4) <span class="hljs-comment">// &quot;Good night access!</span>
+    <span class="hljs-comment">//sampleEnd</span>
+}
 </code></pre>
 <ul>
 <li>配列</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// 配列を作るには arrayOfNulls を使う</span>
-<span class="hljs-comment">// Int の配列の場合は以下のような書き方</span>
-<span class="hljs-keyword">val</span> ints = arrayOfNulls&lt;<span class="hljs-built_in">Int</span>&gt;(<span class="hljs-number">10</span>)
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// 配列を作るには arrayOfNulls を使う</span>
+    <span class="hljs-comment">// Int の配列の場合は以下のような書き方</span>
+    <span class="hljs-keyword">val</span> ints = arrayOfNulls&lt;<span class="hljs-built_in">Int</span>&gt;(<span class="hljs-number">10</span>)
 
-<span class="hljs-comment">// 各要素への値の代入</span>
-<span class="hljs-comment">// (再代入も可能)</span>
-ints[<span class="hljs-number">0</span>] = <span class="hljs-number">10</span>
-ints[<span class="hljs-number">1</span>] = <span class="hljs-number">20</span>
+    <span class="hljs-comment">// 各要素への値の代入</span>
+    <span class="hljs-comment">// (再代入も可能)</span>
+    ints[<span class="hljs-number">0</span>] = <span class="hljs-number">10</span>
+    ints[<span class="hljs-number">1</span>] = <span class="hljs-number">20</span>
 
-<span class="hljs-comment">// 中身はこうなる</span>
-ints[<span class="hljs-number">0</span>] <span class="hljs-comment">// 10</span>
-ints[<span class="hljs-number">1</span>] <span class="hljs-comment">// 20</span>
-ints[<span class="hljs-number">2</span>] <span class="hljs-comment">// null</span>
+    <span class="hljs-comment">// 中身はこうなる</span>
+    println(ints[<span class="hljs-number">0</span>])    <span class="hljs-comment">// 10</span>
+    println(ints[<span class="hljs-number">1</span>])    <span class="hljs-comment">// 20</span>
+    println(ints[<span class="hljs-number">2</span>])    <span class="hljs-comment">// null</span>
 
-<span class="hljs-comment">// 要素数の取得には size プロパティを使う</span>
-ints.size <span class="hljs-comment">// 10</span>
+    <span class="hljs-comment">// 要素数の取得には size プロパティを使う</span>
+    println(ints.size)  <span class="hljs-comment">// 10</span>
 
-<span class="hljs-comment">// arrayOf で書くと型推論される</span>
-<span class="hljs-comment">// 以下は String の配列ということにされる</span>
-<span class="hljs-keyword">val</span> array = arrayOf(<span class="hljs-string">&quot;access&quot;</span>, <span class="hljs-string">&quot;company&quot;</span>, <span class="hljs-string">&quot;com&quot;</span>)
-array[<span class="hljs-number">0</span>] <span class="hljs-comment">// &quot;access&quot;</span>
-array[<span class="hljs-number">1</span>] <span class="hljs-comment">// &quot;company&quot;</span>
-array[<span class="hljs-number">2</span>] <span class="hljs-comment">// &quot;com&quot;</span>
+    <span class="hljs-comment">// arrayOf で書くと型推論される</span>
+    <span class="hljs-comment">// 以下は String の配列ということにされる</span>
+    <span class="hljs-keyword">val</span> array = arrayOf(<span class="hljs-string">&quot;access&quot;</span>, <span class="hljs-string">&quot;company&quot;</span>, <span class="hljs-string">&quot;com&quot;</span>)
+    println(array[<span class="hljs-number">0</span>])   <span class="hljs-comment">// &quot;access&quot;</span>
+    println(array[<span class="hljs-number">1</span>])   <span class="hljs-comment">// &quot;company&quot;</span>
+    println(array[<span class="hljs-number">2</span>])   <span class="hljs-comment">// &quot;com&quot;</span>
+    <span class="hljs-comment">//sampleEnd</span>
+}
 </code></pre>
 <ul>
 <li>リスト</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// listOf でリストを作る。</span>
-<span class="hljs-keyword">val</span> list = listOf&lt;<span class="hljs-built_in">Int</span>&gt;(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// listOf でリストを作る。</span>
+    <span class="hljs-keyword">val</span> list = listOf&lt;<span class="hljs-built_in">Int</span>&gt;(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
 
-<span class="hljs-comment">// 配列と同じように要素アクセスできる</span>
-list[<span class="hljs-number">0</span>] <span class="hljs-comment">// 1</span>
+    <span class="hljs-comment">// 配列と同じように要素アクセスできる</span>
+    println(list[<span class="hljs-number">0</span>])    <span class="hljs-comment">// 1</span>
 
-<span class="hljs-comment">// 単なるリストは要素の値を変更できない</span>
-<span class="hljs-comment">// 要素の値を変更可能なリストが欲しい場合は MutableList を使う</span>
-list[<span class="hljs-number">0</span>] = <span class="hljs-number">100</span> <span class="hljs-comment">// コンパイルエラー</span>
+    <span class="hljs-comment">// 単なるリストは要素の値を変更できない</span>
+    <span class="hljs-comment">// 要素の値を変更可能なリストが欲しい場合は MutableList を使う</span>
+    <span class="hljs-comment">// listOf を mutableListOf に変えてみよう</span>
+    list[<span class="hljs-number">0</span>] = <span class="hljs-number">100</span>   <span class="hljs-comment">// コンパイルエラー</span>
+    println(list[<span class="hljs-number">0</span>])
+    <span class="hljs-comment">//sampleEnd</span>
+}
 </code></pre>
 <ul>
 <li>セット</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// セットは「重複のない」集合を扱う場合に用いる</span>
-<span class="hljs-keyword">val</span> intSet = setOf(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>)
-intSet <span class="hljs-comment">// [1, 2, 3, 4]</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// セットは「重複のない」集合を扱う場合に用いる</span>
+    <span class="hljs-keyword">val</span> intSet = setOf(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>)
+    println(intSet) <span class="hljs-comment">// [1, 2, 3, 4]</span>
 
-<span class="hljs-comment">// 単なるセットは要素の値を変更できない</span>
-<span class="hljs-comment">// 要素を追加したり削除したりする場合は MutableSet を用いる</span>
-intSet += <span class="hljs-number">5</span> <span class="hljs-comment">// コンパイルエラー</span>
+    <span class="hljs-comment">// 単なるセットは要素の値を変更できない</span>
+    <span class="hljs-comment">// 要素を追加したり削除したりする場合は MutableSet を用いる</span>
+    <span class="hljs-comment">// setOf を mutableSetOf に変えてみよう</span>
+    intSet += <span class="hljs-number">5</span> <span class="hljs-comment">// コンパイルエラー</span>
+    println(intSet)
 
-<span class="hljs-comment">// セットは要素の順番を保証しないので、配列みたいな添字での要素アクセスはできない</span>
-intSet[<span class="hljs-number">2</span>] <span class="hljs-comment">// コンパイルエラー</span>
+    <span class="hljs-comment">// セットは要素の順番を保証しないので、配列みたいな添字での要素アクセスはできない</span>
+    <span class="hljs-comment">// intSet[2] を intSet.toList()[2] に変えてみよう</span>
+    intSet[<span class="hljs-number">2</span>]   <span class="hljs-comment">// コンパイルエラー</span>
+    println(intSet)
+    <span class="hljs-comment">//sampleEnd</span>
+}
 </code></pre>
 <ul>
 <li>マップ</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// マップはキーと値のペアを保持するコレクション</span>
-<span class="hljs-comment">// 以下は &lt;String, Int&gt; という形のペアを保持できるマップ</span>
-<span class="hljs-keyword">val</span> map = mapOf(<span class="hljs-number">1</span> to <span class="hljs-string">&quot;access&quot;</span>, <span class="hljs-number">2</span> to <span class="hljs-string">&quot;company&quot;</span>, <span class="hljs-number">3</span> to <span class="hljs-string">&quot;com&quot;</span>)
-map[<span class="hljs-number">1</span>] <span class="hljs-comment">// &quot;access&quot;</span>
-map[<span class="hljs-number">2</span>] <span class="hljs-comment">// &quot;company&quot;</span>
-map[<span class="hljs-number">3</span>] <span class="hljs-comment">// &quot;com&quot;</span>
-map[<span class="hljs-number">4</span>] <span class="hljs-comment">// null</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// マップはキーと値のペアを保持するコレクション</span>
+    <span class="hljs-comment">// 以下は &lt;String, Int&gt; という形のペアを保持できるマップ</span>
+    <span class="hljs-keyword">val</span> map = mapOf(<span class="hljs-number">1</span> to <span class="hljs-string">&quot;access&quot;</span>, <span class="hljs-number">2</span> to <span class="hljs-string">&quot;company&quot;</span>, <span class="hljs-number">3</span> to <span class="hljs-string">&quot;com&quot;</span>)
+    println(map[<span class="hljs-number">1</span>]) <span class="hljs-comment">// &quot;access&quot;</span>
+    println(map[<span class="hljs-number">2</span>]) <span class="hljs-comment">// &quot;company&quot;</span>
+    println(map[<span class="hljs-number">3</span>]) <span class="hljs-comment">// &quot;com&quot;</span>
+    println(map[<span class="hljs-number">4</span>]) <span class="hljs-comment">// null</span>
 
-<span class="hljs-comment">// ご多分に漏れず、単なるマップは値の変更ができない</span>
-<span class="hljs-comment">// 要素の値を変更可能なマップが欲しい場合は MutableMap を使う</span>
-map[<span class="hljs-number">1</span>] = <span class="hljs-string">&quot;fuga&quot;</span> <span class="hljs-comment">// コンパイルエラー</span>
+    <span class="hljs-comment">// ご多分に漏れず、単なるマップは値の変更ができない</span>
+    <span class="hljs-comment">// 要素の値を変更可能なマップが欲しい場合は MutableMap を使う</span>
+    <span class="hljs-comment">// mapOf を mutableMapOf に変えてみよう</span>
+    map[<span class="hljs-number">1</span>] = <span class="hljs-string">&quot;fuga&quot;</span> <span class="hljs-comment">// コンパイルエラー</span>
+    println(map[<span class="hljs-number">1</span>])
+    <span class="hljs-comment">//sampleEnd</span>
+}
 </code></pre>
 <ul>
 <li>レンジ<ul>
@@ -617,19 +669,23 @@ map[<span class="hljs-number">1</span>] = <span class="hljs-string">&quot;fuga&q
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-number">1.</span><span class="hljs-number">.10</span> <span class="hljs-comment">// 1〜10 の範囲を示す</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// 1..10 で、 1〜10 の範囲を示す</span>
 
-<span class="hljs-comment">// in を使って、指定した値が範囲内にあるかチェックする</span>
-<span class="hljs-number">5</span> <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.10</span>   <span class="hljs-comment">// true</span>
-<span class="hljs-number">100</span> <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.10</span> <span class="hljs-comment">// false</span>
+    <span class="hljs-comment">// in を使って、指定した値が範囲内にあるかチェックする</span>
+    println(<span class="hljs-number">5</span> <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.10</span>)     <span class="hljs-comment">// true</span>
+    println(<span class="hljs-number">100</span> <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.10</span>)   <span class="hljs-comment">// false</span>
 
-<span class="hljs-comment">// range もオブジェクトなので変数に入れたりできる</span>
-<span class="hljs-keyword">val</span> r = <span class="hljs-number">1.</span><span class="hljs-number">.10</span>
-<span class="hljs-number">5</span> <span class="hljs-keyword">in</span> r <span class="hljs-comment">// true</span>
+    <span class="hljs-comment">// range もオブジェクトなので変数に入れたりできる</span>
+    <span class="hljs-keyword">val</span> r = <span class="hljs-number">1.</span><span class="hljs-number">.10</span>
+    println(<span class="hljs-number">5</span> <span class="hljs-keyword">in</span> r) <span class="hljs-comment">// true</span>
 
-<span class="hljs-comment">// レンジからリストを得ることができる</span>
-<span class="hljs-keyword">val</span> list = r.toList()
-list <span class="hljs-comment">// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span>
+    <span class="hljs-comment">// レンジからリストを得ることができる</span>
+    <span class="hljs-keyword">val</span> list = r.toList()
+    println(list)   <span class="hljs-comment">// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span>
+    <span class="hljs-comment">//sampleEnd</span>
+}
 </code></pre>
 <h2 id="条件分岐">条件分岐</h2>
 <ul>
@@ -639,29 +695,34 @@ list <span class="hljs-comment">// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span>
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-keyword">val</span> r = <span class="hljs-number">1.</span><span class="hljs-number">.10</span>
-<span class="hljs-keyword">if</span> (<span class="hljs-number">5</span> <span class="hljs-keyword">in</span> r) {
-    println(<span class="hljs-string">&quot;5 is in range&quot;</span>)
-}
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-keyword">val</span> r = <span class="hljs-number">1.</span><span class="hljs-number">.10</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-number">5</span> <span class="hljs-keyword">in</span> r) {
+        println(<span class="hljs-string">&quot;5 is in range&quot;</span>)
+    }
 
-<span class="hljs-comment">// 式として用いて変数に代入することも可能</span>
-<span class="hljs-keyword">val</span> n = <span class="hljs-number">5</span>
-<span class="hljs-keyword">val</span> result = <span class="hljs-keyword">if</span> (n <span class="hljs-keyword">in</span> r) {
-    <span class="hljs-string">&quot;<span class="hljs-variable">$n</span> is in range&quot;</span>
-} <span class="hljs-keyword">else</span> {
-    <span class="hljs-comment">// 式として用いるときには else 必須</span>
-    <span class="hljs-string">&quot;<span class="hljs-variable">$n</span> is not in range&quot;</span>
-}
-result <span class="hljs-comment">// 5 is in range</span>
+    <span class="hljs-comment">// 式として用いて変数に代入することも可能</span>
+    <span class="hljs-keyword">val</span> n = <span class="hljs-number">5</span>
+    <span class="hljs-keyword">val</span> result = <span class="hljs-keyword">if</span> (n <span class="hljs-keyword">in</span> r) {
+        <span class="hljs-string">&quot;<span class="hljs-variable">$n</span> is in range&quot;</span>
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">// 式として用いるときには else 必須</span>
+        <span class="hljs-string">&quot;<span class="hljs-variable">$n</span> is not in range&quot;</span>
+    }
+    println(result) <span class="hljs-comment">// 5 is in range</span>
 
-<span class="hljs-comment">// else if で次々つなげることも可能</span>
-<span class="hljs-keyword">val</span> age = <span class="hljs-number">7</span>
-<span class="hljs-keyword">val</span> fee = <span class="hljs-keyword">if</span> (age &gt; <span class="hljs-number">12</span>) {
-    <span class="hljs-string">&quot;大人料金&quot;</span>
-} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (age &gt;= <span class="hljs-number">6</span>) {
-    <span class="hljs-string">&quot;小人料金&quot;</span>
-} <span class="hljs-keyword">else</span> {
-    <span class="hljs-string">&quot;無料&quot;</span>
+    <span class="hljs-comment">// else if で次々つなげることも可能</span>
+    <span class="hljs-keyword">val</span> age = <span class="hljs-number">7</span>
+    <span class="hljs-keyword">val</span> fee = <span class="hljs-keyword">if</span> (age &gt; <span class="hljs-number">12</span>) {
+        <span class="hljs-string">&quot;大人料金&quot;</span>
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (age &gt;= <span class="hljs-number">6</span>) {
+        <span class="hljs-string">&quot;小人料金&quot;</span>
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-string">&quot;無料&quot;</span>
+    }
+    println(<span class="hljs-string">&quot;<span class="hljs-variable">$age</span> 歳は <span class="hljs-variable">$fee</span>&quot;</span>)
+    <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
 <ul>
@@ -671,121 +732,171 @@ result <span class="hljs-comment">// 5 is in range</span>
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// オーソドックスな when の使い方</span>
-<span class="hljs-keyword">val</span> n = <span class="hljs-number">5</span>
-<span class="hljs-keyword">when</span> (n) {
-    <span class="hljs-number">1</span>    -&gt; <span class="hljs-string">&quot;access&quot;</span>
-    <span class="hljs-number">2</span>, <span class="hljs-number">3</span> -&gt; <span class="hljs-string">&quot;company&quot;</span>
-    <span class="hljs-keyword">else</span> -&gt; <span class="hljs-string">&quot;com&quot;</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// オーソドックスな when の使い方</span>
+    <span class="hljs-keyword">val</span> n = <span class="hljs-number">5</span>
+    <span class="hljs-keyword">when</span> (n) {
+        <span class="hljs-number">1</span>    -&gt; println(<span class="hljs-string">&quot;access&quot;</span>)
+        <span class="hljs-number">2</span>, <span class="hljs-number">3</span> -&gt; println(<span class="hljs-string">&quot;company&quot;</span>)
+        <span class="hljs-keyword">else</span> -&gt; println(<span class="hljs-string">&quot;com&quot;</span>)
+    }
+    <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// is を用いた型チェック</span>
-<span class="hljs-comment">// 値の代入もできる</span>
-<span class="hljs-keyword">val</span> n = <span class="hljs-number">5</span>
-<span class="hljs-keyword">val</span> type = <span class="hljs-keyword">when</span> (n) {
-    <span class="hljs-keyword">is</span> <span class="hljs-built_in">Int</span>    -&gt; <span class="hljs-string">&quot;<span class="hljs-variable">$n</span> is Int&quot;</span>
-    <span class="hljs-keyword">else</span>      -&gt; <span class="hljs-string">&quot;<span class="hljs-variable">$n</span> is not Int&quot;</span>
-}
-type <span class="hljs-comment">// 5 is Int</span>
-</code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// when のあとに値を伴わない書き方もできる</span>
-<span class="hljs-keyword">val</span> n = <span class="hljs-number">5</span>
-<span class="hljs-keyword">when</span> {
-    <span class="hljs-comment">// 以下、条件に一致したものがどれかひとつ実行される</span>
-    <span class="hljs-comment">// 評価は上から順番に行われる</span>
-    n % <span class="hljs-number">15</span> == <span class="hljs-number">0</span> -&gt; println(<span class="hljs-string">&quot;fizzbuzz&quot;</span>)
-    n % <span class="hljs-number">5</span> == <span class="hljs-number">0</span> -&gt; println(<span class="hljs-string">&quot;buzz&quot;</span>)
-    n % <span class="hljs-number">3</span> == <span class="hljs-number">0</span> -&gt; println(<span class="hljs-string">&quot;fizz&quot;</span>)
-    <span class="hljs-keyword">else</span> -&gt; println(<span class="hljs-string">&quot;<span class="hljs-variable">$n</span>&quot;</span>)
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// is を用いた型チェック</span>
+    <span class="hljs-comment">// 値の代入もできる</span>
+    <span class="hljs-keyword">val</span> n = <span class="hljs-number">5</span>
+    <span class="hljs-keyword">val</span> type = <span class="hljs-keyword">when</span> (n) {
+        <span class="hljs-keyword">is</span> <span class="hljs-built_in">Int</span>    -&gt; <span class="hljs-string">&quot;<span class="hljs-variable">$n</span> is Int&quot;</span>
+        <span class="hljs-keyword">else</span>      -&gt; <span class="hljs-string">&quot;<span class="hljs-variable">$n</span> is not Int&quot;</span>
+    }
+    println(type)   <span class="hljs-comment">// 5 is Int</span>
+    <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// 定数以外も用いることができる</span>
-<span class="hljs-keyword">val</span> n = <span class="hljs-number">5</span>
-<span class="hljs-keyword">when</span> {
-    n <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.5</span> -&gt; <span class="hljs-string">&quot;access&quot;</span>
-    n &gt; <span class="hljs-number">5</span>     -&gt; <span class="hljs-string">&quot;company&quot;</span>
-    <span class="hljs-keyword">else</span>      -&gt; <span class="hljs-string">&quot;com&quot;</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// when のあとに値を伴わない書き方もできる</span>
+    <span class="hljs-keyword">val</span> n = <span class="hljs-number">5</span>
+    <span class="hljs-keyword">when</span> {
+        <span class="hljs-comment">// 以下、条件に一致したものがどれかひとつ実行される</span>
+        <span class="hljs-comment">// 評価は上から順番に行われる</span>
+        n % <span class="hljs-number">15</span> == <span class="hljs-number">0</span> -&gt; println(<span class="hljs-string">&quot;fizzbuzz&quot;</span>)
+        n % <span class="hljs-number">5</span> == <span class="hljs-number">0</span> -&gt; println(<span class="hljs-string">&quot;buzz&quot;</span>)
+        n % <span class="hljs-number">3</span> == <span class="hljs-number">0</span> -&gt; println(<span class="hljs-string">&quot;fizz&quot;</span>)
+        <span class="hljs-keyword">else</span> -&gt; println(<span class="hljs-string">&quot;<span class="hljs-variable">$n</span>&quot;</span>)
+    }
+    <span class="hljs-comment">//sampleEnd</span>
+}
+</code></pre>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// 定数以外も用いることができる</span>
+    <span class="hljs-keyword">val</span> n = <span class="hljs-number">5</span>
+    <span class="hljs-keyword">when</span> {
+        n <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.5</span> -&gt; println(<span class="hljs-string">&quot;access&quot;</span>)  <span class="hljs-comment">// レンジ</span>
+        n &gt; <span class="hljs-number">5</span>     -&gt; println(<span class="hljs-string">&quot;company&quot;</span>)
+        <span class="hljs-keyword">else</span>      -&gt; println(<span class="hljs-string">&quot;com&quot;</span>)
+    }
+    <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
 <h2 id="ループ">ループ</h2>
 <ul>
 <li>while</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// while による繰り返し</span>
-<span class="hljs-keyword">var</span> count1 = <span class="hljs-number">0</span>
-<span class="hljs-keyword">while</span> (count1 &lt; <span class="hljs-number">5</span>) {
-    <span class="hljs-comment">// 繰り返したい処理</span>
-    count1++
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// while による繰り返し</span>
+    <span class="hljs-keyword">var</span> count1 = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">while</span> (count1 &lt; <span class="hljs-number">5</span>) {
+        <span class="hljs-comment">// 繰り返したい処理</span>
+        count1++
+    }
+    println(count1)
+    <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// do-while も使えます</span>
-<span class="hljs-comment">// 単なる while は繰り返し 0 回 (＝何もしない) もできるが、</span>
-<span class="hljs-comment">// do-while の場合はまず do の中身を一度実行してから繰り返す</span>
-<span class="hljs-keyword">var</span> count2 = <span class="hljs-number">0</span>
-<span class="hljs-keyword">do</span> {
-    <span class="hljs-comment">// 繰り返したい処理</span>
-    count2++
-} <span class="hljs-keyword">while</span>(count2 &lt; <span class="hljs-number">5</span>)
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// do-while も使えます</span>
+    <span class="hljs-comment">// 単なる while は繰り返し 0 回 (＝何もしない) もできるが、</span>
+    <span class="hljs-comment">// do-while の場合はまず do の中身を一度実行してから繰り返す</span>
+    <span class="hljs-keyword">var</span> count2 = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">do</span> {
+        <span class="hljs-comment">// 繰り返したい処理</span>
+        count2++
+    } <span class="hljs-keyword">while</span>(count2 &lt; <span class="hljs-number">5</span>) <span class="hljs-comment">// 5 を 0 にして確認しよう</span>
+    println(count2)
+    <span class="hljs-comment">//sampleEnd</span>
+}
 </code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// 無限ループ</span>
-<span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
-    <span class="hljs-comment">// 繰り返したい処理</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// 無限ループ</span>
+    <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
+        <span class="hljs-comment">// 繰り返したい処理</span>
+        println(<span class="hljs-string">&quot;押しちゃ駄目だ、押しちゃ駄目だ、押しちゃ駄目だ、押しちゃ駄目だ、押しちゃ駄目だ&quot;</span>)
+    }
+    <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
 <ul>
 <li>for</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// for 文で繰り返し実行が可能なのは、</span>
-<span class="hljs-comment">// イテレータを提供するオブジェクト (配列、リスト、レンジ、等)</span>
-<span class="hljs-keyword">for</span> (要素名 <span class="hljs-keyword">in</span> イテレータオブジェクト) {
-    <span class="hljs-comment">// 繰り返したい処理</span>
-}
-</code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// Int の配列の場合</span>
-<span class="hljs-keyword">val</span> ints = arrayOf(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
-<span class="hljs-keyword">for</span> (n <span class="hljs-keyword">in</span> ints) {
-    println(n) <span class="hljs-comment">// 1, 2, 3 が順番に出力される</span>
-}
-</code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// レンジを使う場合</span>
-<span class="hljs-keyword">var</span> sum = <span class="hljs-number">0</span>
-<span class="hljs-keyword">for</span> (n <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.10</span>) {
-    sum += n
-}
-sum <span class="hljs-comment">// 55</span>
-</code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// リストを使う場合</span>
-<span class="hljs-keyword">var</span> sum = <span class="hljs-number">0</span>
-<span class="hljs-keyword">val</span> list = (<span class="hljs-number">1.</span><span class="hljs-number">.10</span>).toList()
-<span class="hljs-keyword">for</span> (n <span class="hljs-keyword">in</span> list) {
-    sum += n
-}
-sum <span class="hljs-comment">// 55</span>
-</code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// 途中でループを抜けたり (break)</span>
-<span class="hljs-comment">// 次のループまでスキップしたり (continue)</span>
-<span class="hljs-keyword">var</span> count = <span class="hljs-number">0</span>
-<span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
-    count++
-    <span class="hljs-keyword">if</span> (count == <span class="hljs-number">10</span>) {
-        <span class="hljs-keyword">break</span> <span class="hljs-comment">// while ループを抜ける</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// for 文で繰り返し実行が可能なのは、</span>
+    <span class="hljs-comment">// イテレータを提供するオブジェクト (配列、リスト、レンジ、等)</span>
+
+    <span class="hljs-comment">// Int の配列の場合</span>
+    <span class="hljs-keyword">val</span> ints = arrayOf(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+    <span class="hljs-keyword">for</span> (n <span class="hljs-keyword">in</span> ints) {   <span class="hljs-comment">// 要素名 in イテレータオブジェクト</span>
+        println(n)  <span class="hljs-comment">// 1, 2, 3 が順番に出力される</span>
     }
-    <span class="hljs-keyword">if</span> (count % <span class="hljs-number">3</span> == <span class="hljs-number">0</span>) {
-        println(<span class="hljs-string">&quot;3の倍数です！&quot;</span>)
-        <span class="hljs-keyword">continue</span> <span class="hljs-comment">// 後ろの処理を行わずに次のループを開始する</span>
-    }
-    println(count)
+    <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// ループが多重の場合は、</span>
-<span class="hljs-comment">// どのループを抜けるかラベルで指定する</span>
-<span class="hljs-symbol">outer@</span> <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.10</span>) { <span class="hljs-comment">// ← outer というラベルをつけたところ</span>
-    <span class="hljs-keyword">for</span> (j <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.10</span>) {
-        <span class="hljs-keyword">if</span> ((i+j) % <span class="hljs-number">3</span> == <span class="hljs-number">0</span>) {
-            <span class="hljs-keyword">break</span><span class="hljs-symbol">@outer</span> <span class="hljs-comment">// 外側のループを抜ける</span>
-            <span class="hljs-comment">// break のように何も指定しない場合、内側のループを抜ける</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// レンジを使う場合</span>
+    <span class="hljs-keyword">var</span> sum = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> (n <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.10</span>) {
+        sum += n
+    }
+    println(sum)    <span class="hljs-comment">// 55</span>
+    <span class="hljs-comment">//sampleEnd</span>
+}
+</code></pre>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// リストを使う場合</span>
+    <span class="hljs-keyword">var</span> sum = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">val</span> list = (<span class="hljs-number">1.</span><span class="hljs-number">.10</span>).toList()
+    <span class="hljs-keyword">for</span> (n <span class="hljs-keyword">in</span> list) {
+        sum += n
+    }
+    println(sum)    <span class="hljs-comment">// 55</span>
+    <span class="hljs-comment">//sampleEnd</span>
+}
+</code></pre>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// 途中でループを抜けたり (break)</span>
+    <span class="hljs-comment">// 次のループまでスキップしたり (continue)</span>
+    <span class="hljs-keyword">var</span> count = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
+        count++
+        <span class="hljs-keyword">if</span> (count == <span class="hljs-number">10</span>) {
+            <span class="hljs-keyword">break</span> <span class="hljs-comment">// while ループを抜ける</span>
+        }
+        <span class="hljs-keyword">if</span> (count % <span class="hljs-number">3</span> == <span class="hljs-number">0</span>) {
+            println(<span class="hljs-string">&quot;3の倍数です！&quot;</span>)
+            <span class="hljs-keyword">continue</span> <span class="hljs-comment">// 後ろの処理を行わずに次のループを開始する</span>
+        }
+        println(count)
+    }
+    <span class="hljs-comment">//sampleEnd</span>
+}
+</code></pre>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// ループが多重の場合は、</span>
+    <span class="hljs-comment">// どのループを抜けるかラベルで指定する</span>
+    <span class="hljs-symbol">outer@</span> <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.10</span>) { <span class="hljs-comment">// ← outer というラベルをつけたところ</span>
+        <span class="hljs-keyword">for</span> (j <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.10</span>) {
+            println(<span class="hljs-string">&quot;i=<span class="hljs-variable">$i</span>, j=<span class="hljs-variable">$j</span>&quot;</span>)
+            <span class="hljs-keyword">if</span> ((i+j) % <span class="hljs-number">3</span> == <span class="hljs-number">0</span>) {
+                println(<span class="hljs-string">&quot;Break!&quot;</span>)
+                <span class="hljs-keyword">break</span><span class="hljs-symbol">@outer</span> <span class="hljs-comment">// 外側のループを抜ける</span>
+                <span class="hljs-comment">// break のように何も指定しない場合、内側のループを抜ける</span>
+            }
         }
     }
+    <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
 
@@ -815,7 +926,7 @@ sum <span class="hljs-comment">// 55</span>
 
             
                 
-                <a href="development_environment.html" class="navigation navigation-prev " aria-label="Previous page: 開発環境の構築">
+                <a href="about_kotlin.html" class="navigation navigation-prev " aria-label="Previous page: Kotlin について">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -831,7 +942,7 @@ sum <span class="hljs-comment">// 55</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"基本的な文法","level":"1.5","depth":1,"next":{"title":"関数","level":"1.6","depth":1,"path":"function.md","ref":"./function.md","articles":[]},"previous":{"title":"開発環境の構築","level":"1.4","depth":1,"path":"development_environment.md","ref":"./development_environment.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"head-append":{"code":["<script src=\"https://unpkg.com/kotlin-playground@1\"></script>","<script>","document.addEventListener('DOMContentLoaded', function() {","KotlinPlayground('.lang-kotlin');","});","</script>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"basic_syntax.md","mtime":"2022-02-19T13:21:37.789Z","type":"markdown"},"gitbook":{"version":"3.7.1","time":"2022-03-14T01:16:07.696Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"基本的な文法","level":"1.4","depth":1,"next":{"title":"関数","level":"1.5","depth":1,"path":"function.md","ref":"./function.md","articles":[]},"previous":{"title":"Kotlin について","level":"1.3","depth":1,"path":"about_kotlin.md","ref":"./about_kotlin.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"head-append":{"code":["<script src=\"https://unpkg.com/kotlin-playground@1\"></script>","<script>","document.addEventListener('DOMContentLoaded', function() {","KotlinPlayground('.lang-kotlin');","});","</script>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"basic_syntax.md","mtime":"2022-03-18T06:05:55.026Z","type":"markdown"},"gitbook":{"version":"3.7.1","time":"2022-03-22T08:39:11.764Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

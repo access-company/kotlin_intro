@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>開発環境の構築 · HonKit</title>
+        <title>Android開発環境の構築 · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 3.7.1">
@@ -61,10 +61,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="basic_syntax.html" />
     
-    
-    <link rel="prev" href="about_kotlin.html" />
+    <link rel="prev" href="exercise3.html" />
     
 
 <script src="https://unpkg.com/kotlin-playground@1"></script>
@@ -139,20 +137,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter active" data-level="1.4" data-path="development_environment.html">
-            
-                <a href="development_environment.html">
-            
-                    
-                    開発環境の構築
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5" data-path="basic_syntax.html">
+        <li class="chapter " data-level="1.4" data-path="basic_syntax.html">
             
                 <a href="basic_syntax.html">
             
@@ -165,7 +150,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="function.html">
+        <li class="chapter " data-level="1.5" data-path="function.html">
             
                 <a href="function.html">
             
@@ -178,7 +163,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="first_class_function.html">
+        <li class="chapter " data-level="1.6" data-path="first_class_function.html">
             
                 <a href="first_class_function.html">
             
@@ -191,7 +176,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="class.html">
+        <li class="chapter " data-level="1.7" data-path="class.html">
             
                 <a href="class.html">
             
@@ -204,7 +189,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.9" data-path="inherit_abstract.html">
+        <li class="chapter " data-level="1.8" data-path="inherit_abstract.html">
             
                 <a href="inherit_abstract.html">
             
@@ -217,7 +202,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.10" data-path="interface.html">
+        <li class="chapter " data-level="1.9" data-path="interface.html">
             
                 <a href="interface.html">
             
@@ -230,7 +215,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.11" data-path="generics.html">
+        <li class="chapter " data-level="1.10" data-path="generics.html">
             
                 <a href="generics.html">
             
@@ -243,7 +228,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.12" data-path="null_safe.html">
+        <li class="chapter " data-level="1.11" data-path="null_safe.html">
             
                 <a href="null_safe.html">
             
@@ -256,7 +241,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.13" data-path="tips.html">
+        <li class="chapter " data-level="1.12" data-path="tips.html">
             
                 <a href="tips.html">
             
@@ -269,7 +254,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.14" data-path="exercise1.html">
+        <li class="chapter " data-level="1.13" data-path="exercise1.html">
             
                 <a href="exercise1.html">
             
@@ -282,7 +267,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.15" data-path="exercise2.html">
+        <li class="chapter " data-level="1.14" data-path="exercise2.html">
             
                 <a href="exercise2.html">
             
@@ -295,12 +280,25 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.16" data-path="exercise3.html">
+        <li class="chapter " data-level="1.15" data-path="exercise3.html">
             
                 <a href="exercise3.html">
             
                     
                     Exercise (3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.16" data-path="android_dev_environment.html">
+            
+                <a href="android_dev_environment.html">
+            
+                    
+                    Android開発環境の構築
             
                 </a>
             
@@ -338,7 +336,7 @@ KotlinPlayground('.lang-kotlin');
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >開発環境の構築</a>
+        <a href="." >Android開発環境の構築</a>
     </h1>
 </div>
 
@@ -354,29 +352,28 @@ KotlinPlayground('.lang-kotlin');
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="開発環境の構築">開発環境の構築</h1>
-<p>Kotlin を用いた開発を行うための環境構築について記載します。</p>
+<p>Kotlin 研修おつかれさまでした！</p>
+<p>これから待ち受ける実習課題にそなえ、 Kotlin で Android 開発を行うための環境構築について記載します。</p>
 <h2 id="ゴール">ゴール</h2>
 <ul>
 <li>サンプルプロジェクトをclone する</li>
 <li>clone したサンプルプロジェクトを Android Studio で読み込む</li>
-<li>SampleTest を実行し、welcome メッセージを確認する</li>
-<li>Sample.kt を編集し、hello world を出す関数を定義する</li>
-<li>hello world を出す関数を SampleTest クラスから呼び出す</li>
+<li>サンプルアプリを実行する</li>
 </ul>
 <h2 id="想定する事前準備">想定する事前準備</h2>
 <p>以下はあらかじめ用意されていることを想定</p>
 <ul>
 <li>ターミナルで git コマンドが実行できるようになっていること</li>
-<li>Android Studio (バージョン 4 以降) がインストールされていること</li>
+<li>Android Studio (バージョン Bumblebee 2021.1.1 以降) がインストールされていること</li>
 </ul>
 <h2 id="サンプルプロジェクトを-clone-する">サンプルプロジェクトを clone する</h2>
 <ul>
-<li>本研修で使用するサンプルプロジェクトを用意しておいた<ul>
-<li><a href="https://github.com/access-company/KotlinTraining" target="_blank">サンプルプロジェクトはココ</a></li>
+<li>サンプルプロジェクトは以下<ul>
+<li><a href="https://github.com/access-company/TrainingProject_Nekonosuzu" target="_blank">https://github.com/access-company/TrainingProject_Nekonosuzu</a></li>
 </ul>
 </li>
 <li>ターミナルを開き、任意の位置に clone する<ul>
-<li>以下のようなコマンドを打つ<pre><code class="lang-bash">$ git <span class="hljs-built_in">clone</span> https://github.com/access-company/KotlinTraining.git
+<li>以下のようなコマンドを打つ<pre><code class="lang-bash">$ git <span class="hljs-built_in">clone</span> https://github.com/access-company/TrainingProject_Nekonosuzu.git
 </code></pre>
 </li>
 </ul>
@@ -385,36 +382,33 @@ KotlinPlayground('.lang-kotlin');
 </ul>
 <h2 id="clone-したサンプルプロジェクトを-android-studio-で読み込む">clone したサンプルプロジェクトを Android Studio で読み込む</h2>
 <ul>
-<li>無事に clone は済んだだろうか</li>
-<li>次に clone したソースコードを Android Studio で読み込む</li>
-<li>Android Studio を起動し、「Open an exisiting Android Studio project」を選ぶ</li>
+<li>Android Studio を起動し、Open を選ぶ</li>
 </ul>
-<p><img src="assets/images/as1.png" alt="as1.png"><br>↑ Android Studio を開いたところ</p>
+<p><img src="assets/images/as1.png" alt="as1.png"></p>
 <ul>
-<li>ファイルエクスプローラが起動するので、先程 clone したところを選ぶ</li>
+<li>ファイルエクスプローラが起動するので、先程 clone した TrainingProject_Nekonosuzu のフォルダを選び Open する</li>
+<li>ファイルではなくフォルダを選ぶ</li>
 </ul>
-<p><img src="assets/images/as2.png" alt="as2.png"><br>↑ clone したサンプルプロジェクトを選ぶ (アイコンが緑の丸っぽいのを選ぶ)</p>
+<p><img src="assets/images/as2.png" alt="as2.png"></p>
 <ul>
-<li>選ぶと自動的にビルドが始まり、必要なもののダウンロード等が始まったりする</li>
+<li>自動的にビルドが始まり、必要なもののダウンロード等が始まる</li>
 </ul>
-<h2 id="sampletest-を実行し、welcome-メッセージを確認する">SampleTest を実行し、welcome メッセージを確認する</h2>
+<h2 id="サンプルを実行しよう">サンプルを実行しよう</h2>
 <ul>
-<li>SampleTest クラスを見つけてみよう</li>
-<li>見つけたら、右クリックで選択し、<code>Run &apos;SampleTest&apos;</code> を選択</li>
-<li>welcome メッセージが出るかな</li>
+<li>Android 端末を PC に USB で接続しよう<ul>
+<li>事前に Android 側で開発者向けオプションと USB デバッグを有効にすること(<a href="https://developer.android.com/studio/debug/dev-options?hl=ja" target="_blank">参考</a>）</li>
 </ul>
-<h2 id="samplekt-を編集し、hello-world-を出す関数を定義する">Sample.kt を編集し、hello world を出す関数を定義する</h2>
-<ul>
-<li>Sample.kt を探し、以下のようなコードを書いてみましょう。</li>
+</li>
+<li>Android Studio の Run メニューからサンプルアプリを実行しよう</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">hello</span><span class="hljs-params">()</span></span> {
-    println(<span class="hljs-string">&quot;Hello World!&quot;</span>)
-}
-</code></pre>
-<h2 id="hello-を-sampletest-クラスから呼び出す"><code>hello</code> を SampleTest クラスから呼び出す</h2>
+<p><img src="assets/images/as3.png" alt="as3.png"></p>
 <ul>
-<li>SampleTest を編集し、先ほど Sample.kt に定義した <code>hello</code> を呼び出してみよう</li>
-<li>うまく呼び出せただろうか</li>
+<li>うまく動いただろうか</li>
+<li>実機がなくても、エミュレーターを作成して実行することができる<ul>
+<li>余裕があれば調べてやってみよう</li>
+</ul>
+</li>
+<li>それでは、実習にのぞんでください！</li>
 </ul>
 
                                 
@@ -443,14 +437,10 @@ KotlinPlayground('.lang-kotlin');
 
             
                 
-                <a href="about_kotlin.html" class="navigation navigation-prev " aria-label="Previous page: Kotlin について">
+                <a href="exercise3.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Exercise (3)">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="basic_syntax.html" class="navigation navigation-next " aria-label="Next page: 基本的な文法">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -459,7 +449,7 @@ KotlinPlayground('.lang-kotlin');
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"開発環境の構築","level":"1.4","depth":1,"next":{"title":"基本的な文法","level":"1.5","depth":1,"path":"basic_syntax.md","ref":"./basic_syntax.md","articles":[]},"previous":{"title":"Kotlin について","level":"1.3","depth":1,"path":"about_kotlin.md","ref":"./about_kotlin.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"head-append":{"code":["<script src=\"https://unpkg.com/kotlin-playground@1\"></script>","<script>","document.addEventListener('DOMContentLoaded', function() {","KotlinPlayground('.lang-kotlin');","});","</script>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"development_environment.md","mtime":"2022-02-19T13:21:37.789Z","type":"markdown"},"gitbook":{"version":"3.7.1","time":"2022-03-14T01:16:07.696Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Android開発環境の構築","level":"1.16","depth":1,"previous":{"title":"Exercise (3)","level":"1.15","depth":1,"path":"exercise3.md","ref":"./exercise3.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"head-append":{"code":["<script src=\"https://unpkg.com/kotlin-playground@1\"></script>","<script>","document.addEventListener('DOMContentLoaded', function() {","KotlinPlayground('.lang-kotlin');","});","</script>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"android_dev_environment.md","mtime":"2022-03-18T06:05:54.983Z","type":"markdown"},"gitbook":{"version":"3.7.1","time":"2022-03-22T08:39:11.764Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

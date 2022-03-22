@@ -139,20 +139,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="development_environment.html">
-            
-                <a href="development_environment.html">
-            
-                    
-                    開発環境の構築
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5" data-path="basic_syntax.html">
+        <li class="chapter " data-level="1.4" data-path="basic_syntax.html">
             
                 <a href="basic_syntax.html">
             
@@ -165,7 +152,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="function.html">
+        <li class="chapter " data-level="1.5" data-path="function.html">
             
                 <a href="function.html">
             
@@ -178,7 +165,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="first_class_function.html">
+        <li class="chapter " data-level="1.6" data-path="first_class_function.html">
             
                 <a href="first_class_function.html">
             
@@ -191,7 +178,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="class.html">
+        <li class="chapter " data-level="1.7" data-path="class.html">
             
                 <a href="class.html">
             
@@ -204,7 +191,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.9" data-path="inherit_abstract.html">
+        <li class="chapter " data-level="1.8" data-path="inherit_abstract.html">
             
                 <a href="inherit_abstract.html">
             
@@ -217,7 +204,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.10" data-path="interface.html">
+        <li class="chapter " data-level="1.9" data-path="interface.html">
             
                 <a href="interface.html">
             
@@ -230,7 +217,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.11" data-path="generics.html">
+        <li class="chapter " data-level="1.10" data-path="generics.html">
             
                 <a href="generics.html">
             
@@ -243,7 +230,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.12" data-path="null_safe.html">
+        <li class="chapter " data-level="1.11" data-path="null_safe.html">
             
                 <a href="null_safe.html">
             
@@ -256,7 +243,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.13" data-path="tips.html">
+        <li class="chapter " data-level="1.12" data-path="tips.html">
             
                 <a href="tips.html">
             
@@ -269,7 +256,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.14" data-path="exercise1.html">
+        <li class="chapter " data-level="1.13" data-path="exercise1.html">
             
                 <a href="exercise1.html">
             
@@ -282,7 +269,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter active" data-level="1.15" data-path="exercise2.html">
+        <li class="chapter active" data-level="1.14" data-path="exercise2.html">
             
                 <a href="exercise2.html">
             
@@ -295,12 +282,25 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.16" data-path="exercise3.html">
+        <li class="chapter " data-level="1.15" data-path="exercise3.html">
             
                 <a href="exercise3.html">
             
                     
                     Exercise (3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="android_dev_environment.html">
+            
+                <a href="android_dev_environment.html">
+            
+                    
+                    Android開発環境の構築
             
                 </a>
             
@@ -359,15 +359,14 @@ KotlinPlayground('.lang-kotlin');
 <p><code>Int</code> を拡張して、<code>isOdd</code>、<code>isEven</code> メソッドを追加してみよう！</p>
 <ul>
 <li><code>isOdd</code> ... 数が奇数であるときに <code>true</code> を返し、偶数のときに <code>false</code> を返すメソッド</li>
-<li><p><code>isEven</code> ... 数が偶数であるときに <code>true</code> を返し、奇数のときに <code>false</code> を返すメソッド</p>
-</li>
-<li><p>使い方イメージ</p>
-</li>
+<li><code>isEven</code> ... 数が偶数であるときに <code>true</code> を返し、奇数のときに <code>false</code> を返すメソッド</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+<pre><code class="lang-kotlin"><span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> isOdd と isEven を拡張メソッドで実装する</span>
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-keyword">val</span> a = <span class="hljs-number">5</span>
-    a.isOdd()  <span class="hljs-comment">// true</span>
-    a.isEven() <span class="hljs-comment">// false</span>
+    println(a.isOdd())  <span class="hljs-comment">// true</span>
+    println(a.isEven()) <span class="hljs-comment">// false</span>
 }
 </code></pre>
 <h2 id="n-面のサイコロ">n 面のサイコロ</h2>
@@ -383,22 +382,19 @@ KotlinPlayground('.lang-kotlin');
 <li>別の Dice インスタンスを作ればまた <code>roll</code> できる</li>
 </ul>
 </li>
-<li>ランダムな数を得る方法は、たとえば以下</li>
 </ul>
 <pre><code class="lang-kotlin"><span class="hljs-keyword">import</span> java.util.Random
 
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
-    <span class="hljs-keyword">val</span> random = Random()
-    <span class="hljs-keyword">val</span> n = random.nextInt(<span class="hljs-number">100</span>) <span class="hljs-comment">// 0〜99 までの範囲の値がランダムで返る</span>
-    println(n)
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dice</span></span>(<span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> diceFace: <span class="hljs-built_in">Int</span>) {
+    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> class Dice を完成させる</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">roll</span><span class="hljs-params">()</span></span>: <span class="hljs-built_in">Int</span> {
+        <span class="hljs-comment">// ヒント：以下は、0〜5 までの値がランダムで返る</span>
+        <span class="hljs-keyword">val</span> random = Random()
+        <span class="hljs-keyword">val</span> n = random.nextInt(<span class="hljs-number">6</span>) 
+        <span class="hljs-keyword">return</span> n
+    }
 }
-</code></pre>
-<ul>
-<li>以下、<code>Dice</code> クラスの使い方イメージ</li>
-</ul>
-<pre><code class="lang-kotlin"><span class="hljs-keyword">import</span> java.util.Random
-
-<span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> class Dice を書く</span>
 
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-keyword">val</span> d = Dice(<span class="hljs-number">16</span>)
@@ -410,9 +406,6 @@ KotlinPlayground('.lang-kotlin');
 </code></pre>
 <h2 id="呼び出した回数をカウントする">呼び出した回数をカウントする</h2>
 <p>カスタムセッターを使って、何度呼び出されたかをカウントしてみよう！</p>
-<ul>
-<li>使い方イメージ</li>
-</ul>
 <pre><code class="lang-kotlin"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyCustomClass</span> </span>{
     <span class="hljs-keyword">var</span> counter: <span class="hljs-built_in">Int</span> = <span class="hljs-number">0</span>
     <span class="hljs-keyword">var</span> propertyWithCounter: <span class="hljs-built_in">Int</span> = <span class="hljs-number">0</span>
@@ -449,10 +442,9 @@ KotlinPlayground('.lang-kotlin');
     }
 }
 
-<span class="hljs-comment">// 呼び出しイメージ</span>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-keyword">val</span> n = NabeAtsu()
-    <span class="hljs-keyword">for</span> (i <span class="hljs-number">1.</span><span class="hljs-number">.100</span>) {
+    <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.100</span>) {
         println(n.next())
     }
 }
@@ -504,7 +496,7 @@ Aho Aho Aho Aho Aho Aho Aho Aho Aho 40 41 Aho Aho ...
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Exercise (2)","level":"1.15","depth":1,"next":{"title":"Exercise (3)","level":"1.16","depth":1,"path":"exercise3.md","ref":"./exercise3.md","articles":[]},"previous":{"title":"Exercise (1)","level":"1.14","depth":1,"path":"exercise1.md","ref":"./exercise1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"head-append":{"code":["<script src=\"https://unpkg.com/kotlin-playground@1\"></script>","<script>","document.addEventListener('DOMContentLoaded', function() {","KotlinPlayground('.lang-kotlin');","});","</script>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"exercise2.md","mtime":"2022-02-19T13:21:37.790Z","type":"markdown"},"gitbook":{"version":"3.7.1","time":"2022-03-14T01:16:07.696Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Exercise (2)","level":"1.14","depth":1,"next":{"title":"Exercise (3)","level":"1.15","depth":1,"path":"exercise3.md","ref":"./exercise3.md","articles":[]},"previous":{"title":"Exercise (1)","level":"1.13","depth":1,"path":"exercise1.md","ref":"./exercise1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"head-append":{"code":["<script src=\"https://unpkg.com/kotlin-playground@1\"></script>","<script>","document.addEventListener('DOMContentLoaded', function() {","KotlinPlayground('.lang-kotlin');","});","</script>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"exercise2.md","mtime":"2022-03-18T06:04:56.382Z","type":"markdown"},"gitbook":{"version":"3.7.1","time":"2022-03-22T08:39:11.764Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
