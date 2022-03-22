@@ -20,9 +20,13 @@
   * コンストラクタを持たせることはできない
 
 * 定義の仕方
+  * interface と書いて宣言する
+* 実装の仕方
+  * class を作ってインターフェースを継承する
+  * abstract なものをひととおりオーバーライドする (interface を実装する、と呼ぶ)
 
 ```kotlin
-// interface と書いて宣言する
+//sampleStart
 // Greeter (挨拶するひと) インターフェース
 interface Greeter {
     // プロパティ、メソッドを持たせられるが、いずれも abstract
@@ -32,13 +36,7 @@ interface Greeter {
     val language: String
     fun sayHello(target: String)
 }
-```
 
-* 実装の仕方
-  * クラスを作ってインターフェースを継承する
-  * abstract なものをひととおりオーバーライドする (interface を実装する、と呼ぶ)
-
-```kotlin
 // Greeter interface を実装する EnglishGreeter クラス
 class EnglishGreeter : Greeter {
     // val language と fun sayHello を
@@ -48,26 +46,39 @@ class EnglishGreeter : Greeter {
         println("Hello! $target!")
     }
 }
+//sampleEnd
+
+fun main(args: Array<String>) {
+    EnglishGreeter().sayHello("Everyone")
+}
 ```
 
 * ちなみに、クラスの継承はひとつまでなのに対し、インターフェースは複数継承することができる 
 
 ```kotlin
-
+//sampleStart
 // インターフェースがふたつ以上あったとして...
 interface Cookie {
-    ...
+    fun whiteDay()
 }
 
 interface Chocolate {
-    ...
+    fun valentinesDay()
 }
 
 // クラスは複数のインターフェースを継承して実装することができる
 class Sweet : Cookie, Chocolate {
-    ...
     // Cookie、Chocolate に含まれるメンバを
     // 全てオーバーライドする (実装する) 必要がある
+    override fun whiteDay() {}
+    override fun valentinesDay() {}
+}
+//sampleEnd
+
+fun main(args: Array<String>) {
+    val sweet = Sweet()
+    sweet.valentinesDay()
+    sweet.whiteDay()
 }
 ```
 
@@ -89,7 +100,7 @@ class EnglishGreeter : Greeter {
 
 fun main(args: Array<String>) {
     val g: Greeter = EnglishGreeter()
-    g.sayHello("takeshi") // Hello takeshi!
+    g.sayHello("takeshi")   // Hello takeshi!
 }
 ```
 
@@ -99,11 +110,10 @@ fun main(args: Array<String>) {
     * スーパークラスの変更はただちにサブクラスに影響する (変更の影響範囲を小さくできない)
   * 継承せずに別クラスに処理を委譲するやり方をデリゲーションと呼ぶ
 
-  継承と委譲それぞれの実装例を見てみよう。
+継承と委譲それぞれの実装例を見てみよう。
 
 ```kotlin
 // 継承するパターン
-
 // インターフェースの定義
 interface Greeter {
     fun sayHello()
@@ -133,10 +143,10 @@ class EnglishGreeterGreatAgain : EnglishGreeter() {
 
 fun main(args: Array<String>) {
     val g = EnglishGreeterGreatAgain()
-    g.sayHello("America") // Hello America great again!
-    g.sayHello("Japan")   // Hello Japan great again!
-    g.sayHello("Germany") // Hello Germany great again!
-    g.sayHello()        // Hello anonymous great again ← ！？
+    g.sayHello("America")   // Hello America great again!
+    g.sayHello("Japan")     // Hello Japan great again!
+    g.sayHello("Germany")   // Hello Germany great again!
+    g.sayHello()            // Hello anonymous great again ← ！？
 }
 ```
 
@@ -146,7 +156,26 @@ fun main(args: Array<String>) {
 
 ```kotlin
 // 委譲するパターン
+// インターフェースの定義
+interface Greeter {
+    fun sayHello()
+    fun sayHello(target: String)
+}
 
+// 英語で挨拶クラス
+open class EnglishGreeter : Greeter {
+    override fun sayHello() {
+        // 名前を省略したら anonymous さんに挨拶する
+        sayHello("anonymous")
+    }
+
+    override fun sayHello(target: String) {
+        println("Hello, $target!")
+    }
+}
+
+// 名前を指定されたときはすごい挨拶をする
+// 英語で挨拶クラスを委譲して拡張した
 class EnglishGreeterGreatAgain : Greeter {
     // 継承ではなく、メンバとして値を持つ
     private val g: Greeter = EnglishGreeter()
@@ -158,16 +187,16 @@ class EnglishGreeterGreatAgain : Greeter {
 
     override fun sayHello(target: String) {
         // 拡張してメソッドを呼び出す
-        g.sayHello("Hello $target great again!")
+        g.sayHello("$target great again!")
     }
 }
 
 fun main(args: Array<String>) {
     val g = EnglishGreeterGreatAgain()
-    g.sayHello("America") // Hello America great again!
-    g.sayHello("Japan")   // Hello Japan great again!
-    g.sayHello("Germany") // Hello Germany great again!
-    g.sayHello()        // Hello anonymous!
+    g.sayHello("America")   // Hello America great again!
+    g.sayHello("Japan")     // Hello Japan great again!
+    g.sayHello("Germany")   // Hello Germany great again!
+    g.sayHello()            // Hello anonymous!
 }
 ```
 
@@ -176,6 +205,24 @@ fun main(args: Array<String>) {
   * ところが、Kotlin の場合、委譲してもコード量を増やさない技が備わっている
 
 ```kotlin
+// インターフェースの定義
+interface Greeter {
+    fun sayHello()
+    fun sayHello(target: String)
+}
+
+// 英語で挨拶クラス
+open class EnglishGreeter : Greeter {
+    override fun sayHello() {
+        // 名前を省略したら anonymous さんに挨拶する
+        sayHello("anonymous")
+    }
+
+    override fun sayHello(target: String) {
+        println("Hello, $target!")
+    }
+}
+
 // コンストラクタで Greeter をとりつつ、"Greeter by greeter" と指定して継承
 // override してない部分は greeter に委譲するという意味になる
 class EnglishGreeterGreatAgain(private val greeter: Greeter): Greeter by greeter {
@@ -183,17 +230,17 @@ class EnglishGreeterGreatAgain(private val greeter: Greeter): Greeter by greeter
 
     // 拡張したいところだけ override
     override fun sayHello(target: String) {
-        greeter.sayHello("Hello $target great again!")
+        greeter.sayHello("$target great again!")
     }
 }
 
 fun main(args: Array<String>) {
     val eg = EnglishGreeter()
     val g = EnglishGreeterGreatAgain(eg)
-    g.sayHello("America") // Hello America great again!
-    g.sayHello("Japan")   // Hello Japan great again!
-    g.sayHello("Germany") // Hello Germany great again!
-    g.sayHello()        // Hello anonymous!
+    g.sayHello("America")   // Hello America great again!
+    g.sayHello("Japan")     // Hello Japan great again!
+    g.sayHello("Germany")   // Hello Germany great again!
+    g.sayHello()            // Hello anonymous!
 }
 ```
 
@@ -244,4 +291,4 @@ fun main(args: Array<String>) {
 * 実装の中身を入れ替えたいときに便利
   * テスト用に常に OK を返すだけのクラスにしたい
   * SQLite を使っていたが Postgres に変更したい
-  * 等など
+  * などなど
