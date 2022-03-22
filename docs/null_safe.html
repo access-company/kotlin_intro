@@ -139,20 +139,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="development_environment.html">
-            
-                <a href="development_environment.html">
-            
-                    
-                    開発環境の構築
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5" data-path="basic_syntax.html">
+        <li class="chapter " data-level="1.4" data-path="basic_syntax.html">
             
                 <a href="basic_syntax.html">
             
@@ -165,7 +152,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="function.html">
+        <li class="chapter " data-level="1.5" data-path="function.html">
             
                 <a href="function.html">
             
@@ -178,7 +165,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="first_class_function.html">
+        <li class="chapter " data-level="1.6" data-path="first_class_function.html">
             
                 <a href="first_class_function.html">
             
@@ -191,7 +178,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="class.html">
+        <li class="chapter " data-level="1.7" data-path="class.html">
             
                 <a href="class.html">
             
@@ -204,7 +191,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.9" data-path="inherit_abstract.html">
+        <li class="chapter " data-level="1.8" data-path="inherit_abstract.html">
             
                 <a href="inherit_abstract.html">
             
@@ -217,7 +204,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.10" data-path="interface.html">
+        <li class="chapter " data-level="1.9" data-path="interface.html">
             
                 <a href="interface.html">
             
@@ -230,7 +217,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.11" data-path="generics.html">
+        <li class="chapter " data-level="1.10" data-path="generics.html">
             
                 <a href="generics.html">
             
@@ -243,7 +230,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter active" data-level="1.12" data-path="null_safe.html">
+        <li class="chapter active" data-level="1.11" data-path="null_safe.html">
             
                 <a href="null_safe.html">
             
@@ -256,7 +243,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.13" data-path="tips.html">
+        <li class="chapter " data-level="1.12" data-path="tips.html">
             
                 <a href="tips.html">
             
@@ -269,7 +256,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.14" data-path="exercise1.html">
+        <li class="chapter " data-level="1.13" data-path="exercise1.html">
             
                 <a href="exercise1.html">
             
@@ -282,7 +269,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.15" data-path="exercise2.html">
+        <li class="chapter " data-level="1.14" data-path="exercise2.html">
             
                 <a href="exercise2.html">
             
@@ -295,12 +282,25 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.16" data-path="exercise3.html">
+        <li class="chapter " data-level="1.15" data-path="exercise3.html">
             
                 <a href="exercise3.html">
             
                     
                     Exercise (3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="android_dev_environment.html">
+            
+                <a href="android_dev_environment.html">
+            
+                    
+                    Android開発環境の構築
             
                 </a>
             
@@ -452,27 +452,35 @@ String ss = Fuga(); <span class="hljs-comment">// 文字列か null を返す関
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// たとえば、以下のコードはコンパイルに失敗する</span>
-<span class="hljs-comment">// String は「null になりえない」型であるから</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// たとえば、以下のコードはコンパイルに失敗する</span>
+    <span class="hljs-comment">// String は「null になりえない」型であるから</span>
 
-<span class="hljs-keyword">val</span> s: String = <span class="hljs-literal">null</span> <span class="hljs-comment">// error: null can not be a value of a non-null type String</span>
+    <span class="hljs-keyword">val</span> s: String = <span class="hljs-literal">null</span> <span class="hljs-comment">// error: null can not be a value of a non-null type String</span>
+    <span class="hljs-comment">//sampleEnd</span>
+}
 </code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// 「null になりえる」型を宣言するためには、? を補う</span>
-<span class="hljs-comment">// 以下はコンパイル OK</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// 「null になりえる」型を宣言するためには、? を補う</span>
+    <span class="hljs-comment">// 以下はコンパイル OK</span>
 
-<span class="hljs-keyword">val</span> s: String? = <span class="hljs-literal">null</span>
+    <span class="hljs-keyword">val</span> s: String? = <span class="hljs-literal">null</span>
 
-<span class="hljs-comment">// ただし、「null になりえる」の状態のままではメソッド、プロパティの呼び出しができない</span>
-<span class="hljs-comment">// error: only safe (?.) or non-null asserted (!!.) calls are</span>
-<span class="hljs-comment">// allowed on a nullable receiver of type String?</span>
-s.toUpperCase()
+    <span class="hljs-comment">// ただし、「null になりえる」の状態のままではメソッド、プロパティの呼び出しができない</span>
+    <span class="hljs-comment">// error: only safe (?.) or non-null asserted (!!.) calls are</span>
+    <span class="hljs-comment">// allowed on a nullable receiver of type String?</span>
+    println(s.toUpperCase())
 
-<span class="hljs-comment">// たとえ値が入っていても同様</span>
-<span class="hljs-keyword">val</span> ss: String? = <span class="hljs-string">&quot;hoge&quot;</span>
+    <span class="hljs-comment">// たとえ値が入っていても同様</span>
+    <span class="hljs-keyword">val</span> ss: String? = <span class="hljs-string">&quot;hoge&quot;</span>
 
-<span class="hljs-comment">// error: only safe (?.) or non-null asserted (!!.) calls are</span>
-<span class="hljs-comment">// allowed on a nullable receiver of type String?</span>
-ss.toUpperCase()
+    <span class="hljs-comment">// error: only safe (?.) or non-null asserted (!!.) calls are</span>
+    <span class="hljs-comment">// allowed on a nullable receiver of type String?</span>
+    println(ss.toUpperCase())
+    <span class="hljs-comment">//sampleEnd</span>
+}
 </code></pre>
 <ul>
 <li>スマートキャスト<ul>
@@ -482,12 +490,16 @@ ss.toUpperCase()
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// スマートキャストを使った「null になりえる」から「null になりえない」への変換</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// スマートキャストを使った「null になりえる」から「null になりえない」への変換</span>
 
-<span class="hljs-keyword">val</span> s: String? = <span class="hljs-string">&quot;hoge&quot;</span> <span class="hljs-comment">// 「null になりえる」状態</span>
+    <span class="hljs-keyword">val</span> s: String? = <span class="hljs-string">&quot;hoge&quot;</span> <span class="hljs-comment">// 「null になりえる」状態</span>
 
-<span class="hljs-keyword">if</span> (s != <span class="hljs-literal">null</span>) { <span class="hljs-comment">// null チェックすることで s は「null になりえない」になる</span>
-    println(s.toUpperCase()) <span class="hljs-comment">// メソッドが呼び出せる</span>
+    <span class="hljs-keyword">if</span> (s != <span class="hljs-literal">null</span>) {  <span class="hljs-comment">// null チェックすることで s は「null になりえない」になる</span>
+        println(s.toUpperCase())  <span class="hljs-comment">// メソッドが呼び出せる</span>
+    }
+    <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
 <ul>
@@ -496,33 +508,43 @@ ss.toUpperCase()
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// ? をつけると「null になりえる」型</span>
-<span class="hljs-keyword">val</span> s: String? = <span class="hljs-string">&quot;hoge&quot;</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// ? をつけると「null になりえる」型</span>
+    <span class="hljs-keyword">val</span> s: String? = <span class="hljs-string">&quot;hoge&quot;</span>
 
-<span class="hljs-comment">// 通常、このままでは s のメソッドを呼べないが、</span>
-<span class="hljs-comment">// ? を補うことで呼び出せる</span>
-<span class="hljs-keyword">val</span> u = s?.toUpperCase()
+    <span class="hljs-comment">// 通常、このままでは s のメソッドを呼べないが、</span>
+    <span class="hljs-comment">// ? を補うことで呼び出せる</span>
+    <span class="hljs-keyword">val</span> u = s?.toUpperCase()
+    println(u)
 
-<span class="hljs-comment">// 上記は以下と同じ処理</span>
-<span class="hljs-keyword">val</span> u = <span class="hljs-keyword">if</span> (s != <span class="hljs-literal">null</span>) {
-    s.toUpperCase()
-} <span class="hljs-keyword">else</span> {
-    <span class="hljs-literal">null</span>
+    <span class="hljs-comment">// 上記は以下と同じ処理</span>
+    <span class="hljs-keyword">val</span> up = <span class="hljs-keyword">if</span> (s != <span class="hljs-literal">null</span>) {
+        s.toUpperCase()
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-literal">null</span>
+    }
+    println(up)
+    <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
 <ul>
 <li>メソッドの引数に「null になりうる」を渡す場合</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// 以下の関数の引数の型は「null になりえない」という記述</span>
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">greet</span><span class="hljs-params">(name: <span class="hljs-type">String</span>)</span></span> {
-    println(<span class="hljs-string">&quot;hello, <span class="hljs-variable">$name</span>!&quot;</span>)
-}
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// 以下の関数の引数の型は「null になりえない」という記述</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">greet</span><span class="hljs-params">(name: <span class="hljs-type">String</span>)</span></span> {
+        println(<span class="hljs-string">&quot;hello, <span class="hljs-variable">$name</span>!&quot;</span>)
+    }
 
-<span class="hljs-keyword">val</span> s: String? = <span class="hljs-string">&quot;hoge&quot;</span>
-greet(s) <span class="hljs-comment">// コンパイルエラー</span>
+    <span class="hljs-keyword">val</span> s: String? = <span class="hljs-string">&quot;hoge&quot;</span>
+    greet(s)  <span class="hljs-comment">// コンパイルエラー</span>
 
-<span class="hljs-keyword">if</span> (s != <span class="hljs-literal">null</span>) {
-    greet(s) <span class="hljs-comment">// これなら OK</span>
+    <span class="hljs-keyword">if</span> (s != <span class="hljs-literal">null</span>) {
+        greet(s)  <span class="hljs-comment">// これなら OK</span>
+    }
+    <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
 <ul>
@@ -531,11 +553,19 @@ greet(s) <span class="hljs-comment">// コンパイルエラー</span>
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-keyword">val</span> s: String? = <span class="hljs-string">&quot;hoge&quot;</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">greet</span><span class="hljs-params">(name: <span class="hljs-type">String</span>)</span></span> {
+    println(<span class="hljs-string">&quot;hello, <span class="hljs-variable">$name</span>!&quot;</span>)
+}
 
-<span class="hljs-comment">// コンパイル OK</span>
-<span class="hljs-comment">// s が null ならラムダ式は呼び出されない</span>
-s?.let { greet(it) }
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-keyword">val</span> s: String? = <span class="hljs-string">&quot;hoge&quot;</span>
+
+    <span class="hljs-comment">// コンパイル OK</span>
+    <span class="hljs-comment">// s が null ならラムダ式は呼び出されない</span>
+    s?.let { greet(it) }
+    <span class="hljs-comment">//sampleEnd</span>
+}
 </code></pre>
 <ul>
 <li>強制呼び出し<ul>
@@ -546,11 +576,19 @@ s?.let { greet(it) }
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-keyword">val</span> s: String? = <span class="hljs-string">&quot;hoge&quot;</span>
-s!!.toUpperCase() <span class="hljs-comment">// コンパイルOK、実行も可能</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-keyword">val</span> s: String? = <span class="hljs-string">&quot;hoge&quot;</span>
+    println(s!!.toUpperCase())  <span class="hljs-comment">// コンパイルOK、実行も可能</span>
+    <span class="hljs-comment">//sampleEnd</span>
+}
 </code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-keyword">val</span> s: String? = <span class="hljs-literal">null</span>
-s!!.toUpperCase() <span class="hljs-comment">// コンパイルOK、だが実行時に例外 (NullPointerException) を吐く</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-keyword">val</span> s: String? = <span class="hljs-literal">null</span>
+    println(s!!.toUpperCase())  <span class="hljs-comment">// コンパイルOK、だが実行時に例外 (NullPointerException) を吐く</span>
+    <span class="hljs-comment">//sampleEnd</span>
+}
 </code></pre>
 <ul>
 <li>エルビス演算子<ul>
@@ -562,15 +600,19 @@ s!!.toUpperCase() <span class="hljs-comment">// コンパイルOK、だが実行
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-keyword">val</span> s: String? = <span class="hljs-literal">null</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-keyword">val</span> s: String? = <span class="hljs-literal">null</span>
 
-s ?: <span class="hljs-string">&quot;null です！&quot;</span> <span class="hljs-comment">// null だったら「null です！」を返す</span>
+    s ?: <span class="hljs-string">&quot;null です！&quot;</span> <span class="hljs-comment">// null だったら「null です！」を出力</span>
 
-<span class="hljs-comment">// 以下と同義</span>
-<span class="hljs-keyword">if</span> (s != <span class="hljs-literal">null</span>) {
-    s
-} <span class="hljs-keyword">else</span> {
-    <span class="hljs-string">&quot;null です！&quot;</span>
+    <span class="hljs-comment">// 以下と同義</span>
+    <span class="hljs-keyword">if</span> (s != <span class="hljs-literal">null</span>) {
+        println(s)
+    } <span class="hljs-keyword">else</span> {
+        println(<span class="hljs-string">&quot;null です！&quot;</span>)
+    }
+    <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
 <ul>
@@ -580,13 +622,21 @@ s ?: <span class="hljs-string">&quot;null です！&quot;</span> <span class="hl
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-keyword">val</span> a: Any = <span class="hljs-string">&quot;string&quot;</span> <span class="hljs-comment">// String を Any に入れる</span>
-println(a <span class="hljs-keyword">as</span> String) <span class="hljs-comment">// String へのキャストは OK (&quot;string&quot; が表示される)</span>
-println(a <span class="hljs-keyword">as</span> <span class="hljs-built_in">Int</span>) <span class="hljs-comment">// java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-keyword">val</span> a: Any = <span class="hljs-string">&quot;string&quot;</span> <span class="hljs-comment">// String を Any に入れる</span>
+    println(a <span class="hljs-keyword">as</span> String) <span class="hljs-comment">// String へのキャストは OK (&quot;string&quot; が表示される)</span>
+    println(a <span class="hljs-keyword">as</span> <span class="hljs-built_in">Int</span>) <span class="hljs-comment">// java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer</span>
+    <span class="hljs-comment">//sampleEnd</span>
+}
 </code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-keyword">val</span> a: Any = <span class="hljs-string">&quot;string&quot;</span> <span class="hljs-comment">// String を Any に入れる</span>
-println(a <span class="hljs-keyword">as</span>? String) <span class="hljs-comment">// String へのキャストは OK (&quot;string&quot; が表示される)</span>
-println(a <span class="hljs-keyword">as</span>? <span class="hljs-built_in">Int</span>) <span class="hljs-comment">// null が表示される</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-keyword">val</span> a: Any = <span class="hljs-string">&quot;string&quot;</span> <span class="hljs-comment">// String を Any に入れる</span>
+    println(a <span class="hljs-keyword">as</span>? String) <span class="hljs-comment">// String へのキャストは OK (&quot;string&quot; が表示される)</span>
+    println(a <span class="hljs-keyword">as</span>? <span class="hljs-built_in">Int</span>) <span class="hljs-comment">// null が表示される</span>
+    <span class="hljs-comment">//sampleEnd</span>
+}
 </code></pre>
 
                                 
@@ -631,7 +681,7 @@ println(a <span class="hljs-keyword">as</span>? <span class="hljs-built_in">Int<
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Null安全","level":"1.12","depth":1,"next":{"title":"その他豆知識","level":"1.13","depth":1,"path":"tips.md","ref":"./tips.md","articles":[]},"previous":{"title":"ジェネリクス","level":"1.11","depth":1,"path":"generics.md","ref":"./generics.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"head-append":{"code":["<script src=\"https://unpkg.com/kotlin-playground@1\"></script>","<script>","document.addEventListener('DOMContentLoaded', function() {","KotlinPlayground('.lang-kotlin');","});","</script>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"null_safe.md","mtime":"2022-02-19T13:21:37.791Z","type":"markdown"},"gitbook":{"version":"3.7.1","time":"2022-03-14T01:16:07.696Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Null安全","level":"1.11","depth":1,"next":{"title":"その他豆知識","level":"1.12","depth":1,"path":"tips.md","ref":"./tips.md","articles":[]},"previous":{"title":"ジェネリクス","level":"1.10","depth":1,"path":"generics.md","ref":"./generics.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"head-append":{"code":["<script src=\"https://unpkg.com/kotlin-playground@1\"></script>","<script>","document.addEventListener('DOMContentLoaded', function() {","KotlinPlayground('.lang-kotlin');","});","</script>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"null_safe.md","mtime":"2022-03-22T08:22:04.166Z","type":"markdown"},"gitbook":{"version":"3.7.1","time":"2022-03-22T08:39:11.764Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

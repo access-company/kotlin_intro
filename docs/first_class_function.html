@@ -139,20 +139,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="development_environment.html">
-            
-                <a href="development_environment.html">
-            
-                    
-                    開発環境の構築
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5" data-path="basic_syntax.html">
+        <li class="chapter " data-level="1.4" data-path="basic_syntax.html">
             
                 <a href="basic_syntax.html">
             
@@ -165,7 +152,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="function.html">
+        <li class="chapter " data-level="1.5" data-path="function.html">
             
                 <a href="function.html">
             
@@ -178,7 +165,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter active" data-level="1.7" data-path="first_class_function.html">
+        <li class="chapter active" data-level="1.6" data-path="first_class_function.html">
             
                 <a href="first_class_function.html">
             
@@ -191,7 +178,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="class.html">
+        <li class="chapter " data-level="1.7" data-path="class.html">
             
                 <a href="class.html">
             
@@ -204,7 +191,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.9" data-path="inherit_abstract.html">
+        <li class="chapter " data-level="1.8" data-path="inherit_abstract.html">
             
                 <a href="inherit_abstract.html">
             
@@ -217,7 +204,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.10" data-path="interface.html">
+        <li class="chapter " data-level="1.9" data-path="interface.html">
             
                 <a href="interface.html">
             
@@ -230,7 +217,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.11" data-path="generics.html">
+        <li class="chapter " data-level="1.10" data-path="generics.html">
             
                 <a href="generics.html">
             
@@ -243,7 +230,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.12" data-path="null_safe.html">
+        <li class="chapter " data-level="1.11" data-path="null_safe.html">
             
                 <a href="null_safe.html">
             
@@ -256,7 +243,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.13" data-path="tips.html">
+        <li class="chapter " data-level="1.12" data-path="tips.html">
             
                 <a href="tips.html">
             
@@ -269,7 +256,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.14" data-path="exercise1.html">
+        <li class="chapter " data-level="1.13" data-path="exercise1.html">
             
                 <a href="exercise1.html">
             
@@ -282,7 +269,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.15" data-path="exercise2.html">
+        <li class="chapter " data-level="1.14" data-path="exercise2.html">
             
                 <a href="exercise2.html">
             
@@ -295,12 +282,25 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.16" data-path="exercise3.html">
+        <li class="chapter " data-level="1.15" data-path="exercise3.html">
             
                 <a href="exercise3.html">
             
                     
                     Exercise (3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="android_dev_environment.html">
+            
+                <a href="android_dev_environment.html">
+            
+                    
+                    Android開発環境の構築
             
                 </a>
             
@@ -367,76 +367,95 @@ KotlinPlayground('.lang-kotlin');
 <ul>
 <li>関数もオブジェクトの一種</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// 関数のオブジェクトを変数に代入する例</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// 関数のオブジェクトを変数に代入する例</span>
 
-<span class="hljs-comment">// 入力を二乗する関数</span>
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">square</span><span class="hljs-params">(i: <span class="hljs-type">Int</span>)</span></span> = i * i
+    <span class="hljs-comment">// 入力を二乗する関数</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">square</span><span class="hljs-params">(i: <span class="hljs-type">Int</span>)</span></span> = i * i
 
-<span class="hljs-comment">// 関数のオブジェクトを取得するときは &quot;::&quot; をつける</span>
-<span class="hljs-comment">// 変数に代入できる</span>
-<span class="hljs-keyword">val</span> func = ::square
+    <span class="hljs-comment">// 関数のオブジェクトを取得するときは &quot;::&quot; をつける</span>
+    <span class="hljs-comment">// 変数に代入できる</span>
+    <span class="hljs-keyword">val</span> func = ::square
 
-square(<span class="hljs-number">5</span>) <span class="hljs-comment">// 25</span>
-func(<span class="hljs-number">5</span>)   <span class="hljs-comment">// 25 (square を呼び出したのと同じ)</span>
+    println(square(<span class="hljs-number">5</span>))  <span class="hljs-comment">// 25</span>
+    println(func(<span class="hljs-number">5</span>))    <span class="hljs-comment">// 25 (square を呼び出したのと同じ)</span>
+    <span class="hljs-comment">//sampleEnd</span>
+}
 </code></pre>
 <ul>
 <li>関数オブジェクトの型は？</li>
 </ul>
 <p>関数オブジェクトもオブジェクトの一種なので「型」がある</p>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// 入力を二乗する関数</span>
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">square</span><span class="hljs-params">(i: <span class="hljs-type">Int</span>)</span></span> = i * i
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// 入力を二乗する関数</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">square</span><span class="hljs-params">(i: <span class="hljs-type">Int</span>)</span></span> = i * i
 
-<span class="hljs-comment">// 上の関数は「Int を引数にとって Int を返す関数」という型なので、</span>
-<span class="hljs-comment">// 「Int を引数にとって Int を返す関数」型の変数に代入できる</span>
-<span class="hljs-keyword">val</span> func1: (<span class="hljs-built_in">Int</span>) -&gt; <span class="hljs-built_in">Int</span> = ::square <span class="hljs-comment">// 型があっていれば代入できる</span>
+    <span class="hljs-comment">// 上の関数は「Int を引数にとって Int を返す関数」という型なので、</span>
+    <span class="hljs-comment">// 「Int を引数にとって Int を返す関数」型の変数に代入できる</span>
+    <span class="hljs-keyword">val</span> func1: (<span class="hljs-built_in">Int</span>) -&gt; <span class="hljs-built_in">Int</span> = ::square  <span class="hljs-comment">// 型があっていれば代入できる</span>
 
-<span class="hljs-comment">// 型があってないと代入できない</span>
-<span class="hljs-comment">// 以下の関数は (String) -&gt; Unit という型</span>
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">greet</span><span class="hljs-params">(name: <span class="hljs-type">String</span>)</span></span> = println(<span class="hljs-string">&quot;Hello <span class="hljs-variable">$name</span>!&quot;</span>)
-<span class="hljs-keyword">val</span> func2: (<span class="hljs-built_in">Int</span>) -&gt; <span class="hljs-built_in">Int</span> = ::greet <span class="hljs-comment">// 型があっていないので代入できない (コンパイルエラー)</span>
+    <span class="hljs-comment">// 型があってないと代入できない</span>
+    <span class="hljs-comment">// 以下の関数は (String) -&gt; Unit という型</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">greet</span><span class="hljs-params">(name: <span class="hljs-type">String</span>)</span></span> = println(<span class="hljs-string">&quot;Hello <span class="hljs-variable">$name</span>!&quot;</span>)
+    <span class="hljs-keyword">val</span> func2: (<span class="hljs-built_in">Int</span>) -&gt; <span class="hljs-built_in">Int</span> = ::greet   <span class="hljs-comment">// 型があっていないので代入できない (コンパイルエラー)</span>
+
+    println(func1(<span class="hljs-number">3</span>))
+    func2(<span class="hljs-string">&quot;Tony&quot;</span>)
+    <span class="hljs-comment">//sampleEnd</span>
+}
 </code></pre>
 <ul>
 <li>関数を引数として渡したり戻り値にしたり (高階関数)</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// 関数を引数にとる関数</span>
-<span class="hljs-comment">// 第二引数には「Int を引数にとる関数」を指定する</span>
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">printWith</span><span class="hljs-params">(ints: <span class="hljs-type">List</span>&lt;<span class="hljs-type">Int</span>&gt;, printFunc: (<span class="hljs-type">Int</span>) -&gt; <span class="hljs-type">Unit</span>)</span></span> {
-    <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> ints) {
-        printFunc(i) <span class="hljs-comment">// 引数でもらった関数を呼び出す</span>
-    }
-}
-
-<span class="hljs-comment">// 「Int を引数にとる関数」の例</span>
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">myPrintFunc</span><span class="hljs-params">(i: <span class="hljs-type">Int</span>)</span></span> {
-    <span class="hljs-keyword">if</span> (i % <span class="hljs-number">3</span> == <span class="hljs-number">0</span>) {
-        println(<span class="hljs-string">&quot;3の倍数です!&quot;</span>)
-    } <span class="hljs-keyword">else</span> {
-        println(i)
-    }
-}
-
-<span class="hljs-comment">// 関数オブジェクトを第二引数に指定して呼び出す</span>
-printWith((<span class="hljs-number">1.</span><span class="hljs-number">.10</span>).toList(), ::myPrintFunc)
-</code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// n 乗を返す関数を生成する関数</span>
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">powerGen</span><span class="hljs-params">(n: <span class="hljs-type">Int</span>)</span></span>: (<span class="hljs-built_in">Int</span>) -&gt; <span class="hljs-built_in">Long</span> {
-    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">power</span><span class="hljs-params">(num: <span class="hljs-type">Int</span>)</span></span>: <span class="hljs-built_in">Long</span> {
-        <span class="hljs-keyword">var</span> result: <span class="hljs-built_in">Long</span> = <span class="hljs-number">1</span>
-        <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span>.n) {
-            result *= num
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// 関数を引数にとる関数</span>
+    <span class="hljs-comment">// 第二引数には「Int を引数にとる関数」を指定する</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">printWith</span><span class="hljs-params">(ints: <span class="hljs-type">List</span>&lt;<span class="hljs-type">Int</span>&gt;, printFunc: (<span class="hljs-type">Int</span>) -&gt; <span class="hljs-type">Unit</span>)</span></span> {
+        <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> ints) {
+            printFunc(i)    <span class="hljs-comment">// 引数でもらった関数を呼び出す</span>
         }
-        <span class="hljs-keyword">return</span> result
     }
-    <span class="hljs-keyword">return</span> ::power
+
+    <span class="hljs-comment">// 「Int を引数にとる関数」の例</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">myPrintFunc</span><span class="hljs-params">(i: <span class="hljs-type">Int</span>)</span></span> {
+        <span class="hljs-keyword">if</span> (i % <span class="hljs-number">3</span> == <span class="hljs-number">0</span>) {
+            println(<span class="hljs-string">&quot;3の倍数です!&quot;</span>)
+        } <span class="hljs-keyword">else</span> {
+            println(i)
+        }
+    }
+
+    <span class="hljs-comment">// 関数オブジェクトを第二引数に指定して呼び出す</span>
+    printWith((<span class="hljs-number">1.</span><span class="hljs-number">.10</span>).toList(), ::myPrintFunc)
+    <span class="hljs-comment">//sampleEnd</span>
 }
+</code></pre>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// n 乗を返す関数を生成する関数</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">powerGen</span><span class="hljs-params">(n: <span class="hljs-type">Int</span>)</span></span>: (<span class="hljs-built_in">Int</span>) -&gt; <span class="hljs-built_in">Long</span> {
+        <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">power</span><span class="hljs-params">(num: <span class="hljs-type">Int</span>)</span></span>: <span class="hljs-built_in">Long</span> {
+            <span class="hljs-keyword">var</span> result: <span class="hljs-built_in">Long</span> = <span class="hljs-number">1</span>
+            <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span>.n) {
+                result *= num
+            }
+            <span class="hljs-keyword">return</span> result
+        }
+        <span class="hljs-keyword">return</span> ::power
+    }
 
-<span class="hljs-comment">// 入力を 5 乗する関数を生成</span>
-<span class="hljs-keyword">val</span> fivePowerOf = powerGen(<span class="hljs-number">5</span>)
-fivePowerOf(<span class="hljs-number">10</span>) <span class="hljs-comment">// 100000</span>
+    <span class="hljs-comment">// 入力を 5 乗する関数を生成</span>
+    <span class="hljs-keyword">val</span> fivePowerOf = powerGen(<span class="hljs-number">5</span>)
+    println(fivePowerOf(<span class="hljs-number">10</span>))    <span class="hljs-comment">// 100000</span>
 
-<span class="hljs-comment">// 入力を 10 乗する関数を生成</span>
-<span class="hljs-keyword">val</span> tenPowerOf = powerGen(<span class="hljs-number">10</span>)
-tenPowerOf(<span class="hljs-number">2</span>)   <span class="hljs-comment">// 1024</span>
+    <span class="hljs-comment">// 入力を 10 乗する関数を生成</span>
+    <span class="hljs-keyword">val</span> tenPowerOf = powerGen(<span class="hljs-number">10</span>)
+    println(tenPowerOf(<span class="hljs-number">2</span>))      <span class="hljs-comment">// 1024</span>
+    <span class="hljs-comment">//sampleEnd</span>
+}
 </code></pre>
 <h2 id="色々な関数の作り方">色々な関数の作り方</h2>
 <ul>
@@ -445,49 +464,81 @@ tenPowerOf(<span class="hljs-number">2</span>)   <span class="hljs-comment">// 1
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// 通常の関数オブジェクトを得る方法</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// 通常の関数オブジェクトを得る方法</span>
 
-<span class="hljs-comment">// 関数定義</span>
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">square</span><span class="hljs-params">(n: <span class="hljs-type">Int</span>)</span></span>: <span class="hljs-built_in">Int</span> {
-    <span class="hljs-keyword">return</span> n * n
+    <span class="hljs-comment">// 関数定義</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">square</span><span class="hljs-params">(n: <span class="hljs-type">Int</span>)</span></span>: <span class="hljs-built_in">Int</span> {
+        <span class="hljs-keyword">return</span> n * n
+    }
+
+    <span class="hljs-comment">// 定義された関数の名前に :: をつけて関数オブジェクトを得る</span>
+    println(::square)   <span class="hljs-comment">// fun square(kotlin.Int): kotlin.Int</span>
+    <span class="hljs-comment">//sampleEnd</span>
 }
-
-<span class="hljs-comment">// 定義された関数の名前に :: をつけて関数オブジェクトを得る</span>
-println(::square) <span class="hljs-comment">// fun square(kotlin.Int): kotlin.Int</span>
 </code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// 一方、ラムダ式を使う場合</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// 一方、ラムダ式を使う場合</span>
 
-<span class="hljs-comment">// 関数の型 = { 引数リスト -&gt; 関数の実装 } という形</span>
-<span class="hljs-keyword">val</span> square: (<span class="hljs-built_in">Int</span>) -&gt; <span class="hljs-built_in">Int</span> = { i: <span class="hljs-built_in">Int</span> -&gt;
-    i * i <span class="hljs-comment">// 最後に評価された式が返される。return しなくてよい。</span>
+    <span class="hljs-comment">// 関数の型 = { 引数リスト -&gt; 関数の実装 } という形</span>
+    <span class="hljs-keyword">val</span> square: (<span class="hljs-built_in">Int</span>) -&gt; <span class="hljs-built_in">Int</span> = { i: <span class="hljs-built_in">Int</span> -&gt;
+        i * i   <span class="hljs-comment">// 最後に評価された式が返される。return しなくてよい。</span>
+    }
+
+    println(square)     <span class="hljs-comment">// (kotlin.Int) -&gt; kotlin.Int</span>
+    println(square(<span class="hljs-number">3</span>))  <span class="hljs-comment">// 9</span>
+    <span class="hljs-comment">//sampleEnd</span>
 }
-
-println(square)    <span class="hljs-comment">// (kotlin.Int) -&gt; kotlin.Int</span>
-println(square(<span class="hljs-number">3</span>)) <span class="hljs-comment">// 9</span>
 </code></pre>
 <ul>
 <li>型推論すると短く書ける</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// 「Int を引数にとって Int を返す」を型推論してもらい、</span>
-<span class="hljs-comment">// 関数の型の記載を省略</span>
-<span class="hljs-keyword">val</span> square = { i: <span class="hljs-built_in">Int</span> -&gt;
-    i * i
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// 「Int を引数にとって Int を返す」を型推論してもらい、</span>
+    <span class="hljs-comment">// 関数の型の記載を省略</span>
+    <span class="hljs-keyword">val</span> square = { i: <span class="hljs-built_in">Int</span> -&gt;
+        i * i
+    }
+
+    println(square(<span class="hljs-number">3</span>))  <span class="hljs-comment">// 9</span>
+    <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// または「Int を引数にとる」を型推論してもらい、</span>
-<span class="hljs-comment">// 関数の実装における引数の型を省略</span>
-<span class="hljs-keyword">val</span> square: (<span class="hljs-built_in">Int</span>) -&gt; <span class="hljs-built_in">Int</span> = { i -&gt;
-    i * i
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// または「Int を引数にとる」を型推論してもらい、</span>
+    <span class="hljs-comment">// 関数の実装における引数の型を省略</span>
+    <span class="hljs-keyword">val</span> square: (<span class="hljs-built_in">Int</span>) -&gt; <span class="hljs-built_in">Int</span> = { i -&gt;
+        i * i
+    }
+
+    println(square(<span class="hljs-number">3</span>))  <span class="hljs-comment">// 9</span>
+    <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// 両方省略するとiの型がわからないので、省略できない(コンパイルエラー)</span>
-<span class="hljs-keyword">val</span> square = { i -&gt;
-    i * i   <span class="hljs-comment">// コンパイルエラー</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// 両方省略するとiの型がわからないので、省略できない(コンパイルエラー)</span>
+    <span class="hljs-keyword">val</span> square = { i -&gt;
+        i * i   <span class="hljs-comment">// コンパイルエラー</span>
+    }
+
+    println(square(<span class="hljs-number">3</span>)) 
+    <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// 引数が一個の場合、「it」と書ける</span>
-<span class="hljs-keyword">val</span> square: (<span class="hljs-built_in">Int</span>) -&gt; <span class="hljs-built_in">Int</span> = {
-    it * it
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// 引数が一個の場合、「it」と書ける</span>
+    <span class="hljs-keyword">val</span> square: (<span class="hljs-built_in">Int</span>) -&gt; <span class="hljs-built_in">Int</span> = {
+        it * it
+    }
+
+    println(square(<span class="hljs-number">3</span>))  <span class="hljs-comment">// 9</span>
+    <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
 <ul>
@@ -496,7 +547,8 @@ println(square(<span class="hljs-number">3</span>)) <span class="hljs-comment">/
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// 呼び出すたびに数字を1つ増やす関数を返す</span>
+<pre><code class="lang-kotlin"><span class="hljs-comment">//sampleStart</span>
+<span class="hljs-comment">// 呼び出すたびに数字を1つ増やす関数を返す</span>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">genCounterFunc</span><span class="hljs-params">()</span></span>: () -&gt; <span class="hljs-built_in">Int</span> {
     <span class="hljs-keyword">var</span> count = <span class="hljs-number">0</span>
     <span class="hljs-comment">// ラムダ式の形で関数オブジェクトを返す</span>
@@ -520,6 +572,7 @@ println(square(<span class="hljs-number">3</span>)) <span class="hljs-comment">/
     println(func2()) <span class="hljs-comment">// 1</span>
     println(func2()) <span class="hljs-comment">// 2</span>
 }
+<span class="hljs-comment">//sampleEnd</span>
 </code></pre>
 <ul>
 <li>インライン関数<ul>
@@ -528,38 +581,39 @@ println(square(<span class="hljs-number">3</span>)) <span class="hljs-comment">/
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// インライン展開なし</span>
-
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">log</span><span class="hljs-params">(debug: <span class="hljs-type">Boolean</span>, message: () -&gt; <span class="hljs-type">String</span>)</span></span> {
-    <span class="hljs-keyword">if</span> (debug) {
-        println(message())
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// インライン展開なし</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">log</span><span class="hljs-params">(debug: <span class="hljs-type">Boolean</span>, message: () -&gt; <span class="hljs-type">String</span>)</span></span> {
+        <span class="hljs-keyword">if</span> (debug) {
+            println(message())
+        }
     }
-}
 
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     log(<span class="hljs-literal">true</span>, { <span class="hljs-string">&quot;log message&quot;</span> })    <span class="hljs-comment">// 表示される</span>
     log(<span class="hljs-literal">false</span>, { <span class="hljs-string">&quot;log message&quot;</span> })   <span class="hljs-comment">// 表示されない</span>
+    <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// もしくはlogの{}をカッコの外に出して、こう書ける</span>
-
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">log</span><span class="hljs-params">(debug: <span class="hljs-type">Boolean</span>, message: () -&gt; <span class="hljs-type">String</span>)</span></span> {
-    <span class="hljs-keyword">if</span> (debug) {
-       println(message())
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// もしくはlogの{}をカッコの外に出して、こう書ける</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">log</span><span class="hljs-params">(debug: <span class="hljs-type">Boolean</span>, message: () -&gt; <span class="hljs-type">String</span>)</span></span> {
+        <span class="hljs-keyword">if</span> (debug) {
+        println(message())
+        }
     }
-}
 
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     log(<span class="hljs-literal">true</span>) {
         <span class="hljs-string">&quot;log message&quot;</span>   <span class="hljs-comment">// 表示される</span>
     }
     log(<span class="hljs-literal">false</span>) {
         <span class="hljs-string">&quot;log message&quot;</span>   <span class="hljs-comment">// 表示されない</span>
     }
+    <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
 <pre><code class="lang-kotlin"><span class="hljs-comment">// インライン展開する</span>
-
 <span class="hljs-keyword">inline</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">log</span><span class="hljs-params">(debug: <span class="hljs-type">Boolean</span>, message: () -&gt; <span class="hljs-type">String</span>)</span></span> {
     <span class="hljs-keyword">if</span> (debug) {
         println(message())
@@ -572,19 +626,20 @@ println(square(<span class="hljs-number">3</span>)) <span class="hljs-comment">/
     }
     log(<span class="hljs-literal">false</span>) {
         <span class="hljs-string">&quot;log message&quot;</span>   <span class="hljs-comment">// 表示されない</span>
-    })
+    }
 }
 </code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// 上述の main 関数は、以下と概ね同義になる</span>
-<span class="hljs-comment">// debug が true でないときは、関数呼び出しまで到達しないコードになる</span>
-
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// 上述の main 関数は、以下と概ね同義になる</span>
+    <span class="hljs-comment">// debug が true でないときは、関数呼び出しまで到達しないコードになる</span>
     <span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span>) {
-        println(<span class="hljs-string">&quot;log message&quot;</span>) <span class="hljs-comment">// 表示される</span>
+        println(<span class="hljs-string">&quot;log message&quot;</span>)  <span class="hljs-comment">// 表示される</span>
     }
     <span class="hljs-keyword">if</span> (<span class="hljs-literal">false</span>) {
-        println(<span class="hljs-string">&quot;log message&quot;</span>) <span class="hljs-comment">// 表示されない</span>
+        println(<span class="hljs-string">&quot;log message&quot;</span>)  <span class="hljs-comment">// 表示されない</span>
     }
+    <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
 <pre><code class="lang-kotlin"><span class="hljs-comment">// 非ローカルリターン</span>
@@ -609,21 +664,39 @@ println(square(<span class="hljs-number">3</span>)) <span class="hljs-comment">/
     }
     <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
 }
-</code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// inline だが非ローカルリターンしたくない場合は、</span>
-<span class="hljs-comment">// ラベルへのリターンを利用する</span>
 
-<span class="hljs-comment">// 入力した文字列 (str) に数字が含まれているかどうかを返す関数</span>
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">containsDigit</span><span class="hljs-params">(str: <span class="hljs-type">String</span>)</span></span>: <span class="hljs-built_in">Boolean</span> {
-    <span class="hljs-keyword">var</span> result = <span class="hljs-literal">false</span>
-    forEach(str) <span class="hljs-symbol">loop@</span> {
-        <span class="hljs-keyword">if</span> (it.isDigit()) {
-            result = <span class="hljs-literal">true</span> 
-            <span class="hljs-keyword">return</span><span class="hljs-symbol">@loop</span> <span class="hljs-comment">// forEach を抜ける</span>
-            <span class="hljs-comment">// return@forEach という書き方も可能</span>
-        }
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    println(containsDigit(<span class="hljs-string">&quot;ACCESS&quot;</span>))     <span class="hljs-comment">// false</span>
+    println(containsDigit(<span class="hljs-string">&quot;C0MPANY&quot;</span>))    <span class="hljs-comment">// true</span>
+}
+</code></pre>
+<pre><code class="lang-kotlin"><span class="hljs-keyword">inline</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">forEach</span><span class="hljs-params">(str: <span class="hljs-type">String</span>, f: (<span class="hljs-type">Char</span>) -&gt; <span class="hljs-type">Unit</span>)</span></span> {
+    <span class="hljs-keyword">for</span> (c <span class="hljs-keyword">in</span> str) {
+        f(c)
     }
-    <span class="hljs-keyword">return</span> result
+}
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// inline だが非ローカルリターンしたくない場合は、</span>
+    <span class="hljs-comment">// ラベルへのリターンを利用する</span>
+
+    <span class="hljs-comment">// 入力した文字列 (str) に数字が含まれているかどうかを返す関数</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">containsDigit</span><span class="hljs-params">(str: <span class="hljs-type">String</span>)</span></span>: <span class="hljs-built_in">Boolean</span> {
+        <span class="hljs-keyword">var</span> result = <span class="hljs-literal">false</span>
+        forEach(str) <span class="hljs-symbol">loop@</span> {
+            <span class="hljs-keyword">if</span> (it.isDigit()) {
+                result = <span class="hljs-literal">true</span> 
+                <span class="hljs-keyword">return</span><span class="hljs-symbol">@loop</span> <span class="hljs-comment">// forEach を抜ける</span>
+                <span class="hljs-comment">// return@forEach という書き方も可能</span>
+            }
+        }
+        <span class="hljs-keyword">return</span> result
+    }
+
+    println(containsDigit(<span class="hljs-string">&quot;ACCESS&quot;</span>))     <span class="hljs-comment">// false</span>
+    println(containsDigit(<span class="hljs-string">&quot;C0MPANY&quot;</span>))    <span class="hljs-comment">// true</span>
+    <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
 <ul>
@@ -633,19 +706,37 @@ println(square(<span class="hljs-number">3</span>)) <span class="hljs-comment">/
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// ラムダ式 (再掲)</span>
-<span class="hljs-keyword">val</span> square: (<span class="hljs-built_in">Int</span>) -&gt; <span class="hljs-built_in">Int</span> = { i: <span class="hljs-built_in">Int</span> -&gt;
-    i * i
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// ラムダ式 (再掲)</span>
+    <span class="hljs-keyword">val</span> square: (<span class="hljs-built_in">Int</span>) -&gt; <span class="hljs-built_in">Int</span> = { i: <span class="hljs-built_in">Int</span> -&gt;
+        i * i
+    }
+
+    println(square(<span class="hljs-number">3</span>))  <span class="hljs-comment">// 9</span>
+    <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// 無名関数</span>
-<span class="hljs-comment">// 上記のラムダ式にあたる部分に関数を書くイメージ</span>
-<span class="hljs-keyword">val</span> square: (<span class="hljs-built_in">Int</span>) -&gt; <span class="hljs-built_in">Int</span> = <span class="hljs-function"><span class="hljs-title">fun</span><span class="hljs-params">(i: <span class="hljs-type">Int</span>)</span></span>: <span class="hljs-built_in">Int</span> {
-    <span class="hljs-keyword">return</span> i * i <span class="hljs-comment">// ラムダ式と違って要 return 文</span>
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// 無名関数</span>
+    <span class="hljs-comment">// 上記のラムダ式にあたる部分に関数を書くイメージ</span>
+    <span class="hljs-keyword">val</span> square: (<span class="hljs-built_in">Int</span>) -&gt; <span class="hljs-built_in">Int</span> = <span class="hljs-function"><span class="hljs-title">fun</span><span class="hljs-params">(i: <span class="hljs-type">Int</span>)</span></span>: <span class="hljs-built_in">Int</span> {
+        <span class="hljs-keyword">return</span> i * i <span class="hljs-comment">// ラムダ式と違って要 return 文</span>
+    }
+
+    println(square(<span class="hljs-number">3</span>))  <span class="hljs-comment">// 9</span>
+    <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// 無名関数 省略版</span>
-<span class="hljs-keyword">val</span> square: (<span class="hljs-built_in">Int</span>) -&gt; <span class="hljs-built_in">Int</span> = <span class="hljs-function"><span class="hljs-title">fun</span><span class="hljs-params">(i : <span class="hljs-type">Int</span>)</span></span> = i * i
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// 無名関数 省略版</span>
+    <span class="hljs-keyword">val</span> square: (<span class="hljs-built_in">Int</span>) -&gt; <span class="hljs-built_in">Int</span> = <span class="hljs-function"><span class="hljs-title">fun</span><span class="hljs-params">(i : <span class="hljs-type">Int</span>)</span></span> = i * i
+
+    println(square(<span class="hljs-number">3</span>))  <span class="hljs-comment">// 9</span>
+    <span class="hljs-comment">//sampleEnd</span>
+}
 </code></pre>
 
                                 
@@ -690,7 +781,7 @@ println(square(<span class="hljs-number">3</span>)) <span class="hljs-comment">/
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ちょっと特殊な関数","level":"1.7","depth":1,"next":{"title":"クラス","level":"1.8","depth":1,"path":"class.md","ref":"./class.md","articles":[]},"previous":{"title":"関数","level":"1.6","depth":1,"path":"function.md","ref":"./function.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"head-append":{"code":["<script src=\"https://unpkg.com/kotlin-playground@1\"></script>","<script>","document.addEventListener('DOMContentLoaded', function() {","KotlinPlayground('.lang-kotlin');","});","</script>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"first_class_function.md","mtime":"2022-02-19T13:21:37.790Z","type":"markdown"},"gitbook":{"version":"3.7.1","time":"2022-03-14T01:16:07.696Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ちょっと特殊な関数","level":"1.6","depth":1,"next":{"title":"クラス","level":"1.7","depth":1,"path":"class.md","ref":"./class.md","articles":[]},"previous":{"title":"関数","level":"1.5","depth":1,"path":"function.md","ref":"./function.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"head-append":{"code":["<script src=\"https://unpkg.com/kotlin-playground@1\"></script>","<script>","document.addEventListener('DOMContentLoaded', function() {","KotlinPlayground('.lang-kotlin');","});","</script>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"first_class_function.md","mtime":"2022-03-18T06:59:53.971Z","type":"markdown"},"gitbook":{"version":"3.7.1","time":"2022-03-22T08:39:11.764Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

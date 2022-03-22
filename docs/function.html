@@ -139,20 +139,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="development_environment.html">
-            
-                <a href="development_environment.html">
-            
-                    
-                    開発環境の構築
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5" data-path="basic_syntax.html">
+        <li class="chapter " data-level="1.4" data-path="basic_syntax.html">
             
                 <a href="basic_syntax.html">
             
@@ -165,7 +152,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter active" data-level="1.6" data-path="function.html">
+        <li class="chapter active" data-level="1.5" data-path="function.html">
             
                 <a href="function.html">
             
@@ -178,7 +165,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="first_class_function.html">
+        <li class="chapter " data-level="1.6" data-path="first_class_function.html">
             
                 <a href="first_class_function.html">
             
@@ -191,7 +178,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="class.html">
+        <li class="chapter " data-level="1.7" data-path="class.html">
             
                 <a href="class.html">
             
@@ -204,7 +191,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.9" data-path="inherit_abstract.html">
+        <li class="chapter " data-level="1.8" data-path="inherit_abstract.html">
             
                 <a href="inherit_abstract.html">
             
@@ -217,7 +204,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.10" data-path="interface.html">
+        <li class="chapter " data-level="1.9" data-path="interface.html">
             
                 <a href="interface.html">
             
@@ -230,7 +217,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.11" data-path="generics.html">
+        <li class="chapter " data-level="1.10" data-path="generics.html">
             
                 <a href="generics.html">
             
@@ -243,7 +230,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.12" data-path="null_safe.html">
+        <li class="chapter " data-level="1.11" data-path="null_safe.html">
             
                 <a href="null_safe.html">
             
@@ -256,7 +243,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.13" data-path="tips.html">
+        <li class="chapter " data-level="1.12" data-path="tips.html">
             
                 <a href="tips.html">
             
@@ -269,7 +256,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.14" data-path="exercise1.html">
+        <li class="chapter " data-level="1.13" data-path="exercise1.html">
             
                 <a href="exercise1.html">
             
@@ -282,7 +269,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.15" data-path="exercise2.html">
+        <li class="chapter " data-level="1.14" data-path="exercise2.html">
             
                 <a href="exercise2.html">
             
@@ -295,12 +282,25 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.16" data-path="exercise3.html">
+        <li class="chapter " data-level="1.15" data-path="exercise3.html">
             
                 <a href="exercise3.html">
             
                     
                     Exercise (3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="android_dev_environment.html">
+            
+                <a href="android_dev_environment.html">
+            
+                    
+                    Android開発環境の構築
             
                 </a>
             
@@ -375,36 +375,71 @@ KotlinPlayground('.lang-kotlin');
 <ul>
 <li>基本形</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// fun で始まる以下の形が基本の関数定義の仕方</span>
-<span class="hljs-function"><span class="hljs-keyword">fun</span> 関数名<span class="hljs-params">(引数リスト)</span></span>: 戻り値の型
+<pre><code class="lang-kotlin"><span class="hljs-comment">//sampleStart</span>
+<span class="hljs-comment">// fun で始まる以下の形が基本の関数定義の仕方</span>
+<span class="hljs-comment">// fun 関数名(引数リスト): 戻り値の型</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">add</span><span class="hljs-params">(a: <span class="hljs-type">Int</span>, b: <span class="hljs-type">Int</span>)</span></span>: <span class="hljs-built_in">Int</span> {
+    <span class="hljs-keyword">return</span> a + b
+}
+<span class="hljs-comment">//sampleEnd</span>
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    println(<span class="hljs-string">&quot;a=1, b=2, add(a, b)=<span class="hljs-subst">${add(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)}</span>&quot;</span>)
+}
 </code></pre>
 <ul>
 <li>単一の式からなる関数の場合</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// Int を 2 つとって足した数を返す関数</span>
+<pre><code class="lang-kotlin"><span class="hljs-comment">//sampleStart</span>
+<span class="hljs-comment">// Int を 2 つとって足した数を返す関数</span>
 <span class="hljs-comment">// 処理が一個しかない (式が一個) の場合はこんな風に書ける</span>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">add</span><span class="hljs-params">(a: <span class="hljs-type">Int</span>, b: <span class="hljs-type">Int</span>)</span></span>: <span class="hljs-built_in">Int</span> = a + b
+<span class="hljs-comment">//sampleEnd</span>
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    println(<span class="hljs-string">&quot;a=1, b=2, add(a, b)=<span class="hljs-subst">${add(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)}</span>&quot;</span>)
+}
 </code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// Int を 2 つとって大きい方を返す関数</span>
+<pre><code class="lang-kotlin"><span class="hljs-comment">//sampleStart</span>
+<span class="hljs-comment">// Int を 2 つとって大きい方を返す関数</span>
 <span class="hljs-comment">// if 文 1 個ということも可能</span>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">max</span><span class="hljs-params">(a: <span class="hljs-type">Int</span>, b: <span class="hljs-type">Int</span>)</span></span>: <span class="hljs-built_in">Int</span> = <span class="hljs-keyword">if</span> (a &gt; b) a <span class="hljs-keyword">else</span> b
+<span class="hljs-comment">//sampleEnd</span>
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    println(<span class="hljs-string">&quot;a=1, b=2, max(a, b)=<span class="hljs-subst">${max(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)}</span>&quot;</span>)
+}
 </code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// Int を 2 つとって小さい方を返す関数</span>
+<pre><code class="lang-kotlin"><span class="hljs-comment">//sampleStart</span>
+<span class="hljs-comment">// Int を 2 つとって小さい方を返す関数</span>
 <span class="hljs-comment">// 戻り値の型に型推論が効く</span>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">min</span><span class="hljs-params">(a: <span class="hljs-type">Int</span>, b: <span class="hljs-type">Int</span>)</span></span> = <span class="hljs-keyword">if</span> (a &lt; b) a <span class="hljs-keyword">else</span> b
+<span class="hljs-comment">//sampleEnd</span>
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    println(<span class="hljs-string">&quot;a=1, b=2, min(a, b)=<span class="hljs-subst">${min(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)}</span>&quot;</span>)
+}
 </code></pre>
 <ul>
 <li>文を持つ</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// 文を扱うときはこう</span>
+<pre><code class="lang-kotlin"><span class="hljs-comment">//sampleStart</span>
+<span class="hljs-comment">// 文を扱うときはこう</span>
 <span class="hljs-comment">// Int を 2 つ引数に取って足し合わせた結果を返しつつ、画面に結果を出す関数</span>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">addWithPrint</span><span class="hljs-params">(a: <span class="hljs-type">Int</span>, b: <span class="hljs-type">Int</span>)</span></span>: <span class="hljs-built_in">Int</span> {
     <span class="hljs-keyword">val</span> result = a + b
     println(result)
     <span class="hljs-keyword">return</span> result
 }
+<span class="hljs-comment">//sampleEnd</span>
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    println(<span class="hljs-string">&quot;a=1, b=2&quot;</span>)
+    addWithPrint(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)
+}
 </code></pre>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// Int の配列を引数にとって全部足し合わせたものを返す関数</span>
+<pre><code class="lang-kotlin"><span class="hljs-comment">//sampleStart</span>
+<span class="hljs-comment">// Int の配列を引数にとって全部足し合わせたものを返す関数</span>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sum</span><span class="hljs-params">(ints: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">Int</span>&gt;)</span></span>: <span class="hljs-built_in">Int</span> {
     <span class="hljs-keyword">var</span> sum = <span class="hljs-number">0</span>
     <span class="hljs-keyword">for</span> (n <span class="hljs-keyword">in</span> ints) {
@@ -412,50 +447,68 @@ KotlinPlayground('.lang-kotlin');
     }
     <span class="hljs-keyword">return</span> sum
 }
+<span class="hljs-comment">//sampleEnd</span>
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    println(<span class="hljs-string">&quot;ints=[1, 2, 3, 4], sum(ints)=<span class="hljs-subst">${sum(arrayOf(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>))}</span>&quot;</span>)
+}
 </code></pre>
 <ul>
 <li>名前付き引数</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// どの引数に値を渡すか、引数の名前を指定できる</span>
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">name</span><span class="hljs-params">(first: <span class="hljs-type">String</span>, last:<span class="hljs-type">String</span>)</span></span> = println(<span class="hljs-string">&quot;<span class="hljs-variable">$first</span> <span class="hljs-variable">$last</span>&quot;</span>)
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// どの引数に値を渡すか、引数の名前を指定できる</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">name</span><span class="hljs-params">(first: <span class="hljs-type">String</span>, last:<span class="hljs-type">String</span>)</span></span> = println(<span class="hljs-string">&quot;<span class="hljs-variable">$first</span> <span class="hljs-variable">$last</span>&quot;</span>)
 
-<span class="hljs-comment">// 名前を指定せずに呼び出すとき</span>
-name(<span class="hljs-string">&quot;taro&quot;</span>, <span class="hljs-string">&quot;yamada&quot;</span>) <span class="hljs-comment">// taro yamada</span>
+    <span class="hljs-comment">// 名前を指定せずに呼び出すとき</span>
+    name(<span class="hljs-string">&quot;taro&quot;</span>, <span class="hljs-string">&quot;yamada&quot;</span>)  <span class="hljs-comment">// taro yamada</span>
 
-<span class="hljs-comment">// 名前を指定して呼び出すとき</span>
-<span class="hljs-comment">// 関数定義の順番に従う必要がなく、意味も分かりやすくなる場合もある</span>
-name(last = <span class="hljs-string">&quot;yamada&quot;</span>, first = <span class="hljs-string">&quot;taro&quot;</span>) <span class="hljs-comment">// taro yamada</span>
+    <span class="hljs-comment">// 名前を指定して呼び出すとき</span>
+    <span class="hljs-comment">// 関数定義の順番に従う必要がなく、意味も分かりやすくなる場合もある</span>
+    name(last = <span class="hljs-string">&quot;yamada&quot;</span>, first = <span class="hljs-string">&quot;taro&quot;</span>)   <span class="hljs-comment">// taro yamada</span>
+    <span class="hljs-comment">//sampleEnd</span>
+}
 </code></pre>
 <ul>
 <li>デフォルト引数</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// デフォルトの値を指定してくことができる</span>
-<span class="hljs-comment">// 呼び出し時に値を指定しなかった場合はデフォルト値が使われる</span>
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">greet</span><span class="hljs-params">(name: <span class="hljs-type">String</span> = <span class="hljs-string">&quot;anonymous&quot;</span>)</span></span> {
-    println(<span class="hljs-string">&quot;Hi, <span class="hljs-variable">$name</span>!&quot;</span>)
-}
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// デフォルトの値を指定してくことができる</span>
+    <span class="hljs-comment">// 呼び出し時に値を指定しなかった場合はデフォルト値が使われる</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">greet</span><span class="hljs-params">(name: <span class="hljs-type">String</span> = <span class="hljs-string">&quot;anonymous&quot;</span>)</span></span> {
+        println(<span class="hljs-string">&quot;Hi, <span class="hljs-variable">$name</span>!&quot;</span>)
+    }
 
-greet()      <span class="hljs-comment">// Hi, anonymous!</span>
-greet(<span class="hljs-string">&quot;BOB&quot;</span>) <span class="hljs-comment">// Hi, BOB!</span>
+    greet()         <span class="hljs-comment">// Hi, anonymous!</span>
+    greet(<span class="hljs-string">&quot;BOB&quot;</span>)    <span class="hljs-comment">// Hi, BOB!</span>
+    <span class="hljs-comment">//sampleEnd</span>
+}
 </code></pre>
 <ul>
 <li>可変長引数</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// 引数に &quot;vararg&quot; をつけると可変長 (任意の個数、引数入力が可能) という意味になる</span>
-<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sum</span><span class="hljs-params">(<span class="hljs-keyword">vararg</span> ints: <span class="hljs-type">Int</span>)</span></span>: <span class="hljs-built_in">Int</span> { <span class="hljs-comment">// 引数として任意の数の Int をとる</span>
-    <span class="hljs-keyword">var</span> sum = <span class="hljs-number">0</span>
-    <span class="hljs-keyword">for</span> (n <span class="hljs-keyword">in</span> ints) {
-        sum += n
+<pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-comment">//sampleStart</span>
+    <span class="hljs-comment">// 引数に &quot;vararg&quot; をつけると可変長 (任意の個数、引数入力が可能) という意味になる</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sum</span><span class="hljs-params">(<span class="hljs-keyword">vararg</span> ints: <span class="hljs-type">Int</span>)</span></span>: <span class="hljs-built_in">Int</span> { <span class="hljs-comment">// 引数として任意の数の Int をとる</span>
+        <span class="hljs-keyword">var</span> sum = <span class="hljs-number">0</span>
+        <span class="hljs-keyword">for</span> (n <span class="hljs-keyword">in</span> ints) {
+            sum += n
+        }
+        <span class="hljs-keyword">return</span> sum
     }
-    <span class="hljs-keyword">return</span> sum
+
+    <span class="hljs-comment">// 呼び出し例</span>
+    println(sum(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>))    <span class="hljs-comment">// 10</span>
+
+    <span class="hljs-comment">// 配列を可変長引数として扱ってもらうこともできる</span>
+    <span class="hljs-keyword">var</span> array = intArrayOf(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>)
+    <span class="hljs-comment">// * をつけると配列を可変長引数として扱ってもらえる</span>
+    println(sum(*array))        <span class="hljs-comment">// 15</span>
+    <span class="hljs-comment">//sampleEnd</span>
 }
-
-<span class="hljs-comment">// 呼び出し例</span>
-sum(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>) <span class="hljs-comment">// 10</span>
-
-<span class="hljs-comment">// 配列を可変長引数として扱ってもらうこともできる</span>
-<span class="hljs-keyword">var</span> array = intArrayOf(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>)
-sum(*array) <span class="hljs-comment">// * をつけると配列を可変長引数として扱ってもらえる</span>
 </code></pre>
 
                                 
@@ -500,7 +553,7 @@ sum(*array) <span class="hljs-comment">// * をつけると配列を可変長引
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"関数","level":"1.6","depth":1,"next":{"title":"ちょっと特殊な関数","level":"1.7","depth":1,"path":"first_class_function.md","ref":"./first_class_function.md","articles":[]},"previous":{"title":"基本的な文法","level":"1.5","depth":1,"path":"basic_syntax.md","ref":"./basic_syntax.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"head-append":{"code":["<script src=\"https://unpkg.com/kotlin-playground@1\"></script>","<script>","document.addEventListener('DOMContentLoaded', function() {","KotlinPlayground('.lang-kotlin');","});","</script>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"function.md","mtime":"2022-02-19T13:21:37.790Z","type":"markdown"},"gitbook":{"version":"3.7.1","time":"2022-03-14T01:16:07.696Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"関数","level":"1.5","depth":1,"next":{"title":"ちょっと特殊な関数","level":"1.6","depth":1,"path":"first_class_function.md","ref":"./first_class_function.md","articles":[]},"previous":{"title":"基本的な文法","level":"1.4","depth":1,"path":"basic_syntax.md","ref":"./basic_syntax.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"head-append":{"code":["<script src=\"https://unpkg.com/kotlin-playground@1\"></script>","<script>","document.addEventListener('DOMContentLoaded', function() {","KotlinPlayground('.lang-kotlin');","});","</script>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"function.md","mtime":"2022-03-18T06:30:30.080Z","type":"markdown"},"gitbook":{"version":"3.7.1","time":"2022-03-22T08:39:11.764Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

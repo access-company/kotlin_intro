@@ -139,20 +139,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="development_environment.html">
-            
-                <a href="development_environment.html">
-            
-                    
-                    開発環境の構築
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5" data-path="basic_syntax.html">
+        <li class="chapter " data-level="1.4" data-path="basic_syntax.html">
             
                 <a href="basic_syntax.html">
             
@@ -165,7 +152,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="function.html">
+        <li class="chapter " data-level="1.5" data-path="function.html">
             
                 <a href="function.html">
             
@@ -178,7 +165,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="first_class_function.html">
+        <li class="chapter " data-level="1.6" data-path="first_class_function.html">
             
                 <a href="first_class_function.html">
             
@@ -191,7 +178,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="class.html">
+        <li class="chapter " data-level="1.7" data-path="class.html">
             
                 <a href="class.html">
             
@@ -204,7 +191,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.9" data-path="inherit_abstract.html">
+        <li class="chapter " data-level="1.8" data-path="inherit_abstract.html">
             
                 <a href="inherit_abstract.html">
             
@@ -217,7 +204,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter active" data-level="1.10" data-path="interface.html">
+        <li class="chapter active" data-level="1.9" data-path="interface.html">
             
                 <a href="interface.html">
             
@@ -230,7 +217,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.11" data-path="generics.html">
+        <li class="chapter " data-level="1.10" data-path="generics.html">
             
                 <a href="generics.html">
             
@@ -243,7 +230,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.12" data-path="null_safe.html">
+        <li class="chapter " data-level="1.11" data-path="null_safe.html">
             
                 <a href="null_safe.html">
             
@@ -256,7 +243,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.13" data-path="tips.html">
+        <li class="chapter " data-level="1.12" data-path="tips.html">
             
                 <a href="tips.html">
             
@@ -269,7 +256,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.14" data-path="exercise1.html">
+        <li class="chapter " data-level="1.13" data-path="exercise1.html">
             
                 <a href="exercise1.html">
             
@@ -282,7 +269,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.15" data-path="exercise2.html">
+        <li class="chapter " data-level="1.14" data-path="exercise2.html">
             
                 <a href="exercise2.html">
             
@@ -295,12 +282,25 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.16" data-path="exercise3.html">
+        <li class="chapter " data-level="1.15" data-path="exercise3.html">
             
                 <a href="exercise3.html">
             
                     
                     Exercise (3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="android_dev_environment.html">
+            
+                <a href="android_dev_environment.html">
+            
+                    
+                    Android開発環境の構築
             
                 </a>
             
@@ -374,9 +374,17 @@ KotlinPlayground('.lang-kotlin');
 </ul>
 </li>
 <li><p>定義の仕方</p>
+<ul>
+<li>interface と書いて宣言する</li>
+</ul>
+</li>
+<li>実装の仕方<ul>
+<li>class を作ってインターフェースを継承する</li>
+<li>abstract なものをひととおりオーバーライドする (interface を実装する、と呼ぶ)</li>
+</ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// interface と書いて宣言する</span>
+<pre><code class="lang-kotlin"><span class="hljs-comment">//sampleStart</span>
 <span class="hljs-comment">// Greeter (挨拶するひと) インターフェース</span>
 <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Greeter</span> </span>{
     <span class="hljs-comment">// プロパティ、メソッドを持たせられるが、いずれも abstract</span>
@@ -386,15 +394,8 @@ KotlinPlayground('.lang-kotlin');
     <span class="hljs-keyword">val</span> language: String
     <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span></span>
 }
-</code></pre>
-<ul>
-<li>実装の仕方<ul>
-<li>クラスを作ってインターフェースを継承する</li>
-<li>abstract なものをひととおりオーバーライドする (interface を実装する、と呼ぶ)</li>
-</ul>
-</li>
-</ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// Greeter interface を実装する EnglishGreeter クラス</span>
+
+<span class="hljs-comment">// Greeter interface を実装する EnglishGreeter クラス</span>
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EnglishGreeter</span> : <span class="hljs-type">Greeter {</span></span>
     <span class="hljs-comment">// val language と fun sayHello を</span>
     <span class="hljs-comment">// オーバーライドしないとコンパイルが通らない</span>
@@ -403,25 +404,38 @@ KotlinPlayground('.lang-kotlin');
         println(<span class="hljs-string">&quot;Hello! <span class="hljs-variable">$target</span>!&quot;</span>)
     }
 }
+<span class="hljs-comment">//sampleEnd</span>
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    EnglishGreeter().sayHello(<span class="hljs-string">&quot;Everyone&quot;</span>)
+}
 </code></pre>
 <ul>
 <li>ちなみに、クラスの継承はひとつまでなのに対し、インターフェースは複数継承することができる </li>
 </ul>
-<pre><code class="lang-kotlin">
+<pre><code class="lang-kotlin"><span class="hljs-comment">//sampleStart</span>
 <span class="hljs-comment">// インターフェースがふたつ以上あったとして...</span>
 <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Cookie</span> </span>{
-    ...
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">whiteDay</span><span class="hljs-params">()</span></span>
 }
 
 <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Chocolate</span> </span>{
-    ...
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">valentinesDay</span><span class="hljs-params">()</span></span>
 }
 
 <span class="hljs-comment">// クラスは複数のインターフェースを継承して実装することができる</span>
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Sweet</span> : <span class="hljs-type">Cookie</span>, <span class="hljs-type">Chocolate {</span></span>
-    ...
     <span class="hljs-comment">// Cookie、Chocolate に含まれるメンバを</span>
     <span class="hljs-comment">// 全てオーバーライドする (実装する) 必要がある</span>
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">whiteDay</span><span class="hljs-params">()</span></span> {}
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">valentinesDay</span><span class="hljs-params">()</span></span> {}
+}
+<span class="hljs-comment">//sampleEnd</span>
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
+    <span class="hljs-keyword">val</span> sweet = Sweet()
+    sweet.valentinesDay()
+    sweet.whiteDay()
 }
 </code></pre>
 <ul>
@@ -444,12 +458,11 @@ KotlinPlayground('.lang-kotlin');
 
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-keyword">val</span> g: Greeter = EnglishGreeter()
-    g.sayHello(<span class="hljs-string">&quot;takeshi&quot;</span>) <span class="hljs-comment">// Hello takeshi!</span>
+    g.sayHello(<span class="hljs-string">&quot;takeshi&quot;</span>)   <span class="hljs-comment">// Hello takeshi!</span>
 }
 </code></pre>
 <ul>
-<li><p>クラスデリゲーション</p>
-<ul>
+<li>クラスデリゲーション<ul>
 <li>継承の問題点として、以下のようなものがある<ul>
 <li>こじらせるとクラスがどんどん大きくなってしまう (共通機能をつめこみたくなる)</li>
 <li>スーパークラスの変更はただちにサブクラスに影響する (変更の影響範囲を小さくできない)</li>
@@ -457,11 +470,10 @@ KotlinPlayground('.lang-kotlin');
 </li>
 <li>継承せずに別クラスに処理を委譲するやり方をデリゲーションと呼ぶ</li>
 </ul>
-<p>継承と委譲それぞれの実装例を見てみよう。</p>
 </li>
 </ul>
+<p>継承と委譲それぞれの実装例を見てみよう。</p>
 <pre><code class="lang-kotlin"><span class="hljs-comment">// 継承するパターン</span>
-
 <span class="hljs-comment">// インターフェースの定義</span>
 <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Greeter</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">()</span></span>
@@ -491,10 +503,10 @@ KotlinPlayground('.lang-kotlin');
 
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-keyword">val</span> g = EnglishGreeterGreatAgain()
-    g.sayHello(<span class="hljs-string">&quot;America&quot;</span>) <span class="hljs-comment">// Hello America great again!</span>
-    g.sayHello(<span class="hljs-string">&quot;Japan&quot;</span>)   <span class="hljs-comment">// Hello Japan great again!</span>
-    g.sayHello(<span class="hljs-string">&quot;Germany&quot;</span>) <span class="hljs-comment">// Hello Germany great again!</span>
-    g.sayHello()        <span class="hljs-comment">// Hello anonymous great again ← ！？</span>
+    g.sayHello(<span class="hljs-string">&quot;America&quot;</span>)   <span class="hljs-comment">// Hello America great again!</span>
+    g.sayHello(<span class="hljs-string">&quot;Japan&quot;</span>)     <span class="hljs-comment">// Hello Japan great again!</span>
+    g.sayHello(<span class="hljs-string">&quot;Germany&quot;</span>)   <span class="hljs-comment">// Hello Germany great again!</span>
+    g.sayHello()            <span class="hljs-comment">// Hello anonymous great again ← ！？</span>
 }
 </code></pre>
 <ul>
@@ -502,7 +514,26 @@ KotlinPlayground('.lang-kotlin');
 <li>スーパークラスをいじれれば良いが、そうでない場合は思い通りにできない場合も</li>
 </ul>
 <pre><code class="lang-kotlin"><span class="hljs-comment">// 委譲するパターン</span>
+<span class="hljs-comment">// インターフェースの定義</span>
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Greeter</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">()</span></span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span></span>
+}
 
+<span class="hljs-comment">// 英語で挨拶クラス</span>
+<span class="hljs-keyword">open</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EnglishGreeter</span> : <span class="hljs-type">Greeter {</span></span>
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">()</span></span> {
+        <span class="hljs-comment">// 名前を省略したら anonymous さんに挨拶する</span>
+        sayHello(<span class="hljs-string">&quot;anonymous&quot;</span>)
+    }
+
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span></span> {
+        println(<span class="hljs-string">&quot;Hello, <span class="hljs-variable">$target</span>!&quot;</span>)
+    }
+}
+
+<span class="hljs-comment">// 名前を指定されたときはすごい挨拶をする</span>
+<span class="hljs-comment">// 英語で挨拶クラスを委譲して拡張した</span>
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EnglishGreeterGreatAgain</span> : <span class="hljs-type">Greeter {</span></span>
     <span class="hljs-comment">// 継承ではなく、メンバとして値を持つ</span>
     <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> g: Greeter = EnglishGreeter()
@@ -514,16 +545,16 @@ KotlinPlayground('.lang-kotlin');
 
     <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span></span> {
         <span class="hljs-comment">// 拡張してメソッドを呼び出す</span>
-        g.sayHello(<span class="hljs-string">&quot;Hello <span class="hljs-variable">$target</span> great again!&quot;</span>)
+        g.sayHello(<span class="hljs-string">&quot;<span class="hljs-variable">$target</span> great again!&quot;</span>)
     }
 }
 
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-keyword">val</span> g = EnglishGreeterGreatAgain()
-    g.sayHello(<span class="hljs-string">&quot;America&quot;</span>) <span class="hljs-comment">// Hello America great again!</span>
-    g.sayHello(<span class="hljs-string">&quot;Japan&quot;</span>)   <span class="hljs-comment">// Hello Japan great again!</span>
-    g.sayHello(<span class="hljs-string">&quot;Germany&quot;</span>) <span class="hljs-comment">// Hello Germany great again!</span>
-    g.sayHello()        <span class="hljs-comment">// Hello anonymous!</span>
+    g.sayHello(<span class="hljs-string">&quot;America&quot;</span>)   <span class="hljs-comment">// Hello America great again!</span>
+    g.sayHello(<span class="hljs-string">&quot;Japan&quot;</span>)     <span class="hljs-comment">// Hello Japan great again!</span>
+    g.sayHello(<span class="hljs-string">&quot;Germany&quot;</span>)   <span class="hljs-comment">// Hello Germany great again!</span>
+    g.sayHello()            <span class="hljs-comment">// Hello anonymous!</span>
 }
 </code></pre>
 <ul>
@@ -533,24 +564,42 @@ KotlinPlayground('.lang-kotlin');
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-comment">// コンストラクタで Greeter をとりつつ、&quot;Greeter by greeter&quot; と指定して継承</span>
+<pre><code class="lang-kotlin"><span class="hljs-comment">// インターフェースの定義</span>
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Greeter</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">()</span></span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span></span>
+}
+
+<span class="hljs-comment">// 英語で挨拶クラス</span>
+<span class="hljs-keyword">open</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EnglishGreeter</span> : <span class="hljs-type">Greeter {</span></span>
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">()</span></span> {
+        <span class="hljs-comment">// 名前を省略したら anonymous さんに挨拶する</span>
+        sayHello(<span class="hljs-string">&quot;anonymous&quot;</span>)
+    }
+
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span></span> {
+        println(<span class="hljs-string">&quot;Hello, <span class="hljs-variable">$target</span>!&quot;</span>)
+    }
+}
+
+<span class="hljs-comment">// コンストラクタで Greeter をとりつつ、&quot;Greeter by greeter&quot; と指定して継承</span>
 <span class="hljs-comment">// override してない部分は greeter に委譲するという意味になる</span>
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EnglishGreeterGreatAgain</span></span>(<span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> greeter: Greeter): Greeter <span class="hljs-keyword">by</span> greeter {
     <span class="hljs-comment">// override fun sayHello() は実装しない (= greeter に委譲)</span>
 
     <span class="hljs-comment">// 拡張したいところだけ override</span>
     <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span></span> {
-        greeter.sayHello(<span class="hljs-string">&quot;Hello <span class="hljs-variable">$target</span> great again!&quot;</span>)
+        greeter.sayHello(<span class="hljs-string">&quot;<span class="hljs-variable">$target</span> great again!&quot;</span>)
     }
 }
 
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-keyword">val</span> eg = EnglishGreeter()
     <span class="hljs-keyword">val</span> g = EnglishGreeterGreatAgain(eg)
-    g.sayHello(<span class="hljs-string">&quot;America&quot;</span>) <span class="hljs-comment">// Hello America great again!</span>
-    g.sayHello(<span class="hljs-string">&quot;Japan&quot;</span>)   <span class="hljs-comment">// Hello Japan great again!</span>
-    g.sayHello(<span class="hljs-string">&quot;Germany&quot;</span>) <span class="hljs-comment">// Hello Germany great again!</span>
-    g.sayHello()        <span class="hljs-comment">// Hello anonymous!</span>
+    g.sayHello(<span class="hljs-string">&quot;America&quot;</span>)   <span class="hljs-comment">// Hello America great again!</span>
+    g.sayHello(<span class="hljs-string">&quot;Japan&quot;</span>)     <span class="hljs-comment">// Hello Japan great again!</span>
+    g.sayHello(<span class="hljs-string">&quot;Germany&quot;</span>)   <span class="hljs-comment">// Hello Germany great again!</span>
+    g.sayHello()            <span class="hljs-comment">// Hello anonymous!</span>
 }
 </code></pre>
 <ul>
@@ -602,7 +651,7 @@ KotlinPlayground('.lang-kotlin');
 <li>実装の中身を入れ替えたいときに便利<ul>
 <li>テスト用に常に OK を返すだけのクラスにしたい</li>
 <li>SQLite を使っていたが Postgres に変更したい</li>
-<li>等など</li>
+<li>などなど</li>
 </ul>
 </li>
 </ul>
@@ -649,7 +698,7 @@ KotlinPlayground('.lang-kotlin');
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"インターフェース","level":"1.10","depth":1,"next":{"title":"ジェネリクス","level":"1.11","depth":1,"path":"generics.md","ref":"./generics.md","articles":[]},"previous":{"title":"継承・抽象クラス","level":"1.9","depth":1,"path":"inherit_abstract.md","ref":"./inherit_abstract.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"head-append":{"code":["<script src=\"https://unpkg.com/kotlin-playground@1\"></script>","<script>","document.addEventListener('DOMContentLoaded', function() {","KotlinPlayground('.lang-kotlin');","});","</script>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"interface.md","mtime":"2022-02-19T13:21:37.791Z","type":"markdown"},"gitbook":{"version":"3.7.1","time":"2022-03-14T01:16:07.696Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"インターフェース","level":"1.9","depth":1,"next":{"title":"ジェネリクス","level":"1.10","depth":1,"path":"generics.md","ref":"./generics.md","articles":[]},"previous":{"title":"継承・抽象クラス","level":"1.8","depth":1,"path":"inherit_abstract.md","ref":"./inherit_abstract.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"head-append":{"code":["<script src=\"https://unpkg.com/kotlin-playground@1\"></script>","<script>","document.addEventListener('DOMContentLoaded', function() {","KotlinPlayground('.lang-kotlin');","});","</script>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"interface.md","mtime":"2022-03-22T08:10:18.389Z","type":"markdown"},"gitbook":{"version":"3.7.1","time":"2022-03-22T08:39:11.764Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

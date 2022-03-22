@@ -61,6 +61,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="android_dev_environment.html" />
+    
     
     <link rel="prev" href="exercise2.html" />
     
@@ -137,20 +139,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="development_environment.html">
-            
-                <a href="development_environment.html">
-            
-                    
-                    開発環境の構築
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5" data-path="basic_syntax.html">
+        <li class="chapter " data-level="1.4" data-path="basic_syntax.html">
             
                 <a href="basic_syntax.html">
             
@@ -163,7 +152,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="function.html">
+        <li class="chapter " data-level="1.5" data-path="function.html">
             
                 <a href="function.html">
             
@@ -176,7 +165,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="first_class_function.html">
+        <li class="chapter " data-level="1.6" data-path="first_class_function.html">
             
                 <a href="first_class_function.html">
             
@@ -189,7 +178,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="class.html">
+        <li class="chapter " data-level="1.7" data-path="class.html">
             
                 <a href="class.html">
             
@@ -202,7 +191,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.9" data-path="inherit_abstract.html">
+        <li class="chapter " data-level="1.8" data-path="inherit_abstract.html">
             
                 <a href="inherit_abstract.html">
             
@@ -215,7 +204,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.10" data-path="interface.html">
+        <li class="chapter " data-level="1.9" data-path="interface.html">
             
                 <a href="interface.html">
             
@@ -228,7 +217,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.11" data-path="generics.html">
+        <li class="chapter " data-level="1.10" data-path="generics.html">
             
                 <a href="generics.html">
             
@@ -241,7 +230,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.12" data-path="null_safe.html">
+        <li class="chapter " data-level="1.11" data-path="null_safe.html">
             
                 <a href="null_safe.html">
             
@@ -254,7 +243,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.13" data-path="tips.html">
+        <li class="chapter " data-level="1.12" data-path="tips.html">
             
                 <a href="tips.html">
             
@@ -267,7 +256,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.14" data-path="exercise1.html">
+        <li class="chapter " data-level="1.13" data-path="exercise1.html">
             
                 <a href="exercise1.html">
             
@@ -280,7 +269,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.15" data-path="exercise2.html">
+        <li class="chapter " data-level="1.14" data-path="exercise2.html">
             
                 <a href="exercise2.html">
             
@@ -293,12 +282,25 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter active" data-level="1.16" data-path="exercise3.html">
+        <li class="chapter active" data-level="1.15" data-path="exercise3.html">
             
                 <a href="exercise3.html">
             
                     
                     Exercise (3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="android_dev_environment.html">
+            
+                <a href="android_dev_environment.html">
+            
+                    
+                    Android開発環境の構築
             
                 </a>
             
@@ -355,17 +357,23 @@ KotlinPlayground('.lang-kotlin');
 <h2 id="ヌルと戦うjavaプログラマーにkotlinを教えよう！">ヌルと戦うJavaプログラマーにKotlinを教えよう！</h2>
 <p>あなたの部署には、Kotlinをまったく知らないJava開発者のN内さんがいます。</p>
 <p>N内さんは、上司の指示でJavaのコードをKotlinに書き直して、あなたにレビューをお願いして来ました。</p>
-<p>N内さんは「<strong>漏れなくnullチェックできてるし！！</strong>」と自信満々だが、そのコードはビルドすら通りません。</p>
-<p>あなたは呆れ顔で、このコードを修正してあげる必要があります。</p>
+<p>N内さんは「<strong>漏れなくnullチェックできてるし！！</strong>」と自信満々だが、そのコードにはたくさんのビルドエラーがあります。</p>
+<p>あなたは呆れ顔で、このコードの問題を指摘します。</p>
 <h3 id="問題">問題</h3>
 <p>正しい出力結果</p>
-<pre><code>To: antonio@abc-company.com
+<pre><code>To: antonio@example.com
 message: Hello, Antonio!
-</code></pre><p>が出るよう、以下のコードを<strong>できる限り短く読みやすく</strong>修正してください。</p>
+</code></pre><p>が出るよう、以下の条件を守り、コードを<strong>できる限り短く読みやすく</strong>修正してください。</p>
 <ul>
+<li><code>/* ここからは変えない */</code>〜<code>/* ここまでは変えない */</code>の間は変えないこと</li>
+<li>予め定義されているクラスをすべて使うこと<ul>
+<li>つまり<code>main</code>に<code>println</code>で直接出力結果を書くことは許されない</li>
+</ul>
+</li>
 <li><code>if</code>を使うのは1回まで</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span> </span>(<span class="hljs-keyword">val</span> personalInfo: PersonalInfo?)
+<pre><code class="lang-kotlin"><span class="hljs-comment">/* ここからは変えない */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span> </span>(<span class="hljs-keyword">val</span> personalInfo: PersonalInfo?)
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PersonalInfo</span> </span>(<span class="hljs-keyword">val</span> email: String?)
 
@@ -378,6 +386,7 @@ message: Hello, Antonio!
         println(<span class="hljs-string">&quot;To: <span class="hljs-variable">$email</span>\nmessage: <span class="hljs-variable">$message</span>&quot;</span>)
     }
 }
+<span class="hljs-comment">/* ここまでは変えない */</span>
 
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sendMessageToClient</span><span class="hljs-params">(client: <span class="hljs-type">Client</span>?, message: <span class="hljs-type">String</span>?, mailer: <span class="hljs-type">Mailer</span>)</span></span> {
     <span class="hljs-keyword">if</span> (client == <span class="hljs-literal">null</span> || message == <span class="hljs-literal">null</span>) {
@@ -459,10 +468,14 @@ message: Hello, Antonio!
 
             
                 
-                <a href="exercise2.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Exercise (2)">
+                <a href="exercise2.html" class="navigation navigation-prev " aria-label="Previous page: Exercise (2)">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="android_dev_environment.html" class="navigation navigation-next " aria-label="Next page: Android開発環境の構築">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -471,7 +484,7 @@ message: Hello, Antonio!
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Exercise (3)","level":"1.16","depth":1,"previous":{"title":"Exercise (2)","level":"1.15","depth":1,"path":"exercise2.md","ref":"./exercise2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"head-append":{"code":["<script src=\"https://unpkg.com/kotlin-playground@1\"></script>","<script>","document.addEventListener('DOMContentLoaded', function() {","KotlinPlayground('.lang-kotlin');","});","</script>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"exercise3.md","mtime":"2022-02-19T13:21:37.790Z","type":"markdown"},"gitbook":{"version":"3.7.1","time":"2022-03-14T01:16:07.696Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Exercise (3)","level":"1.15","depth":1,"next":{"title":"Android開発環境の構築","level":"1.16","depth":1,"path":"android_dev_environment.md","ref":"./android_dev_environment.md","articles":[]},"previous":{"title":"Exercise (2)","level":"1.14","depth":1,"path":"exercise2.md","ref":"./exercise2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"head-append":{"code":["<script src=\"https://unpkg.com/kotlin-playground@1\"></script>","<script>","document.addEventListener('DOMContentLoaded', function() {","KotlinPlayground('.lang-kotlin');","});","</script>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"exercise3.md","mtime":"2022-03-18T06:05:09.022Z","type":"markdown"},"gitbook":{"version":"3.7.1","time":"2022-03-22T08:39:11.764Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
