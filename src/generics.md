@@ -53,7 +53,7 @@ fun main(args: Array<String>) {
 
     // 値を取り出すときにキャスト不要
     // キャスト不要なので ClassCastException も起こらない
-    val i:Int = intContainer.value 
+    val i: Int = intContainer.value 
 
     // 使い方が違っていればコンパイル時にエラーになる
     val s: String =  intContainer.value // コンパイルエラー
