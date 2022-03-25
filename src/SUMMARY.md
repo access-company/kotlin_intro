@@ -8,6 +8,7 @@
 * [インターフェース](./interface.md)
 * [ジェネリクス](./generics.md)
 * [Null安全](./null_safe.md)
+* [デザインパターン](./design_pattern.md)
 * [その他豆知識](./tips.md)
 * [Exercise (1)](./exercise1.md)
 * [Exercise (2)](./exercise2.md)
