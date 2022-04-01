@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>Android開発環境の構築 · HonKit</title>
+        <title>デザインパターン · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 3.7.1">
@@ -61,8 +61,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="tips.html" />
     
-    <link rel="prev" href="exercise3.html" />
+    
+    <link rel="prev" href="null_safe.html" />
     
 
 <script src="https://unpkg.com/kotlin-playground@1"></script>
@@ -241,7 +243,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter " data-level="1.12" data-path="design_pattern.html">
+        <li class="chapter active" data-level="1.12" data-path="design_pattern.html">
             
                 <a href="design_pattern.html">
             
@@ -306,7 +308,7 @@ KotlinPlayground('.lang-kotlin');
             
         </li>
     
-        <li class="chapter active" data-level="1.17" data-path="android_dev_environment.html">
+        <li class="chapter " data-level="1.17" data-path="android_dev_environment.html">
             
                 <a href="android_dev_environment.html">
             
@@ -349,7 +351,7 @@ KotlinPlayground('.lang-kotlin');
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Android開発環境の構築</a>
+        <a href="." >デザインパターン</a>
     </h1>
 </div>
 
@@ -364,64 +366,95 @@ KotlinPlayground('.lang-kotlin');
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="開発環境の構築">開発環境の構築</h1>
-<p>Kotlin 研修おつかれさまでした！</p>
-<p>これから待ち受ける実習課題にそなえ、 Kotlin で Android 開発を行うための環境構築について記載します。</p>
+                                <h1 id="デザインパターン">デザインパターン</h1>
 <h2 id="ゴール">ゴール</h2>
 <ul>
-<li>サンプルプロジェクトをclone する</li>
-<li>clone したサンプルプロジェクトを Android Studio で読み込む</li>
-<li>サンプルアプリを実行する</li>
-</ul>
-<h2 id="想定する事前準備">想定する事前準備</h2>
-<p>以下はあらかじめ用意されていることを想定</p>
-<ul>
-<li>ターミナルで git コマンドが実行できるようになっていること</li>
-<li>Android Studio (バージョン Bumblebee 2021.1.1 以降) がインストールされていること</li>
-</ul>
-<h2 id="サンプルプロジェクトを-clone-する">サンプルプロジェクトを clone する</h2>
-<ul>
-<li>サンプルプロジェクトは以下<ul>
-<li><a href="https://github.com/access-company/TrainingProject_Nekonosuzu" target="_blank">https://github.com/access-company/TrainingProject_Nekonosuzu</a></li>
+<li>デザインパターンについて<strong>浅く</strong>知る<ul>
+<li>ここでは、メジャーなパターンやキーワードをいくつか知っておくとよい</li>
+<li>聞いて習得できる知識ではない。実践が大事！</li>
 </ul>
 </li>
-<li>ターミナルを開き、任意の位置に clone する<ul>
-<li>以下のようなコマンドを打つ<pre><code class="lang-bash">$ git <span class="hljs-built_in">clone</span> https://github.com/access-company/TrainingProject_Nekonosuzu.git
-</code></pre>
+</ul>
+<h2 id="オブジェクト指向におけるデザインパターンとは">オブジェクト指向におけるデザインパターンとは</h2>
+<ul>
+<li>ソフトウェアの設計に、建築工学で使われるデザインパターンを取り入れたもの</li>
+<li>一言で言えば、<strong>よくある課題を解決できる設計集</strong></li>
+<li>たとえば継承には Template Method パターン、委譲には Strategy パターンのように、設計の<strong>型</strong>がある</li>
+<li>モバイルアプリ開発では、委譲型の Delegation パターン、継承と委譲のどちらでもよい Adapter パターンとかが多用される</li>
+<li>GoF のデザインパターンと呼ばれる古典的デザインパターン以外に、言語やフレームワークによって新しいパターンが年々生まれ続けている<ul>
+<li>最近は言語やフレームワークの流儀に従っていれば自然と良いパターンに導かれることが多い</li>
+</ul>
 </li>
 </ul>
-</li>
-<li>正常に完了すると、リポジトリのソースコード一式がダウンロードされる</li>
-</ul>
-<h2 id="clone-したサンプルプロジェクトを-android-studio-で読み込む">clone したサンプルプロジェクトを Android Studio で読み込む</h2>
+<h3 id="採用する利点">採用する利点</h3>
 <ul>
-<li>Android Studio を起動し、Open を選ぶ</li>
-</ul>
-<p><img src="assets/images/as1.png" alt="as1.png"></p>
-<ul>
-<li>ファイルエクスプローラが起動するので、先程 clone した TrainingProject_Nekonosuzu のフォルダを選び Open する</li>
-<li>ファイルではなくフォルダを選ぶ</li>
-</ul>
-<p><img src="assets/images/as2.png" alt="as2.png"></p>
-<ul>
-<li>自動的にビルドが始まり、必要なもののダウンロード等が始まる</li>
-</ul>
-<h2 id="サンプルを実行しよう">サンプルを実行しよう</h2>
-<ul>
-<li>Android 端末を PC に USB で接続しよう<ul>
-<li>事前に Android 側で開発者向けオプションと USB デバッグを有効にすること(<a href="https://developer.android.com/studio/debug/dev-options?hl=ja" target="_blank">参考</a>）</li>
+<li>慣れてくると、他人のコードを「これは◯◯パターンだな」とか読める</li>
+<li>技術者間の共通の用語としての価値<ul>
+<li>Builder, Iterator, Observer, Singleton と言ったときに意思疎通が図りやすい</li>
 </ul>
 </li>
-<li>Android Studio の Run メニューからサンプルアプリを実行しよう</li>
+<li><strong>良い設計</strong>をするための教材としての価値</li>
 </ul>
-<p><img src="assets/images/as3.png" alt="as3.png"></p>
+<h3 id="メジャーなデザインパターン">メジャーなデザインパターン</h3>
+<p>検索すればたくさん出てくるので、個人的に知っておいてほしいものだけ紹介</p>
+<h4 id="インスタンスの生成に関するパターン">インスタンスの生成に関するパターン</h4>
 <ul>
-<li>うまく動いただろうか</li>
-<li>実機がなくても、エミュレーターを作成して実行することができる<ul>
-<li>余裕があれば調べてやってみよう</li>
+<li>Factory Method<ul>
+<li>実際に生成されるインスタンスに依存しない、インスタンスの生成方法を提供する</li>
 </ul>
 </li>
-<li>それでは、実習にのぞんでください！</li>
+<li>Abstract Factory<ul>
+<li>関連する一連のインスタンスを状況に応じて、適切に生成する方法を提供する</li>
+</ul>
+</li>
+<li>Singleton<ul>
+<li>あるクラスについて、アプリケーション内でインスタンスが単一であることを保証する</li>
+</ul>
+</li>
+</ul>
+<h4 id="構造に関するデザインパターン">構造に関するデザインパターン</h4>
+<ul>
+<li>Bridge<ul>
+<li>クラスなどの実装と、呼出し側の間の橋渡しをするクラスを用意し、実装を隠蔽する</li>
+</ul>
+</li>
+<li>Repository<ul>
+<li>ビジネスロジックとデータ操作との間に 1 枚リポジトリレイヤーを挟み、データがサーバーにあるのか DB にあるのかとかを、ビジネスロジックが意識しないようにする</li>
+</ul>
+</li>
+<li>Composite<ul>
+<li>再帰的な構造を表現する。Tree と呼ばれる場合もある</li>
+</ul>
+</li>
+</ul>
+<h4 id="振る舞いに関するデザインパターン">振る舞いに関するデザインパターン</h4>
+<ul>
+<li>State<ul>
+<li>状態 1 つ 1 つを異なるクラスとし、あるインスタンスのクラスを切り替えることで状態を変化させる</li>
+</ul>
+</li>
+<li>Iterator<ul>
+<li>複数の要素を内包するオブジェクトのすべての要素に対して、順番にアクセスする方法を提供する。反復子</li>
+</ul>
+</li>
+<li>Observer<ul>
+<li>インスタンスの変化を他のインスタンスから監視できるようにする。Listener とも呼ばれる</li>
+</ul>
+</li>
+<li>Strategy<ul>
+<li>データ構造に対して適用する一連のアルゴリズムをカプセル化し、アルゴリズムの切替えを容易にする</li>
+</ul>
+</li>
+</ul>
+<h2 id="アーキテクチャーとは">アーキテクチャーとは</h2>
+<ul>
+<li>デザインパターンより上位の<strong>基本構造</strong>や<strong>設計思想</strong>のこと<ul>
+<li>家やビルを建てるときに考える設計と似ている</li>
+<li>メソッド/クラス/モジュール を、どのように 分離/結合 するか</li>
+</ul>
+</li>
+<li>ソフトウェア、特に Kotlin やモバイルアプリまわりでよく聞くのは、MVVM, MVC, MVP, MVI, Flux, クリーンアーキテクチャーなど</li>
+<li>詳しくは <a href="https://access-company.github.io/techbookfest/techbookfest7/ACCESS_techbook_ebook_20190922.pdf" target="_blank">ACCESS テックブック</a> 第 1 章 クリーンアーキテクチャー p 9 〜 13（ 1.1 〜 1.4 節）を読んでください</li>
 </ul>
 
                                 
@@ -450,10 +483,14 @@ KotlinPlayground('.lang-kotlin');
 
             
                 
-                <a href="exercise3.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Exercise (3)">
+                <a href="null_safe.html" class="navigation navigation-prev " aria-label="Previous page: Null安全">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="tips.html" class="navigation navigation-next " aria-label="Next page: その他豆知識">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -462,7 +499,7 @@ KotlinPlayground('.lang-kotlin');
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Android開発環境の構築","level":"1.17","depth":1,"previous":{"title":"Exercise (3)","level":"1.16","depth":1,"path":"exercise3.md","ref":"./exercise3.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"head-append":{"code":["<script src=\"https://unpkg.com/kotlin-playground@1\"></script>","<script>","document.addEventListener('DOMContentLoaded', function() {","KotlinPlayground('.lang-kotlin');","});","</script>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"android_dev_environment.md","mtime":"2022-03-18T06:05:54.983Z","type":"markdown"},"gitbook":{"version":"3.7.1","time":"2022-04-01T08:04:42.295Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"デザインパターン","level":"1.12","depth":1,"next":{"title":"その他豆知識","level":"1.13","depth":1,"path":"tips.md","ref":"./tips.md","articles":[]},"previous":{"title":"Null安全","level":"1.11","depth":1,"path":"null_safe.md","ref":"./null_safe.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"head-append":{"code":["<script src=\"https://unpkg.com/kotlin-playground@1\"></script>","<script>","document.addEventListener('DOMContentLoaded', function() {","KotlinPlayground('.lang-kotlin');","});","</script>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"design_pattern.md","mtime":"2022-04-01T08:04:16.293Z","type":"markdown"},"gitbook":{"version":"3.7.1","time":"2022-04-01T08:04:42.295Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
