@@ -15,12 +15,12 @@
         },
         "head-append": {
             "code": [
-                "<script src=\"https://unpkg.com/kotlin-playground@1\"></script>",
-                "<script>",
+                "<SCRIPTTAG src=\"https://unpkg.com/kotlin-playground@1\"></SCRIPTTAG>",
+                "<SCRIPTTAG>",
                     "document.addEventListener('DOMContentLoaded', function() {",
                     "KotlinPlayground('.lang-kotlin');",
                 "});",
-                "</script>"
+                "</SCRIPTTAG>"
             ]
         }
     }
