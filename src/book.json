@@ -16,11 +16,7 @@
         "head-append": {
             "code": [
                 "<SCRIPTTAG src=\"https://unpkg.com/kotlin-playground@1\"></SCRIPTTAG>",
-                "<SCRIPTTAG>",
-                    "document.addEventListener('DOMContentLoaded', function() {",
-                    "KotlinPlayground('.lang-kotlin');",
-                "});",
-                "</SCRIPTTAG>"
+                "<SCRIPTTAG src=\"/head-append.js\"></SCRIPTTAG>"
             ]
         }
     }
