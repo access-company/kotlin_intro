@@ -16,7 +16,7 @@
         "head-append": {
             "code": [
                 "<SCRIPTTAG src=\"https://unpkg.com/kotlin-playground@1\"></SCRIPTTAG>",
-                "<SCRIPTTAG src=\"/head-append.js\"></SCRIPTTAG>"
+                "<SCRIPTTAG src=\"./head-append.js\"></SCRIPTTAG>"
             ]
         }
     }
