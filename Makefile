@@ -9,6 +9,7 @@ $(CURDIR)/src/node_modules:
 	cd .. && \
 	rm -rf $(CURDIR)/docs && \
 	mv $(CURDIR)/src/_book $(CURDIR)/docs
+	cp $(CURDIR)/src/*.js $(CURDIR)/docs
 
 commit: gen_commit_msg
 	git add $(CURDIR)/docs
