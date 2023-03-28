@@ -115,7 +115,7 @@ fun main(args: Array<String>) {
 fun main(args: Array<String>) {
     //sampleStart
     // どの引数に値を渡すか、引数の名前を指定できる
-    fun name(first: String, last:String) = println("$first $last")
+    fun name(first: String, last: String) = println("$first $last")
 
     // 名前を指定せずに呼び出すとき
     name("taro", "yamada")  // taro yamada

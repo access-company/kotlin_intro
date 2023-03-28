@@ -238,7 +238,7 @@ fun main(args: Array<String>) {
     //sampleStart
     val s: String? = null
 
-    s ?: "null です！" // null だったら「null です！」を出力
+    println(s ?: "null です！") // null だったら「null です！」を出力
 
     // 以下と同義
     if (s != null) {

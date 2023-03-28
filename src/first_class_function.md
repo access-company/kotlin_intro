@@ -139,9 +139,7 @@ fun main(args: Array<String>) {
     // 一方、ラムダ式を使う場合
 
     // 関数の型 = { 引数リスト -> 関数の実装 } という形
-    val square: (Int) -> Int = { i: Int ->
-        i * i   // 最後に評価された式が返される。return しなくてよい。
-    }
+    val square: (Int) -> Int = { i: Int -> i * i }
 
     println(square)     // (kotlin.Int) -> kotlin.Int
     println(square(3))  // 9
@@ -156,9 +154,7 @@ fun main(args: Array<String>) {
     //sampleStart
     // 「Int を引数にとって Int を返す」を型推論してもらい、
     // 関数の型の記載を省略
-    val square = { i: Int ->
-        i * i
-    }
+    val square = { i: Int -> i * i }
 
     println(square(3))  // 9
     //sampleEnd
@@ -170,9 +166,7 @@ fun main(args: Array<String>) {
     //sampleStart
     // または「Int を引数にとる」を型推論してもらい、
     // 関数の実装における引数の型を省略
-    val square: (Int) -> Int = { i ->
-        i * i
-    }
+    val square: (Int) -> Int = { i -> i * i }
 
     println(square(3))  // 9
     //sampleEnd
@@ -183,9 +177,7 @@ fun main(args: Array<String>) {
 fun main(args: Array<String>) {
     //sampleStart
     // 両方省略するとiの型がわからないので、省略できない(コンパイルエラー)
-    val square = { i ->
-        i * i   // コンパイルエラー
-    }
+    val square = { i -> i * i }
 
     println(square(3)) 
     //sampleEnd
@@ -196,9 +188,7 @@ fun main(args: Array<String>) {
 fun main(args: Array<String>) {
     //sampleStart
     // 引数が一個の場合、「it」と書ける
-    val square: (Int) -> Int = {
-        it * it
-    }
+    val square: (Int) -> Int = { it * it }
 
     println(square(3))  // 9
     //sampleEnd

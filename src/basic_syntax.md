@@ -140,11 +140,14 @@ fun main(args: Array<String>) {
     val str2 = "Hello " + str + " !"    // + を使った連結
     println(str2) // "Hello access !"
 
-    val str3 = "Good evening ${str}!"   // String テンプレートを使った連結
+    val str3 = "Good evening $str!"     // String テンプレートを使った連結
     println(str3) // "Good evening access!
 
-    val str4 = "Good night $str!"       // String テンプレートを使った連結
+    val str4 = "Good night ${str}!"     // String テンプレートを使った連結
     println(str4) // "Good night access!
+
+    val str5 = "1 + 1 = ${1 + 1}"       // String テンプレートを使った計算
+    println(str5) // "1 + 1 = 2"
     //sampleEnd
 }
 ```
@@ -154,29 +157,19 @@ fun main(args: Array<String>) {
 ```kotlin
 fun main(args: Array<String>) {
     //sampleStart
-    // 配列を作るには arrayOfNulls を使う
-    // Int の配列の場合は以下のような書き方
-    val ints = arrayOfNulls<Int>(10)
-
-    // 各要素への値の代入
-    // (再代入も可能)
-    ints[0] = 10
-    ints[1] = 20
-
-    // 中身はこうなる
-    println(ints[0])    // 10
-    println(ints[1])    // 20
-    println(ints[2])    // null
-
-    // 要素数の取得には size プロパティを使う
-    println(ints.size)  // 10
-
-    // arrayOf で書くと型推論される
+    // 配列を作るには arrayOf を使う
+    // 配列の中身の型は推論される
     // 以下は String の配列ということにされる
     val array = arrayOf("access", "company", "com")
     println(array[0])   // "access"
     println(array[1])   // "company"
     println(array[2])   // "com"
+
+    // 配列の要素を後から変更することもできる
+    array[2] = "jp"
+    println(array[2])   // "jp"
+
+    // 配列に後から要素を足したり減らしたりすることはできない
     //sampleEnd
 }
 ```
@@ -197,6 +190,11 @@ fun main(args: Array<String>) {
     // listOf を mutableListOf に変えてみよう
     list[0] = 100   // コンパイルエラー
     println(list[0])
+
+    // MutableList なら要素を足したり減らしたりもできる
+    list.removeFirst()
+    list.add(4)
+    println(list)
     //sampleEnd
 }
 ```
@@ -217,9 +215,8 @@ fun main(args: Array<String>) {
     println(intSet)
 
     // セットは要素の順番を保証しないので、配列みたいな添字での要素アクセスはできない
-    // intSet[2] を intSet.toList()[2] に変えてみよう
-    intSet[2]   // コンパイルエラー
-    println(intSet)
+    // intSet[2] を intSet.toList() に変えてみよう
+    println(intSet[2]) // コンパイルエラー
     //sampleEnd
 }
 ```
@@ -332,8 +329,8 @@ fun main(args: Array<String>) {
     // 値の代入もできる
     val n = 5
     val type = when (n) {
-        is Int    -> "$n is Int"
-        else      -> "$n is not Int"
+        is Int -> "$n is Int"
+        else   -> "$n is not Int"
     }
     println(type)   // 5 is Int
     //sampleEnd
