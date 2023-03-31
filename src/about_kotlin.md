@@ -32,9 +32,9 @@
 ## Java ではなくて Kotlin を使う理由
 
 * Java より記述が簡潔
-  * 型推論、ラムダ式、スマートキャスト、等の言語仕様
+  * 型推論、スマートキャスト、等の言語仕様
+  * Android 向け開発で使える Java の機能は Java 8 あたりまでしかサポートされておらず、それ以降にサポートされた新しい Java の機能は基本的に利用できない
 * Java より安全
   * Null安全、キャスト周りの安全性
-* Kotlin は新しい
-  * Java にはモダンな言語仕様を入れにくい。下位互換をサポートしなければならないという事情
-  * Kotlin は比較的新しいので、いわゆるしがらみが少なく、モダンな言語仕様をサポートしやすい
+* Kotlin はポータブル
+  * [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html) を利用すると、Kotlin で書いた一つのコードを Android と iOS と Web フロントエンドで使い回したりすることができる

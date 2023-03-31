@@ -6,7 +6,7 @@
         <title>基本的な文法 · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 4.0.4">
+        <meta name="generator" content="HonKit 4.0.7">
         
         
         
@@ -641,11 +641,14 @@
     <span class="hljs-keyword">val</span> str2 = <span class="hljs-string">&quot;Hello &quot;</span> + str + <span class="hljs-string">&quot; !&quot;</span>    <span class="hljs-comment">// + を使った連結</span>
     println(str2) <span class="hljs-comment">// &quot;Hello access !&quot;</span>
 
-    <span class="hljs-keyword">val</span> str3 = <span class="hljs-string">&quot;Good evening <span class="hljs-subst">${str}</span>!&quot;</span>   <span class="hljs-comment">// String テンプレートを使った連結</span>
+    <span class="hljs-keyword">val</span> str3 = <span class="hljs-string">&quot;Good evening <span class="hljs-variable">$str</span>!&quot;</span>     <span class="hljs-comment">// String テンプレートを使った連結</span>
     println(str3) <span class="hljs-comment">// &quot;Good evening access!</span>
 
-    <span class="hljs-keyword">val</span> str4 = <span class="hljs-string">&quot;Good night <span class="hljs-variable">$str</span>!&quot;</span>       <span class="hljs-comment">// String テンプレートを使った連結</span>
+    <span class="hljs-keyword">val</span> str4 = <span class="hljs-string">&quot;Good night <span class="hljs-subst">${str}</span>!&quot;</span>     <span class="hljs-comment">// String テンプレートを使った連結</span>
     println(str4) <span class="hljs-comment">// &quot;Good night access!</span>
+
+    <span class="hljs-keyword">val</span> str5 = <span class="hljs-string">&quot;1 + 1 = <span class="hljs-subst">${<span class="hljs-number">1</span> + <span class="hljs-number">1</span>}</span>&quot;</span>       <span class="hljs-comment">// String テンプレートを使った計算</span>
+    println(str5) <span class="hljs-comment">// &quot;1 + 1 = 2&quot;</span>
     <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
@@ -654,29 +657,19 @@
 </ul>
 <pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-comment">//sampleStart</span>
-    <span class="hljs-comment">// 配列を作るには arrayOfNulls を使う</span>
-    <span class="hljs-comment">// Int の配列の場合は以下のような書き方</span>
-    <span class="hljs-keyword">val</span> ints = arrayOfNulls&lt;<span class="hljs-built_in">Int</span>&gt;(<span class="hljs-number">10</span>)
-
-    <span class="hljs-comment">// 各要素への値の代入</span>
-    <span class="hljs-comment">// (再代入も可能)</span>
-    ints[<span class="hljs-number">0</span>] = <span class="hljs-number">10</span>
-    ints[<span class="hljs-number">1</span>] = <span class="hljs-number">20</span>
-
-    <span class="hljs-comment">// 中身はこうなる</span>
-    println(ints[<span class="hljs-number">0</span>])    <span class="hljs-comment">// 10</span>
-    println(ints[<span class="hljs-number">1</span>])    <span class="hljs-comment">// 20</span>
-    println(ints[<span class="hljs-number">2</span>])    <span class="hljs-comment">// null</span>
-
-    <span class="hljs-comment">// 要素数の取得には size プロパティを使う</span>
-    println(ints.size)  <span class="hljs-comment">// 10</span>
-
-    <span class="hljs-comment">// arrayOf で書くと型推論される</span>
+    <span class="hljs-comment">// 配列を作るには arrayOf を使う</span>
+    <span class="hljs-comment">// 配列の中身の型は推論される</span>
     <span class="hljs-comment">// 以下は String の配列ということにされる</span>
     <span class="hljs-keyword">val</span> array = arrayOf(<span class="hljs-string">&quot;access&quot;</span>, <span class="hljs-string">&quot;company&quot;</span>, <span class="hljs-string">&quot;com&quot;</span>)
     println(array[<span class="hljs-number">0</span>])   <span class="hljs-comment">// &quot;access&quot;</span>
     println(array[<span class="hljs-number">1</span>])   <span class="hljs-comment">// &quot;company&quot;</span>
     println(array[<span class="hljs-number">2</span>])   <span class="hljs-comment">// &quot;com&quot;</span>
+
+    <span class="hljs-comment">// 配列の要素を後から変更することもできる</span>
+    array[<span class="hljs-number">2</span>] = <span class="hljs-string">&quot;jp&quot;</span>
+    println(array[<span class="hljs-number">2</span>])   <span class="hljs-comment">// &quot;jp&quot;</span>
+
+    <span class="hljs-comment">// 配列に後から要素を足したり減らしたりすることはできない</span>
     <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
@@ -696,6 +689,11 @@
     <span class="hljs-comment">// listOf を mutableListOf に変えてみよう</span>
     list[<span class="hljs-number">0</span>] = <span class="hljs-number">100</span>   <span class="hljs-comment">// コンパイルエラー</span>
     println(list[<span class="hljs-number">0</span>])
+
+    <span class="hljs-comment">// MutableList なら要素を足したり減らしたりもできる</span>
+    list.removeFirst()
+    list.add(<span class="hljs-number">4</span>)
+    println(list)
     <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
@@ -715,9 +713,8 @@
     println(intSet)
 
     <span class="hljs-comment">// セットは要素の順番を保証しないので、配列みたいな添字での要素アクセスはできない</span>
-    <span class="hljs-comment">// intSet[2] を intSet.toList()[2] に変えてみよう</span>
-    intSet[<span class="hljs-number">2</span>]   <span class="hljs-comment">// コンパイルエラー</span>
-    println(intSet)
+    <span class="hljs-comment">// intSet[2] を intSet.toList() に変えてみよう</span>
+    println(intSet[<span class="hljs-number">2</span>]) <span class="hljs-comment">// コンパイルエラー</span>
     <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
@@ -829,8 +826,8 @@
     <span class="hljs-comment">// 値の代入もできる</span>
     <span class="hljs-keyword">val</span> n = <span class="hljs-number">5</span>
     <span class="hljs-keyword">val</span> type = <span class="hljs-keyword">when</span> (n) {
-        <span class="hljs-keyword">is</span> <span class="hljs-built_in">Int</span>    -&gt; <span class="hljs-string">&quot;<span class="hljs-variable">$n</span> is Int&quot;</span>
-        <span class="hljs-keyword">else</span>      -&gt; <span class="hljs-string">&quot;<span class="hljs-variable">$n</span> is not Int&quot;</span>
+        <span class="hljs-keyword">is</span> <span class="hljs-built_in">Int</span> -&gt; <span class="hljs-string">&quot;<span class="hljs-variable">$n</span> is Int&quot;</span>
+        <span class="hljs-keyword">else</span>   -&gt; <span class="hljs-string">&quot;<span class="hljs-variable">$n</span> is not Int&quot;</span>
     }
     println(type)   <span class="hljs-comment">// 5 is Int</span>
     <span class="hljs-comment">//sampleEnd</span>
@@ -1021,7 +1018,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"基本的な文法","level":"1.3.2","depth":2,"next":{"title":"関数","level":"1.3.3","depth":2,"path":"function.md","ref":"./function.md","articles":[]},"previous":{"title":"Kotlin について","level":"1.3.1","depth":2,"path":"about_kotlin.md","ref":"./about_kotlin.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false,"config":"classic"},"head-append":{"code":["<SCRIPTTAG src=\"https://unpkg.com/kotlin-playground@1\"></SCRIPTTAG>","<SCRIPTTAG src=\"./head-append.js\"></SCRIPTTAG>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"basic_syntax.md","mtime":"2023-03-16T08:13:17.751Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-03-20T22:43:42.243Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"基本的な文法","level":"1.3.2","depth":2,"next":{"title":"関数","level":"1.3.3","depth":2,"path":"function.md","ref":"./function.md","articles":[]},"previous":{"title":"Kotlin について","level":"1.3.1","depth":2,"path":"about_kotlin.md","ref":"./about_kotlin.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false,"config":"classic"},"head-append":{"code":["<SCRIPTTAG src=\"https://unpkg.com/kotlin-playground@1\"></SCRIPTTAG>","<SCRIPTTAG src=\"./head-append.js\"></SCRIPTTAG>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"basic_syntax.md","mtime":"2023-03-28T05:15:02.480Z","type":"markdown"},"gitbook":{"version":"4.0.7","time":"2023-03-28T07:59:48.170Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

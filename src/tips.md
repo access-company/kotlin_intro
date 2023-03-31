@@ -55,7 +55,7 @@ MyApp: print
 
 もし、`debug`があちこちから大量に呼ばれたら…たちまちインスタンスが乱立して、メモリを圧迫し、アプリの動作が重くなるだろう。
 
-それを避けるため、クラスを`object`識別子で定義する。
+それを避けるため、クラスを`object`キーワードで定義する。
 
 ```kotlin
 object Logger {
@@ -79,7 +79,7 @@ fun main(args: Array<String>) {
 
 さて、上記の例だと、`TAG`も`debug`もシングルトンとして生成されるが、時には`TAG`だけに適用したい場合もある。
 
-その場合、`companion object`識別子を使うと、`TAG`を`Logger`クラスに属するシングルトン変数、つまり「定数」にできる。
+その場合、`companion object`キーワードを使うと、`TAG`を`Logger`クラスに属するシングルトン変数、つまり「定数」にできる。
 
 ```kotlin
 class Logger(outputFilePath: String) {
@@ -143,7 +143,7 @@ fun main(args: Array<String>) {
 
 ```kotlin
 enum class Kanto {
-    IBARAGI,
+    IBARAKI,
     TOCHIGI,
     GUNMA,
     SAITAMA,

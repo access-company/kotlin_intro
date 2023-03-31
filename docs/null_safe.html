@@ -6,7 +6,7 @@
         <title>Null安全 · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 4.0.4">
+        <meta name="generator" content="HonKit 4.0.7">
         
         
         
@@ -683,7 +683,7 @@ String ss = Fuga(); <span class="hljs-comment">// 文字列か null を返す関
     <span class="hljs-comment">//sampleStart</span>
     <span class="hljs-keyword">val</span> s: String? = <span class="hljs-literal">null</span>
 
-    s ?: <span class="hljs-string">&quot;null です！&quot;</span> <span class="hljs-comment">// null だったら「null です！」を出力</span>
+    println(s ?: <span class="hljs-string">&quot;null です！&quot;</span>) <span class="hljs-comment">// null だったら「null です！」を出力</span>
 
     <span class="hljs-comment">// 以下と同義</span>
     <span class="hljs-keyword">if</span> (s != <span class="hljs-literal">null</span>) {
@@ -760,7 +760,7 @@ String ss = Fuga(); <span class="hljs-comment">// 文字列か null を返す関
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Null安全","level":"1.3.9","depth":2,"next":{"title":"その他豆知識","level":"1.3.10","depth":2,"path":"tips.md","ref":"./tips.md","articles":[]},"previous":{"title":"ジェネリクス","level":"1.3.8","depth":2,"path":"generics.md","ref":"./generics.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false,"config":"classic"},"head-append":{"code":["<SCRIPTTAG src=\"https://unpkg.com/kotlin-playground@1\"></SCRIPTTAG>","<SCRIPTTAG src=\"./head-append.js\"></SCRIPTTAG>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"null_safe.md","mtime":"2023-03-16T08:13:17.757Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-03-20T22:43:42.243Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Null安全","level":"1.3.9","depth":2,"next":{"title":"その他豆知識","level":"1.3.10","depth":2,"path":"tips.md","ref":"./tips.md","articles":[]},"previous":{"title":"ジェネリクス","level":"1.3.8","depth":2,"path":"generics.md","ref":"./generics.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false,"config":"classic"},"head-append":{"code":["<SCRIPTTAG src=\"https://unpkg.com/kotlin-playground@1\"></SCRIPTTAG>","<SCRIPTTAG src=\"./head-append.js\"></SCRIPTTAG>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"null_safe.md","mtime":"2023-03-28T07:34:01.476Z","type":"markdown"},"gitbook":{"version":"4.0.7","time":"2023-03-28T07:59:48.170Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

@@ -106,6 +106,7 @@ fun main(args: Array<String>) {
                 print("$name (man) ") // 名前の後ろに (man) を表示するようにした
                 return name.length
             }
+
         // bornFrom を Man 用の振る舞いにオーバーライド
         override fun bornFrom() = "mud" // 土から生まれた
 
@@ -121,6 +122,7 @@ fun main(args: Array<String>) {
                 print("$name (woman) ") // 名前の後ろに (woman) を表示するようにした
                 return name.length
             }
+
         // bornFrom を Woman 用の振る舞いにオーバーライド
         override fun bornFrom() = "rib" // 肋骨から生まれた
 
@@ -174,6 +176,7 @@ fun main(args: Array<String>) {
                 print("$name (man) ") // 名前の後ろに (man) を表示するようにした
                 return name.length
             }
+
         // bornFrom を Man 用の振る舞いにオーバーライド
         override fun bornFrom() = "mud" // 土から生まれた
 
@@ -189,6 +192,7 @@ fun main(args: Array<String>) {
                 print("$name (woman) ") // 名前の後ろに (woman) を表示するようにした
                 return name.length
             }
+
         // bornFrom を Woman 用の振る舞いにオーバーライド
         override fun bornFrom() = "rib" // 肋骨から生まれた
 
@@ -222,8 +226,10 @@ fun main(args: Array<String>) {
 ```kotlin
 fun main(args: Array<String>) {
     abstract class Person() {
-        // どこから生まれたかメソッドを抽象メソッドに
-        // abstract の場合、スーパークラスでは実装を書かなくてよい
+        // どこから生まれたかメソッドを抽象メソッドにする。
+        // abstract の場合、スーパークラスでは実装を書かなくてよい。
+        // なお、abstract がついてる場合はオーバーライドすることが前提なので、
+        // open もつけなくて良い
         abstract fun bornFrom(): String
     }
 
@@ -234,8 +240,7 @@ fun main(args: Array<String>) {
     }
 
     class Woman() : Person() {
-        // なお、abstract がついてる場合はオーバーライドすることが前提なので、
-        // スーパークラスの側に open をつけなくて良い
+        // こっちもオーバーライドする
         override fun bornFrom() = "rib"
     }
 
@@ -406,6 +411,8 @@ fun main(args: Array<String>) {
 
 * クラス内部の宣言の場合
   * トップレベルの宣言時に使える 3 種に加えて、`protected` を使うことができる
+  * `private` は同一クラス内からのみアクセス可能
+  * `protected` は `private` に近いが、サブクラスからもアクセス可能
 
 ```kotlin
 //sampleStart
