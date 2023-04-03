@@ -18,4 +18,4 @@
 
 * 閑話
     * [デザインパターン](./design_pattern.md)
-    * TBD
+    * [コミュニケーション技法](./communication_skill.md)
