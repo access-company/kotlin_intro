@@ -112,9 +112,13 @@ fun power(a: Int, n: Int): Long {
 }
 
 fun main(args: Array<String>) {
-    println(power(2.0, 3.0))    // 8.0
-    println(power(4.5, 6.7))    // 23797
-    println(power(-1.0, 2.0))   // inputs must be positive. return 0 -> 0.0
+    println(power(2, 3))        // 8
+    println(power(4, 6))        // 4096
+    println(power(-1, 2))       // inputs must be positive. return 0 -> 0
+
+    // println(power(2.0, 3.0))    // 8.0
+    // println(power(4.5, 6.7))    // 23797
+    // println(power(-1.0, 2.0))   // inputs must be positive. return 0 -> 0.0
 }
 ```
 
