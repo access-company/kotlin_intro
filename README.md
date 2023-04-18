@@ -4,6 +4,10 @@ Kotlin 導入のための資料です。
 GitHub pages を使ってホスティングしています。  
 https://access-company.github.io/kotlin_intro/
 
+## 注意
+
+Public リポジトリなので社内の情報をコミットしないでください。
+
 ## ドキュメントのビルド方法
 
 ### Minimum
