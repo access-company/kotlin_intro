@@ -21,25 +21,23 @@ fun main(args: Array<String>) {
 
 ## n 面のサイコロ
 
-サイコロクラス (Dice クラス) を作るよ！プロパティ、メソッドとして以下を備えるとする。
+サイコロクラス (Dice クラス) にプロパティ、メソッドを使って以下の機能を実装してください
 
-* n 面のサイコロを表す `n: Int` をコンストラクタで取る
 * 「サイコロを振る」メソッド `roll` を備える
-  * `roll` は Int をひとつ返す (返る値は 1 以上 n 以下) メソッド
-* ちなみに 100 回振ると壊れて例外 `Exception("I was broken")` を吐く
-  * 以後、`roll` を呼び出すと例外を吐く
+  * `roll` は Int をひとつ返すメソッド。返る値は 1 以上 `diceFace` 以下。ただし `diceFace` はコンストラクタの引数で与えられた値。
+* 100 回振ると壊れて例外 `Exception("I was broken")` を投げる
+  * 以後、`roll` を呼び出すと例外を投げる
   * 別の Dice インスタンスを作ればまた `roll` できる
 
 ```kotlin
-import java.util.Random
+import kotlin.random.Random
 
 class Dice(private val diceFace: Int) {
     // TODO: class Dice を完成させる
 
     fun roll(): Int {
         // ヒント：以下は、0〜5 までの値がランダムで返る
-        val random = Random()
-        val n = random.nextInt(6) 
+        val n = Random.nextInt(6) 
         return n
     }
 }

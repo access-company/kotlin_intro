@@ -449,28 +449,26 @@
 }
 </code></pre>
 <h2 id="n-面のサイコロ">n 面のサイコロ</h2>
-<p>サイコロクラス (Dice クラス) を作るよ！プロパティ、メソッドとして以下を備えるとする。</p>
+<p>サイコロクラス (Dice クラス) にプロパティ、メソッドを使って以下の機能を実装してください</p>
 <ul>
-<li>n 面のサイコロを表す <code>n: Int</code> をコンストラクタで取る</li>
 <li>「サイコロを振る」メソッド <code>roll</code> を備える<ul>
-<li><code>roll</code> は Int をひとつ返す (返る値は 1 以上 n 以下) メソッド</li>
+<li><code>roll</code> は Int をひとつ返すメソッド。返る値は 1 以上 <code>diceFace</code> 以下。ただし <code>diceFace</code> はコンストラクタの引数で与えられた値。</li>
 </ul>
 </li>
-<li>ちなみに 100 回振ると壊れて例外 <code>Exception(&quot;I was broken&quot;)</code> を吐く<ul>
-<li>以後、<code>roll</code> を呼び出すと例外を吐く</li>
+<li>100 回振ると壊れて例外 <code>Exception(&quot;I was broken&quot;)</code> を投げる<ul>
+<li>以後、<code>roll</code> を呼び出すと例外を投げる</li>
 <li>別の Dice インスタンスを作ればまた <code>roll</code> できる</li>
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-keyword">import</span> java.util.Random
+<pre><code class="lang-kotlin"><span class="hljs-keyword">import</span> kotlin.random.Random
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dice</span></span>(<span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> diceFace: <span class="hljs-built_in">Int</span>) {
     <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> class Dice を完成させる</span>
 
     <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">roll</span><span class="hljs-params">()</span></span>: <span class="hljs-built_in">Int</span> {
         <span class="hljs-comment">// ヒント：以下は、0〜5 までの値がランダムで返る</span>
-        <span class="hljs-keyword">val</span> random = Random()
-        <span class="hljs-keyword">val</span> n = random.nextInt(<span class="hljs-number">6</span>) 
+        <span class="hljs-keyword">val</span> n = Random.nextInt(<span class="hljs-number">6</span>) 
         <span class="hljs-keyword">return</span> n
     }
 }
@@ -575,7 +573,7 @@ Aho Aho Aho Aho Aho Aho Aho Aho Aho 40 41 Aho Aho ...
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Exercise (2)","level":"1.4.2","depth":2,"next":{"title":"Exercise (3)","level":"1.4.3","depth":2,"path":"exercise3.md","ref":"./exercise3.md","articles":[]},"previous":{"title":"Exercise (1)","level":"1.4.1","depth":2,"path":"exercise1.md","ref":"./exercise1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false,"config":"classic"},"head-append":{"code":["<SCRIPTTAG src=\"https://unpkg.com/kotlin-playground@1\"></SCRIPTTAG>","<SCRIPTTAG src=\"./head-append.js\"></SCRIPTTAG>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"exercise2.md","mtime":"2023-03-31T08:46:30.173Z","type":"markdown"},"gitbook":{"version":"4.0.7","time":"2023-04-06T03:23:22.358Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Exercise (2)","level":"1.4.2","depth":2,"next":{"title":"Exercise (3)","level":"1.4.3","depth":2,"path":"exercise3.md","ref":"./exercise3.md","articles":[]},"previous":{"title":"Exercise (1)","level":"1.4.1","depth":2,"path":"exercise1.md","ref":"./exercise1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false,"config":"classic"},"head-append":{"code":["<SCRIPTTAG src=\"https://unpkg.com/kotlin-playground@1\"></SCRIPTTAG>","<SCRIPTTAG src=\"./head-append.js\"></SCRIPTTAG>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"exercise2.md","mtime":"2024-01-17T05:12:56.027Z","type":"markdown"},"gitbook":{"version":"4.0.7","time":"2024-01-17T05:13:01.492Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
