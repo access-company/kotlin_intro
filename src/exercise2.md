@@ -25,8 +25,7 @@ fun main(args: Array<String>) {
 
 * 「サイコロを振る」メソッド `roll` を備える
   * `roll` は Int をひとつ返すメソッド。返る値は 1 以上 `diceFace` 以下。ただし `diceFace` はコンストラクタの引数で与えられた値。
-* 100 回振ると壊れて例外 `Exception("I was broken")` を投げる
-  * 以後、`roll` を呼び出すと例外を投げる
+* 100 回振ると壊れて、101回目以降は例外 `Exception("I was broken")` を投げる
   * 別の Dice インスタンスを作ればまた `roll` できる
 
 ```kotlin
