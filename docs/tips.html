@@ -6,7 +6,7 @@
         <title>その他豆知識 · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 4.0.7">
+        <meta name="generator" content="HonKit 6.0.2">
         
         
         
@@ -28,7 +28,7 @@
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-fontsettings/website.css">
                 
             
         
@@ -454,16 +454,16 @@
 <p>Objectは一言で言えば「シングルトン（Singleton）なクラス」だが、ここでは使用例を見せながら説明する。</p>
 <p><strong>どこからでも呼び出せるログ出力関数</strong>が欲しいとしよう。</p>
 <p>今まで習った内容を使って書くとこうなる。</p>
-<pre><code class="lang-kotlin"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Logger</span> </span>{
-    <span class="hljs-keyword">val</span> TAG = <span class="hljs-string">&quot;MyApp&quot;</span>
+<pre><code class="lang-kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Logger</span> {
+    <span class="hljs-keyword">val</span> TAG = <span class="hljs-string">"MyApp"</span>
     <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">debug</span><span class="hljs-params">(text: <span class="hljs-type">String</span>)</span></span> {
-        println(<span class="hljs-string">&quot;<span class="hljs-variable">$TAG</span>: <span class="hljs-variable">$text</span>&quot;</span>)
+        println(<span class="hljs-string">"<span class="hljs-variable">$TAG</span>: <span class="hljs-variable">$text</span>"</span>)
     }
 }
 
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
-    println(<span class="hljs-string">&quot;Logging to <span class="hljs-subst">${Logger().TAG}</span>.&quot;</span>)
-    Logger().debug(<span class="hljs-string">&quot;print&quot;</span>)
+    println(<span class="hljs-string">"Logging to <span class="hljs-subst">${Logger().TAG}</span>."</span>)
+    Logger().debug(<span class="hljs-string">"print"</span>)
 }
 </code></pre>
 <p>出力結果</p>
@@ -473,15 +473,15 @@ MyApp: print
 <p>もし、<code>debug</code>があちこちから大量に呼ばれたら…たちまちインスタンスが乱立して、メモリを圧迫し、アプリの動作が重くなるだろう。</p>
 <p>それを避けるため、クラスを<code>object</code>キーワードで定義する。</p>
 <pre><code class="lang-kotlin"><span class="hljs-keyword">object</span> Logger {
-    <span class="hljs-keyword">val</span> TAG = <span class="hljs-string">&quot;MyApp&quot;</span>
+    <span class="hljs-keyword">val</span> TAG = <span class="hljs-string">"MyApp"</span>
     <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">debug</span><span class="hljs-params">(text: <span class="hljs-type">String</span>)</span></span> {
-        println(<span class="hljs-string">&quot;<span class="hljs-variable">$TAG</span>: <span class="hljs-variable">$text</span>&quot;</span>)
+        println(<span class="hljs-string">"<span class="hljs-variable">$TAG</span>: <span class="hljs-variable">$text</span>"</span>)
     }
 }
 
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
-    println(<span class="hljs-string">&quot;Logging to <span class="hljs-subst">${Logger.TAG}</span>.&quot;</span>)
-    Logger.debug(<span class="hljs-string">&quot;print&quot;</span>)
+    println(<span class="hljs-string">"Logging to <span class="hljs-subst">${Logger.TAG}</span>."</span>)
+    Logger.debug(<span class="hljs-string">"print"</span>)
 }
 </code></pre>
 <p>こうすると、クラス<code>Logger</code>と変数<code>TAG</code>は<strong>何回呼ばれても常に同じインスタンス</strong>を返す。何度呼ばれても、メモリ圧迫量は変わらない。これがシングルトン。</p>
@@ -489,21 +489,21 @@ MyApp: print
 <h3 id="companion-object">Companion Object</h3>
 <p>さて、上記の例だと、<code>TAG</code>も<code>debug</code>もシングルトンとして生成されるが、時には<code>TAG</code>だけに適用したい場合もある。</p>
 <p>その場合、<code>companion object</code>キーワードを使うと、<code>TAG</code>を<code>Logger</code>クラスに属するシングルトン変数、つまり「定数」にできる。</p>
-<pre><code class="lang-kotlin"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Logger</span></span>(outputFilePath: String) {
+<pre><code class="lang-kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Logger</span>(outputFilePath: String) {
 
     <span class="hljs-keyword">companion</span> <span class="hljs-keyword">object</span> {
-        <span class="hljs-keyword">val</span> TAG = <span class="hljs-string">&quot;MyApp&quot;</span>
+        <span class="hljs-keyword">val</span> TAG = <span class="hljs-string">"MyApp"</span>
     }
 
     <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">debug</span><span class="hljs-params">(text: <span class="hljs-type">String</span>)</span></span> {
         <span class="hljs-comment">// TODO 実際はoutputFilePathにファイル出力するよう作り替える</span>
-        println(<span class="hljs-string">&quot;<span class="hljs-variable">$TAG</span>: <span class="hljs-variable">$text</span>&quot;</span>)
+        println(<span class="hljs-string">"<span class="hljs-variable">$TAG</span>: <span class="hljs-variable">$text</span>"</span>)
     }
 }
 
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
-    println(<span class="hljs-string">&quot;Logging to <span class="hljs-subst">${Logger.TAG}</span>.&quot;</span>)
-    Logger(<span class="hljs-string">&quot;/log.txt&quot;</span>).debug(<span class="hljs-string">&quot;print&quot;</span>)
+    println(<span class="hljs-string">"Logging to <span class="hljs-subst">${Logger.TAG}</span>."</span>)
+    Logger(<span class="hljs-string">"/log.txt"</span>).debug(<span class="hljs-string">"print"</span>)
 }
 </code></pre>
 <p><code>main</code>を見ると、<code>Logger</code>は普通のクラスだが、<code>TAG</code>はシングルトンであることがわかる。</p>
@@ -511,14 +511,14 @@ MyApp: print
 <p>また、Androidでは画面から他画面のデータ渡しでリクエストコードやKey/ValueペアのBundleを使うので、そういうときCompanion Objectはよく使われる。</p>
 <h3 id="余談">余談</h3>
 <p>勘のいい人なら気づいたであろうが、この例の場合、実はクラスを使わず<code>debug()</code>を実装する方法もある。</p>
-<pre><code class="lang-kotlin"><span class="hljs-keyword">val</span> TAG = <span class="hljs-string">&quot;MyApp&quot;</span>
+<pre><code class="lang-kotlin"><span class="hljs-keyword">val</span> TAG = <span class="hljs-string">"MyApp"</span>
 
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">debug</span><span class="hljs-params">(text: <span class="hljs-type">String</span>)</span></span> {
-    println(<span class="hljs-string">&quot;<span class="hljs-variable">$TAG</span>: <span class="hljs-variable">$text</span>&quot;</span>)
+    println(<span class="hljs-string">"<span class="hljs-variable">$TAG</span>: <span class="hljs-variable">$text</span>"</span>)
 }
 
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
-    debug(<span class="hljs-string">&quot;print&quot;</span>)
+    debug(<span class="hljs-string">"print"</span>)
 }
 </code></pre>
 <p>このようにトップレベル関数を使うのが一番シンプルである。</p>
@@ -533,7 +533,7 @@ MyApp: print
 <p>と覚えておこう。</p>
 <h2 id="列挙型">列挙型</h2>
 <p>定数を列挙する場合に便利な書き方。</p>
-<pre><code class="lang-kotlin"><span class="hljs-keyword">enum</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Kanto</span> </span>{
+<pre><code class="lang-kotlin"><span class="hljs-keyword">enum</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Kanto</span> {
     IBARAKI,
     TOCHIGI,
     GUNMA,
@@ -544,18 +544,18 @@ MyApp: print
 }
 
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
-    println(<span class="hljs-string">&quot;Kanto Prefecture List: &quot;</span>)
+    println(<span class="hljs-string">"Kanto Prefecture List: "</span>)
     <span class="hljs-keyword">for</span> (prefecture <span class="hljs-keyword">in</span> Kanto.values()) {
         println(prefecture)
     }
-    println(<span class="hljs-string">&quot;I&apos;m living in <span class="hljs-subst">${Kanto.TOKYO}</span>.&quot;</span>)
+    println(<span class="hljs-string">"I'm living in <span class="hljs-subst">${Kanto.TOKYO}</span>."</span>)
 }
 </code></pre>
 <h2 id="例外">例外</h2>
 <p>異常が起こった場合、関数は例外をスローできる。関数の呼び出し元では、その例外をキャッチして処理できる。</p>
 <pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">validation</span><span class="hljs-params">(percentage: <span class="hljs-type">Int</span>)</span></span> {
     <span class="hljs-keyword">if</span> (percentage !<span class="hljs-keyword">in</span> <span class="hljs-number">0.</span><span class="hljs-number">.100</span>) {
-        <span class="hljs-keyword">throw</span> IllegalArgumentException(<span class="hljs-string">&quot;A percentage must be between 0 and 100 [parameter: <span class="hljs-variable">$percentage</span>]&quot;</span>)
+        <span class="hljs-keyword">throw</span> IllegalArgumentException(<span class="hljs-string">"A percentage must be between 0 and 100 [parameter: <span class="hljs-variable">$percentage</span>]"</span>)
     }
 }
 
@@ -564,7 +564,7 @@ MyApp: print
 }
 </code></pre>
 <p>値が0〜100の範囲に収まっていない場合は、IllegalArgumentExceptionをスローする。</p>
-<pre><code>Exception in thread &quot;main&quot; java.lang.IllegalArgumentException: A percentage must be between 0 and 100 [parameter: 101]
+<pre><code>Exception in thread "main" java.lang.IllegalArgumentException: A percentage must be between 0 and 100 [parameter: 101]
  at FileKt.validation (File.kt:3) 
  at FileKt.main (File.kt:8) 
  at FileKt.main (File.kt:-1)
@@ -632,17 +632,17 @@ MyApp: print
 <ul>
 <li>オブジェクトに対し、プロパティの変更を一括適用する</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Company</span> </span>(
+<pre><code class="lang-kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Company</span> (
     <span class="hljs-keyword">var</span> name: String,
     <span class="hljs-keyword">var</span> numberOfEmployees: <span class="hljs-built_in">Int</span> = <span class="hljs-number">0</span>
 )
 
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
-    <span class="hljs-keyword">val</span> c = Company(<span class="hljs-string">&quot;ACCESS&quot;</span>, <span class="hljs-number">310</span>).apply {
+    <span class="hljs-keyword">val</span> c = Company(<span class="hljs-string">"ACCESS"</span>, <span class="hljs-number">310</span>).apply {
         <span class="hljs-comment">// 今年の新卒社員数を加算</span>
         numberOfEmployees += <span class="hljs-number">15</span>
     }
-    <span class="hljs-keyword">val</span> s = <span class="hljs-string">&quot;<span class="hljs-subst">${c.name}</span> has <span class="hljs-subst">${c.numberOfEmployees}</span> employees.&quot;</span>
+    <span class="hljs-keyword">val</span> s = <span class="hljs-string">"<span class="hljs-subst">${c.name}</span> has <span class="hljs-subst">${c.numberOfEmployees}</span> employees."</span>
     println(s) <span class="hljs-comment">// ACCESS has 325 employees.</span>
 }
 </code></pre>
@@ -659,7 +659,7 @@ MyApp: print
 </ul>
 <pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-comment">//sampleStart</span>
-    <span class="hljs-keyword">val</span> s = <span class="hljs-string">&quot;access&quot;</span>.also { it.toUpperCase() }
+    <span class="hljs-keyword">val</span> s = <span class="hljs-string">"access"</span>.also { it.uppercase() }
     println(s) <span class="hljs-comment">//=&gt; access</span>
     <span class="hljs-comment">//sampleEnd</span>
 }
@@ -669,7 +669,7 @@ MyApp: print
 </ul>
 <pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-comment">//sampleStart</span>
-    <span class="hljs-keyword">val</span> s = <span class="hljs-string">&quot;access&quot;</span>.let { it.toUpperCase() }
+    <span class="hljs-keyword">val</span> s = <span class="hljs-string">"access"</span>.let { it.uppercase() }
     println(s) <span class="hljs-comment">//=&gt; ACCESS</span>
     <span class="hljs-comment">//sampleEnd</span>
 }
@@ -683,13 +683,13 @@ MyApp: print
 </li>
 </ul>
 <pre><code class="lang-kotlin"><span class="hljs-keyword">val</span> greetMessage: String <span class="hljs-keyword">by</span> lazy {
-    println(<span class="hljs-string">&quot;First time!&quot;</span>)
-    <span class="hljs-string">&quot;Hello!&quot;</span>
+    println(<span class="hljs-string">"First time!"</span>)
+    <span class="hljs-string">"Hello!"</span>
 }
 
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
-    println(greetMessage) <span class="hljs-comment">// &quot;First time!\nHello!&quot;</span>
-    println(greetMessage) <span class="hljs-comment">// &quot;Hello!&quot;</span>
+    println(greetMessage) <span class="hljs-comment">// "First time!\nHello!"</span>
+    println(greetMessage) <span class="hljs-comment">// "Hello!"</span>
 }
 </code></pre>
 <ul>
@@ -737,7 +737,7 @@ MyApp: print
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"その他豆知識","level":"1.3.10","depth":2,"next":{"title":"Exercise","level":"1.4","depth":1,"ref":"","articles":[{"title":"Exercise (1)","level":"1.4.1","depth":2,"path":"exercise1.md","ref":"./exercise1.md","articles":[]},{"title":"Exercise (2)","level":"1.4.2","depth":2,"path":"exercise2.md","ref":"./exercise2.md","articles":[]},{"title":"Exercise (3)","level":"1.4.3","depth":2,"path":"exercise3.md","ref":"./exercise3.md","articles":[]}]},"previous":{"title":"Null安全","level":"1.3.9","depth":2,"path":"null_safe.md","ref":"./null_safe.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false,"config":"classic"},"head-append":{"code":["<SCRIPTTAG src=\"https://unpkg.com/kotlin-playground@1\"></SCRIPTTAG>","<SCRIPTTAG src=\"./head-append.js\"></SCRIPTTAG>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"tips.md","mtime":"2023-03-31T08:46:30.174Z","type":"markdown"},"gitbook":{"version":"4.0.7","time":"2024-01-18T05:48:19.374Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"その他豆知識","level":"1.3.10","depth":2,"next":{"title":"Exercise","level":"1.4","depth":1,"ref":"","articles":[{"title":"Exercise (1)","level":"1.4.1","depth":2,"path":"exercise1.md","ref":"./exercise1.md","articles":[]},{"title":"Exercise (2)","level":"1.4.2","depth":2,"path":"exercise2.md","ref":"./exercise2.md","articles":[]},{"title":"Exercise (3)","level":"1.4.3","depth":2,"path":"exercise3.md","ref":"./exercise3.md","articles":[]}]},"previous":{"title":"Null安全","level":"1.3.9","depth":2,"path":"null_safe.md","ref":"./null_safe.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false,"config":"classic"},"head-append":{"code":["<SCRIPTTAG src=\"https://unpkg.com/kotlin-playground@1\"></SCRIPTTAG>","<SCRIPTTAG src=\"./head-append.js\"></SCRIPTTAG>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"tips.md","mtime":"2025-04-01T06:12:07.000Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-04-01T07:22:13.334Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -799,7 +799,7 @@ MyApp: print
         
     
         
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
         
     
 

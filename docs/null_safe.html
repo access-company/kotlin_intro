@@ -6,7 +6,7 @@
         <title>Null安全 · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 4.0.7">
+        <meta name="generator" content="HonKit 6.0.2">
         
         
         
@@ -28,7 +28,7 @@
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-fontsettings/website.css">
                 
             
         
@@ -446,7 +446,7 @@
 </ul>
 <h2 id="null-って何よ">null って何よ</h2>
 <ul>
-<li><code>null</code> そのものの意味は、&quot;空&quot; とか &quot;無&quot; とか。ドイツ語らしい。</li>
+<li><code>null</code> そのものの意味は、"空" とか "無" とか。ドイツ語らしい。</li>
 <li>変数に <code>null</code> を入れると、その変数はどこも参照していない (<code>null</code> を参照している) 状態になる</li>
 <li><p><code>null</code> を参照しているオブジェクトのメソッド呼び出しは例外 (<code>NullPointerException</code>) を発生させる</p>
 <ul>
@@ -460,13 +460,13 @@
 </li>
 </ul>
 <div><p class="code-filename">Java</p></div>
-<pre><code class="lang-java">String s = <span class="hljs-keyword">null</span>; <span class="hljs-comment">// null を入れる</span>
+<pre><code class="lang-java"><span class="hljs-type">String</span> <span class="hljs-variable">s</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>; <span class="hljs-comment">// null を入れる</span>
 s.toUpperCase(); <span class="hljs-comment">// NullPointerException 発生</span>
 </code></pre>
 <h2 id="従来の-null-との戦い">従来の null との戦い</h2>
 <ul>
 <li>NullPointerException と null チェック<ul>
-<li>NullPointerException が起きないように、<br>変数を参照する前に変数が <code>null</code> でないかを確認する必要が生じることがしばしばある</li>
+<li>NullPointerException が起きないように、<br></br>変数を参照する前に変数が <code>null</code> でないかを確認する必要が生じることがしばしばある</li>
 <li>実はきっちり対処しようとするとそれなりに手間</li>
 </ul>
 </li>
@@ -474,8 +474,8 @@ s.toUpperCase(); <span class="hljs-comment">// NullPointerException 発生</span
 <div><p class="code-filename">Java</p></div>
 <pre><code class="lang-java"><span class="hljs-comment">// 上述のコード例における NullPointerException を回避する</span>
 
-String s = <span class="hljs-keyword">null</span>;
-<span class="hljs-keyword">if</span> (s != <span class="hljs-keyword">null</span>) { <span class="hljs-comment">// null じゃないことを確認する</span>
+<span class="hljs-type">String</span> <span class="hljs-variable">s</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;
+<span class="hljs-keyword">if</span> (s != <span class="hljs-literal">null</span>) { <span class="hljs-comment">// null じゃないことを確認する</span>
     s.toUpperCase();
 }
 </code></pre>
@@ -488,10 +488,10 @@ String s = <span class="hljs-keyword">null</span>;
 </li>
 </ul>
 <div><p class="code-filename">Java</p></div>
-<pre><code class="lang-java">String s = <span class="hljs-string">&quot;hoge&quot;</span>;
+<pre><code class="lang-java"><span class="hljs-type">String</span> <span class="hljs-variable">s</span> <span class="hljs-operator">=</span> <span class="hljs-string">"hoge"</span>;
 <span class="hljs-comment">// s は明らかに null じゃないのでチェックしないで良さそう</span>
 
-String ss = Fuga(); <span class="hljs-comment">// 文字列か null を返す関数だとしたら</span>
+<span class="hljs-type">String</span> <span class="hljs-variable">ss</span> <span class="hljs-operator">=</span> Fuga(); <span class="hljs-comment">// 文字列か null を返す関数だとしたら</span>
 <span class="hljs-comment">// ss は要チェック</span>
 </code></pre>
 <ul>
@@ -513,14 +513,14 @@ String ss = Fuga(); <span class="hljs-comment">// 文字列か null を返す関
 <div><p class="code-filename">Java</p></div>
 <pre><code class="lang-java"><span class="hljs-comment">// アノテーションによって本メソッドは null を返さないことを表明する</span>
 <span class="hljs-meta">@NonNull</span>
-<span class="hljs-function">String <span class="hljs-title">Fuga</span><span class="hljs-params">()</span> </span>{
+String <span class="hljs-title function_">Fuga</span><span class="hljs-params">()</span> {
     <span class="hljs-comment">// ...</span>
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>; <span class="hljs-comment">// しかし null は返すことはできてしまう (コンパイルエラーではない)</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>; <span class="hljs-comment">// しかし null は返すことはできてしまう (コンパイルエラーではない)</span>
 }
 
 <span class="hljs-comment">// null になりうることも表明できる</span>
 <span class="hljs-meta">@Nullable</span>
-<span class="hljs-function">String <span class="hljs-title">Piyo</span><span class="hljs-params">()</span> </span>{
+String <span class="hljs-title function_">Piyo</span><span class="hljs-params">()</span> {
     <span class="hljs-comment">// ...</span>
 }
 </code></pre>
@@ -550,14 +550,14 @@ String ss = Fuga(); <span class="hljs-comment">// 文字列か null を返す関
     <span class="hljs-comment">// ただし、「null になりえる」の状態のままではメソッド、プロパティの呼び出しができない</span>
     <span class="hljs-comment">// error: only safe (?.) or non-null asserted (!!.) calls are</span>
     <span class="hljs-comment">// allowed on a nullable receiver of type String?</span>
-    println(s.toUpperCase())
+    println(s.uppercase())
 
     <span class="hljs-comment">// たとえ値が入っていても同様</span>
-    <span class="hljs-keyword">val</span> ss: String? = <span class="hljs-string">&quot;hoge&quot;</span>
+    <span class="hljs-keyword">val</span> ss: String? = <span class="hljs-string">"hoge"</span>
 
     <span class="hljs-comment">// error: only safe (?.) or non-null asserted (!!.) calls are</span>
     <span class="hljs-comment">// allowed on a nullable receiver of type String?</span>
-    println(ss.toUpperCase())
+    println(ss.uppercase())
     <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
@@ -573,10 +573,10 @@ String ss = Fuga(); <span class="hljs-comment">// 文字列か null を返す関
     <span class="hljs-comment">//sampleStart</span>
     <span class="hljs-comment">// スマートキャストを使った「null になりえる」から「null になりえない」への変換</span>
 
-    <span class="hljs-keyword">val</span> s: String? = <span class="hljs-string">&quot;hoge&quot;</span> <span class="hljs-comment">// 「null になりえる」状態</span>
+    <span class="hljs-keyword">val</span> s: String? = <span class="hljs-string">"hoge"</span> <span class="hljs-comment">// 「null になりえる」状態</span>
 
     <span class="hljs-keyword">if</span> (s != <span class="hljs-literal">null</span>) {  <span class="hljs-comment">// null チェックすることで s は「null になりえない」になる</span>
-        println(s.toUpperCase())  <span class="hljs-comment">// メソッドが呼び出せる</span>
+        println(s.uppercase())  <span class="hljs-comment">// メソッドが呼び出せる</span>
     }
     <span class="hljs-comment">//sampleEnd</span>
 }
@@ -590,16 +590,16 @@ String ss = Fuga(); <span class="hljs-comment">// 文字列か null を返す関
 <pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-comment">//sampleStart</span>
     <span class="hljs-comment">// ? をつけると「null になりえる」型</span>
-    <span class="hljs-keyword">val</span> s: String? = <span class="hljs-string">&quot;hoge&quot;</span>
+    <span class="hljs-keyword">val</span> s: String? = <span class="hljs-string">"hoge"</span>
 
     <span class="hljs-comment">// 通常、このままでは s のメソッドを呼べないが、</span>
     <span class="hljs-comment">// ? を補うことで呼び出せる</span>
-    <span class="hljs-keyword">val</span> u = s?.toUpperCase()
+    <span class="hljs-keyword">val</span> u = s?.uppercase()
     println(u)
 
     <span class="hljs-comment">// 上記は以下と同じ処理</span>
     <span class="hljs-keyword">val</span> up = <span class="hljs-keyword">if</span> (s != <span class="hljs-literal">null</span>) {
-        s.toUpperCase()
+        s.uppercase()
     } <span class="hljs-keyword">else</span> {
         <span class="hljs-literal">null</span>
     }
@@ -614,10 +614,10 @@ String ss = Fuga(); <span class="hljs-comment">// 文字列か null を返す関
     <span class="hljs-comment">//sampleStart</span>
     <span class="hljs-comment">// 以下の関数の引数の型は「null になりえない」という記述</span>
     <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">greet</span><span class="hljs-params">(name: <span class="hljs-type">String</span>)</span></span> {
-        println(<span class="hljs-string">&quot;hello, <span class="hljs-variable">$name</span>!&quot;</span>)
+        println(<span class="hljs-string">"hello, <span class="hljs-variable">$name</span>!"</span>)
     }
 
-    <span class="hljs-keyword">val</span> s: String? = <span class="hljs-string">&quot;hoge&quot;</span>
+    <span class="hljs-keyword">val</span> s: String? = <span class="hljs-string">"hoge"</span>
     greet(s)  <span class="hljs-comment">// コンパイルエラー</span>
 
     <span class="hljs-keyword">if</span> (s != <span class="hljs-literal">null</span>) {
@@ -633,12 +633,12 @@ String ss = Fuga(); <span class="hljs-comment">// 文字列か null を返す関
 </li>
 </ul>
 <pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">greet</span><span class="hljs-params">(name: <span class="hljs-type">String</span>)</span></span> {
-    println(<span class="hljs-string">&quot;hello, <span class="hljs-variable">$name</span>!&quot;</span>)
+    println(<span class="hljs-string">"hello, <span class="hljs-variable">$name</span>!"</span>)
 }
 
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-comment">//sampleStart</span>
-    <span class="hljs-keyword">val</span> s: String? = <span class="hljs-string">&quot;hoge&quot;</span>
+    <span class="hljs-keyword">val</span> s: String? = <span class="hljs-string">"hoge"</span>
 
     <span class="hljs-comment">// コンパイル OK</span>
     <span class="hljs-comment">// s が null ならラムダ式は呼び出されない</span>
@@ -657,22 +657,22 @@ String ss = Fuga(); <span class="hljs-comment">// 文字列か null を返す関
 </ul>
 <pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-comment">//sampleStart</span>
-    <span class="hljs-keyword">val</span> s: String? = <span class="hljs-string">&quot;hoge&quot;</span>
-    println(s!!.toUpperCase())  <span class="hljs-comment">// コンパイルOK、実行も可能</span>
+    <span class="hljs-keyword">val</span> s: String? = <span class="hljs-string">"hoge"</span>
+    println(s!!.uppercase())  <span class="hljs-comment">// コンパイルOK、実行も可能</span>
     <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
 <pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-comment">//sampleStart</span>
     <span class="hljs-keyword">val</span> s: String? = <span class="hljs-literal">null</span>
-    println(s!!.toUpperCase())  <span class="hljs-comment">// コンパイルOK、だが実行時に例外 (NullPointerException) を吐く</span>
+    println(s!!.uppercase())  <span class="hljs-comment">// コンパイルOK、だが実行時に例外 (NullPointerException) を吐く</span>
     <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
 <ul>
 <li>エルビス演算子<ul>
 <li>null のときに返す値を指定できる</li>
-<li>ちなみに三項演算子（<code>a &gt; 0 ? &quot;1以上&quot; : &quot;0以下&quot;</code>）とは別物<ul>
+<li>ちなみに三項演算子（<code>a &gt; 0 ? "1以上" : "0以下"</code>）とは別物<ul>
 <li>三項の方はKotlinでは使えない</li>
 </ul>
 </li>
@@ -683,13 +683,13 @@ String ss = Fuga(); <span class="hljs-comment">// 文字列か null を返す関
     <span class="hljs-comment">//sampleStart</span>
     <span class="hljs-keyword">val</span> s: String? = <span class="hljs-literal">null</span>
 
-    println(s ?: <span class="hljs-string">&quot;null です！&quot;</span>) <span class="hljs-comment">// null だったら「null です！」を出力</span>
+    println(s ?: <span class="hljs-string">"null です！"</span>) <span class="hljs-comment">// null だったら「null です！」を出力</span>
 
     <span class="hljs-comment">// 以下と同義</span>
     <span class="hljs-keyword">if</span> (s != <span class="hljs-literal">null</span>) {
         println(s)
     } <span class="hljs-keyword">else</span> {
-        println(<span class="hljs-string">&quot;null です！&quot;</span>)
+        println(<span class="hljs-string">"null です！"</span>)
     }
     <span class="hljs-comment">//sampleEnd</span>
 }
@@ -703,16 +703,16 @@ String ss = Fuga(); <span class="hljs-comment">// 文字列か null を返す関
 </ul>
 <pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-comment">//sampleStart</span>
-    <span class="hljs-keyword">val</span> a: Any = <span class="hljs-string">&quot;string&quot;</span> <span class="hljs-comment">// String を Any に入れる</span>
-    println(a <span class="hljs-keyword">as</span> String) <span class="hljs-comment">// String へのキャストは OK (&quot;string&quot; が表示される)</span>
+    <span class="hljs-keyword">val</span> a: Any = <span class="hljs-string">"string"</span> <span class="hljs-comment">// String を Any に入れる</span>
+    println(a <span class="hljs-keyword">as</span> String) <span class="hljs-comment">// String へのキャストは OK ("string" が表示される)</span>
     println(a <span class="hljs-keyword">as</span> <span class="hljs-built_in">Int</span>) <span class="hljs-comment">// java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer</span>
     <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
 <pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-comment">//sampleStart</span>
-    <span class="hljs-keyword">val</span> a: Any = <span class="hljs-string">&quot;string&quot;</span> <span class="hljs-comment">// String を Any に入れる</span>
-    println(a <span class="hljs-keyword">as</span>? String) <span class="hljs-comment">// String へのキャストは OK (&quot;string&quot; が表示される)</span>
+    <span class="hljs-keyword">val</span> a: Any = <span class="hljs-string">"string"</span> <span class="hljs-comment">// String を Any に入れる</span>
+    println(a <span class="hljs-keyword">as</span>? String) <span class="hljs-comment">// String へのキャストは OK ("string" が表示される)</span>
     println(a <span class="hljs-keyword">as</span>? <span class="hljs-built_in">Int</span>) <span class="hljs-comment">// null が表示される</span>
     <span class="hljs-comment">//sampleEnd</span>
 }
@@ -760,7 +760,7 @@ String ss = Fuga(); <span class="hljs-comment">// 文字列か null を返す関
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Null安全","level":"1.3.9","depth":2,"next":{"title":"その他豆知識","level":"1.3.10","depth":2,"path":"tips.md","ref":"./tips.md","articles":[]},"previous":{"title":"ジェネリクス","level":"1.3.8","depth":2,"path":"generics.md","ref":"./generics.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false,"config":"classic"},"head-append":{"code":["<SCRIPTTAG src=\"https://unpkg.com/kotlin-playground@1\"></SCRIPTTAG>","<SCRIPTTAG src=\"./head-append.js\"></SCRIPTTAG>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"null_safe.md","mtime":"2023-03-31T08:46:30.174Z","type":"markdown"},"gitbook":{"version":"4.0.7","time":"2024-01-18T05:48:19.374Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Null安全","level":"1.3.9","depth":2,"next":{"title":"その他豆知識","level":"1.3.10","depth":2,"path":"tips.md","ref":"./tips.md","articles":[]},"previous":{"title":"ジェネリクス","level":"1.3.8","depth":2,"path":"generics.md","ref":"./generics.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false,"config":"classic"},"head-append":{"code":["<SCRIPTTAG src=\"https://unpkg.com/kotlin-playground@1\"></SCRIPTTAG>","<SCRIPTTAG src=\"./head-append.js\"></SCRIPTTAG>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"null_safe.md","mtime":"2025-04-01T07:15:42.000Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-04-01T07:22:13.334Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -822,7 +822,7 @@ String ss = Fuga(); <span class="hljs-comment">// 文字列か null を返す関
         
     
         
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
         
     
 

@@ -6,7 +6,7 @@
         <title>Exercise (2) · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 4.0.7">
+        <meta name="generator" content="HonKit 6.0.2">
         
         
         
@@ -28,7 +28,7 @@
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-fontsettings/website.css">
                 
             
         
@@ -455,14 +455,14 @@
 <li><code>roll</code> は Int をひとつ返すメソッド。返る値は 1 以上 <code>diceFace</code> 以下。ただし <code>diceFace</code> はコンストラクタの引数で与えられた値。</li>
 </ul>
 </li>
-<li>100 回振ると壊れて、101回目以降は例外 <code>Exception(&quot;I was broken&quot;)</code> を投げる<ul>
+<li>100 回振ると壊れて、101回目以降は例外 <code>Exception("I was broken")</code> を投げる<ul>
 <li>別の Dice インスタンスを作ればまた <code>roll</code> できる</li>
 </ul>
 </li>
 </ul>
 <pre><code class="lang-kotlin"><span class="hljs-keyword">import</span> kotlin.random.Random
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dice</span></span>(<span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> diceFace: <span class="hljs-built_in">Int</span>) {
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Dice</span>(<span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> diceFace: <span class="hljs-built_in">Int</span>) {
     <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> class Dice を完成させる</span>
 
     <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">roll</span><span class="hljs-params">()</span></span>: <span class="hljs-built_in">Int</span> {
@@ -482,7 +482,7 @@
 </code></pre>
 <h2 id="呼び出した回数をカウントする">呼び出した回数をカウントする</h2>
 <p>カスタムセッターを使って、何度呼び出されたかをカウントしてみよう！</p>
-<pre><code class="lang-kotlin"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyCustomClass</span> </span>{
+<pre><code class="lang-kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyCustomClass</span> {
     <span class="hljs-keyword">var</span> counter: <span class="hljs-built_in">Int</span> = <span class="hljs-number">0</span>
     <span class="hljs-keyword">var</span> propertyWithCounter: <span class="hljs-built_in">Int</span> = <span class="hljs-number">0</span>
         <span class="hljs-comment">/* <span class="hljs-doctag">TODO:</span> ここにカスタムセッターを書く */</span>
@@ -510,7 +510,7 @@
 <li>内部カウンターが「3の倍数と3が付く数字のとき」、<code>next</code> は <code>Aho</code> を返す</li>
 <li>それ以外のときは、カウンターの値を文字列にしたものをそのまま返す</li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NabeAtsu</span> </span>{
+<pre><code class="lang-kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">NabeAtsu</span> {
     <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> 実装する</span>
 
     <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">next</span><span class="hljs-params">()</span></span>: String {
@@ -572,7 +572,7 @@ Aho Aho Aho Aho Aho Aho Aho Aho Aho 40 41 Aho Aho ...
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Exercise (2)","level":"1.4.2","depth":2,"next":{"title":"Exercise (3)","level":"1.4.3","depth":2,"path":"exercise3.md","ref":"./exercise3.md","articles":[]},"previous":{"title":"Exercise (1)","level":"1.4.1","depth":2,"path":"exercise1.md","ref":"./exercise1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false,"config":"classic"},"head-append":{"code":["<SCRIPTTAG src=\"https://unpkg.com/kotlin-playground@1\"></SCRIPTTAG>","<SCRIPTTAG src=\"./head-append.js\"></SCRIPTTAG>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"exercise2.md","mtime":"2024-01-18T05:44:15.516Z","type":"markdown"},"gitbook":{"version":"4.0.7","time":"2024-01-18T05:48:19.374Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Exercise (2)","level":"1.4.2","depth":2,"next":{"title":"Exercise (3)","level":"1.4.3","depth":2,"path":"exercise3.md","ref":"./exercise3.md","articles":[]},"previous":{"title":"Exercise (1)","level":"1.4.1","depth":2,"path":"exercise1.md","ref":"./exercise1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false,"config":"classic"},"head-append":{"code":["<SCRIPTTAG src=\"https://unpkg.com/kotlin-playground@1\"></SCRIPTTAG>","<SCRIPTTAG src=\"./head-append.js\"></SCRIPTTAG>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"exercise2.md","mtime":"2025-04-01T03:10:28.000Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-04-01T07:22:13.334Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -634,7 +634,7 @@ Aho Aho Aho Aho Aho Aho Aho Aho Aho 40 41 Aho Aho ...
         
     
         
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
         
     
 
