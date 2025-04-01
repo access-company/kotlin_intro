@@ -109,14 +109,14 @@ fun main(args: Array<String>) {
     // ただし、「null になりえる」の状態のままではメソッド、プロパティの呼び出しができない
     // error: only safe (?.) or non-null asserted (!!.) calls are
     // allowed on a nullable receiver of type String?
-    println(s.toUpperCase())
+    println(s.uppercase())
 
     // たとえ値が入っていても同様
     val ss: String? = "hoge"
 
     // error: only safe (?.) or non-null asserted (!!.) calls are
     // allowed on a nullable receiver of type String?
-    println(ss.toUpperCase())
+    println(ss.uppercase())
     //sampleEnd
 }
 ```
@@ -134,7 +134,7 @@ fun main(args: Array<String>) {
     val s: String? = "hoge" // 「null になりえる」状態
 
     if (s != null) {  // null チェックすることで s は「null になりえない」になる
-        println(s.toUpperCase())  // メソッドが呼び出せる
+        println(s.uppercase())  // メソッドが呼び出せる
     }
     //sampleEnd
 }
@@ -151,12 +151,12 @@ fun main(args: Array<String>) {
 
     // 通常、このままでは s のメソッドを呼べないが、
     // ? を補うことで呼び出せる
-    val u = s?.toUpperCase()
+    val u = s?.uppercase()
     println(u)
 
     // 上記は以下と同じ処理
     val up = if (s != null) {
-        s.toUpperCase()
+        s.uppercase()
     } else {
         null
     }
@@ -214,7 +214,7 @@ fun main(args: Array<String>) {
 fun main(args: Array<String>) {
     //sampleStart
     val s: String? = "hoge"
-    println(s!!.toUpperCase())  // コンパイルOK、実行も可能
+    println(s!!.uppercase())  // コンパイルOK、実行も可能
     //sampleEnd
 }
 ```
@@ -223,7 +223,7 @@ fun main(args: Array<String>) {
 fun main(args: Array<String>) {
     //sampleStart
     val s: String? = null
-    println(s!!.toUpperCase())  // コンパイルOK、だが実行時に例外 (NullPointerException) を吐く
+    println(s!!.uppercase())  // コンパイルOK、だが実行時に例外 (NullPointerException) を吐く
     //sampleEnd
 }
 ```

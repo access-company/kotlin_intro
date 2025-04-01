@@ -280,7 +280,7 @@ fun main(args: Array<String>) {
 ```kotlin
 fun main(args: Array<String>) {
     //sampleStart
-    val s = "access".also { it.toUpperCase() }
+    val s = "access".also { it.uppercase() }
     println(s) //=> access
     //sampleEnd
 }
@@ -291,7 +291,7 @@ fun main(args: Array<String>) {
 ```kotlin
 fun main(args: Array<String>) {
     //sampleStart
-    val s = "access".let { it.toUpperCase() }
+    val s = "access".let { it.uppercase() }
     println(s) //=> ACCESS
     //sampleEnd
 }
