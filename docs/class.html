@@ -6,7 +6,7 @@
         <title>クラス · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 4.0.7">
+        <meta name="generator" content="HonKit 6.0.2">
         
         
         
@@ -28,7 +28,7 @@
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-fontsettings/website.css">
                 
             
         
@@ -472,7 +472,7 @@
 <ul>
 <li>機能が多いので、収支履歴機能、残高機能、口座機能、と機能別に設計するのが望ましい</li>
 </ul>
-<p><img src="assets/images/class_sample.png"></p>
+<p><img src="assets/images/class_sample.png"></img></p>
 <ul>
 <li>収支履歴クラス、残高クラス、口座クラス、さらにユーザー情報クラスと分割<ul>
 <li>それぞれに必要なデータ(変数)と処理(関数)を持たせる。データだけのクラス、処理だけのクラスもあり得る</li>
@@ -499,15 +499,15 @@
 <pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-comment">//sampleStart</span>
     <span class="hljs-comment">// ヒトを表すクラス</span>
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>{
+    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span> {
         <span class="hljs-comment">// プロパティ (名前)</span>
-        <span class="hljs-keyword">var</span> name: String = <span class="hljs-string">&quot;&quot;</span>
+        <span class="hljs-keyword">var</span> name: String = <span class="hljs-string">""</span>
 
         <span class="hljs-comment">// プロパティ (年齢、カスタムセッター付き)</span>
         <span class="hljs-keyword">var</span> age: <span class="hljs-built_in">Int</span> = <span class="hljs-number">0</span>
             <span class="hljs-keyword">set</span>(i) =
                 <span class="hljs-keyword">if</span> (i &lt; <span class="hljs-number">0</span>) {
-                    println(<span class="hljs-string">&quot;invalid argument. only positive value can be specified to age property.&quot;</span>)
+                    println(<span class="hljs-string">"invalid argument. only positive value can be specified to age property."</span>)
                     <span class="hljs-comment">// field という変数で代入する。age = 0 とやると…？</span>
                     field = <span class="hljs-number">0</span>
                 } <span class="hljs-keyword">else</span> {
@@ -535,7 +535,7 @@
     <span class="hljs-keyword">val</span> pankona = Person()
 
     <span class="hljs-comment">// プロパティに値をセット</span>
-    pankona.name = <span class="hljs-string">&quot;yosuke akatsuka&quot;</span>
+    pankona.name = <span class="hljs-string">"yosuke akatsuka"</span>
     pankona.age  = <span class="hljs-number">37</span>
 
     <span class="hljs-comment">// プロパティの値を参照する</span>
@@ -545,9 +545,9 @@
 
     <span class="hljs-comment">// メソッドの呼び出し</span>
     <span class="hljs-keyword">if</span> (pankona.isAdult()) {
-        println(<span class="hljs-string">&quot;pankona belongs to adult team&quot;</span>)
+        println(<span class="hljs-string">"pankona belongs to adult team"</span>)
     } <span class="hljs-keyword">else</span> {
-        println(<span class="hljs-string">&quot;pankona belongs to young team&quot;</span>)
+        println(<span class="hljs-string">"pankona belongs to young team"</span>)
     }
     <span class="hljs-comment">//sampleEnd</span>
 }
@@ -564,9 +564,9 @@
 <span class="hljs-comment">// ヒトを表すクラス (再掲)</span>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-comment">//sampleStart</span>
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>{
+    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span> {
         <span class="hljs-comment">// これらのプロパティはバッキングフィールドを持つ</span>
-        <span class="hljs-keyword">var</span> name: String = <span class="hljs-string">&quot;&quot;</span>
+        <span class="hljs-keyword">var</span> name: String = <span class="hljs-string">""</span>
         <span class="hljs-keyword">var</span> age: <span class="hljs-built_in">Int</span> = <span class="hljs-number">0</span>
 
         <span class="hljs-comment">// カスタムゲッターを設定</span>
@@ -576,7 +576,7 @@
     }
 
     <span class="hljs-keyword">val</span> pankona = Person()
-    pankona.name = <span class="hljs-string">&quot;yosuke akatsuka&quot;</span>
+    pankona.name = <span class="hljs-string">"yosuke akatsuka"</span>
     pankona.age  = <span class="hljs-number">37</span>
     println(pankona.name)
     println(pankona.age)
@@ -598,7 +598,7 @@
 <pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-comment">//sampleStart</span>
     <span class="hljs-comment">// コンパイルが通らないヒトを表すクラス</span>
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>{
+    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span> {
         <span class="hljs-comment">// これらのプロパティはバッキングフィールドを持つ</span>
         <span class="hljs-comment">// そのため、以下のように宣言時に初期化をしないとコンパイルエラーになる</span>
         <span class="hljs-keyword">var</span> name: String  <span class="hljs-comment">// コンパイルエラー！</span>
@@ -606,7 +606,7 @@
     }
 
     <span class="hljs-keyword">val</span> pankona = Person()
-    pankona.name = <span class="hljs-string">&quot;yosuke akatsuka&quot;</span>
+    pankona.name = <span class="hljs-string">"yosuke akatsuka"</span>
     pankona.age  = <span class="hljs-number">37</span>
     println(pankona.name)
     println(pankona.age)
@@ -616,7 +616,7 @@
 <pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-comment">//sampleStart</span>
     <span class="hljs-comment">// lateinit を使ってコンパイルが通るヒトを表すクラス</span>
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>{
+    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span> {
         <span class="hljs-comment">// lateinit を使うと、宣言時に初期化しなくて良い</span>
         <span class="hljs-keyword">lateinit</span> <span class="hljs-keyword">var</span> name: String
     }
@@ -654,15 +654,15 @@
 <pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-comment">//sampleStart</span>
     <span class="hljs-comment">// ヒトを表すクラス (再掲)</span>
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>{
-        <span class="hljs-keyword">var</span> name: String = <span class="hljs-string">&quot;&quot;</span>
+    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span> {
+        <span class="hljs-keyword">var</span> name: String = <span class="hljs-string">""</span>
         <span class="hljs-keyword">var</span> age: <span class="hljs-built_in">Int</span> = <span class="hljs-number">0</span>
         <span class="hljs-keyword">val</span> nameLength: <span class="hljs-built_in">Int</span>
             <span class="hljs-keyword">get</span>() = <span class="hljs-keyword">this</span>.name.length <span class="hljs-comment">// ← this をつけて name を参照</span>
     }
 
     <span class="hljs-keyword">val</span> pankona = Person()
-    pankona.name = <span class="hljs-string">&quot;yosuke akatsuka&quot;</span>
+    pankona.name = <span class="hljs-string">"yosuke akatsuka"</span>
     pankona.age  = <span class="hljs-number">37</span>
     println(pankona.name)
     println(pankona.age)
@@ -680,13 +680,13 @@
     <span class="hljs-comment">//sampleStart</span>
     <span class="hljs-comment">// ヒトを表すクラス</span>
     <span class="hljs-comment">// コンストラクタの書き方は従来はこう。</span>
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> <span class="hljs-keyword">constructor</span></span>(n: String, a: <span class="hljs-built_in">Int</span>) {
+    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span> <span class="hljs-keyword">constructor</span>(n: String, a: <span class="hljs-built_in">Int</span>) {
         <span class="hljs-keyword">val</span> name: String = n
         <span class="hljs-keyword">val</span> age: <span class="hljs-built_in">Int</span> = a
     }
 
     <span class="hljs-comment">// コンストラクタを用いたインスタンスの初期化</span>
-    <span class="hljs-keyword">val</span> p = Person(<span class="hljs-string">&quot;yosuke akatsuka&quot;</span>, <span class="hljs-number">37</span>)
+    <span class="hljs-keyword">val</span> p = Person(<span class="hljs-string">"yosuke akatsuka"</span>, <span class="hljs-number">37</span>)
     println(p.name) <span class="hljs-comment">// yosuke akatsuka</span>
     println(p.age)  <span class="hljs-comment">// 37</span>
     <span class="hljs-comment">//sampleEnd</span>
@@ -696,10 +696,10 @@
     <span class="hljs-comment">//sampleStart</span>
     <span class="hljs-comment">// ヒトを表すクラス</span>
     <span class="hljs-comment">// コンストラクタに val、var を伴うことで、そのままプロパティとして扱うこともできる。</span>
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> <span class="hljs-keyword">constructor</span></span>(<span class="hljs-keyword">val</span> name: String, <span class="hljs-keyword">val</span> age: <span class="hljs-built_in">Int</span>)
+    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span> <span class="hljs-keyword">constructor</span>(<span class="hljs-keyword">val</span> name: String, <span class="hljs-keyword">val</span> age: <span class="hljs-built_in">Int</span>)
 
     <span class="hljs-comment">// 前の例と同じように使える</span>
-    <span class="hljs-keyword">val</span> p = Person(<span class="hljs-string">&quot;yosuke akatsuka&quot;</span>, <span class="hljs-number">37</span>)
+    <span class="hljs-keyword">val</span> p = Person(<span class="hljs-string">"yosuke akatsuka"</span>, <span class="hljs-number">37</span>)
     println(p.name) <span class="hljs-comment">// yosuke akatsuka</span>
     println(p.age)  <span class="hljs-comment">// 37</span>
     <span class="hljs-comment">//sampleEnd</span>
@@ -709,9 +709,9 @@
     <span class="hljs-comment">//sampleStart</span>
     <span class="hljs-comment">// ヒトを表すクラス</span>
     <span class="hljs-comment">// ちなみに、constructor の文字は省略が可能 (先述のものと意味は同じ)</span>
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>(<span class="hljs-keyword">val</span> name: String, <span class="hljs-keyword">val</span> age: <span class="hljs-built_in">Int</span>)
+    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span> (<span class="hljs-keyword">val</span> name: String, <span class="hljs-keyword">val</span> age: <span class="hljs-built_in">Int</span>)
 
-    <span class="hljs-keyword">val</span> p = Person(<span class="hljs-string">&quot;yosuke akatsuka&quot;</span>, <span class="hljs-number">37</span>)
+    <span class="hljs-keyword">val</span> p = Person(<span class="hljs-string">"yosuke akatsuka"</span>, <span class="hljs-number">37</span>)
     println(p.name) <span class="hljs-comment">// yosuke akatsuka</span>
     println(p.age)  <span class="hljs-comment">// 37</span>
     <span class="hljs-comment">//sampleEnd</span>
@@ -731,15 +731,15 @@
     <span class="hljs-comment">//sampleStart</span>
     <span class="hljs-comment">// ヒトを表すクラス</span>
     <span class="hljs-comment">// 別引数を持つ2つ目のコンストラクタを定義することもできる</span>
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>(<span class="hljs-keyword">val</span> name: String, <span class="hljs-keyword">val</span> age: <span class="hljs-built_in">Int</span>) {
+    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span> (<span class="hljs-keyword">val</span> name: String, <span class="hljs-keyword">val</span> age: <span class="hljs-built_in">Int</span>) {
         <span class="hljs-comment">// 引数なしのコンストラクタを定義</span>
         <span class="hljs-comment">// this を使って ↑ のコンストラクタを呼び出す</span>
-        <span class="hljs-keyword">constructor</span>() : <span class="hljs-keyword">this</span>(<span class="hljs-string">&quot;anonymous&quot;</span>, <span class="hljs-number">999</span>) {
-            println(<span class="hljs-string">&quot;this is secondary constructor!&quot;</span>)
+        <span class="hljs-keyword">constructor</span>() : <span class="hljs-keyword">this</span>(<span class="hljs-string">"anonymous"</span>, <span class="hljs-number">999</span>) {
+            println(<span class="hljs-string">"this is secondary constructor!"</span>)
         }
     }
 
-    <span class="hljs-keyword">val</span> p = Person(<span class="hljs-string">&quot;yosuke akatsuka&quot;</span>, <span class="hljs-number">37</span>)
+    <span class="hljs-keyword">val</span> p = Person(<span class="hljs-string">"yosuke akatsuka"</span>, <span class="hljs-number">37</span>)
     println(p.name) <span class="hljs-comment">// yosuke akatsuka</span>
     println(p.age)  <span class="hljs-comment">// 37</span>
 
@@ -760,7 +760,7 @@
 <pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-comment">//sampleStart</span>
     <span class="hljs-comment">// ヒトを表すクラス</span>
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span></span>(<span class="hljs-keyword">val</span> name: String, <span class="hljs-keyword">val</span> age: <span class="hljs-built_in">Int</span>) {
+    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span>(<span class="hljs-keyword">val</span> name: String, <span class="hljs-keyword">val</span> age: <span class="hljs-built_in">Int</span>) {
         <span class="hljs-keyword">init</span> {
             <span class="hljs-comment">// 条件を満たさない場合は例外をスロー</span>
             <span class="hljs-comment">// java.lang.IllegalArgumentException: Failed requirement.</span>
@@ -768,7 +768,7 @@
         }
     }
 
-    <span class="hljs-keyword">val</span> p = Person(<span class="hljs-string">&quot;pankona&quot;</span>, -<span class="hljs-number">10</span>) <span class="hljs-comment">// 例外発生</span>
+    <span class="hljs-keyword">val</span> p = Person(<span class="hljs-string">"pankona"</span>, -<span class="hljs-number">10</span>) <span class="hljs-comment">// 例外発生</span>
     println(p.name)
     println(p.age)
     <span class="hljs-comment">//sampleEnd</span>
@@ -786,7 +786,7 @@
     <span class="hljs-comment">// 文字列の長さを取得する関数を普通に作ると</span>
     <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">strlen</span><span class="hljs-params">(str: <span class="hljs-type">String</span>)</span></span> = str.length
 
-    println(strlen(<span class="hljs-string">&quot;hogehoge&quot;</span>)) <span class="hljs-comment">// 8</span>
+    println(strlen(<span class="hljs-string">"hogehoge"</span>)) <span class="hljs-comment">// 8</span>
     <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
@@ -796,7 +796,7 @@
 <span class="hljs-function"><span class="hljs-keyword">fun</span> String.<span class="hljs-title">size</span><span class="hljs-params">()</span></span> = <span class="hljs-keyword">this</span>.length
 
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
-    println(<span class="hljs-string">&quot;hogehoge&quot;</span>.size()) <span class="hljs-comment">// 8</span>
+    println(<span class="hljs-string">"hogehoge"</span>.size()) <span class="hljs-comment">// 8</span>
 }
 <span class="hljs-comment">//sampleEnd</span>
 </code></pre>
@@ -813,7 +813,7 @@
     <span class="hljs-keyword">get</span>() = <span class="hljs-keyword">this</span>.length
 
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
-    println(<span class="hljs-string">&quot;hogehoge&quot;</span>.size) <span class="hljs-comment">// 8</span>
+    println(<span class="hljs-string">"hogehoge"</span>.size) <span class="hljs-comment">// 8</span>
 }
 <span class="hljs-comment">//sampleEnd</span>
 </code></pre>
@@ -831,9 +831,9 @@
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-comment">//sampleStart</span>
     <span class="hljs-comment">// ヒトクラス (data が頭にくっついている)</span>
-    <span class="hljs-keyword">data</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span></span>(<span class="hljs-keyword">val</span> name: String, <span class="hljs-keyword">val</span> age: <span class="hljs-built_in">Int</span>)
+    <span class="hljs-keyword">data</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span>(<span class="hljs-keyword">val</span> name: String, <span class="hljs-keyword">val</span> age: <span class="hljs-built_in">Int</span>)
 
-    println(<span class="hljs-string">&quot;hogehoge&quot;</span>.size) <span class="hljs-comment">// 8</span>
+    println(<span class="hljs-string">"hogehoge"</span>.size) <span class="hljs-comment">// 8</span>
     <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
@@ -843,11 +843,11 @@
 <pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-comment">//sampleStart</span>
     <span class="hljs-comment">// ヒトクラス</span>
-    <span class="hljs-keyword">data</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span></span>(<span class="hljs-keyword">val</span> name: String, <span class="hljs-keyword">val</span> age: <span class="hljs-built_in">Int</span>)
+    <span class="hljs-keyword">data</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span>(<span class="hljs-keyword">val</span> name: String, <span class="hljs-keyword">val</span> age: <span class="hljs-built_in">Int</span>)
 
     <span class="hljs-comment">// 同じ名前と年齢を与える</span>
-    <span class="hljs-keyword">val</span> p1 = Person(<span class="hljs-string">&quot;access&quot;</span>, <span class="hljs-number">37</span>)
-    <span class="hljs-keyword">val</span> p2 = Person(<span class="hljs-string">&quot;access&quot;</span>, <span class="hljs-number">37</span>)
+    <span class="hljs-keyword">val</span> p1 = Person(<span class="hljs-string">"access"</span>, <span class="hljs-number">37</span>)
+    <span class="hljs-keyword">val</span> p2 = Person(<span class="hljs-string">"access"</span>, <span class="hljs-number">37</span>)
 
     <span class="hljs-comment">// 以下は true になる</span>
     p1 == p2    <span class="hljs-comment">// true</span>
@@ -876,11 +876,11 @@
 <pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-comment">//sampleStart</span>
     <span class="hljs-comment">// ヒトクラス</span>
-    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span></span>(<span class="hljs-keyword">val</span> name: String, <span class="hljs-keyword">val</span> age: <span class="hljs-built_in">Int</span>)
+    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span>(<span class="hljs-keyword">val</span> name: String, <span class="hljs-keyword">val</span> age: <span class="hljs-built_in">Int</span>)
 
     <span class="hljs-comment">// 同じ名前と年齢を与える</span>
-    <span class="hljs-keyword">val</span> p1 = Person(<span class="hljs-string">&quot;access&quot;</span>, <span class="hljs-number">37</span>)
-    <span class="hljs-keyword">val</span> p2 = Person(<span class="hljs-string">&quot;access&quot;</span>, <span class="hljs-number">37</span>)
+    <span class="hljs-keyword">val</span> p1 = Person(<span class="hljs-string">"access"</span>, <span class="hljs-number">37</span>)
+    <span class="hljs-keyword">val</span> p2 = Person(<span class="hljs-string">"access"</span>, <span class="hljs-number">37</span>)
 
     <span class="hljs-comment">// p1 と p2 は、「値は同じかもしれないが違うオブジェクト」なので</span>
     <span class="hljs-comment">// 下記の評価結果は false になる</span>
@@ -937,7 +937,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"クラス","level":"1.3.5","depth":2,"next":{"title":"継承・抽象クラス","level":"1.3.6","depth":2,"path":"inherit_abstract.md","ref":"./inherit_abstract.md","articles":[]},"previous":{"title":"ちょっと特殊な関数","level":"1.3.4","depth":2,"path":"first_class_function.md","ref":"./first_class_function.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false,"config":"classic"},"head-append":{"code":["<SCRIPTTAG src=\"https://unpkg.com/kotlin-playground@1\"></SCRIPTTAG>","<SCRIPTTAG src=\"./head-append.js\"></SCRIPTTAG>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"class.md","mtime":"2023-03-31T08:46:30.173Z","type":"markdown"},"gitbook":{"version":"4.0.7","time":"2024-01-18T05:48:19.374Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"クラス","level":"1.3.5","depth":2,"next":{"title":"継承・抽象クラス","level":"1.3.6","depth":2,"path":"inherit_abstract.md","ref":"./inherit_abstract.md","articles":[]},"previous":{"title":"ちょっと特殊な関数","level":"1.3.4","depth":2,"path":"first_class_function.md","ref":"./first_class_function.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false,"config":"classic"},"head-append":{"code":["<SCRIPTTAG src=\"https://unpkg.com/kotlin-playground@1\"></SCRIPTTAG>","<SCRIPTTAG src=\"./head-append.js\"></SCRIPTTAG>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"class.md","mtime":"2025-04-01T03:10:28.000Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-04-01T07:22:13.334Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -999,7 +999,7 @@
         
     
         
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
         
     
 

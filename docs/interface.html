@@ -6,7 +6,7 @@
         <title>インターフェース · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 4.0.7">
+        <meta name="generator" content="HonKit 6.0.2">
         
         
         
@@ -28,7 +28,7 @@
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-fontsettings/website.css">
                 
             
         
@@ -465,7 +465,7 @@
 </ul>
 <pre><code class="lang-kotlin"><span class="hljs-comment">//sampleStart</span>
 <span class="hljs-comment">// Greeter (挨拶するひと) インターフェース</span>
-<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Greeter</span> </span>{
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">Greeter</span> {
     <span class="hljs-comment">// プロパティ、メソッドを持たせられるが、いずれも abstract</span>
     <span class="hljs-comment">// 強制的に abstract になるので、abstract は書かないでも良い (書いても良いが冗長)</span>
     <span class="hljs-comment">// また、メンバは全て public 扱いになる</span>
@@ -475,18 +475,18 @@
 }
 
 <span class="hljs-comment">// Greeter interface を実装する EnglishGreeter クラス</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EnglishGreeter</span> : <span class="hljs-type">Greeter {</span></span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">EnglishGreeter</span> : <span class="hljs-type">Greeter</span> {
     <span class="hljs-comment">// val language と fun sayHello を</span>
     <span class="hljs-comment">// オーバーライドしないとコンパイルが通らない</span>
-    <span class="hljs-keyword">override</span> <span class="hljs-keyword">val</span> language = <span class="hljs-string">&quot;English&quot;</span>
+    <span class="hljs-keyword">override</span> <span class="hljs-keyword">val</span> language = <span class="hljs-string">"English"</span>
     <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span></span> {
-        println(<span class="hljs-string">&quot;Hello! <span class="hljs-variable">$target</span>!&quot;</span>)
+        println(<span class="hljs-string">"Hello! <span class="hljs-variable">$target</span>!"</span>)
     }
 }
 <span class="hljs-comment">//sampleEnd</span>
 
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
-    EnglishGreeter().sayHello(<span class="hljs-string">&quot;Everyone&quot;</span>)
+    EnglishGreeter().sayHello(<span class="hljs-string">"Everyone"</span>)
 }
 </code></pre>
 <ul>
@@ -494,16 +494,16 @@
 </ul>
 <pre><code class="lang-kotlin"><span class="hljs-comment">//sampleStart</span>
 <span class="hljs-comment">// インターフェースがふたつ以上あったとして...</span>
-<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Cookie</span> </span>{
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">Cookie</span> {
     <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">whiteDay</span><span class="hljs-params">()</span></span>
 }
 
-<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Chocolate</span> </span>{
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">Chocolate</span> {
     <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">valentinesDay</span><span class="hljs-params">()</span></span>
 }
 
 <span class="hljs-comment">// クラスは複数のインターフェースを継承して実装することができる</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Sweet</span> : <span class="hljs-type">Cookie</span>, <span class="hljs-type">Chocolate {</span></span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Sweet</span> : <span class="hljs-type">Cookie</span>, <span class="hljs-type">Chocolate</span> {
     <span class="hljs-comment">// Cookie、Chocolate に含まれるメンバを</span>
     <span class="hljs-comment">// 全てオーバーライドする (実装する) 必要がある</span>
     <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">whiteDay</span><span class="hljs-params">()</span></span> {}
@@ -524,20 +524,20 @@
 </ul>
 </li>
 </ul>
-<pre><code class="lang-kotlin"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Greeter</span> </span>{
+<pre><code class="lang-kotlin"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Greeter</span> {
     <span class="hljs-comment">// デフォルト実装をもったメソッド</span>
     <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span></span> {
-        println(<span class="hljs-string">&quot;Hello <span class="hljs-variable">$target</span>!&quot;</span>)
+        println(<span class="hljs-string">"Hello <span class="hljs-variable">$target</span>!"</span>)
     }
 }
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EnglishGreeter</span> : <span class="hljs-type">Greeter {</span></span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">EnglishGreeter</span> : <span class="hljs-type">Greeter</span> {
     <span class="hljs-comment">// sayHello の実装を省略</span>
 }
 
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-keyword">val</span> g: Greeter = EnglishGreeter()
-    g.sayHello(<span class="hljs-string">&quot;takeshi&quot;</span>)   <span class="hljs-comment">// Hello takeshi!</span>
+    g.sayHello(<span class="hljs-string">"takeshi"</span>)   <span class="hljs-comment">// Hello takeshi!</span>
 }
 </code></pre>
 <ul>
@@ -554,66 +554,66 @@
 <p>継承と委譲それぞれの実装例を見てみよう。</p>
 <pre><code class="lang-kotlin"><span class="hljs-comment">// 継承するパターン</span>
 <span class="hljs-comment">// インターフェースの定義</span>
-<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Greeter</span> </span>{
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">Greeter</span> {
     <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">()</span></span>
     <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span></span>
 }
 
 <span class="hljs-comment">// 英語で挨拶クラス</span>
-<span class="hljs-keyword">open</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EnglishGreeter</span> : <span class="hljs-type">Greeter {</span></span>
+<span class="hljs-keyword">open</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">EnglishGreeter</span> : <span class="hljs-type">Greeter</span> {
     <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">()</span></span> {
         <span class="hljs-comment">// 名前を省略したら anonymous さんに挨拶する</span>
-        sayHello(<span class="hljs-string">&quot;anonymous&quot;</span>)
+        sayHello(<span class="hljs-string">"anonymous"</span>)
     }
 
     <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span></span> {
-        println(<span class="hljs-string">&quot;Hello, <span class="hljs-variable">$target</span>!&quot;</span>)
+        println(<span class="hljs-string">"Hello, <span class="hljs-variable">$target</span>!"</span>)
     }
 }
 
 <span class="hljs-comment">// 名前を指定されたときはすごい挨拶をする</span>
 <span class="hljs-comment">// 英語で挨拶クラスを継承して拡張した</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EnglishGreeterGreatAgain</span> : <span class="hljs-type">EnglishGreeter</span></span>() {
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">EnglishGreeterGreatAgain</span> : <span class="hljs-type">EnglishGreeter</span>() {
     <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span></span> {
         <span class="hljs-comment">// スーパークラスの実装を呼び出す</span>
-        <span class="hljs-keyword">super</span>.sayHello(<span class="hljs-string">&quot;<span class="hljs-variable">$target</span> great again!&quot;</span>) <span class="hljs-comment">// Hello $target great again!</span>
+        <span class="hljs-keyword">super</span>.sayHello(<span class="hljs-string">"<span class="hljs-variable">$target</span> great again!"</span>) <span class="hljs-comment">// Hello $target great again!</span>
     }
 }
 
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-keyword">val</span> g = EnglishGreeterGreatAgain()
-    g.sayHello(<span class="hljs-string">&quot;America&quot;</span>)   <span class="hljs-comment">// Hello America great again!</span>
-    g.sayHello(<span class="hljs-string">&quot;Japan&quot;</span>)     <span class="hljs-comment">// Hello Japan great again!</span>
-    g.sayHello(<span class="hljs-string">&quot;Germany&quot;</span>)   <span class="hljs-comment">// Hello Germany great again!</span>
+    g.sayHello(<span class="hljs-string">"America"</span>)   <span class="hljs-comment">// Hello America great again!</span>
+    g.sayHello(<span class="hljs-string">"Japan"</span>)     <span class="hljs-comment">// Hello Japan great again!</span>
+    g.sayHello(<span class="hljs-string">"Germany"</span>)   <span class="hljs-comment">// Hello Germany great again!</span>
     g.sayHello()            <span class="hljs-comment">// Hello anonymous great again ← ！？</span>
 }
 </code></pre>
 <ul>
-<li>継承で一部分だけ拡張したつもりでいたが、<br>結局のところはスーパークラスの実装への依存があり、制御が難しい場合がある</li>
+<li>継承で一部分だけ拡張したつもりでいたが、<br></br>結局のところはスーパークラスの実装への依存があり、制御が難しい場合がある</li>
 <li>スーパークラスをいじれれば良いが、そうでない場合は思い通りにできない場合も</li>
 </ul>
 <pre><code class="lang-kotlin"><span class="hljs-comment">// 委譲するパターン</span>
 <span class="hljs-comment">// インターフェースの定義</span>
-<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Greeter</span> </span>{
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">Greeter</span> {
     <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">()</span></span>
     <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span></span>
 }
 
 <span class="hljs-comment">// 英語で挨拶クラス</span>
-<span class="hljs-keyword">open</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EnglishGreeter</span> : <span class="hljs-type">Greeter {</span></span>
+<span class="hljs-keyword">open</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">EnglishGreeter</span> : <span class="hljs-type">Greeter</span> {
     <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">()</span></span> {
         <span class="hljs-comment">// 名前を省略したら anonymous さんに挨拶する</span>
-        sayHello(<span class="hljs-string">&quot;anonymous&quot;</span>)
+        sayHello(<span class="hljs-string">"anonymous"</span>)
     }
 
     <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span></span> {
-        println(<span class="hljs-string">&quot;Hello, <span class="hljs-variable">$target</span>!&quot;</span>)
+        println(<span class="hljs-string">"Hello, <span class="hljs-variable">$target</span>!"</span>)
     }
 }
 
 <span class="hljs-comment">// 名前を指定されたときはすごい挨拶をする</span>
 <span class="hljs-comment">// 英語で挨拶クラスを委譲して拡張した</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EnglishGreeterGreatAgain</span> : <span class="hljs-type">Greeter {</span></span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">EnglishGreeterGreatAgain</span> : <span class="hljs-type">Greeter</span> {
     <span class="hljs-comment">// 継承ではなく、メンバとして値を持つ</span>
     <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> g: Greeter = EnglishGreeter()
 
@@ -624,15 +624,15 @@
 
     <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span></span> {
         <span class="hljs-comment">// 拡張してメソッドを呼び出す</span>
-        g.sayHello(<span class="hljs-string">&quot;<span class="hljs-variable">$target</span> great again!&quot;</span>)
+        g.sayHello(<span class="hljs-string">"<span class="hljs-variable">$target</span> great again!"</span>)
     }
 }
 
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-keyword">val</span> g = EnglishGreeterGreatAgain()
-    g.sayHello(<span class="hljs-string">&quot;America&quot;</span>)   <span class="hljs-comment">// Hello America great again!</span>
-    g.sayHello(<span class="hljs-string">&quot;Japan&quot;</span>)     <span class="hljs-comment">// Hello Japan great again!</span>
-    g.sayHello(<span class="hljs-string">&quot;Germany&quot;</span>)   <span class="hljs-comment">// Hello Germany great again!</span>
+    g.sayHello(<span class="hljs-string">"America"</span>)   <span class="hljs-comment">// Hello America great again!</span>
+    g.sayHello(<span class="hljs-string">"Japan"</span>)     <span class="hljs-comment">// Hello Japan great again!</span>
+    g.sayHello(<span class="hljs-string">"Germany"</span>)   <span class="hljs-comment">// Hello Germany great again!</span>
     g.sayHello()            <span class="hljs-comment">// Hello anonymous!</span>
 }
 </code></pre>
@@ -644,40 +644,40 @@
 </li>
 </ul>
 <pre><code class="lang-kotlin"><span class="hljs-comment">// インターフェースの定義</span>
-<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Greeter</span> </span>{
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">Greeter</span> {
     <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">()</span></span>
     <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span></span>
 }
 
 <span class="hljs-comment">// 英語で挨拶クラス</span>
-<span class="hljs-keyword">open</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EnglishGreeter</span> : <span class="hljs-type">Greeter {</span></span>
+<span class="hljs-keyword">open</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">EnglishGreeter</span> : <span class="hljs-type">Greeter</span> {
     <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">()</span></span> {
         <span class="hljs-comment">// 名前を省略したら anonymous さんに挨拶する</span>
-        sayHello(<span class="hljs-string">&quot;anonymous&quot;</span>)
+        sayHello(<span class="hljs-string">"anonymous"</span>)
     }
 
     <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span></span> {
-        println(<span class="hljs-string">&quot;Hello, <span class="hljs-variable">$target</span>!&quot;</span>)
+        println(<span class="hljs-string">"Hello, <span class="hljs-variable">$target</span>!"</span>)
     }
 }
 
-<span class="hljs-comment">// コンストラクタで Greeter をとりつつ、&quot;Greeter by greeter&quot; と指定して継承</span>
+<span class="hljs-comment">// コンストラクタで Greeter をとりつつ、"Greeter by greeter" と指定して継承</span>
 <span class="hljs-comment">// override してない部分は greeter に委譲するという意味になる</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EnglishGreeterGreatAgain</span></span>(<span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> greeter: Greeter): Greeter <span class="hljs-keyword">by</span> greeter {
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">EnglishGreeterGreatAgain</span>(<span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> greeter: Greeter): Greeter <span class="hljs-keyword">by</span> greeter {
     <span class="hljs-comment">// override fun sayHello() は実装しない (= greeter に委譲)</span>
 
     <span class="hljs-comment">// 拡張したいところだけ override</span>
     <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span></span> {
-        greeter.sayHello(<span class="hljs-string">&quot;<span class="hljs-variable">$target</span> great again!&quot;</span>)
+        greeter.sayHello(<span class="hljs-string">"<span class="hljs-variable">$target</span> great again!"</span>)
     }
 }
 
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-keyword">val</span> eg = EnglishGreeter()
     <span class="hljs-keyword">val</span> g = EnglishGreeterGreatAgain(eg)
-    g.sayHello(<span class="hljs-string">&quot;America&quot;</span>)   <span class="hljs-comment">// Hello America great again!</span>
-    g.sayHello(<span class="hljs-string">&quot;Japan&quot;</span>)     <span class="hljs-comment">// Hello Japan great again!</span>
-    g.sayHello(<span class="hljs-string">&quot;Germany&quot;</span>)   <span class="hljs-comment">// Hello Germany great again!</span>
+    g.sayHello(<span class="hljs-string">"America"</span>)   <span class="hljs-comment">// Hello America great again!</span>
+    g.sayHello(<span class="hljs-string">"Japan"</span>)     <span class="hljs-comment">// Hello Japan great again!</span>
+    g.sayHello(<span class="hljs-string">"Germany"</span>)   <span class="hljs-comment">// Hello Germany great again!</span>
     g.sayHello()            <span class="hljs-comment">// Hello anonymous!</span>
 }
 </code></pre>
@@ -688,7 +688,7 @@
 </li>
 </ul>
 <pre><code class="lang-kotlin"><span class="hljs-comment">// Greeter インターフェース</span>
-<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Greeter</span> </span>{
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">Greeter</span> {
     <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span></span>
 }
 
@@ -698,32 +698,32 @@
 }
 
 <span class="hljs-comment">// 日本語で挨拶</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">JapaneseGreeter</span> : <span class="hljs-type">Greeter {</span></span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">JapaneseGreeter</span> : <span class="hljs-type">Greeter</span> {
     <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span></span> {
-        println(<span class="hljs-string">&quot;こんにちは、<span class="hljs-variable">$target</span> さん！&quot;</span>)
+        println(<span class="hljs-string">"こんにちは、<span class="hljs-variable">$target</span> さん！"</span>)
     }
 }
 
 <span class="hljs-comment">// 英語で挨拶</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EnglishGreeter</span> : <span class="hljs-type">Greeter {</span></span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">EnglishGreeter</span> : <span class="hljs-type">Greeter</span> {
     <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span></span> {
-        println(<span class="hljs-string">&quot;Hello, <span class="hljs-variable">$target</span>!&quot;</span>)
+        println(<span class="hljs-string">"Hello, <span class="hljs-variable">$target</span>!"</span>)
     }
 }
 
 <span class="hljs-comment">// ドイツ語で挨拶</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GermanyGreeter</span> : <span class="hljs-type">Greeter {</span></span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">GermanyGreeter</span> : <span class="hljs-type">Greeter</span> {
     <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sayHello</span><span class="hljs-params">(target: <span class="hljs-type">String</span>)</span></span> {
-        println(<span class="hljs-string">&quot;Guten morgen, <span class="hljs-variable">$target</span>!&quot;</span>)
+        println(<span class="hljs-string">"Guten morgen, <span class="hljs-variable">$target</span>!"</span>)
     }
 }
 
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-comment">// greeting 関数は Greeter インターフェースを実装したクラスを</span>
     <span class="hljs-comment">// 引数にとるので、以下はいずれも有効な書き方</span>
-    greeting(JapaneseGreeter(), <span class="hljs-string">&quot;world&quot;</span>) <span class="hljs-comment">// こんにちは、world さん！</span>
-    greeting(EnglishGreeter(), <span class="hljs-string">&quot;world&quot;</span>)  <span class="hljs-comment">// Hello, world!</span>
-    greeting(GermanyGreeter(), <span class="hljs-string">&quot;world&quot;</span>)  <span class="hljs-comment">// Guten morgen, world!</span>
+    greeting(JapaneseGreeter(), <span class="hljs-string">"world"</span>) <span class="hljs-comment">// こんにちは、world さん！</span>
+    greeting(EnglishGreeter(), <span class="hljs-string">"world"</span>)  <span class="hljs-comment">// Hello, world!</span>
+    greeting(GermanyGreeter(), <span class="hljs-string">"world"</span>)  <span class="hljs-comment">// Guten morgen, world!</span>
 }
 </code></pre>
 <ul>
@@ -777,7 +777,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"インターフェース","level":"1.3.7","depth":2,"next":{"title":"ジェネリクス","level":"1.3.8","depth":2,"path":"generics.md","ref":"./generics.md","articles":[]},"previous":{"title":"継承・抽象クラス","level":"1.3.6","depth":2,"path":"inherit_abstract.md","ref":"./inherit_abstract.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false,"config":"classic"},"head-append":{"code":["<SCRIPTTAG src=\"https://unpkg.com/kotlin-playground@1\"></SCRIPTTAG>","<SCRIPTTAG src=\"./head-append.js\"></SCRIPTTAG>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"interface.md","mtime":"2023-03-22T03:50:40.320Z","type":"markdown"},"gitbook":{"version":"4.0.7","time":"2024-01-18T05:48:19.374Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"インターフェース","level":"1.3.7","depth":2,"next":{"title":"ジェネリクス","level":"1.3.8","depth":2,"path":"generics.md","ref":"./generics.md","articles":[]},"previous":{"title":"継承・抽象クラス","level":"1.3.6","depth":2,"path":"inherit_abstract.md","ref":"./inherit_abstract.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false,"config":"classic"},"head-append":{"code":["<SCRIPTTAG src=\"https://unpkg.com/kotlin-playground@1\"></SCRIPTTAG>","<SCRIPTTAG src=\"./head-append.js\"></SCRIPTTAG>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"interface.md","mtime":"2025-04-01T03:10:28.000Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-04-01T07:22:13.334Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -839,7 +839,7 @@
         
     
         
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
         
     
 

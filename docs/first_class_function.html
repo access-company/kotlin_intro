@@ -6,7 +6,7 @@
         <title>ちょっと特殊な関数 · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 4.0.7">
+        <meta name="generator" content="HonKit 6.0.2">
         
         
         
@@ -28,7 +28,7 @@
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-fontsettings/website.css">
                 
             
         
@@ -453,7 +453,7 @@
     <span class="hljs-comment">// 入力を二乗する関数</span>
     <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">square</span><span class="hljs-params">(i: <span class="hljs-type">Int</span>)</span></span> = i * i
 
-    <span class="hljs-comment">// 関数のオブジェクトを取得するときは &quot;::&quot; をつける</span>
+    <span class="hljs-comment">// 関数のオブジェクトを取得するときは "::" をつける</span>
     <span class="hljs-comment">// 変数に代入できる</span>
     <span class="hljs-keyword">val</span> func = ::square
 
@@ -477,11 +477,11 @@
 
     <span class="hljs-comment">// 型があってないと代入できない</span>
     <span class="hljs-comment">// 以下の関数は (String) -&gt; Unit という型</span>
-    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">greet</span><span class="hljs-params">(name: <span class="hljs-type">String</span>)</span></span> = println(<span class="hljs-string">&quot;Hello <span class="hljs-variable">$name</span>!&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">greet</span><span class="hljs-params">(name: <span class="hljs-type">String</span>)</span></span> = println(<span class="hljs-string">"Hello <span class="hljs-variable">$name</span>!"</span>)
     <span class="hljs-keyword">val</span> func2: (<span class="hljs-built_in">Int</span>) -&gt; <span class="hljs-built_in">Int</span> = ::greet   <span class="hljs-comment">// 型があっていないので代入できない (コンパイルエラー)</span>
 
     println(func1(<span class="hljs-number">3</span>))
-    func2(<span class="hljs-string">&quot;Tony&quot;</span>)
+    func2(<span class="hljs-string">"Tony"</span>)
     <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
@@ -501,7 +501,7 @@
     <span class="hljs-comment">// 「Int を引数にとる関数」の例</span>
     <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">myPrintFunc</span><span class="hljs-params">(i: <span class="hljs-type">Int</span>)</span></span> {
         <span class="hljs-keyword">if</span> (i % <span class="hljs-number">3</span> == <span class="hljs-number">0</span>) {
-            println(<span class="hljs-string">&quot;3の倍数です!&quot;</span>)
+            println(<span class="hljs-string">"3の倍数です!"</span>)
         } <span class="hljs-keyword">else</span> {
             println(i)
         }
@@ -659,8 +659,8 @@
         }
     }
 
-    log(<span class="hljs-literal">true</span>, { <span class="hljs-string">&quot;log message&quot;</span> })    <span class="hljs-comment">// 表示される</span>
-    log(<span class="hljs-literal">false</span>, { <span class="hljs-string">&quot;log message&quot;</span> })   <span class="hljs-comment">// 表示されない</span>
+    log(<span class="hljs-literal">true</span>, { <span class="hljs-string">"log message"</span> })    <span class="hljs-comment">// 表示される</span>
+    log(<span class="hljs-literal">false</span>, { <span class="hljs-string">"log message"</span> })   <span class="hljs-comment">// 表示されない</span>
     <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
@@ -674,10 +674,10 @@
     }
 
     log(<span class="hljs-literal">true</span>) {
-        <span class="hljs-string">&quot;log message&quot;</span>   <span class="hljs-comment">// 表示される</span>
+        <span class="hljs-string">"log message"</span>   <span class="hljs-comment">// 表示される</span>
     }
     log(<span class="hljs-literal">false</span>) {
-        <span class="hljs-string">&quot;log message&quot;</span>   <span class="hljs-comment">// 表示されない</span>
+        <span class="hljs-string">"log message"</span>   <span class="hljs-comment">// 表示されない</span>
     }
     <span class="hljs-comment">//sampleEnd</span>
 }
@@ -691,10 +691,10 @@
 
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     log(<span class="hljs-literal">true</span>) {
-        <span class="hljs-string">&quot;log message&quot;</span>   <span class="hljs-comment">// 表示される</span>
+        <span class="hljs-string">"log message"</span>   <span class="hljs-comment">// 表示される</span>
     }
     log(<span class="hljs-literal">false</span>) {
-        <span class="hljs-string">&quot;log message&quot;</span>   <span class="hljs-comment">// 表示されない</span>
+        <span class="hljs-string">"log message"</span>   <span class="hljs-comment">// 表示されない</span>
     }
 }
 </code></pre>
@@ -703,10 +703,10 @@
     <span class="hljs-comment">// 上述の main 関数は、以下と概ね同義になる</span>
     <span class="hljs-comment">// debug が true でないときは、関数呼び出しまで到達しないコードになる</span>
     <span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span>) {
-        println(<span class="hljs-string">&quot;log message&quot;</span>)  <span class="hljs-comment">// 表示される</span>
+        println(<span class="hljs-string">"log message"</span>)  <span class="hljs-comment">// 表示される</span>
     }
     <span class="hljs-keyword">if</span> (<span class="hljs-literal">false</span>) {
-        println(<span class="hljs-string">&quot;log message&quot;</span>)  <span class="hljs-comment">// 表示されない</span>
+        println(<span class="hljs-string">"log message"</span>)  <span class="hljs-comment">// 表示されない</span>
     }
     <span class="hljs-comment">//sampleEnd</span>
 }
@@ -735,8 +735,8 @@
 }
 
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
-    println(containsDigit(<span class="hljs-string">&quot;ACCESS&quot;</span>))     <span class="hljs-comment">// false</span>
-    println(containsDigit(<span class="hljs-string">&quot;C0MPANY&quot;</span>))    <span class="hljs-comment">// true</span>
+    println(containsDigit(<span class="hljs-string">"ACCESS"</span>))     <span class="hljs-comment">// false</span>
+    println(containsDigit(<span class="hljs-string">"C0MPANY"</span>))    <span class="hljs-comment">// true</span>
 }
 </code></pre>
 <pre><code class="lang-kotlin"><span class="hljs-keyword">inline</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">forEach</span><span class="hljs-params">(str: <span class="hljs-type">String</span>, f: (<span class="hljs-type">Char</span>) -&gt; <span class="hljs-type">Unit</span>)</span></span> {
@@ -763,8 +763,8 @@
         <span class="hljs-keyword">return</span> result
     }
 
-    println(containsDigit(<span class="hljs-string">&quot;ACCESS&quot;</span>))     <span class="hljs-comment">// false</span>
-    println(containsDigit(<span class="hljs-string">&quot;C0MPANY&quot;</span>))    <span class="hljs-comment">// true</span>
+    println(containsDigit(<span class="hljs-string">"ACCESS"</span>))     <span class="hljs-comment">// false</span>
+    println(containsDigit(<span class="hljs-string">"C0MPANY"</span>))    <span class="hljs-comment">// true</span>
     <span class="hljs-comment">//sampleEnd</span>
 }
 </code></pre>
@@ -850,7 +850,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ちょっと特殊な関数","level":"1.3.4","depth":2,"next":{"title":"クラス","level":"1.3.5","depth":2,"path":"class.md","ref":"./class.md","articles":[]},"previous":{"title":"関数","level":"1.3.3","depth":2,"path":"function.md","ref":"./function.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false,"config":"classic"},"head-append":{"code":["<SCRIPTTAG src=\"https://unpkg.com/kotlin-playground@1\"></SCRIPTTAG>","<SCRIPTTAG src=\"./head-append.js\"></SCRIPTTAG>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"first_class_function.md","mtime":"2023-03-31T08:46:30.173Z","type":"markdown"},"gitbook":{"version":"4.0.7","time":"2024-01-18T05:48:19.374Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ちょっと特殊な関数","level":"1.3.4","depth":2,"next":{"title":"クラス","level":"1.3.5","depth":2,"path":"class.md","ref":"./class.md","articles":[]},"previous":{"title":"関数","level":"1.3.3","depth":2,"path":"function.md","ref":"./function.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false,"config":"classic"},"head-append":{"code":["<SCRIPTTAG src=\"https://unpkg.com/kotlin-playground@1\"></SCRIPTTAG>","<SCRIPTTAG src=\"./head-append.js\"></SCRIPTTAG>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"first_class_function.md","mtime":"2025-04-01T03:10:28.000Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-04-01T07:22:13.334Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -912,7 +912,7 @@
         
     
         
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
         
     
 

@@ -6,7 +6,7 @@
         <title>Exercise (1) · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 4.0.7">
+        <meta name="generator" content="HonKit 6.0.2">
         
         
         
@@ -28,7 +28,7 @@
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-fontsettings/website.css">
                 
             
         
@@ -438,7 +438,7 @@
 <li>つまり、以下を Run してみよう！</li>
 </ul>
 <pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
-    println(<span class="hljs-string">&quot;Hello world!&quot;</span>)
+    println(<span class="hljs-string">"Hello world!"</span>)
 }
 </code></pre>
 <h2 id="fizz-buzz">Fizz Buzz</h2>
@@ -497,7 +497,7 @@ Buzz
 <li>入力は 0 以上の <code>Int</code></li>
 <li>うるう年ならば <code>true</code>、そうでないならば <code>false</code> を返す</li>
 <li>ところでうるう年って？<ul>
-<li>年が 4 で割り切れる場合、その年はうるう年として扱う。<br>ただし、100 で割り切れてかつ 400 で割り切れない年は除く</li>
+<li>年が 4 で割り切れる場合、その年はうるう年として扱う。<br></br>ただし、100 で割り切れてかつ 400 で割り切れない年は除く</li>
 <li>1700、1800、1900、2100、2200、2300、2500、2600 はうるう年ではない</li>
 <li>1600、2000、2400 はうるう年</li>
 </ul>
@@ -511,7 +511,7 @@ Buzz
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
     <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> <span class="hljs-number">2000.</span><span class="hljs-number">.2100</span>) {
         <span class="hljs-keyword">if</span> (isLeapYear(i)) {
-            println(<span class="hljs-string">&quot;<span class="hljs-variable">$i</span> 年はうるう年です！&quot;</span>)
+            println(<span class="hljs-string">"<span class="hljs-variable">$i</span> 年はうるう年です！"</span>)
         }
     }
 }
@@ -533,7 +533,7 @@ Buzz
 </ul>
 <pre><code class="lang-kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">power</span><span class="hljs-params">(a: <span class="hljs-type">Int</span>, n: <span class="hljs-type">Int</span>)</span></span>: <span class="hljs-built_in">Long</span> {
     <span class="hljs-keyword">if</span> (a &lt; <span class="hljs-number">0</span> || n &lt; <span class="hljs-number">0</span>) {
-        println(<span class="hljs-string">&quot;inputs must be positive. return 0&quot;</span>)
+        println(<span class="hljs-string">"inputs must be positive. return 0"</span>)
         <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>
     }
     <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> 実装する</span>
@@ -588,7 +588,7 @@ Buzz
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Exercise (1)","level":"1.4.1","depth":2,"next":{"title":"Exercise (2)","level":"1.4.2","depth":2,"path":"exercise2.md","ref":"./exercise2.md","articles":[]},"previous":{"title":"Exercise","level":"1.4","depth":1,"ref":"","articles":[{"title":"Exercise (1)","level":"1.4.1","depth":2,"path":"exercise1.md","ref":"./exercise1.md","articles":[]},{"title":"Exercise (2)","level":"1.4.2","depth":2,"path":"exercise2.md","ref":"./exercise2.md","articles":[]},{"title":"Exercise (3)","level":"1.4.3","depth":2,"path":"exercise3.md","ref":"./exercise3.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false,"config":"classic"},"head-append":{"code":["<SCRIPTTAG src=\"https://unpkg.com/kotlin-playground@1\"></SCRIPTTAG>","<SCRIPTTAG src=\"./head-append.js\"></SCRIPTTAG>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"exercise1.md","mtime":"2023-04-06T03:16:59.913Z","type":"markdown"},"gitbook":{"version":"4.0.7","time":"2024-01-18T05:48:19.374Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Exercise (1)","level":"1.4.1","depth":2,"next":{"title":"Exercise (2)","level":"1.4.2","depth":2,"path":"exercise2.md","ref":"./exercise2.md","articles":[]},"previous":{"title":"Exercise","level":"1.4","depth":1,"ref":"","articles":[{"title":"Exercise (1)","level":"1.4.1","depth":2,"path":"exercise1.md","ref":"./exercise1.md","articles":[]},{"title":"Exercise (2)","level":"1.4.2","depth":2,"path":"exercise2.md","ref":"./exercise2.md","articles":[]},{"title":"Exercise (3)","level":"1.4.3","depth":2,"path":"exercise3.md","ref":"./exercise3.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false,"config":"classic"},"head-append":{"code":["<SCRIPTTAG src=\"https://unpkg.com/kotlin-playground@1\"></SCRIPTTAG>","<SCRIPTTAG src=\"./head-append.js\"></SCRIPTTAG>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"exercise1.md","mtime":"2025-04-01T03:10:28.000Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-04-01T07:22:13.334Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -650,7 +650,7 @@ Buzz
         
     
         
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
         
     
 

@@ -6,7 +6,7 @@
         <title>Exercise (3) · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 4.0.7">
+        <meta name="generator" content="HonKit 6.0.2">
         
         
         
@@ -28,7 +28,7 @@
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-fontsettings/website.css">
                 
             
         
@@ -452,17 +452,17 @@ message: Hello, Antonio!
 <li><code>if</code>を使うのは1回まで</li>
 </ul>
 <pre><code class="lang-kotlin"><span class="hljs-comment">/* ここからは変えない */</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span> </span>(<span class="hljs-keyword">val</span> personalInfo: PersonalInfo?)
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Client</span> (<span class="hljs-keyword">val</span> personalInfo: PersonalInfo?)
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PersonalInfo</span> </span>(<span class="hljs-keyword">val</span> email: String?)
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">PersonalInfo</span> (<span class="hljs-keyword">val</span> email: String?)
 
-<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Mailer</span> </span>{
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">Mailer</span> {
     <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sendMessage</span><span class="hljs-params">(email: <span class="hljs-type">String</span>, message: <span class="hljs-type">String</span>)</span></span>
 }
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CosmosMailer</span>: <span class="hljs-type">Mailer {</span></span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">CosmosMailer</span>: <span class="hljs-type">Mailer</span> {
     <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">sendMessage</span><span class="hljs-params">(email: <span class="hljs-type">String</span>, message: <span class="hljs-type">String</span>)</span></span>{
-        println(<span class="hljs-string">&quot;To: <span class="hljs-variable">$email</span>\nmessage: <span class="hljs-variable">$message</span>&quot;</span>)
+        println(<span class="hljs-string">"To: <span class="hljs-variable">$email</span>\nmessage: <span class="hljs-variable">$message</span>"</span>)
     }
 }
 <span class="hljs-comment">/* ここまでは変えない */</span>
@@ -486,12 +486,12 @@ message: Hello, Antonio!
 }
 
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
-    <span class="hljs-keyword">val</span> personalInfo: PersonalInfo = PersonalInfo(email: <span class="hljs-string">&quot;antonio@example.com&quot;</span>)
+    <span class="hljs-keyword">val</span> personalInfo: PersonalInfo = PersonalInfo(email: <span class="hljs-string">"antonio@example.com"</span>)
     <span class="hljs-keyword">val</span> client: Client = Client(personalInfo: personalInfo)
     <span class="hljs-keyword">val</span> mailer: Mailer = CosmosMailer()
     sendMessageToClient(
             client: client,
-            message: <span class="hljs-string">&quot;Hello, Antonio!&quot;</span>,
+            message: <span class="hljs-string">"Hello, Antonio!"</span>,
             mailer: mailer
     )
 }
@@ -505,17 +505,17 @@ message: Hello, Antonio!
 </li>
 </ul>
 <div><p class="code-filename">Java</p></div>
-<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sendMessageToClient</span><span class="hljs-params">(
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">sendMessageToClient</span><span class="hljs-params">(
     <span class="hljs-meta">@Nullable</span> Client client,
     <span class="hljs-meta">@Nullable</span> String message,
-    <span class="hljs-meta">@NonNull</span> Mailer mailer)</span> </span>{
-    <span class="hljs-keyword">if</span> (client == <span class="hljs-keyword">null</span> || message == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span>;
+    <span class="hljs-meta">@NonNull</span> Mailer mailer)</span> {
+    <span class="hljs-keyword">if</span> (client == <span class="hljs-literal">null</span> || message == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span>;
 
-    PersonalInfo personalInfo = client.getPersonalInfo();
-    <span class="hljs-keyword">if</span> (personalInfo == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span>;
+    <span class="hljs-type">PersonalInfo</span> <span class="hljs-variable">personalInfo</span> <span class="hljs-operator">=</span> client.getPersonalInfo();
+    <span class="hljs-keyword">if</span> (personalInfo == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span>;
 
-    String email = personalInfo.getEmail();
-    <span class="hljs-keyword">if</span> (email == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span>;
+    <span class="hljs-type">String</span> <span class="hljs-variable">email</span> <span class="hljs-operator">=</span> personalInfo.getEmail();
+    <span class="hljs-keyword">if</span> (email == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span>;
 
     mailer.sendMessage(email, message);
 }
@@ -563,7 +563,7 @@ message: Hello, Antonio!
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Exercise (3)","level":"1.4.3","depth":2,"next":{"title":"Android開発環境の構築","level":"1.5","depth":1,"path":"android_dev_environment.md","ref":"./android_dev_environment.md","articles":[]},"previous":{"title":"Exercise (2)","level":"1.4.2","depth":2,"path":"exercise2.md","ref":"./exercise2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false,"config":"classic"},"head-append":{"code":["<SCRIPTTAG src=\"https://unpkg.com/kotlin-playground@1\"></SCRIPTTAG>","<SCRIPTTAG src=\"./head-append.js\"></SCRIPTTAG>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"exercise3.md","mtime":"2023-03-22T03:50:40.320Z","type":"markdown"},"gitbook":{"version":"4.0.7","time":"2024-01-18T05:48:19.374Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Exercise (3)","level":"1.4.3","depth":2,"next":{"title":"Android開発環境の構築","level":"1.5","depth":1,"path":"android_dev_environment.md","ref":"./android_dev_environment.md","articles":[]},"previous":{"title":"Exercise (2)","level":"1.4.2","depth":2,"path":"exercise2.md","ref":"./exercise2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","codeblock-filename","head-append","-lunr","-search","search-pro-kui"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false,"config":"classic"},"head-append":{"code":["<SCRIPTTAG src=\"https://unpkg.com/kotlin-playground@1\"></SCRIPTTAG>","<SCRIPTTAG src=\"./head-append.js\"></SCRIPTTAG>"]},"codeblock-filename":{},"search-pro-kui":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"exercise3.md","mtime":"2025-04-01T03:10:28.000Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-04-01T07:22:13.334Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -625,7 +625,7 @@ message: Hello, Antonio!
         
     
         
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
         
     
 
